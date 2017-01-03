@@ -1,0 +1,56 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {% block title %}
+      CS4All Activities
+    {% endblock %}
+  </title>
+</head>
+
+<body>
+  <nav id="main-nav" class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/" id="logo"><img src="/static/images/logo.png" alt="CS4All Activities"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/about">About</a></li>
+        <li><a href="/">Activities</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'new' %}">New Activity</a></li>
+          <li><a href="{% url 'auth_logout' %}">Log out</a></li>
+          <li><a href="{% url 'auth_password_change' %}">Change password</a></li>
+        {% else %}
+          <li><a href="{% url 'auth_login' %}">Log in</a></li>
+          <li><a href="/accounts/register">Register</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="content">
+          {% block content %}
+          {% endblock %}
+        </div>
+
+        <div id="footer">
+          {% block footer %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

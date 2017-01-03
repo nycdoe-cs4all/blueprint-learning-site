@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div id="search">
+
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <form action="/">
+
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" name="q" value="{{filters.q}}" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-default">Go!</button>
+          </span>
+        </div>
+      </div>
+
+      {% if user.is_superuser %}
+        <div class="form-group">
+          <select name="approved" id="approved-filter" class="form-control">
+            <option value="1" {% if filters.approved == "1" %}selected{% endif %}>Approved</option>
+            <option value="0" {% if filters.approved == "0" %}selected{% endif %}>Pending</option>
+          </select>
+        </div>
+      {% endif %}
+
+      <div class="form-group">
+        <select name="grade" id="grade-filter" class="form-control">
+          <option value="">All Grades</option>
+          {% for grade in grades %}
+          <option {% if filters.grade == grade.name %}selected{% endif %} value="{{grade.name}}">{{grade.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select name="level" id="level-filter" class="form-control">
+          <option value="">All Levels</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <select name="subject" id="subject-filter" class="form-control">
+          <option value="">All Subjects</option>
+          {% for subject in subjects %}
+          <option {% if filters.subject == subject.name %}selected{% endif %} value="{{subject.name}}">{{subject.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label id="select-all-devices">
+            <input type="checkbox" value="" checked>
+            All devices
+          </label>
+        </div>
+        {% for d in all_devices %}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="device-filter" value="{{d}}" {% if d in filters.devices %}checked{% endif %} name="devices">
+              {{ d}}
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+
+  <div class="col-md-9">
+    <h2 style="margin-top: 0;">Activities</h2>
+    {% if activities %}
+      <div class="activity-list">
+        {% for activity in activities %}
+          <a class="activity" href="{% url 'detail' activity.id %}">
+            <span class="activity-title">{{ activity.title }}</span>
+            <span class="activity-grade"><small>Grade:</small> {{activity.body.grade}}</span>
+            <span class="activity-subject"><small>Subject:</small> {{activity.body.subject}}</span>
+            <span class="activity-devices"><small>Devices:</small> {{activity.body.devices|join:", "}}</span>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>No activities found.</p>
+    {% endif %}
+
+    <div class="pagination">
+      <span class="step-links">
+        {% if activities.has_previous %}
+          <a href="?page={{ activities.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+          Page {{ activities.number }} of {{ activities.paginator.num_pages }}.
+        </span>
+
+        {% if activities.has_next %}
+          <a href="?page={{ activities.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">next</a>
+        {% endif %}
+      </span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var checkbox = document.querySelector('#select-all-devices input')
+  checkbox.addEventListener('change', function(e){
+    var checkboxes = document.querySelectorAll('.device-filter');
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = checkbox.checked;
+    }
+  });
+</script>
+{% endblock %}
+

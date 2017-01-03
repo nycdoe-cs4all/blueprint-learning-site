@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="col-md-9">
+  <h1>{{ activity.html_body|safe }}</h1>
+</div>
+<div class="col-md-3">
+  {% if user.is_superuser %}
+  <a href="{% url 'admin:activities_activity_change' activity.id %}">Edit</a>
+  {% endif %}
+</div>
+{% endblock %}
+
+
