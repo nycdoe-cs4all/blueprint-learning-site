@@ -7,8 +7,10 @@
 </div>
 <div class="col-md-3">
   {% if user.is_superuser %}
-  <a href="{% url 'admin:activities_activity_change' activity.id %}">Edit</a>
+    <p><a href="{% url 'admin:activities_activity_change' activity.id %}">Edit</a></p>
   {% endif %}
+    <p><a href="{{ activity.google_file_id }}" target="_blank">View original on Google Docs</a></p>
+    <p><a href="{{ activity.copy_url }}" target="_blank">Make a copy on Google Docs</a></p>
 </div>
 {% endblock %}
 

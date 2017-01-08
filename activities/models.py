@@ -49,3 +49,8 @@ class Activity(models.Model):
     body = JSONField()
 
     approved = models.BooleanField(default=False)
+
+    def _get_copy_url(self):
+        return self.google_file_id.replace('edit', 'copy')
+
+    copy_url = property(_get_copy_url)
