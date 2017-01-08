@@ -21,9 +21,13 @@ def index(request):
     grade = request.GET.get('grade')
     subject = request.GET.get('subject')
     level = request.GET.get('level')
-    approved = request.GET.get('approved', 1)
     devices = request.GET.getlist('devices')
     page = request.GET.get('page')
+
+    if request.user.is_superuser:
+        approved = str((request.GET.get('approved', 0)))
+    else:
+        approved = str(request.GET.get('approved', 1))
 
     filters = {'q': q, 'grade': grade, 'subject': subject, 'level': level, 'devices': devices, 'approved': approved}
 
