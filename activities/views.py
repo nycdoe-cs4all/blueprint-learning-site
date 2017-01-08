@@ -114,3 +114,16 @@ def new(request):
 def detail(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
     return render(request, 'activities/detail.html', {'activity': activity})
+
+
+def change_status(request):
+    if request.user.is_superuser:
+        post_id = request.POST.get('id')
+        approved = request.POST.get('approved')
+
+        activity = Activity.objects.get(pk=post_id)
+        activity.approved = approved
+        activity.save()
+        return JsonResponse({'status': activity.approved})
+    else:
+        return JsonResponse({'status': 'permission denied'})

@@ -8,6 +8,23 @@
 <div class="col-md-3">
   {% if user.is_superuser %}
     <p><a href="{% url 'admin:activities_activity_change' activity.id %}">Edit</a></p>
+    <div class="form-group">
+      <select name="approved" id="approved" class="form-control">
+        <option value="1" {% if activity.approved == 1 %}selected{% endif %}>Approved</option>
+        <option value="0" {% if activity.approved == 0 %}selected{% endif %}>Pending</option>
+      </select>
+      {% csrf_token %}
+    </div>
+    <hr>
+    <script src="/static/js/reqwest.min.js"></script>
+    <script>
+      (function(){
+        document.querySelector('#approved').addEventListener('change', function(e){
+          var token = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+          reqwest({url: '/activities/change_status/', method: 'POST', data: {csrfmiddlewaretoken: token, id: {{activity.pk}}, approved: e.target.value}});
+        });
+      })();
+    </script>
   {% endif %}
     <p><a href="{{ activity.google_file_id }}" target="_blank">View original on Google Docs</a></p>
     <p><a href="{{ activity.copy_url }}" target="_blank">Make a copy on Google Docs</a></p>
