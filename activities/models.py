@@ -34,13 +34,13 @@ class Activity(models.Model):
     user = models.ForeignKey(User)
     grade = models.ForeignKey(Grade)
     subject = models.ForeignKey(Subject)
-    devices = models.ManyToManyField(Device)
+    # devices = models.ManyToManyField(Device)
 
     date_added = models.DateTimeField(auto_now_add=True)
 
     title = models.CharField(max_length=255)
-    grade_name = models.CharField(max_length=255)
-    subject_name = models.CharField(max_length=255)
+    # grade_name = models.CharField(max_length=255)
+    # subject_name = models.CharField(max_length=255)
 
     google_file_id = models.CharField(max_length=255)
 
