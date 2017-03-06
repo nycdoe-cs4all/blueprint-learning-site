@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="col-md-3">
+  {% if user.profile.full_name %}
+    <h1 style="margin-top:0;">{{ user.profile.full_name }}</h1>
+  {% else %}
+    <h1 style="margin-top:0;">{{ user.profile.username }}</h1>
+  {% endif %}
+  <p> {{user.profile.organization}}</p>
+  {% if user.profile.link %}
+    <p>
+      <a href="{{user.profile.link}}">{{user.profile.link}}</a>  
+    </p>
+  {% endif %}
+
+</div>
+<div class="col-md-9">
+  <h2 style="margin-top: 0;">Activities</h2>
+  {% if activities %}
+    <div class="activity-list">
+      {% for activity in activities %}
+        <a class="activity" href="{% url 'detail' activity.id %}">
+          <span class="activity-title">{{ activity.title }}</span>
+          <span class="activity-grade"><small>Grade:</small> {{activity.body.grade}}</span>
+          <span class="activity-subject"><small>Subject:</small> {{activity.body.subject}}</span>
+          <span class="activity-devices"><small>Devices:</small>
+            {% if activity.body.devices %}
+              {{activity.body.devices|join:", "}}
+            {% endif %}
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No activities found.</p>
+  {% endif %}
+</div>
+{% endblock %}
+
+

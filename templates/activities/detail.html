@@ -26,6 +26,19 @@
       })();
     </script>
   {% endif %}
+    
+    <p>
+      Created by:
+      <a href="/users/{{activity.user.id}}">
+        {% if activity.user.profile %}
+          {{activity.user.profile.full_name}} 
+        {% else %}
+          {{activity.user.username}}
+        {% endif %}
+      </a>
+
+    </p>
+
     <p><a href="{{ activity.google_file_id }}" target="_blank">View original on Google Docs</a></p>
     <p><a href="{{ activity.copy_url }}" target="_blank">Make a copy on Google Docs</a></p>
 </div>

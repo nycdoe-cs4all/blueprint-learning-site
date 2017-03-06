@@ -1,0 +1,142 @@
+[
+{
+  "model": "activities.grade",
+  "pk": 1,
+  "fields": {
+    "name": "9-12"
+  }
+},
+{
+  "model": "activities.grade",
+  "pk": 2,
+  "fields": {
+    "name": "K-2"
+  }
+},
+{
+  "model": "activities.grade",
+  "pk": 3,
+  "fields": {
+    "name": "3-5"
+  }
+},
+{
+  "model": "activities.grade",
+  "pk": 4,
+  "fields": {
+    "name": "6-8"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 2,
+  "fields": {
+    "name": "Windows Laptops"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 3,
+  "fields": {
+    "name": "Macbook Laptops"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 4,
+  "fields": {
+    "name": "Chromebooks"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 5,
+  "fields": {
+    "name": "iPads"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 6,
+  "fields": {
+    "name": "Android Tablets"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 7,
+  "fields": {
+    "name": "Windows Tablets"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 8,
+  "fields": {
+    "name": "Arduinos"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 9,
+  "fields": {
+    "name": "Lego EV3"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 10,
+  "fields": {
+    "name": "Lego WeDo"
+  }
+},
+{
+  "model": "activities.device",
+  "pk": 11,
+  "fields": {
+    "name": "Other"
+  }
+},
+{
+  "model": "activities.subject",
+  "pk": 1,
+  "fields": {
+    "name": "Math"
+  }
+},
+{
+  "model": "activities.subject",
+  "pk": 2,
+  "fields": {
+    "name": "ELA"
+  }
+},
+{
+  "model": "activities.subject",
+  "pk": 3,
+  "fields": {
+    "name": "Social Studies"
+  }
+},
+{
+  "model": "activities.subject",
+  "pk": 4,
+  "fields": {
+    "name": "Science"
+  }
+},
+{
+  "model": "activities.subject",
+  "pk": 5,
+  "fields": {
+    "name": "Visual Art"
+  }
+},
+{
+  "model": "activities.subject",
+  "pk": 6,
+  "fields": {
+    "name": "Music"
+  }
+}
+]

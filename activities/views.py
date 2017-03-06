@@ -1,9 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from .models import Activity, Grade, Subject, Device
-from .forms import ActivityForm
+from .models import Activity, Grade, Subject, Device, Profile
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from .forms import ActivityForm, UserProfileForm
+
 
 
 # Create your views here.
@@ -66,7 +69,7 @@ def index(request):
     context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices}
     return render(request, 'activities/index.html', context)
 
-
+@login_required
 def create(request):
     title = request.POST.get('title')
     subject = request.POST.get('subject')
@@ -107,7 +110,7 @@ def parse(request):
     activity = Activity(request.GET.get('url'))
     return JsonResponse(activity.to_dict())
 
-
+@login_required
 def new(request):
     grades = Grade.objects.all()
     devices = Device.objects.all()
@@ -119,7 +122,11 @@ def new(request):
 
 def detail(request, activity_id):
     activity = get_object_or_404(Activity, pk=activity_id)
-    return render(request, 'activities/detail.html', {'activity': activity})
+    try:
+        profile = Profile.objects.filter(user=request.user)[:1].get()
+    except:
+        profile = None
+    return render(request, 'activities/detail.html', {'activity': activity, 'profile': profile})
 
 
 def change_status(request):
@@ -133,3 +140,35 @@ def change_status(request):
         return JsonResponse({'status': activity.approved})
     else:
         return JsonResponse({'status': 'permission denied'})
+
+@login_required
+def edit_profile(request):
+    try:
+        profile = request.user.profile#Profile.objects.filter(user=request.user)[:1].get()
+        form = UserProfileForm(instance=profile)
+    except Exception as e:
+        print(e)
+        form = UserProfileForm()
+        profile = None
+
+    print(form)
+
+    if request.method == 'POST':
+        if profile is not None:
+            form = UserProfileForm(request.POST, instance=profile)
+        else:
+            form = UserProfileForm(request.POST)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+            return redirect('/')
+
+    return render(request, 'users/edit_profile.html', {'form':form})
+
+
+def user_details(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    profile = user.profile
+    activities = Activity.objects.filter(user=user)
+    return render(request, 'users/detail.html', {'activities': activities, 'user': user, 'profile': profile})

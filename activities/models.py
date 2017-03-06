@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.postgres.fields import JSONField
 import datetime
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 
 
 class Device(models.Model):
@@ -25,8 +28,8 @@ class Grade(models.Model):
         return self.name
 
 
-class UserProfile(models.Model):
-    user = models.ForeignKey(User)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     organization = models.CharField(max_length=255, default="", blank=True)
     link = models.CharField(max_length=255, default="", blank=True)
@@ -62,3 +65,13 @@ class Activity(models.Model):
         return self.google_file_id.replace('edit', 'copy')
 
     copy_url = property(_get_copy_url)
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()

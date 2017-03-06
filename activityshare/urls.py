@@ -20,6 +20,7 @@ from activities.views import index as homepage
 urlpatterns = [
     url(r'^$', homepage),
     url(r'^activities/', include('activities.urls')),
+    url(r'^users/', include('activities.user_urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.simple.urls')),
 ]

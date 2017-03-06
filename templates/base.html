@@ -25,8 +25,9 @@
         <li><a href="/">Activities</a></li>
         {% if user.is_authenticated %}
           <li><a href="{% url 'new' %}">New Activity</a></li>
-          <li><a href="{% url 'auth_logout' %}">Log out</a></li>
-          <li><a href="{% url 'auth_password_change' %}">Change password</a></li>
+          <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+          <li><a href="{% url 'auth_password_change' %}">Change Password</a></li>
+          <li><a href="{% url 'auth_logout' %}">Log Out</a></li>
         {% else %}
           <li><a href="{% url 'auth_login' %}">Log in</a></li>
           <li><a href="/accounts/register">Register</a></li>
