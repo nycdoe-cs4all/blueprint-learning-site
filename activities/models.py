@@ -25,6 +25,14 @@ class Grade(models.Model):
         return self.name
 
 
+class UserProfile(models.Model):
+    user = models.ForeignKey(User)
+
+    organization = models.CharField(max_length=255, default="", blank=True)
+    link = models.CharField(max_length=255, default="", blank=True)
+    full_name = models.CharField(max_length=255, default="", blank=True)
+
+
 # Create your models here.
 class Activity(models.Model):
     class Meta:

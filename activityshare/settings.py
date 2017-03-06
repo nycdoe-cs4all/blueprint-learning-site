@@ -71,7 +71,7 @@ TEMPLATES = [
 ]
 
 STATICFILES_DIRS = [
-    BASE_DIR + '/static/'
+    BASE_DIR + '/static_files/'
 ]
 
 WSGI_APPLICATION = 'activityshare.wsgi.application'
