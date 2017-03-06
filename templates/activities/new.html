@@ -54,6 +54,11 @@
         </p>
 
         <p class="form-group">
+          <label for="pacing">Pacing</labeL>
+          <input class="form-control" type="text" id="pacing" required v-model="pacing">
+        </p>
+
+        <p class="form-group">
           <label for="subject">Subject</labeL>
           <select class="form-control" id="subject" required v-model="subject">
             <option value=""></option>
@@ -64,12 +69,29 @@
         </p>
 
         <p class="form-group">
-          <label>Devices</labeL>
+          <label for="subject">Software</labeL>
+          <select class="form-control" id="software" required v-model="software">
+            <option value=""></option>
+            {% for s in software %}
+              <option value="{{ s.id }}">{{ s.name }}</option>
+            {% endfor %}
+          </select>
+        </p>
 
+        <p class="form-group">
+          <label>Devices</labeL>
             {% for d in devices %}
               <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ d.name }}" v-model="devices"> {{ d.name }}</label>
             {% endfor %}
         </p>
+
+        <p class="form-group">
+          <label>Concepts</labeL>
+            {% for c in concepts %}
+              <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ c.name }}" v-model="concepts"> {{ c.name }}</label>
+            {% endfor %}
+        </p>
+
 
         <textarea style="display:none;" v-model="html_body"></textarea>
         <textarea style="display:none;" v-model="plain_body"></textarea>
@@ -100,9 +122,12 @@ var app = new Vue({
     title: null,
     subject: null,
     grade: null,
+    software: null,
     html_body: '',
     plain_body: '',
     devices: [],
+    concepts: [],
+    pacing: '',
     fetching: false,
     submitting: false,
     submitted: false,
@@ -129,6 +154,9 @@ var app = new Vue({
         self.grade = data.grade;
         self.subject = data.subject;
         self.devices = data.devices;
+        self.pacing = data.pacing;
+        self.concepts = data.concepts;
+        self.software = data.software;
         self.fetching = false;
       }).fail(function(err, status) {
         self.fetching = false;
@@ -151,6 +179,9 @@ var app = new Vue({
         grade: this.grade,
         subject: this.subject,
         devices: this.devices.join(':::'),
+        concepts: this.concepts.join(':::'),
+        pacing: this.pacing,
+        software: this.software,
         html_body: this.html_body,
         plain_body: this.plain_body,
         url: this.url,

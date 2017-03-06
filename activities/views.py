@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from .models import Activity, Grade, Subject, Device, Profile
+from .models import Activity, Grade, Subject, Device, Profile, Concept, Software
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import ActivityForm, UserProfileForm
@@ -75,7 +75,13 @@ def create(request):
     subject = request.POST.get('subject')
     grade = request.POST.get('grade')
     body = request.POST.get('html_body')
+    pacing = request.POST.get('pacing')
     plain_body = request.POST.get('plain_body')
+
+    submitted_concepts = request.POST.get('concepts').split(':::')
+    submitted_concepts = [c.lower() for c in submitted_concepts]
+    possible_concepts = Concept.objects.all()
+    concepts = [c.name for c in possible_concepts if c.name.lower() in submitted_concepts]
 
     submitted_devices = request.POST.get('devices').split(':::')
     submitted_devices = [d.lower() for d in submitted_devices]
@@ -92,9 +98,12 @@ def create(request):
             'title': title,
             'subject': activity.subject.name,
             'grade': activity.grade.name,
+            'software': activity.software.name,
+            'pacing': pacing,
             'html': body,
             'plain': plain_body,
-            'devices': devices
+            'devices': devices,
+            'concepts': concepts
         }
         activity.save()
         response['status'] = 'ok'
@@ -108,14 +117,18 @@ def create(request):
 def parse(request):
     from .get_activity import Activity
     activity = Activity(request.GET.get('url'))
+    print(activity.to_dict())
     return JsonResponse(activity.to_dict())
+
 
 @login_required
 def new(request):
     grades = Grade.objects.all()
     devices = Device.objects.all()
     subjects = Subject.objects.all()
-    context = {'grades': grades, 'devices': devices, 'subjects': subjects}
+    concepts = Concept.objects.all()
+    software = Software.objects.all()
+    context = {'concepts': concepts, 'software': software, 'grades': grades, 'devices': devices, 'subjects': subjects}
 
     return render(request, 'activities/new.html', context)
 

@@ -4,6 +4,7 @@
 
 <div class="col-md-4">
   <h1>Edit Profile</h1>
+  <p><a href="{% url 'auth_password_change' %}">Change Password</a></p>
   <form method="post">
     {% csrf_token %}
       {% bootstrap_form form %}

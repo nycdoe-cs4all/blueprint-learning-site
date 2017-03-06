@@ -7,6 +7,20 @@ from django.dispatch import receiver
 
 
 
+class Concept(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+class Software(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Device(models.Model):
     name = models.CharField(max_length=255)
 
@@ -45,6 +59,7 @@ class Activity(models.Model):
     user = models.ForeignKey(User)
     grade = models.ForeignKey(Grade)
     subject = models.ForeignKey(Subject)
+    software = models.ForeignKey(Software)
     # devices = models.ManyToManyField(Device)
 
     date_added = models.DateTimeField(auto_now_add=True)

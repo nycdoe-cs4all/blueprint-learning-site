@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import re
 import os 
-from .models import Grade, Subject
+from .models import Grade, Subject, Software
 
 with open(os.path.dirname(os.path.realpath(__file__)) + '/credentials.json') as data:
     keys = json.load(data)
@@ -26,11 +26,14 @@ class Activity:
 
         self.set_by_selector('subtitle', 'p.subtitle')
         self.set_by_selector('title', 'p.title')
-        self.set_by_sibling(fieldname='grade_name', selector='h3', search='Grade Band')
-        self.set_by_sibling(fieldname='subject_name', selector='h3', search='Subject')
+        self.set_by_sibling(fieldname='grade_name', selector='h1,h2,h3', search='Grade')
+        self.set_by_sibling(fieldname='subject_name', selector='h1,h2,h3', search='Subject')
+        self.set_by_sibling(fieldname='pacing', selector='h1,h2,h3', search='Pacing')
+        self.set_by_sibling(fieldname='software_name', selector='h1,h2,h3', search='Software')
 
         self.subject = None
         self.grade = None
+        self.software = None
         try:
             self.grade = Grade.objects.get(name=self.grade_name).id
         except:
@@ -39,8 +42,13 @@ class Activity:
             self.subject = Subject.objects.get(name=self.subject_name).id
         except:
             print("Can't find subject")
+        try:
+            self.software = Software.objects.get(name=self.software_name).id
+        except:
+            print("Can't find software")
 
         self.set_devices()
+        self.set_concepts()
         self.set_body()
         self.set_plain_body()
 
@@ -60,17 +68,29 @@ class Activity:
         return value
 
     def set_by_sibling(self, fieldname, selector, search):
+        print(fieldname, search)
         try:
+            for e in self.soup.select(selector):
+                print(e.text)
             el = [e for e in self.soup.select(selector) if search in e.text][0]
             value = el.next_sibling.text
         except Exception as e:
             value = None
         setattr(self, fieldname, value)
+        print('------')
         return value
+
+    def set_concepts(self):
+        try:
+            el = [e for e in self.soup.select('h1, h2, h3') if 'Concepts' in e.text][0]
+            concepts = [e.text.strip() for e in el.next_sibling.children]
+        except Exception as e:
+            concepts = [] 
+        self.concepts = concepts
 
     def set_devices(self):
         try:
-            el = [e for e in self.soup.select('h2') if 'Devices' in e.text][0]
+            el = [e for e in self.soup.select('h1, h2, h3') if 'Devices' in e.text][0]
             devices = [e.text.strip() for e in el.next_sibling.children]
         except Exception as e:
             devices = [] 
@@ -92,7 +112,10 @@ class Activity:
             'subject': self.subject,
             'body': self.body,
             'plain_body': self.plain_body,
-            'devices': self.devices
+            'devices': self.devices,
+            'concepts': self.concepts,
+            'software': self.software,
+            'pacing': self.pacing
         }
 
 
@@ -100,7 +123,7 @@ if __name__ == '__main__':
     import sys
     from pprint import pprint
     activity = Activity(sys.argv[1])
-    print(activity.to_dict()['body'])
+    print(activity.to_dict())
     # print(activity.title, activity.subtitle)
     # print(activity.grade)
     # print(activity.body)
