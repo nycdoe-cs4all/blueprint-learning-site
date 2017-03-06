@@ -8,11 +8,13 @@ from .forms import ActivityForm
 
 # Create your views here.
 def index(request):
-    _devices = Activity.objects.all().raw("SELECT id, body->'devices' AS device FROM activities_activity")
-    all_devices = []
-    for device in _devices:
-        all_devices += device.device
-    all_devices = sorted(list(set(all_devices)))
+    # _devices = Activity.objects.all().raw("SELECT id, body->'devices' AS device FROM activities_activity")
+    # all_devices = []
+    # for device in _devices:
+    #     all_devices += device.device
+    # all_devices = sorted(list(set(all_devices)))
+
+    all_devices = [d.name for d in Device.objects.all()]
 
     grades = Grade.objects.all()
     subjects = Subject.objects.all()
@@ -69,9 +71,13 @@ def create(request):
     title = request.POST.get('title')
     subject = request.POST.get('subject')
     grade = request.POST.get('grade')
-    devices = request.POST.get('devices')
     body = request.POST.get('html_body')
     plain_body = request.POST.get('plain_body')
+
+    submitted_devices = request.POST.get('devices').split(':::')
+    submitted_devices = [d.lower() for d in submitted_devices]
+    possible_devices = Device.objects.all()
+    devices = [d.name for d in possible_devices if d.name.lower() in submitted_devices]
 
     response = {}
     form = ActivityForm(request.POST)
@@ -85,7 +91,7 @@ def create(request):
             'grade': activity.grade.name,
             'html': body,
             'plain': plain_body,
-            'devices': [d.strip() for d in devices.split('\n')]
+            'devices': devices
         }
         activity.save()
         response['status'] = 'ok'

@@ -73,8 +73,8 @@ class Activity:
             el = [e for e in self.soup.select('h2') if 'Devices' in e.text][0]
             devices = [e.text.strip() for e in el.next_sibling.children]
         except Exception as e:
-            devices = ''
-        self.devices = '\n'.join(devices)
+            devices = [] 
+        self.devices = devices
 
     def set_body(self):
         self.body = str(self.soup.find('body'))

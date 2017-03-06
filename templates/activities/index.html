@@ -79,7 +79,11 @@
             <span class="activity-title">{{ activity.title }}</span>
             <span class="activity-grade"><small>Grade:</small> {{activity.body.grade}}</span>
             <span class="activity-subject"><small>Subject:</small> {{activity.body.subject}}</span>
-            <span class="activity-devices"><small>Devices:</small> {{activity.body.devices|join:", "}}</span>
+            <span class="activity-devices"><small>Devices:</small>
+              {% if activity.body.devices %}
+                {{activity.body.devices|join:", "}}
+              {% endif %}
+            </span>
           </a>
         {% endfor %}
       </div>

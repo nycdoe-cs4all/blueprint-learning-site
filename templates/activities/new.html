@@ -64,8 +64,11 @@
         </p>
 
         <p class="form-group">
-          <label for="devices">Devices</labeL>
-          <textarea rows="6" class="form-control" v-model="devices" name="devices" id="devices"></textarea>
+          <label>Devices</labeL>
+
+            {% for d in devices %}
+              <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ d.name }}" v-model="devices"> {{ d.name }}</label>
+            {% endfor %}
         </p>
 
         <textarea style="display:none;" v-model="html_body"></textarea>
@@ -99,7 +102,7 @@ var app = new Vue({
     grade: null,
     html_body: '',
     plain_body: '',
-    devices: '',
+    devices: [],
     fetching: false,
     submitting: false,
     submitted: false,
@@ -147,7 +150,7 @@ var app = new Vue({
         title: this.title,
         grade: this.grade,
         subject: this.subject,
-        devices: this.devices,
+        devices: this.devices.join(':::'),
         html_body: this.html_body,
         plain_body: this.plain_body,
         url: this.url,
