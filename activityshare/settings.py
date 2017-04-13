@@ -40,7 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'activities.apps.ActivitiesConfig',
     'bootstrap3',
+    'anymail',
 ]
+
+ANYMAIL = {
+    # (exact settings here depend on your ESP...)
+    "MAILGUN_API_KEY": "key-9925e799b87621d3a054d6a37990e193",
+    "MAILGUN_SENDER_DOMAIN": 'cs4all.nyc',  # your Mailgun domain, if needed
+}
+EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"  # or sendgrid.EmailBackend, or...
+DEFAULT_FROM_EMAIL = "webmaster@cs4all.nyc"  # if you don't already have this in settings
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
