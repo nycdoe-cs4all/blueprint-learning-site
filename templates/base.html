@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
     {% block title %}
-      CS4All Activities
+      CS4All Units
     {% endblock %}
   </title>
 </head>
@@ -18,13 +18,13 @@
   <nav id="main-nav" class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/" id="logo"><img src="/static/images/logo.png" alt="CS4All Activities"></a>
+        <a class="navbar-brand" href="/" id="logo"><img src="/static/images/logo.png" alt="CS4All Units"></a>
       </div>
       <ul class="nav navbar-nav">
         <li><a href="/about">About Blueprint</a></li>
-        <li><a href="/">Activities</a></li>
+        <li><a href="/">Units</a></li>
         {% if user.is_authenticated %}
-          <li><a href="{% url 'new' %}">New Activity</a></li>
+          <li><a href="{% url 'new' %}">New Unit</a></li>
           <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
           <li><a href="{% url 'auth_logout' %}">Log Out</a></li>
         {% else %}

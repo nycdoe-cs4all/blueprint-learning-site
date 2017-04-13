@@ -9,9 +9,9 @@
 <div class="row">
   <div id="activity-app">
     <div v-if="submitted" class="col-md-4">
-      <h2>Activity Submitted</h2>
-      <p>You're activity has been submitted and is pending review.</p>
-      <p><a href="/activities/new">Click here to submit another activity</a></p>
+      <h2>Unit Submitted</h2>
+      <p>You're unit has been submitted and is pending review.</p>
+      <p><a href="/activities/new">Click here to submit another unit</a></p>
     </div>
     <div v-else>
 
@@ -97,7 +97,7 @@
         <textarea style="display:none;" v-model="plain_body"></textarea>
 
         <p class="form-group">
-          <input type="submit" class="btn btn-default" value="Submit Activity" :disabled="submitting"/>
+          <input type="submit" class="btn btn-default" value="Submit Unit" :disabled="submitting"/>
         </p>
       </div>
     </form>
@@ -105,6 +105,36 @@
     <div class="col-md-8" style="border-left: 1px solid #ccc;" v-if="html_body">
       <h3>Preview:</h3>
       <div id="preview" v-html="html_body"></div>
+    </div>
+
+    <div class="col-md-8"  style="border-left: 1px solid #ccc;" v-else>
+      Submitting a meaningful CS unit to the Blueprint is easy, just follow these steps:
+
+      <h3>Use Google Docs</h3>
+      <p>Make sure your content is in Google Docs. Google Drive makes it easy to convert many different document types into Google Docs. We use Google docs because many educators use it and it makes it easy for educators to copy your unit and make changes.</p>
+
+      <h3>Provide Metadata</h3>
+      <p>Metadata will help educators find your unit. All metadata should appear under a heading in the document that corresponds to the data type. For example, all the devices educators need to implement your unit should appear under a heading called “Devices”. In the case of lists of data, such as a list of devices, please use bullet points.</p>
+
+      <p>Here is a list of the metadata fields and the data types:</p>
+      <ul>
+        <li><b>Title</b> - plain text</li>
+        <li><b>Grade</b> - K-2, 3-5, 6-8, 9-12 (choose one)</li>
+        <li><b>Subject</b> - ELA, Math, Social Studies, Science, Art, Technology</li>
+        <li><b>Pacing</b> - in hours and minutes (7 hours, 30 minutes)</li>
+        <li><b>CS Concepts</b> - list of concepts. See Concepts section for concepts and subconcepts. (Abstraction - Pattern Recognition)</li>
+        <li><b>Devices</b> - list of devices</li>
+        <li><b>Software</b> - list of software</li>
+      </ul>
+
+      <h3>Review and Submit</h3>
+      <p>Once you’ve ensured you’ve got all your metadata in the document, please drop the link to the document in the submission form and click “Fetch”. The Blueprint site will retrieve and parse the document, looking specifically for the metadata from the previous step.</p>
+
+      <p>You will be able to preview how your unit will look on the Blueprint site as well as complete any of the metadata fields that the site was unable to parse from your document. Once you feel good about the look and the metadata associated with your unit, click “Submit”.</p>
+
+      <h3>Approval</h3>
+      <p>Your unit will be reviewed by the CS4All team to ensure it meets the requirements for a meaningful CS unit and is aligned to the needs of classroom educators.</p>
+
     </div>
   </div>
   </div>
