@@ -68,16 +68,16 @@ class Activity:
         return value
 
     def set_by_sibling(self, fieldname, selector, search):
-        print(fieldname, search)
+        # print(fieldname, search)
         try:
-            for e in self.soup.select(selector):
-                print(e.text)
+            # for e in self.soup.select(selector):
+            #     print(e.text)
             el = [e for e in self.soup.select(selector) if search in e.text][0]
             value = el.next_sibling.text
         except Exception as e:
             value = None
         setattr(self, fieldname, value)
-        print('------')
+        # print('------')
         return value
 
     def set_concepts(self):
