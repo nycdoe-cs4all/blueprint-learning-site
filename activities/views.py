@@ -142,6 +142,7 @@ def detail(request, activity_id):
     return render(request, 'activities/detail.html', {'activity': activity, 'profile': profile})
 
 
+@login_required
 def change_status(request):
     if request.user.is_superuser:
         post_id = request.POST.get('id')
@@ -153,6 +154,22 @@ def change_status(request):
         return JsonResponse({'status': activity.approved})
     else:
         return JsonResponse({'status': 'permission denied'})
+
+
+@login_required
+def refresh(request):
+    from .get_activity import Activity as ActivityParser
+    post_id = request.POST.get('id')
+    activity = Activity.objects.get(pk=post_id)
+    if request.user.id == activity.user_id or request.user.is_superuser:
+        parser = ActivityParser(activity.google_file_id)
+        activity.plain_body = parser.plain_body
+        activity.html_body = parser.body
+        activity.save()
+        return JsonResponse({'body': activity.html_body})
+    else:
+        return JsonResponse({'status': 'permission denied'})
+
 
 @login_required
 def edit_profile(request):
