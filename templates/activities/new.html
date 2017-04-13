@@ -21,7 +21,7 @@
       <label for="url">Google Docs URL</labeL>
       <div class="form-group">
         <div class="input-group">
-          <input class="form-control" type="text" name="url" id="url" v-model="url" placeholder="http://">
+          <input class="form-control" type="text" name="url" id="url" v-model="url" placeholder="http://" v-on:keyup.enter="parseDoc">
           <span class="input-group-btn"><button class="btn btn-default" type="button" v-on:click="parseDoc">
             <span v-if="fetching">
               Parsing...
