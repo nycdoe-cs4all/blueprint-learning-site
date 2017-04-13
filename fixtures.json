@@ -138,5 +138,194 @@
   "fields": {
     "name": "Music"
   }
+},
+{
+  "model": "activities.software",
+  "pk": 1,
+  "fields": {
+    "name": "Scratch (Web)"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 1,
+  "fields": {
+    "name": "Scratch (Web)"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 2,
+  "fields": {
+    "name": "Repl.it"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 3,
+  "fields": {
+    "name": "Trinket"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 4,
+  "fields": {
+    "name": "Pencil Code"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 5,
+  "fields": {
+    "name": "Pyret"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 6,
+  "fields": {
+    "name": "CodeSkulptor"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 7,
+  "fields": {
+    "name": "CodePen"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 8,
+  "fields": {
+    "name": "Alice"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 9,
+  "fields": {
+    "name": "PyCharm"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 10,
+  "fields": {
+    "name": "Arduinos"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 11,
+  "fields": {
+    "name": "Processing"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 12,
+  "fields": {
+    "name": "Lego EV3/NXT"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 13,
+  "fields": {
+    "name": "Scratch (Desktop)"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 14,
+  "fields": {
+    "name": "Other Web Application"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 15,
+  "fields": {
+    "name": "AppInventor"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 16,
+  "fields": {
+    "name": "Snap!"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 17,
+  "fields": {
+    "name": "p5"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 18,
+  "fields": {
+    "name": "Thimble"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 19,
+  "fields": {
+    "name": "AppInventor Mobile Emulator"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 20,
+  "fields": {
+    "name": "Other Desktop Application"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 21,
+  "fields": {
+    "name": "Scratch Jr."
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 22,
+  "fields": {
+    "name": "Kodables"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 23,
+  "fields": {
+    "name": "The Foos"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 24,
+  "fields": {
+    "name": "Tynker"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 25,
+  "fields": {
+    "name": "HopScotch"
+  }
+},
+{
+  "model": "activities.software",
+  "pk": 26,
+  "fields": {
+    "name": "Other Mobile Application"
+  }
 }
 ]
