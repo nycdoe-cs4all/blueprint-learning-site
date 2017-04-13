@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from activities.views import index as homepage
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', homepage),
@@ -23,4 +24,5 @@ urlpatterns = [
     url(r'^users/', include('activities.user_urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^about/$', TemplateView.as_view(template_name='about.html')),
 ]
