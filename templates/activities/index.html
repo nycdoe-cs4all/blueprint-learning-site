@@ -51,13 +51,16 @@
         </select>
       </div>
 
+      <hr>
+
       <div class="form-group">
-        <div class="checkbox">
-          <label id="select-all-devices">
-            <input type="checkbox" value="" checked>
-            All devices
-          </label>
-        </div>
+        <b>All devices</b>
+        {# <div class="checkbox"> #}
+        {#   <label> #}
+        {#     <input type="checkbox" value="" checked class="check-toggle" data-target=".device-filter"> #}
+        {#     <b>All devices</b> #}
+        {#   </label> #}
+        {# </div> #}
         {% for d in all_devices %}
           <div class="checkbox">
             <label>
@@ -66,6 +69,32 @@
             </label>
           </div>
         {% endfor %}
+      </div>
+
+      <hr>
+
+      <div class="form-group">
+        <b>All software</b>
+        {# <div class="checkbox"> #}
+        {#   <label> #}
+        {#     <input type="checkbox" value="" checked class="check-toggle" data-target=".software-filter"> #}
+        {#     <b>All software</b> #}
+        {#   </label> #}
+        {# </div> #}
+        {% for d in all_software %}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="software-filter" value="{{d}}" {% if d in filters.software %}checked{% endif %} name="software">
+              {{ d}}
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+
+      <hr>
+
+      <div class="form-group">
+        <button class="btn btn-default">Apply</button>
       </div>
     </form>
   </div>
@@ -111,13 +140,22 @@
 </div>
 
 <script>
-  var checkbox = document.querySelector('#select-all-devices input')
-  checkbox.addEventListener('change', function(e){
-    var checkboxes = document.querySelectorAll('.device-filter');
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = checkbox.checked;
-    }
-  });
+
+  function setToggler(el){
+    el.addEventListener('change', function(e){
+      console.log(el.getAttribute('data-target'))
+      Array.prototype.forEach.call(document.querySelectorAll(el.getAttribute('data-target')), function(i){
+        i.checked = el.checked;
+      });
+    });
+
+    //if (el.checked) {
+    //  Array.prototype.forEach.call(document.querySelectorAll(el.getAttribute('data-target')), function(i){
+    //    i.checked = el.checked;
+    //  });
+    //}
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.check-toggle'), setToggler);
 </script>
 {% endblock %}
 

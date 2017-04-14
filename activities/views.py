@@ -18,15 +18,18 @@ def index(request):
     # all_devices = sorted(list(set(all_devices)))
 
     all_devices = [d.name for d in Device.objects.all()]
+    all_software = [s.name for s in Software.objects.all()]
 
     grades = Grade.objects.all()
     subjects = Subject.objects.all()
+    # softwares = Software.objects.all()
 
     q = request.GET.get('q', '')
     grade = request.GET.get('grade')
     subject = request.GET.get('subject')
     level = request.GET.get('level')
     devices = request.GET.getlist('devices')
+    software = request.GET.getlist('software')
     page = request.GET.get('page')
 
     if request.user.is_superuser:
@@ -34,7 +37,7 @@ def index(request):
     else:
         approved = str(request.GET.get('approved', 1))
 
-    filters = {'q': q, 'grade': grade, 'subject': subject, 'level': level, 'devices': devices, 'approved': approved}
+    filters = {'q': q, 'grade': grade, 'subject': subject, 'level': level, 'devices': devices, 'software': software, 'approved': approved}
 
     activities_list = Activity.objects.order_by('-date_added')
 
@@ -46,6 +49,9 @@ def index(request):
 
     if subject:
         activities_list = activities_list.filter(body__subject=subject)
+
+    if software:
+        activities_list = activities_list.filter(body__software__contains=software)
 
     if devices:
         activities_list = activities_list.filter(body__devices__contains=devices)
@@ -66,7 +72,7 @@ def index(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         activities = paginator.page(paginator.num_pages)
-    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices}
+    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software}
     return render(request, 'activities/index.html', context)
 
 @login_required
