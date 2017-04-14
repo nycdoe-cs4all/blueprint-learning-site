@@ -6,7 +6,6 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 
 
-
 class Concept(models.Model):
     name = models.CharField(max_length=255)
 
@@ -87,6 +86,14 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
 
+
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+
+class Bookmark(models.Model):
+    user = models.ForeignKey(User)
+    activity = models.ForeignKey(Activity)
+
+
