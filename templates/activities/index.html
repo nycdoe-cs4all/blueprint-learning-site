@@ -54,13 +54,21 @@
       <hr>
 
       <div class="form-group">
-        <b>All devices</b>
-        {# <div class="checkbox"> #}
-        {#   <label> #}
-        {#     <input type="checkbox" value="" checked class="check-toggle" data-target=".device-filter"> #}
-        {#     <b>All devices</b> #}
-        {#   </label> #}
-        {# </div> #}
+        <b>Filter by CS concept</b>
+        {% for d in all_concepts %}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="concept-filter" value="{{d}}" {% if d in filters.concepts %}checked{% endif %} name="concepts">
+              {{ d}}
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+
+      <hr>
+
+      <div class="form-group">
+        <b>Filter by device</b>
         {% for d in all_devices %}
           <div class="checkbox">
             <label>
@@ -74,13 +82,7 @@
       <hr>
 
       <div class="form-group">
-        <b>All software</b>
-        {# <div class="checkbox"> #}
-        {#   <label> #}
-        {#     <input type="checkbox" value="" checked class="check-toggle" data-target=".software-filter"> #}
-        {#     <b>All software</b> #}
-        {#   </label> #}
-        {# </div> #}
+        <b>Filter by software</b>
         {% for d in all_software %}
           <div class="checkbox">
             <label>
@@ -94,6 +96,7 @@
       <hr>
 
       <div class="form-group">
+        <a href="/" class="btn btn-default">Reset</a>
         <button class="btn btn-default">Apply</button>
       </div>
     </form>
@@ -102,20 +105,7 @@
   <div class="col-md-9">
     <h2 style="margin-top: 0;">Units</h2>
     {% if activities %}
-      <div class="activity-list">
-        {% for activity in activities %}
-          <a class="activity" href="{% url 'detail' activity.id %}">
-            <span class="activity-title">{{ activity.title }}</span>
-            <span class="activity-grade"><small>Grade:</small> {{activity.body.grade}}</span>
-            <span class="activity-subject"><small>Subject:</small> {{activity.body.subject}}</span>
-            <span class="activity-devices"><small>Devices:</small>
-              {% if activity.body.devices %}
-                {{activity.body.devices|join:", "}}
-              {% endif %}
-            </span>
-          </a>
-        {% endfor %}
-      </div>
+      {% include "activities/_activity_list.html" %}
     {% else %}
       <p>No units found.</p>
     {% endif %}
@@ -138,24 +128,5 @@
 
   </div>
 </div>
-
-<script>
-
-  function setToggler(el){
-    el.addEventListener('change', function(e){
-      console.log(el.getAttribute('data-target'))
-      Array.prototype.forEach.call(document.querySelectorAll(el.getAttribute('data-target')), function(i){
-        i.checked = el.checked;
-      });
-    });
-
-    //if (el.checked) {
-    //  Array.prototype.forEach.call(document.querySelectorAll(el.getAttribute('data-target')), function(i){
-    //    i.checked = el.checked;
-    //  });
-    //}
-  }
-  Array.prototype.forEach.call(document.querySelectorAll('.check-toggle'), setToggler);
-</script>
 {% endblock %}
 

@@ -2,7 +2,7 @@ from apiclient.discovery import build
 from bs4 import BeautifulSoup
 import json
 import re
-import os 
+import os
 from .models import Grade, Subject, Software
 
 with open(os.path.dirname(os.path.realpath(__file__)) + '/credentials.json') as data:
@@ -42,13 +42,14 @@ class Activity:
             self.subject = Subject.objects.get(name=self.subject_name).id
         except:
             print("Can't find subject")
-        try:
-            self.software = Software.objects.get(name=self.software_name).id
-        except:
-            print("Can't find software")
+        # try:
+        #     self.software = Software.objects.get(name=self.software_name).id
+        # except:
+        #     print("Can't find software")
 
         self.set_devices()
         self.set_concepts()
+        self.set_software()
         self.set_body()
         self.set_plain_body()
 
@@ -85,7 +86,7 @@ class Activity:
             el = [e for e in self.soup.select('h1, h2, h3') if 'Concepts' in e.text][0]
             concepts = [e.text.strip() for e in el.next_sibling.children]
         except Exception as e:
-            concepts = [] 
+            concepts = []
         self.concepts = concepts
 
     def set_devices(self):
@@ -93,13 +94,21 @@ class Activity:
             el = [e for e in self.soup.select('h1, h2, h3') if 'Devices' in e.text][0]
             devices = [e.text.strip() for e in el.next_sibling.children]
         except Exception as e:
-            devices = [] 
+            devices = []
         self.devices = devices
+
+    def set_software(self):
+        try:
+            el = [e for e in self.soup.select('h1, h2, h3') if 'Software' in e.text][0]
+            software = [e.text.strip() for e in el.next_sibling.children]
+        except Exception as e:
+            software = []
+        self.software = software
 
     def set_body(self):
         self.body = str(self.soup.find('body'))
         self.body = re.sub(r"\s*style='(.*?)'\s*", '', self.body, flags=re.MULTILINE)
-        self.body = re.sub(r'\s*(style|class|id)="(.*?)"\s*', '', self.body, flags=re.MULTILINE)
+        self.body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', self.body, flags=re.MULTILINE)
         return self.body
 
     def set_plain_body(self):

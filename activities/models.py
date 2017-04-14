@@ -59,7 +59,7 @@ class Activity(models.Model):
     user = models.ForeignKey(User)
     grade = models.ForeignKey(Grade)
     subject = models.ForeignKey(Subject)
-    software = models.ForeignKey(Software)
+    # software = models.ForeignKey(Software)
     # devices = models.ManyToManyField(Device)
 
     date_added = models.DateTimeField(auto_now_add=True)

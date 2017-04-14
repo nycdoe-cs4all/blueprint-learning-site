@@ -19,14 +19,15 @@ def index(request):
 
     all_devices = [d.name for d in Device.objects.all()]
     all_software = [s.name for s in Software.objects.all()]
+    all_concepts = [c.name for c in Concept.objects.all()]
 
     grades = Grade.objects.all()
     subjects = Subject.objects.all()
-    # softwares = Software.objects.all()
 
     q = request.GET.get('q', '')
     grade = request.GET.get('grade')
     subject = request.GET.get('subject')
+    concepts = request.GET.getlist('concepts')
     level = request.GET.get('level')
     devices = request.GET.getlist('devices')
     software = request.GET.getlist('software')
@@ -37,7 +38,7 @@ def index(request):
     else:
         approved = str(request.GET.get('approved', 1))
 
-    filters = {'q': q, 'grade': grade, 'subject': subject, 'level': level, 'devices': devices, 'software': software, 'approved': approved}
+    filters = {'q': q, 'grade': grade, 'subject': subject, 'level': level, 'devices': devices, 'software': software, 'approved': approved, 'concepts': concepts}
 
     activities_list = Activity.objects.order_by('-date_added')
 
@@ -53,13 +54,15 @@ def index(request):
     if software:
         activities_list = activities_list.filter(body__software__contains=software)
 
+    if concepts:
+        activities_list = activities_list.filter(body__devices__contains=concepts)
+
     if devices:
         activities_list = activities_list.filter(body__devices__contains=devices)
 
     if request.GET.get('q'):
         vector = SearchVector('plain_body', 'title')
         query = SearchQuery(q)
-        #activities_list = activities_list.filter(plain_body__search=q)
         activities_list = activities_list.annotate(rank=SearchRank(vector, query)).order_by('-rank')
 
     paginator = Paginator(activities_list, 20)
@@ -72,7 +75,7 @@ def index(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         activities = paginator.page(paginator.num_pages)
-    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software}
+    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software, 'all_concepts': all_concepts}
     return render(request, 'activities/index.html', context)
 
 @login_required
@@ -89,6 +92,11 @@ def create(request):
     possible_concepts = Concept.objects.all()
     concepts = [c.name for c in possible_concepts if c.name.lower() in submitted_concepts]
 
+    submitted_software = request.POST.get('software').split(':::')
+    submitted_software = [s.lower() for s in submitted_software]
+    possible_software = Software.objects.all()
+    softwares = [s.name for s in possible_software if s.name.lower() in submitted_software]
+
     submitted_devices = request.POST.get('devices').split(':::')
     submitted_devices = [d.lower() for d in submitted_devices]
     possible_devices = Device.objects.all()
@@ -104,12 +112,12 @@ def create(request):
             'title': title,
             'subject': activity.subject.name,
             'grade': activity.grade.name,
-            'software': activity.software.name,
             'pacing': pacing,
             'html': body,
             'plain': plain_body,
             'devices': devices,
-            'concepts': concepts
+            'concepts': concepts,
+            'software': softwares
         }
         activity.save()
         response['status'] = 'ok'
