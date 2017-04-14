@@ -17,25 +17,12 @@
 
 </div>
 <div class="col-md-9">
-  <h2 style="margin-top: 0;">Activities</h2>
-  {% if activities %}
-    <div class="activity-list">
-      {% for activity in activities %}
-        <a class="activity" href="{% url 'detail' activity.id %}">
-          <span class="activity-title">{{ activity.title }}</span>
-          <span class="activity-grade"><small>Grade:</small> {{activity.body.grade}}</span>
-          <span class="activity-subject"><small>Subject:</small> {{activity.body.subject}}</span>
-          <span class="activity-devices"><small>Devices:</small>
-            {% if activity.body.devices %}
-              {{activity.body.devices|join:", "}}
-            {% endif %}
-          </span>
-        </a>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No activities found.</p>
-  {% endif %}
+  <h2 style="margin-top: 0;">Units</h2>
+    {% if activities %}
+      {% include "activities/_activity_list.html" %}
+    {% else %}
+      <p>No units found.</p>
+    {% endif %}
 </div>
 {% endblock %}
 
