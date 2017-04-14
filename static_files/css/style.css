@@ -12,19 +12,18 @@
 
 a.activity {
   display: block;
-  padding: 15px;
+  padding: 15px 0;
   color: #000;
-  margin: 2px 0px;
+  border-top: 1px solid #ccc;
 }
 
-a.activity:nth-child(even) {
-  background: #eee
+a.activity:last-child {
+  border-bottom: 1px solid #ccc;
 }
-
 
 a.activity:hover {
   text-decoration: none;
-  box-shadow: 0px 0px 1px #000;
+  background-color: #eee;
 }
 
 a.activity span {
@@ -34,10 +33,20 @@ a.activity span {
 .activity-title {
   font-weight: bold;
   font-size: 1.2em;
+  margin: 0;
+  padding: 0;
 }
 
 .activity small {
   font-size: .8em;
   text-transform: uppercase;
   color: #666;
+}
+
+p.title {
+  font-size: 36px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
 }
