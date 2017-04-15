@@ -70,6 +70,17 @@
   <p><a href="{{ activity.google_file_id }}" target="_blank">View original on Google Docs</a></p>
   <p><a href="{{ activity.copy_url }}" target="_blank">Make a copy on Google Docs</a></p>
 
+  {% if user %}
+  <div class="form-group">
+    <form action="/activities/{% if has_bookmark %}delete{% else %}add{%endif%}_bookmark/" method="POST">
+      <input type="submit" value="{% if has_bookmark %}Remove Bookmark{% else %}Add Bookmark{%endif%}" class="btn btn-primary">
+      <input type="hidden" name="activity_id" value="{{activity.id}}">
+       <input type="hidden" name="next" value="{{ request.path }}">
+      {% csrf_token %}
+    </form>
+  </div>
+  {% endif %}
+
 </div>
 {% endblock %}
 

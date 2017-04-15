@@ -17,13 +17,40 @@
 
 </div>
 <div class="col-md-9">
-  <h2 style="margin-top: 0;">Units</h2>
-    {% if activities %}
-      {% include "activities/_activity_list.html" %}
-    {% else %}
-      <p>No units found.</p>
-    {% endif %}
+
+  <ul class="nav nav-tabs" role="tablist" id="tablist">
+    <li role="presentation" class="active"><a href="#units" aria-controls="units" role="tab" data-toggle="tab">Units</a></li>
+    <li role="presentation"><a href="#bookmarks" aria-controls="bookmarks" role="tab" data-toggle="tab">Bookmarks</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="units">
+      <h2>Units</h2>
+      {% if activities %}
+        {% include "activities/_activity_list.html" %}
+      {% else %}
+        <p>No units created</p>
+      {% endif %}
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="bookmarks">
+      <h2>Bookmarks</h2>
+      {% if bookmarks %}
+        {% include "activities/_activity_list.html" with activities=bookmarks %}
+      {% else %}
+        <p>No bookmarks</p>
+      {% endif %}
+    </div>
+  </div>
+
 </div>
+
+<script>
+$('#tablist a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
 {% endblock %}
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from .models import Activity, Grade, Subject, Device, Profile, Concept, Software
+from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .forms import ActivityForm, UserProfileForm
@@ -77,6 +77,23 @@ def index(request):
         activities = paginator.page(paginator.num_pages)
     context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software, 'all_concepts': all_concepts}
     return render(request, 'activities/index.html', context)
+
+
+@login_required
+def create_bookmark(request):
+    activity_id = request.POST.get('activity_id')
+    activity = get_object_or_404(Activity, pk=activity_id)
+    bookmark = Bookmark(user_id=request.user.id, activity_id=activity_id)
+    bookmark.save()
+    return redirect('/activities/' + activity_id)
+
+
+@login_required
+def delete_bookmark(request):
+    activity_id = request.POST.get('activity_id')
+    Bookmark.objects.filter(user=request.user, activity_id=activity_id).delete()
+    return redirect('/activities/' + activity_id)
+
 
 @login_required
 def create(request):
@@ -153,7 +170,10 @@ def detail(request, activity_id):
         profile = Profile.objects.filter(user=request.user)[:1].get()
     except:
         profile = None
-    return render(request, 'activities/detail.html', {'activity': activity, 'profile': profile})
+    has_bookmark = False
+    if request.user:
+        has_bookmark = Bookmark.objects.filter(user=request.user, activity=activity).count() > 0
+    return render(request, 'activities/detail.html', {'activity': activity, 'profile': profile, 'has_bookmark': has_bookmark})
 
 
 @login_required
@@ -213,6 +233,8 @@ def edit_profile(request):
 
 def user_details(request, user_id):
     user = get_object_or_404(User, pk=user_id)
+    bookmarks = Activity.objects.filter(bookmark__user=user)
+    # bookmarks = Bookmark.objects.filter(user=user)
     profile = user.profile
     activities = Activity.objects.filter(user=user)
-    return render(request, 'users/detail.html', {'activities': activities, 'user': user, 'profile': profile})
+    return render(request, 'users/detail.html', {'activities': activities, 'bookmarks': bookmarks, 'user': user, 'profile': profile})
