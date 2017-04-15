@@ -7,7 +7,16 @@
 }
 
 #logo img{
-  max-width: 500px;
+  max-height: 70px;
+}
+
+.navbar-brand {
+  /* padding: 0; */
+}
+
+#main-nav .navbar-nav a {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 a.activity {
