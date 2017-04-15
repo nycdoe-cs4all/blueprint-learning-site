@@ -27,7 +27,7 @@
     </script>
   {% endif %}
 
-  {% if user.id == activity.user.id %}
+  {% if user.id == activity.user.id or user.is_superuser %}
     <div class="form-group">
       <p>Click below to refresh the content of your unit. This will update your unit from your original Google Doc.</p>
       <button class="btn btn-primary" id="refresh-button">Refresh Content</button>
