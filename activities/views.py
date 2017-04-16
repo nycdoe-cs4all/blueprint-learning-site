@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
+from django.urls import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark
@@ -215,8 +216,6 @@ def edit_profile(request):
         form = UserProfileForm()
         profile = None
 
-    print(form)
-
     if request.method == 'POST':
         if profile is not None:
             form = UserProfileForm(request.POST, instance=profile)
@@ -226,7 +225,7 @@ def edit_profile(request):
             profile = form.save(commit=False)
             profile.user = request.user
             profile.save()
-            return redirect('/')
+            return redirect(reverse('user_detail', args=(request.user.id,)))
 
     return render(request, 'users/edit_profile.html', {'form':form})
 

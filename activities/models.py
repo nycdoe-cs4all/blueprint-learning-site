@@ -45,7 +45,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     organization = models.CharField(max_length=255, default="", blank=True)
-    link = models.CharField(max_length=255, default="", blank=True)
+    link = models.URLField(max_length=255, default="", blank=True)
     full_name = models.CharField(max_length=255, default="", blank=True)
 
 
