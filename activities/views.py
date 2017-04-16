@@ -55,7 +55,7 @@ def index(request):
         activities_list = activities_list.filter(body__software__contains=software)
 
     if concepts:
-        activities_list = activities_list.filter(body__devices__contains=concepts)
+        activities_list = activities_list.filter(body__concepts__contains=concepts)
 
     if devices:
         activities_list = activities_list.filter(body__devices__contains=devices)
