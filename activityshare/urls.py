@@ -25,4 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
+    url(r'^what-is-cs/$', TemplateView.as_view(template_name='what_is_cs.html')),
+    url(r'^meaningful-cs/$', TemplateView.as_view(template_name='meaningful_cs.html')),
+    url(r'^cs-concepts-and-practices/$', TemplateView.as_view(template_name='cs_concepts.html')),
 ]
