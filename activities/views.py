@@ -172,7 +172,7 @@ def detail(request, activity_id):
     except:
         profile = None
     has_bookmark = False
-    if request.user:
+    if request.user.is_authenticated:
         has_bookmark = Bookmark.objects.filter(user=request.user, activity=activity).count() > 0
     return render(request, 'activities/detail.html', {'activity': activity, 'profile': profile, 'has_bookmark': has_bookmark})
 
