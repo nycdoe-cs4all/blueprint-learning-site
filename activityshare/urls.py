@@ -19,7 +19,7 @@ from activities.views import index as homepage
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^$', homepage),
+    url(r'^$', TemplateView.as_view(template_name='home.html')),
     url(r'^activities/', include('activities.urls')),
     url(r'^users/', include('activities.user_urls')),
     url(r'^admin/', admin.site.urls),
