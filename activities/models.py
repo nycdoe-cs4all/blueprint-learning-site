@@ -104,11 +104,20 @@ class Bookmark(models.Model):
     activity = models.ForeignKey(Activity)
 
 
+class ResourceTag(models.Model):
+    title = models.CharField(max_length=255, null=False, blank=False)
+
+    def __str__(self):
+        return self.title
+
+
 class Resource(models.Model):
     title = models.CharField(max_length=255, null=False, blank=False)
     body = models.TextField(null=False, blank=False)
     activities = models.ManyToManyField(Activity)
+    tags = models.ManyToManyField(ResourceTag)
 
     def __str__(self):
         return self.title
+
 
