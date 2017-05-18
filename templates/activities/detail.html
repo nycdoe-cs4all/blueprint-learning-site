@@ -81,6 +81,16 @@
   </div>
   {% endif %}
 
+  {% if resources %}
+    <hr>
+    <h3>Related Resources</h3>
+    <ul>
+    {% for resource in resources %}
+      <li><a href="{% url 'show_resource' resource.id %}">{{resource.title}}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
 </div>
 {% endblock %}
 

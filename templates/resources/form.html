@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block content %}
+<div class="col-md-9">
+<form method="post">{% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}
+
+{% block extra_scripts %}
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.js"></script>
+
+<script>
+$('textarea').summernote({
+  minHeight: 400,
+});
+</script>
+{% endblock %}

@@ -48,6 +48,9 @@ class Profile(models.Model):
     link = models.URLField(max_length=255, default="", blank=True)
     full_name = models.CharField(max_length=255, default="", blank=True)
 
+    def __str__(self):
+        return '{} - {}'.format(self.id, self.full_name)
+
 
 # Create your models here.
 class Activity(models.Model):
@@ -81,6 +84,10 @@ class Activity(models.Model):
     copy_url = property(_get_copy_url)
 
 
+    def __str__(self):
+        return self.title
+
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
@@ -96,4 +103,12 @@ class Bookmark(models.Model):
     user = models.ForeignKey(User)
     activity = models.ForeignKey(Activity)
 
+
+class Resource(models.Model):
+    title = models.CharField(max_length=255, null=False, blank=False)
+    body = models.TextField(null=False, blank=False)
+    activities = models.ManyToManyField(Activity)
+
+    def __str__(self):
+        return self.title
 

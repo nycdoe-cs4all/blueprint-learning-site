@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Activity, Profile
+from .models import Activity, Profile, Resource
 
 
 class ActivityForm(forms.ModelForm):
@@ -14,3 +14,8 @@ class UserProfileForm(forms.ModelForm):
         model = Profile
         fields = ['full_name', 'organization', 'link']
 
+
+class ResourceForm(forms.ModelForm):
+    class Meta:
+        model = Resource
+        fields = ['title', 'body', 'activities']

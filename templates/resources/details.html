@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="col-md-9">
+  <h2>{{resource.title}}</h2>
+  <div>
+    {{resource.body | safe}}
+  </div>
+</div>
+<div class="col-md-3">
+  {% if activities %}
+    <h3>Related Units</h3>
+    <ul>
+    {% for activity in activities %}
+      <li><a href="{% url 'detail' activity.id %}">{{activity.title}}</a></li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if user.is_superuser %}
+    <hr>
+    <a href="{% url "edit_resource" resource.id %}" class="btn btn-primary">Edit Resource</a>
+    <a onclick="return confirm('Are you sure?')" href="{% url "delete_resource" resource.id %}" class="btn btn-danger">Delete Resource</a>
+  {% endif %}
+
+</div>
+{% endblock %}
+

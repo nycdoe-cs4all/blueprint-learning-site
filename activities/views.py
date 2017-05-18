@@ -3,10 +3,10 @@ from django.http import JsonResponse
 from django.urls import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark
+from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark, Resource
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
-from .forms import ActivityForm, UserProfileForm
+from django.contrib.auth.decorators import login_required, user_passes_test
+from .forms import ActivityForm, UserProfileForm, ResourceForm
 
 
 
@@ -174,7 +174,8 @@ def detail(request, activity_id):
     has_bookmark = False
     if request.user.is_authenticated:
         has_bookmark = Bookmark.objects.filter(user=request.user, activity=activity).count() > 0
-    return render(request, 'activities/detail.html', {'activity': activity, 'profile': profile, 'has_bookmark': has_bookmark})
+    resources = activity.resource_set.all()
+    return render(request, 'activities/detail.html', {'activity': activity, 'profile': profile, 'has_bookmark': has_bookmark, 'resources': resources})
 
 
 @login_required
@@ -237,3 +238,40 @@ def user_details(request, user_id):
     profile = user.profile
     activities = Activity.objects.filter(user=user)
     return render(request, 'users/detail.html', {'activities': activities, 'bookmarks': bookmarks, 'user': user, 'profile': profile})
+
+@user_passes_test(lambda u: u.is_superuser)
+def create_resource(request):
+    form = ResourceForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('list_resources')
+    return render(request, 'resources/form.html', {'form':form})
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def edit_resource(request, pk):
+    resource = get_object_or_404(Resource, pk=pk)
+    form = ResourceForm(request.POST or None, instance=resource)
+    if form.is_valid():
+        form.save()
+        return redirect('list_resources')
+    return render(request, 'resources/form.html', {'form':form})
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def delete_resource(request, pk):
+    resource = get_object_or_404(Resource, pk=pk)    
+    if request.method=='POST':
+        resource.delete()
+        return redirect('list_resources')
+
+
+def show_resource(request, pk):
+    resource = get_object_or_404(Resource, pk=pk)
+    activities = resource.activities.all()
+    return render(request, 'resources/details.html', {'resource':resource, 'activities': activities})
+
+
+def list_resources(request):
+    resources = Resource.objects.all()
+    return render(request, 'resources/index.html', {'resources': resources})

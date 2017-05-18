@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="col-md-9">
+  <h2>Resources</h2>
+  <div class="resource-list">
+      {% for resource in resources %}
+      <div class="resource">
+        <a href="{% url "show_resource" resource.id %}">{{ resource.title }}</a>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+<div class="col-md-3">
+  <a href="{% url "create_resource" %}" class="btn btn-primary">New Resource</a>
+</div>
+{% endblock %}
