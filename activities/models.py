@@ -114,8 +114,8 @@ class ResourceTag(models.Model):
 class Resource(models.Model):
     title = models.CharField(max_length=255, null=False, blank=False)
     body = models.TextField(null=False, blank=False)
-    activities = models.ManyToManyField(Activity)
-    tags = models.ManyToManyField(ResourceTag)
+    activities = models.ManyToManyField(Activity, blank=True)
+    tags = models.ManyToManyField(ResourceTag, blank=True)
 
     def __str__(self):
         return self.title
