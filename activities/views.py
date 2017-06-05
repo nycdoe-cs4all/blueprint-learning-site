@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.urls import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark, Resource
+from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark, Resource, ResourceTag
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ActivityForm, UserProfileForm, ResourceForm
@@ -149,7 +149,6 @@ def create(request):
 def parse(request):
     from .get_activity import Activity
     activity = Activity(request.GET.get('url'))
-    print(activity.to_dict())
     return JsonResponse(activity.to_dict())
 
 
@@ -242,6 +241,7 @@ def user_details(request, user_id):
 @user_passes_test(lambda u: u.is_superuser)
 def create_resource(request):
     form = ResourceForm(request.POST or None)
+    print(form)
     if form.is_valid():
         form.save()
         return redirect('list_resources')
@@ -273,5 +273,34 @@ def show_resource(request, pk):
 
 
 def list_resources(request):
-    resources = Resource.objects.all()
-    return render(request, 'resources/index.html', {'resources': resources})
+    tag_name = request.GET.get('tag')
+    if tag_name:
+        resources = Resource.objects.filter(tags__title=tag_name)
+    else:
+        resources = Resource.objects.all()
+    tags = ResourceTag.objects.all()
+    return render(request, 'resources/index.html', {'resources': resources, 'tags': tags})
+
+
+def import_google_doc(request):
+    from .get_activity import KEY
+    from apiclient.discovery import build
+    from bs4 import BeautifulSoup
+    from django.http import HttpResponse
+    import re
+
+    file_id = request.GET.get('file_id')
+    if '/' in file_id:
+        file_id = file_id.split('/')[-2]
+
+    drive_service = build('drive', 'v3', developerKey=KEY)
+    files = drive_service.files()
+    response = files.export(fileId=file_id, mimeType='text/html')
+    html = response.execute()
+    soup = BeautifulSoup(html, 'html.parser')
+
+    body = str(soup.find('body'))
+    body = re.sub(r"\s*style='(.*?)'\s*", '', body, flags=re.MULTILINE)
+    body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', body, flags=re.MULTILINE)
+
+    return HttpResponse(body)

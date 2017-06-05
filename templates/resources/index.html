@@ -2,17 +2,27 @@
 {% load i18n %}
 
 {% block content %}
+<div class="col-md-3">
+  <h3 style="margin-top:0">Filter Resources</h3>
+  <ul>
+    <li><a href="/resources">All Resources</a></li>
+    <li><a href="/resources?tag=Teachers">For Teachers</a></li>
+    <li><a href="/resources?tag=Administrators">For Administrators</a></li>
+  </ul>
+  {% if user.is_superuser %}
+    <p>
+      <a href="{% url "create_resource" %}" class="btn btn-primary">New Resource</a>
+    </p>
+  {% endif %}
+</div>
 <div class="col-md-9">
-  <h2>Resources</h2>
+  <h2 style="margin-top:0">Resources</h2>
   <div class="resource-list">
       {% for resource in resources %}
       <div class="resource">
-        <a href="{% url "show_resource" resource.id %}">{{ resource.title }}</a>
+        <h3><a href="{% url "show_resource" resource.id %}">{{ resource.title }}</a></h3>
       </div>
       {% endfor %}
   </div>
-</div>
-<div class="col-md-3">
-  <a href="{% url "create_resource" %}" class="btn btn-primary">New Resource</a>
 </div>
 {% endblock %}

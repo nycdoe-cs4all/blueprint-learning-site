@@ -18,10 +18,9 @@
   <nav id="main-nav" class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/" id="logo"><img src="/static/images/logo.png" alt="CS4All Blueprint"></a>
+        <a class="navbar-brand" href="/" id="logo"><img src="/static/images/logo.png" alt="CS4All Blueprint">(DRAFT SITE)</a>
       </div>
       <ul class="nav navbar-nav">
-        <li>SITE IS A DRAFT</li>
         <li><a href="/about">About Blueprint</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About CS Education <span class="caret"></span></a>
@@ -31,10 +30,23 @@
             <li><a href="/cs-concepts-and-practices">CS concepts and practices</a></li>
           </ul>
         </li>
-        <li><a href="/activities">Units</a></li>
-        {% if user.is_authenticated %}
-          <li><a href="{% url 'new' %}">New Unit</a></li>
-        {% endif %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/resources">All Resources</a></li>
+            <li><a href="/resources?tag=Teachers">For Teachers</a></li>
+            <li><a href="/resources?tag=Administrators">For Administrators</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Units <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/activities">Units</a></li>
+            {% if user.is_authenticated %}
+              <li><a href="{% url 'new' %}">New Unit</a></li>
+            {% endif %}
+          </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
