@@ -21,7 +21,10 @@
   {% if user.is_superuser %}
     <hr>
     <a href="{% url "edit_resource" resource.id %}" class="btn btn-primary">Edit Resource</a>
-    <a onclick="return confirm('Are you sure?')" href="{% url "delete_resource" resource.id %}" class="btn btn-danger">Delete Resource</a>
+    <form method="post" action="{% url "delete_resource" resource.id %}" style="display:inline">
+      {% csrf_token %}
+      <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="Delete Resource">
+    </form>
   {% endif %}
 
 </div>

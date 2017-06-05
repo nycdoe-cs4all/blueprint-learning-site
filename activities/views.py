@@ -264,6 +264,7 @@ def delete_resource(request, pk):
     if request.method=='POST':
         resource.delete()
         return redirect('list_resources')
+    return redirect('list_resources')
 
 
 def show_resource(request, pk):
