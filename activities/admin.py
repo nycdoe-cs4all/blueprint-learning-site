@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Activity, Grade, Subject, Device, Profile, Software, Concept, Resource, ResourceTag
+from .models import Activity, Grade, Subject, Device, Profile, Software, Concept, Resource, ResourceTag, School
 
 
 class ActivityAdmin(admin.ModelAdmin):
@@ -17,3 +17,4 @@ admin.site.register(Software)
 admin.site.register(Concept)
 admin.site.register(Resource)
 admin.site.register(ResourceTag)
+admin.site.register(School)

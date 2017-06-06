@@ -8,7 +8,13 @@
   {% else %}
     <h1 style="margin-top:0;">{{ user.profile.username }}</h1>
   {% endif %}
-  <p> {{user.profile.organization}}</p>
+
+
+  {% if user.profile.school %}
+    <p>{{user.profile.school.name}}</p>
+  {% endif %}
+  <p>{{user.profile.organization}}</p>
+
   {% if user.profile.link %}
     <p>
       <a href="{{user.profile.link}}">{{user.profile.link}}</a>  

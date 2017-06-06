@@ -41,12 +41,22 @@ class Grade(models.Model):
         return self.name
 
 
+class School(models.Model):
+    name = models.CharField(max_length=255, null=False, blank=False)
+    dbn = models.CharField(max_length=255, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     organization = models.CharField(max_length=255, default="", blank=True)
     link = models.URLField(max_length=255, default="", blank=True)
     full_name = models.CharField(max_length=255, default="", blank=True)
+
+    school = models.ForeignKey(School, blank=True, null=True, default="")
 
     def __str__(self):
         return '{} - {}'.format(self.id, self.full_name)
@@ -119,5 +129,3 @@ class Resource(models.Model):
 
     def __str__(self):
         return self.title
-
-

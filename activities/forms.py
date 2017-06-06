@@ -12,7 +12,10 @@ class ActivityForm(forms.ModelForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['full_name', 'organization', 'link']
+        fields = ['full_name', 'school', 'organization', 'link']
+        labels = {
+            'organization': 'Other Organization',
+        }
 
 
 class ResourceForm(forms.ModelForm):
