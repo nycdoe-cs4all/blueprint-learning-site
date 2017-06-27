@@ -14,6 +14,8 @@ Create a database with a user. In the terminal type, line by line:
 ```
 psql
 
+CREATE DATABASE blueprint;
+
 CREATE USER doe;
 
 GRANT ALL PRIVILEGES ON DATABASE blueprint TO doe;
