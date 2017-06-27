@@ -1,5 +1,6 @@
-# blueprint-learning-site
-Learning activities for the blueprint
+# Computer Science for All Blueprint
+
+The Computer Science for All Blueprint is resource to help NYC public school educators bring meaningful computer science (CS) education to every student in their schools.
 
 ## Setting up a development environment
 
