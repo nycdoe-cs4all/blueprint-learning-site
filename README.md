@@ -50,6 +50,14 @@ Create a superuser account that you can use to log in locally to the admin panel
 ./manage.py createsuperuser
 ```
 
+
+Load in data about grades/subjects
+```
+./manage.py loaddate fixtures2.json
+```
+
+Add the `credentials.json` file the `activities` folder (ask an admin for access to the file).
+
 ## Running locally
 
 To run the project on you computer, just `cd` into the project directory and type:
