@@ -78,3 +78,11 @@ You can see the admin site at [http://localhost:8000/admin](http://localhost:800
 git pull origin master
 sudo systemctl restart gunicorn
 ```
+
+If you've edited or created any static assets (js, images, css etc) you'll also need to run the following:
+
+```
+source env/bin/activate
+./manage.py collectstatic
+```
+
