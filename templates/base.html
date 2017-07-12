@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Computer Science for All (CS4All) Blueprint is an academic and implementation guide to teaching computer science in all New York City public schools.">
-  <link rel="icon" href="/images/icon-blueprint.svg">
+  <link rel="icon" href="/static/images/icon-blueprint.svg">
   
   <title>
     {% block title %}
@@ -18,7 +18,7 @@
   </title>
 </head>
 
-<body>
+<body class="{% block body_class %}{% endblock %}">
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="logo-cs4all" viewBox="0 0 2874.66 377.21">
       <defs><style>.cls-1{fill:#f26922;}.cls-2{fill:#5694cf;}.cls-3{fill:#0a55a3;}.cls-4{fill:#88b8e3;}.cls-5{fill:#a1cd3a;}.cls-6{fill:#1d8743;}.cls-7{fill:#fff;}.cls-8{fill:#a1cc3a;}.cls-9{fill:#f26a23;}</style></defs><title>cs4all-logo</title>

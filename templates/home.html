@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+{% block body_class %}homepage{% endblock %}
 {% block content %}
 <div id="page">
 	
@@ -22,7 +23,7 @@
 					<a class="box embed" href="http://player.vimeo.com/video/223650628?autoplay=1" data-title="Computer Science Centers" data-subtitle="Elementary School">
 						<div class="preview-image">
 							<span class="icon"><svg><use xlink:href="#icon-play" /></svg></span>
-							<img src="/images/assets/elementary_2.jpg" alt="preview" />
+							<img src="/static/images/assets/elementary_2.jpg" alt="preview" />
 						</div>
 						<h3>
 							Computer Science Centers
@@ -34,7 +35,7 @@
 					<a class="box embed" href="http://player.vimeo.com/video/223650705?autoplay=1" data-title="Flipped Instructions" data-subtitle="Middle School">
 						<div class="preview-image">
 							<span class="icon"><svg><use xlink:href="#icon-play" /></svg></span>
-							<img src="/images/assets/middle_1a.jpg" alt="preview" />
+							<img src="/static/images/assets/middle_1a.jpg" alt="preview" />
 						</div>					
 						<h3>
 							Flipped Instructions
@@ -46,7 +47,7 @@
 					<a class="box embed" href="http://player.vimeo.com/video/223650530?autoplay=1" data-title="Peer Review" data-subtitle="High School">
 						<div class="preview-image">
 							<span class="icon"><svg><use xlink:href="#icon-play" /></svg></span>
-							<img src="/images/assets/high_2a.jpg" alt="preview" />
+							<img src="/static/images/assets/high_2a.jpg" alt="preview" />
 						</div>
 						<h3>
 							Peer Review
@@ -107,6 +108,7 @@
 		<div class="container">		
 			
 			<div id="featured-units">
+        <div style="display:none">
 				<h2><span class="preamble">Featured</span> Units</h2>
 				
 				<div class="row gallery">
@@ -115,7 +117,7 @@
 						<a class="box" href="http://blueprint.cs4all.nyc/activities/#">
 							<div class="preview-image">
 								<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
-								<img src="/images/assets/art_machine.jpg" alt="preview" />
+								<img src="/static/images/assets/art_machine.jpg" alt="preview" />
 							</div>
 							<h3>
 								Art Machine
@@ -128,7 +130,7 @@
 						<a class="box" href="http://blueprint.cs4all.nyc/activities/#">
 							<div class="preview-image">
 								<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
-								<img src="/images/assets/understanding_the_internet-b.jpg" alt="preview" />
+								<img src="/static/images/assets/understanding_the_internet-b.jpg" alt="preview" />
 							</div>
 							<h3>
 								Understanding the Internet
@@ -141,7 +143,7 @@
 						<a class="box" href="http://blueprint.cs4all.nyc/activities/#">
 							<div class="preview-image">
 								<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
-								<img src="/images/assets/biobots.jpg" alt="preview" />
+								<img src="/static/images/assets/biobots.jpg" alt="preview" />
 							</div>
 							<h3>
 								Exploring Biorobotics
@@ -151,11 +153,12 @@
 					</div>
 										
 				</div>
+        </div>
 				
 				<div class="exit-links">
 				
 					<div class="row">
-						<div class="col-lg-12 box">
+						<div class="col-lg-12 box" style="display:none">
 							<a class="btn btn-primary btn-lg" href="http://blueprint.cs4all.nyc/activities/" role="button"><span class="preamble">Explore more</span> Units</a>
 						</div>
 						<div class="col-sm-6 box"><a class="btn btn-primary btn-lg" href="#" role="button"><span class="preamble">Get notified about</span> <span>educator trainings</span></a></div>
