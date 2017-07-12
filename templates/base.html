@@ -83,9 +83,15 @@
 						<span class="preamble">Explore</span> Units
 					</a>
 				</li>
-				<li><a href="/accounts/login/">
-					<span class="preamble">Login</span>
-				</a></li>
+
+        {% if user.is_authenticated %}
+        <li>
+          <a href="/users/{{user.id}}">View Profile</a><br>
+        </li>
+        {% else %}
+          <li><a href="{% url 'auth_login' %}">Log In</a></li>
+        {% endif %}
+
 			</ul>
 		</div><!--/.nav-collapse -->
 		
