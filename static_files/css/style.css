@@ -891,7 +891,7 @@ h2:after {
 }
 
 #cboxLoadingGraphic {
-  background: url(images/loading.gif) no-repeat center center;
+  background: url(/static/images/loading.gif) no-repeat center center;
 }
 
 #cboxLoadingOverlay {
@@ -961,19 +961,19 @@ h2:after {
 }
 
 #cboxPrevious {
-  background-image: url('js/images/arrow-left-48.png');
+  background-image: url('/static/images/arrow-left-48.png');
   right: 78px;
   background-position: 5px center;
 }
 
 #cboxNext {
-  background-image: url('js/images/iconmonstr-arrow-24-icon-48.png');
+  background-image: url('/static/images/iconmonstr-arrow-24-icon-48.png');
   right: 41px;
   background-position: 7px center;
 }
 
 #cboxClose {
-  background-image: url('images/icon-close.svg');
+  background-image: url('/static/images/icon-close.svg');
   right: 2px;
   transition: transform .2s;
 }

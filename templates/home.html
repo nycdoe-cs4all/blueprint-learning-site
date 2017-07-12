@@ -7,7 +7,7 @@
 	
 	
 		<div class="jumbotron">
-			<p><a class="intro-a" href="/" target="_blank"><span class="expander">CS4ALL</span></a> will ensure every <span class="intro-2">NYC</span> student receives a <span class="intro-3">meaningful</span> unit of <span class="intro-1">computer science education</span> by 2025. With the <a class="intro-b" href="http://blueprint.cs4all.nyc/about/"><span class="expander">Blueprint</span></a>, our <span class="intro-3">educators</span> are making it happen.</p>
+			<p><a class="intro-a" href="/" target="_blank"><span class="expander">CS4ALL</span></a> will ensure every <span class="intro-2">NYC</span> student receives a <span class="intro-3">meaningful</span> unit of <span class="intro-1">computer science education</span> by 2025. With the <a class="intro-b" href="/about/"><span class="expander">Blueprint</span></a>, our <span class="intro-3">educators</span> are making it happen.</p>
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2 box"><a class="btn btn-primary btn-lg" href="#what-is-blueprint" role="button"><span class="preamble">Show me</span> how</a></div>
 			</div>
@@ -69,7 +69,7 @@
 				<ul class="list-unstyled">
 				
 					<li>
-						<a class="box" href="http://blueprint.cs4all.nyc/what-is-cs/">
+						<a class="box" href="/what-is-cs/">
 							<div class="box-content">
 								<span class="icon"><svg><use xlink:href="#icon-cs-about" /></svg></span>
 								<h3>Explanations of CS concepts &amp; practices.</h3>
@@ -78,7 +78,7 @@
 						</a>
 						
 					</li><li>
-						<a class="box" href="http://blueprint.cs4all.nyc/activities/">
+						<a class="box" href="/activities/">
 							<div class="box-content">
 								<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
 								<h3>Tried-and-true exemplar units.</h3>
@@ -88,7 +88,7 @@
 						</a>
 							
 					</li><li>
-						<a class="box" href="http://blueprint.cs4all.nyc/resources/">
+						<a class="box" href="/resources/">
 							<div class="box-content">
 								<span class="icon"><svg><use xlink:href="#icon-resources" /></svg></span>
 								<h3>Tools for CS teachers of all experience levels.</h3>
@@ -114,7 +114,7 @@
 				<div class="row gallery">
 				
 					<div class="col-sm-6 col-md-4">
-						<a class="box" href="http://blueprint.cs4all.nyc/activities/#">
+						<a class="box" href="/activities/#">
 							<div class="preview-image">
 								<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
 								<img src="/static/images/assets/art_machine.jpg" alt="preview" />
@@ -127,7 +127,7 @@
 					</div>
 					
 					<div class="col-sm-12 col-md-4">
-						<a class="box" href="http://blueprint.cs4all.nyc/activities/#">
+						<a class="box" href="/activities/#">
 							<div class="preview-image">
 								<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
 								<img src="/static/images/assets/understanding_the_internet-b.jpg" alt="preview" />
@@ -140,7 +140,7 @@
 					</div>
 					
 					<div class="col-sm-6 col-md-4">
-						<a class="box" href="http://blueprint.cs4all.nyc/activities/#">
+						<a class="box" href="/activities/#">
 							<div class="preview-image">
 								<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
 								<img src="/static/images/assets/biobots.jpg" alt="preview" />
@@ -159,7 +159,7 @@
 				
 					<div class="row">
 						<div class="col-lg-12 box" style="display:none">
-							<a class="btn btn-primary btn-lg" href="http://blueprint.cs4all.nyc/activities/" role="button"><span class="preamble">Explore more</span> Units</a>
+							<a class="btn btn-primary btn-lg" href="/activities/" role="button"><span class="preamble">Explore more</span> Units</a>
 						</div>
 						<div class="col-sm-6 box"><a class="btn btn-primary btn-lg" href="#" role="button"><span class="preamble">Get notified about</span> <span>educator trainings</span></a></div>
 						<div class="col-sm-6 box"><a class="btn btn-primary btn-lg" href="http://cs4all.nyc/" role="button" target="_blank"><span class="preamble">Learn more about the</span> <span>CS4ALL initiative</span></a></div>
@@ -176,5 +176,10 @@
 		</div> <!-- /container -->
 	
 	</div>
+  
 {% endblock %}
-
+{% block extra_scripts %}
+  <script type='text/javascript' src='/static/js/jquery.cookie.js?v=20170702'></script>
+  <script type='text/javascript' src='/static/js/jquery.colorbox-min.js?ver=20170629'></script>
+  <script type='text/javascript' src='/static/js/functions.js?ver=20170702.9'></script>
+{% endblock %}
