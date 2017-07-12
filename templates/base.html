@@ -84,6 +84,18 @@
     </div>
   </div>
 
+  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="plan-info" aria-hidden="true" id="mymodal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          Loading...
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="/static/js/jquery.min.js"></script>
   <script src="/static/js/bootstrap.min.js"></script>
   {% block extra_scripts %}
@@ -98,7 +110,21 @@
 
     ga('create', 'UA-84670539-2', 'auto');
     ga('send', 'pageview');
+    // if modal trigger is clicked
+    $('.ls-modal').on('click', function(e){
+  e.preventDefault();
+  var myModal= $('#mymodal');
+  // shows modal
+  myModal.modal('show');
+  // puts the term in the header
+  myModal.find('.modal-header').text($(this).attr('href'));
+  var modalBod=myModal.find('.modal-body'); //finds the body of the modal
+  // concatenates term with api address to make the call, loads it into the modal body
+  modalBod.load("http://cs4all.nyc/api/glossary?term=".concat($(this).attr('href')));
+});
   </script>
+
+
 </body>
 
 </html>
