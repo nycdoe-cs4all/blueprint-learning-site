@@ -1083,11 +1083,11 @@ h2:after {
     padding-top: 80px;
     padding-bottom: 0;
   }
-  .homepage .btn {
+  .homepage .btn, nav .btn {
     padding: 24px;
     font-size: 22px;
   }
-  .homepage h2 {
+  .homepage h2, nav h2 {
     font-size: 48px;
     line-height: .72;
     margin: 0 auto 32px;
@@ -1098,7 +1098,7 @@ h2:after {
     padding: 16px;
     margin: 8px 0;
   }
-  .homepage nav a.navbar-brand {
+  nav a.navbar-brand {
     height: 80px;
     width: 400px;
     max-width: none;
