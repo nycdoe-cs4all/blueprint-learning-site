@@ -29,4 +29,5 @@ urlpatterns = [
     url(r'^what-is-cs/$', TemplateView.as_view(template_name='what_is_cs.html')),
     url(r'^meaningful-cs/$', TemplateView.as_view(template_name='meaningful_cs.html')),
     url(r'^cs-concepts-and-practices/$', TemplateView.as_view(template_name='cs_concepts.html')),
+    url(r'^test/$', TemplateView.as_view(template_name='test.html')),
 ]
