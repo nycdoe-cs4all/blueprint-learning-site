@@ -2,9 +2,9 @@
   {% for activity in activities %}
     <a class="activity" href="{% url 'detail' activity.id %}">
       <span class="activity-title">{{ activity.title }}</span>
-      <span class="activity-pacing"><small>Pacing:</small> {{activity.body.pacing}}</span>
       <span class="activity-grade"><small>Grade:</small> {{activity.body.grade}}</span>
       <span class="activity-subject"><small>Subject:</small> {{activity.body.subject}}</span>
+<!--       <span class="activity-pacing"><small>Pacing:</small> {{activity.body.pacing}}</span> -->
       <span class="activity-devices"><small>Devices:</small>
         {% if activity.body.devices %}
           {{activity.body.devices|join:", "}}
