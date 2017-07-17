@@ -45,13 +45,30 @@ a.activity:hover {
 
 a.activity span {
   display: block;
+
 }
 
-.activity-title {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin: 0;
-  padding: 0;
+  .activity-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+ .activity-subject {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin: 0;
+    padding: 0;
+  }
+  .activity-grade {
+    display: inline;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin: 0 0 0 0px;
+    padding: 0;
+  }
+span.activity-concepts {
+  margin-bottom: 15px;
 }
 
 .activity small {
@@ -76,6 +93,226 @@ p.title {
   border: 1px solid #666;
   padding: 10px;
 }
+
+  #mean{
+    border: solid;
+    background-color: #F6F6F6;
+    border-width: 0px 0px 3px 0px; 
+    border-color: #17283e;
+    padding: 20px;
+  }
+
+  #intro{
+    padding: 10px 15px 10px 15px;
+  }
+  .perspective{
+    color:#17283e;
+    border-color:#17283e;
+    background-color: white;
+    border: solid;
+  }
+  .practice{
+    color: #2FA351;
+    border-color:#2FA351;
+    background-color: white;
+    border: solid;
+  }
+  .concept{
+    color:#F26922;
+    border-color:#F26922;
+    background-color: white;
+    border: solid;
+  }
+  .perspectiveinvert{
+    color:white;
+    background-color: #17283e;
+    border: solid;
+    border-color:#17283e;
+  }
+  .practiceinvert{
+    color: white;
+    background-color: #2FA351;
+    border: solid;
+    border-color:#2FA351;
+  }
+  .conceptinvert{
+    color:white;
+    background-color: #F26922;
+    border: solid;
+    border-color:#F26922;
+  }
+
+  .prcinfo{
+    display: inline;
+  }
+  .perinfo{
+    display: inline;
+  }
+  .coninfo{
+    display: inline;
+  }
+
+  .dropbtn {
+    margin-left: 10px;
+    margin-right: 10px;
+    /*color: #2FA351;*/
+    padding: 12px;
+    /*border-color:#2FA351 */
+    cursor: pointer;
+  }
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    margin-left: 10px;
+
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: white;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+    opacity: 1;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {opacity: 0.75;}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    opacity: 0.75;
+  }
+  .original{
+    display: flex;
+   -webkit-flex-direction: column; 
+  flex-direction: column; 
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    right: 0;
+    background-color: lightgrey;
+  }
+  #leftcol{
+/*     background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+background: linear-gradient(to right, #25c481, #25b7c4);*/
+font-family: 'Roboto', sans-serif;
+float: left;
+width: 66%;
+}
+
+#contain{
+  position: relative;
+  width: 100%;
+  margin-right: 42%;
+  left: 15%;
+  transform: translate(-15%, 0%);
+}
+
+#statement{
+ text-align: center;
+}
+
+
+
+.tblinfo{
+ display: none;
+}
+section{
+  position: absolute;
+  margin-top: 50px;
+  padding-right: 20px;
+}
+
+#userdata table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+}
+.tbl-content{
+
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+}
+#userdata th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+#userdata td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 15px;
+  color: #000;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+.tbl-content::-webkit-scrollbar{
+  width: 6px;
+} 
+.tbl-content::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+.tbl-content::-webkit-scrollbar-thumb{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+@media (min-width: 690px) {
+  .infoTitle {
+    font-size: 28px;
+  }
+
+  .readMore {
+  background-color:#599bb3;
+  -moz-border-radius:9px;
+  -webkit-border-radius:9px;
+  border-radius:9px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:16px;
+  font-weight:bold;
+  padding:10px 25px;
+  text-decoration:none;
+  text-shadow:-1px 1px 2px #3d768a;
+}
+.readMore:hover {
+  background-color:#408c99;
+}
+.readMore:active {
+  position:relative;
+  top:1px;
+}
+}
+
+
 
 
 /* Typography */
@@ -102,6 +339,13 @@ li h3 {
 
 h1, h2, nav, .btn, .subtitle, #cboxTitle {
   font-weight: 900;
+}
+
+h1 span{
+  font-size: 20px;
+}
+h2 span{
+  font-size: 16px;
 }
 
 .preamble {
@@ -592,7 +836,7 @@ h2, .box, .box-content, .preview-image, .gallery {
   padding: 16px;
 }
 
-h2:after, .box:before, .box:after, .box-content:after, .box-content:before, .preview-image:before, .preview-image:after, .btn:before, .btn:after, .gallery:before {
+h2:after, .box:before, .box:after, .box-content:after, .box-content:before, .preview-image:before, .preview-image:after,  .gallery:before {
   content: '';
   display: block;
   position: absolute;
@@ -1142,7 +1386,7 @@ h2:after {
     margin-right: auto;
   }
   .container li {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
   }
   .box .box-content {
     padding: 24px 24px 24px 160px;

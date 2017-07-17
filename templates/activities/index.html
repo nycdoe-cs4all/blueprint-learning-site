@@ -8,7 +8,6 @@
 <div class="row">
   <div class="col-md-3">
     <form action="/activities">
-
       <div class="form-group">
         <div class="input-group">
           <input type="text" class="form-control" name="q" value="{{filters.q}}" placeholder="Search for...">
@@ -19,12 +18,12 @@
       </div>
 
       {% if user.is_superuser %}
-        <div class="form-group">
-          <select name="approved" id="approved-filter" class="form-control">
-            <option value="1" {% if filters.approved == "1" %}selected{% endif %}>Approved</option>
-            <option value="0" {% if filters.approved == "0" %}selected{% endif %}>Pending</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <select name="approved" id="approved-filter" class="form-control">
+          <option value="1" {% if filters.approved == "1" %}selected{% endif %}>Approved</option>
+          <option value="0" {% if filters.approved == "0" %}selected{% endif %}>Pending</option>
+        </select>
+      </div>
       {% endif %}
 
       <div class="form-group">
@@ -51,17 +50,19 @@
         </select>
       </div>
 
-      <hr>
+     <button type='button'  class="btn btn-info" data-toggle="collapse" data-target=".advfilter">Show Filters</button>
+     <hr>
 
+     <div class="advfilter collapse">
       <div class="form-group">
         <b>Filter by CS concept</b>
         {% for d in all_concepts %}
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" class="concept-filter" value="{{d}}" {% if d in filters.concepts %}checked{% endif %} name="concepts">
-              {{ d}}
-            </label>
-          </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="concept-filter" value="{{d}}" {% if d in filters.concepts %}checked{% endif %} name="concepts">
+            {{ d}}
+          </label>
+        </div>
         {% endfor %}
       </div>
 
@@ -70,12 +71,12 @@
       <div class="form-group">
         <b>Filter by device</b>
         {% for d in all_devices %}
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" class="device-filter" value="{{d}}" {% if d in filters.devices %}checked{% endif %} name="devices">
-              {{ d}}
-            </label>
-          </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="device-filter" value="{{d}}" {% if d in filters.devices %}checked{% endif %} name="devices">
+            {{ d}}
+          </label>
+        </div>
         {% endfor %}
       </div>
 
@@ -84,12 +85,12 @@
       <div class="form-group">
         <b>Filter by software</b>
         {% for d in all_software %}
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" class="software-filter" value="{{d}}" {% if d in filters.software %}checked{% endif %} name="software">
-              {{ d}}
-            </label>
-          </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="software-filter" value="{{d}}" {% if d in filters.software %}checked{% endif %} name="software">
+            {{ d}}
+          </label>
+        </div>
         {% endfor %}
       </div>
 
@@ -99,34 +100,35 @@
         <a href="/" class="btn btn-default">Reset</a>
         <button class="btn btn-default">Apply</button>
       </div>
-    </form>
-  </div>
-
-  <div class="col-md-9">
-    <h2 style="margin-top: 0;">Units</h2>
-    {% if activities %}
-      {% include "activities/_activity_list.html" %}
-    {% else %}
-      <p>No units found.</p>
-    {% endif %}
-
-    <div class="pagination">
-      <span class="step-links">
-        {% if activities.has_previous %}
-          <a href="?page={{ activities.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">previous</a>
-        {% endif %}
-
-        <span class="current">
-          Page {{ activities.number }} of {{ activities.paginator.num_pages }}.
-        </span>
-
-        {% if activities.has_next %}
-          <a href="?page={{ activities.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">next</a>
-        {% endif %}
-      </span>
     </div>
+  </form>
+</div>
 
+<div class="col-md-9">
+  <h2 style="margin-top: 0;">Units</h2>
+  {% if activities %}
+  {% include "activities/_activity_list.html" %}
+  {% else %}
+  <p>No units found.</p>
+  {% endif %}
+
+  <div class="pagination">
+    <span class="step-links">
+      {% if activities.has_previous %}
+      <a href="?page={{ activities.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">previous</a>
+      {% endif %}
+
+      <span class="current">
+        Page {{ activities.number }} of {{ activities.paginator.num_pages }}.
+      </span>
+
+      {% if activities.has_next %}
+      <a href="?page={{ activities.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">next</a>
+      {% endif %}
+    </span>
   </div>
+
+</div>
 </div>
 {% endblock %}
 
