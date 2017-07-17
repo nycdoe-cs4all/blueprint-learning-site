@@ -341,6 +341,10 @@ h1, h2, nav, .btn, .subtitle, #cboxTitle {
   font-weight: 900;
 }
 
+h1 span{
+  font-size: 18px;
+}
+
 .preamble {
   text-transform: lowercase;
 }
@@ -1379,7 +1383,7 @@ h2:after {
     margin-right: auto;
   }
   .container li {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
   }
   .box .box-content {
     padding: 24px 24px 24px 160px;
