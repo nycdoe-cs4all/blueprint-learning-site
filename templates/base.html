@@ -5,12 +5,12 @@
 <head>
   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.min.css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Computer Science for All (CS4All) Blueprint is an academic and implementation guide to teaching computer science in all New York City public schools.">
   <link rel="icon" href="/static/images/icon-blueprint.svg">
-  
+
   <title>
     {% block title %}
       CS4ALL Blueprint Beta
@@ -46,18 +46,18 @@
     </symbol>
             <path d="M9 12.242v7.894l-4.291.864-.709-3.827 4.005-5.909c.331.382.352.46.995.978zm2 1.176v8.015l2.732 2.567 3.268-2.567-1.052-1.109 1.052-1.108-1.052-1.108 1.052-1.108v-3.583c-.941.381-1.955.583-3.001.583-1.045 0-2.059-.202-2.999-.582zm7.242-11.661c-2.131-2.131-5.424-2.25-7.687-.651-1.174.821-1.96 1.94-2.335 3.378-1.664-.087-2.72-.905-2.72-1.484 0-.6 1.128-1.46 2.898-1.494.42-.524.67-.822 1.42-1.36-.42-.086-.856-.146-1.318-.146-2.485 0-4.5 1.343-4.5 3 0 1.936 2.526 3 4.5 3 2.818 0 5.337-1.892 4.252-3.967.567-.912 1.682-.902 2.309-.275.975.975.24 2.625-1.146 2.544-.862 2.006-3.376 3-5.794 2.879.225 1.122.768 2.192 1.638 3.062 2.342 2.344 6.141 2.343 8.484 0 1.17-1.172 1.757-2.708 1.757-4.244 0-1.535-.586-3.07-1.758-4.242z"/>
       </symbol>
-      
+
       <symbol id="icon-lock" viewBox="0 0 24 24">
         <path d="M10 16c0-1.104.896-2 2-2s2 .896 2 2c0 .738-.404 1.376-1 1.723v2.277h-2v-2.277c-.596-.347-1-.985-1-1.723zm11-6v14h-18v-14h3v-4c0-3.313 2.687-6 6-6s6 2.687 6 6v4h3zm-13 0h8v-4c0-2.206-1.795-4-4-4s-4 1.794-4 4v4zm11 2h-14v10h14v-10z"/>
       </symbol>
-      
+
       <symbol id="icon-user" viewBox="0 0 24 24">
         <path d="M20.822 18.096c-3.439-.794-6.641-1.49-5.09-4.418 4.719-8.912 1.251-13.678-3.732-13.678-5.082 0-8.465 4.949-3.732 13.678 1.598 2.945-1.725 3.641-5.09 4.418-2.979.688-3.178 2.143-3.178 4.663l.005 1.241h1.995c0-3.134-.125-3.55 1.838-4.003 2.851-.657 5.543-1.278 6.525-3.456.359-.795.592-2.103-.338-3.815-2.058-3.799-2.578-7.089-1.423-9.026 1.354-2.275 5.426-2.264 6.767-.034 1.15 1.911.639 5.219-1.403 9.076-.91 1.719-.671 3.023-.31 3.814.99 2.167 3.707 2.794 6.584 3.458 1.879.436 1.76.882 1.76 3.986h1.995l.005-1.241c0-2.52-.199-3.975-3.178-4.663z"/>
       </symbol>
   </svg>
-  
+
 	<nav id="masthead" class="navbar navbar-fixed-top">
-	
+
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
@@ -68,11 +68,10 @@
 			<a class="navbar-brand" href="/">
 				<h1>
 					<span class="logo"><svg><use xlink:href="#logo-cs4all" /></svg></span>
-					Computer Science for All
 				</h1>
 			</a>
 		</div>
-		
+
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="/about/">
@@ -111,7 +110,7 @@
           <ul class="dropdown-menu">
             <li><a href="/users/{{user.id}}">View Profile</a></li>
             <li><a href="{% url 'auth_logout' %}">Log Out</a></li>
-          </ul>             
+          </ul>
         </li>
         {% else %}
           <li><a href="{% url 'auth_login' %}">           <span class="icon"><svg><use xlink:href="#icon-lock" /></svg></span>
@@ -121,9 +120,9 @@
 
 			</ul>
 		</div><!--/.nav-collapse -->
-		
+
 	</nav>
-  
+
 
   <div class="container">
     <div class="row">
