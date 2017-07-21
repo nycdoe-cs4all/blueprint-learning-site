@@ -867,7 +867,7 @@ h2, .box, .box-content, .preview-image, .gallery {
   padding: 16px;
 }
 
-h1:after, .box:before, .box:after, .box-content:after, .box-content:before, .preview-image:before, .preview-image:after,  .gallery:before {
+h1:after, .btn-lg:before, .btn-lg:after, .box:before, .box:after, .box-content:after, .box-content:before, .preview-image:before, .preview-image:after,  .gallery:before {
   content: '';
   display: block;
   position: absolute;
