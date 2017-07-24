@@ -981,7 +981,7 @@ h1:after {
 
 .light-theme h1:after, .light-theme .box .box-content:before, .light-theme .box .box-content:after {
   background: linear-gradient(to right, rgba(107, 139, 178, 0) 0%, rgba(107, 139, 178, 1) 50%, rgba(107, 139, 178, 0) 100%);
-   W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
+   W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+
 }
 
 .light-theme .box:before, .light-theme .box:after {
@@ -1041,7 +1041,7 @@ h1:after {
     .collapse.in{
         display:block !important;
     }
-    
+
     #navbar {
       background: #cad5e0;
       color: #17283e;
@@ -1061,7 +1061,7 @@ h1:after {
       display: inline-block;
       vertical-align: middle;
     }
-    
+
     .navbar-nav > li > .dropdown-menu {
       border: none;
       background: none;
@@ -1078,19 +1078,19 @@ h1:after {
       padding-left: 83px !important;
       line-height: 1.8 !important;
     }
-    
+
     .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
       max-height: none;
     }
-    
+
 }
 
 @media (min-width: 992px) and (max-width: 1160px) {
-  
+
   .navbar .preamble {
     display: none;
   }
-  
+
 }
 /* Video Player */
 
@@ -1586,4 +1586,18 @@ h1 span{
 }
 h2 span{
   font-size: 30px;
+}
+
+.loader {
+    border: 4px solid #6699cc;
+    border-top: 4px solid #ff9933;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
