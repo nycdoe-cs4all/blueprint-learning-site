@@ -176,6 +176,7 @@
   myModal.find('.modal-header').text($(this).attr('href'));
   var modalBod=myModal.find('.modal-body'); //finds the body of the modal
   // concatenates term with api address to make the call, loads it into the modal body
+  modalBod.text("Loading...");
   modalBod.load("http://cs4all.nyc/api/glossary?term=".concat($(this).attr('href')));
 });
   </script>
