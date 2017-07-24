@@ -318,6 +318,8 @@ section{
 
 /* Typography */
 
+p { font-size: 115%; }
+
 body, li h3, .preamble, #cboxTitle .subtitle {
   font-family: 'Roboto Slab', serif;
 }
