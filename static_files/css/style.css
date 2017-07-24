@@ -475,6 +475,10 @@ nav a:hover svg, .homepage .dropdown.open > a:hover svg {
   display: inline-block;
 }
 
+.homepage h2, nav, .subtitle, .btn, #cboxTitle {
+  text-transform: uppercase;
+}
+
 #page {
   overflow: hidden;
 }
@@ -867,7 +871,7 @@ h2, .box, .box-content, .preview-image, .gallery {
   padding: 16px;
 }
 
-h1:after, .box:before, .box:after, .box-content:after, .box-content:before, .preview-image:before, .preview-image:after,  .gallery:before {
+.homepage h1:after, .box:before, .box:after, .box-content:after, .box-content:before, .preview-image:before, .preview-image:after,  .gallery:before {
   content: '';
   display: block;
   position: absolute;
@@ -975,7 +979,7 @@ h1:after {
 
 .light-theme h1:after, .light-theme .box .box-content:before, .light-theme .box .box-content:after {
   background: linear-gradient(to right, rgba(107, 139, 178, 0) 0%, rgba(107, 139, 178, 1) 50%, rgba(107, 139, 178, 0) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
 }
 
 .light-theme .box:before, .light-theme .box:after {
@@ -983,7 +987,7 @@ h1:after {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.light-theme h3 {
+.light-theme h3{
   color: #dd3c10;
 }
 
@@ -1442,7 +1446,7 @@ h1:after {
     border-width: 1px 1px 1px 0;
     margin-left: -15px;
   }
-  .container ul {
+  .homepage .container ul {
     max-width: 790px;
     margin-left: auto;
     margin-right: auto;
@@ -1497,7 +1501,7 @@ h1:after {
   }
   h1 {
     font-size: 48px;
-    line-height: .7;
+    line-height: 1;
     margin: 22px auto 10px;
   }
   h2{

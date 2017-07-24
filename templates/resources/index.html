@@ -6,8 +6,13 @@
   <h3 style="margin-top:0">Filter Resources</h3>
   <ul>
     <li><a href="/resources">All Resources</a></li>
-    <li><a href="/resources?tag=Teachers">For Teachers</a></li>
-    <li><a href="/resources?tag=Administrators">For Administrators</a></li>
+    <li><a href="/resources?tag=Planning">Planning</a></li>
+    <li><a href="/resources?tag=School Culture">School Culture</a></li>
+    <li><a href="/resources?tag=Assessment">Assessment</a></li>
+    <li><a href="/resources?tag=Instructional Strategies">Instructional Strategies</a></li>
+    <li><a href="/resources?tag=Device Management">Device Management</a></li>
+    <li><a href="/resources?tag=Classroom Management">Classroom Management</a></li>
+    <li><a href="/resources?tag=Video">Video</a></li>
   </ul>
   {% if user.is_superuser %}
     <p>
@@ -17,6 +22,7 @@
 </div>
 <div class="col-md-9">
   <h1 style="margin-top:0">Resources</h1>
+  <p>These resources were developed by teachers for teachers. Use the tags under Filter Resources to the left help you find what you need.</p>
   <div class="resource-list">
       {% for resource in resources %}
       <div class="resource">
