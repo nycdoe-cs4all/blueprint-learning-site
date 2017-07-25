@@ -109,6 +109,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="/users/{{user.id}}">View Profile</a></li>
+            <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
             <li><a href="{% url 'auth_logout' %}">Log Out</a></li>
           </ul>
         </li>
