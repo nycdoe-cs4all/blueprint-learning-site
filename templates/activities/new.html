@@ -11,7 +11,7 @@
     <div v-if="submitted" class="col-md-4">
       <h1>Unit Submitted</h1>
       <p>You're unit has been submitted and is pending review.</p>
-      <p><a href="/activities/new">Click here to submit another unit</a></p>
+      <p><a href="/units/new">Click here to submit another unit</a></p>
     </div>
     <div v-else>
 
@@ -172,7 +172,7 @@ var app = new Vue({
 
       var self = this;
 
-      reqwest({url: '/activities/parse/?url=' + this.url}).then(function(data) {
+      reqwest({url: '/units/parse/?url=' + this.url}).then(function(data) {
         self.html_body = data.body;
         self.plain_body = data.plain_body;
         self.title = data.title;
@@ -215,7 +215,7 @@ var app = new Vue({
 
       var self = this;
 
-      reqwest({url: '/activities/create/', method: 'post', data: data}).then(function(response){
+      reqwest({url: '/units/create/', method: 'post', data: data}).then(function(response){
         console.log(response);
         self.submitting = false;
         self.submitted = true;

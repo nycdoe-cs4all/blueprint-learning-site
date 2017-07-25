@@ -86,14 +86,14 @@ def create_bookmark(request):
     activity = get_object_or_404(Activity, pk=activity_id)
     bookmark = Bookmark(user_id=request.user.id, activity_id=activity_id)
     bookmark.save()
-    return redirect('/activities/' + activity_id)
+    return redirect('/units/' + activity_id)
 
 
 @login_required
 def delete_bookmark(request):
     activity_id = request.POST.get('activity_id')
     Bookmark.objects.filter(user=request.user, activity_id=activity_id).delete()
-    return redirect('/activities/' + activity_id)
+    return redirect('/units/' + activity_id)
 
 
 @login_required
