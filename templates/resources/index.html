@@ -27,6 +27,9 @@
       {% for resource in resources %}
       <div class="resource">
         <h3><a href="{% url "show_resource" resource.id %}">{{ resource.title }}</a></h3>
+        {% if resource.summary %}
+          <p>{{ resource.summary }}</p>
+        {% endif %}
       </div>
       {% endfor %}
   </div>

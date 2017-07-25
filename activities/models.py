@@ -123,6 +123,7 @@ class ResourceTag(models.Model):
 
 class Resource(models.Model):
     title = models.CharField(max_length=255, null=False, blank=False)
+    summary = models.CharField(max_length=255, null=True, blank=True)
     body = models.TextField(null=False, blank=False)
     activities = models.ManyToManyField(Activity, blank=True)
     tags = models.ManyToManyField(ResourceTag, blank=True)

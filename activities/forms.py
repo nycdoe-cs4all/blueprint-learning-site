@@ -21,4 +21,4 @@ class UserProfileForm(forms.ModelForm):
 class ResourceForm(forms.ModelForm):
     class Meta:
         model = Resource
-        fields = ['title', 'body', 'activities', 'tags']
+        fields = ['title', 'summary', 'body', 'activities', 'tags']
