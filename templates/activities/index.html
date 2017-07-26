@@ -7,7 +7,7 @@
 </div>
 <div class="row">
   <div class="col-md-3">
-    <form action="/activities">
+    <form action="/units">
       <div class="form-group">
         <div class="input-group">
           <input type="text" class="form-control" name="q" value="{{filters.q}}" placeholder="Search for...">
@@ -41,14 +41,14 @@
       {#   </select> #}
       {# </div> #}
 
-      <div class="form-group">
-        <select name="subject" id="subject-filter" class="form-control">
-          <option value="">All Subjects</option>
-          {% for subject in subjects %}
-          <option {% if filters.subject == subject.name %}selected{% endif %} value="{{subject.name}}">{{subject.name}}</option>
-          {% endfor %}
-        </select>
-      </div>
+      {# <div class="form-group"> #}
+      {#   <select name="subject" id="subject-filter" class="form-control"> #}
+      {#     <option value="">All Subjects</option> #}
+      {#     {% for subject in subjects %} #}
+      {#     <option {% if filters.subject == subject.name %}selected{% endif %} value="{{subject.name}}">{{subject.name}}</option> #}
+      {#     {% endfor %} #}
+      {#   </select> #}
+      {# </div> #}
 
      <button type='button'  class="btn btn-info" data-toggle="collapse" data-target=".advfilter">Show Filters</button>
      <hr>
@@ -97,7 +97,7 @@
       <hr>
 
       <div class="form-group">
-        <a href="/" class="btn btn-default">Reset</a>
+        <a href="/units" class="btn btn-default">Reset</a>
         <button class="btn btn-default">Apply</button>
       </div>
     </div>

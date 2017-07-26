@@ -58,15 +58,15 @@
           <input class="form-control" type="text" id="pacing" required v-model="pacing">
         </p>
 
-        <p class="form-group">
-          <label for="subject">Subject</labeL>
-          <select class="form-control" id="subject" required v-model="subject">
-            <option value=""></option>
-            {% for s in subjects %}
-              <option value="{{ s.id }}">{{ s.name }}</option>
-            {% endfor %}
-          </select>
-        </p>
+        {# <p class="form-group"> #}
+        {#   <label for="subject">Subject</labeL> #}
+        {#   <select class="form-control" id="subject" required v-model="subject"> #}
+        {#     <option value=""></option> #}
+        {#     {% for s in subjects %} #}
+        {#       <option value="{{ s.id }}">{{ s.name }}</option> #}
+        {#     {% endfor %} #}
+        {#   </select> #}
+        {# </p> #}
 
         <p class="form-group">
           <label>Concepts</labeL>
@@ -115,7 +115,7 @@
       <ul>
         <li><b>Title</b> - plain text</li>
         <li><b>Grade</b> - K-2, 3-5, 6-8, 9-12 (choose one)</li>
-        <li><b>Subject</b> - ELA, Math, Social Studies, Science, Art, Technology</li>
+        {# <li><b>Subject</b> - ELA, Math, Social Studies, Science, Art, Technology</li> #}
         <li><b>Pacing</b> - in hours and minutes (7 hours, 30 minutes)</li>
         <li><b>CS Concepts</b> - list of concepts. See Concepts section for concepts and subconcepts. (Abstraction - Pattern Recognition)</li>
         <li><b>Devices</b> - list of devices</li>
@@ -193,7 +193,7 @@ var app = new Vue({
       e.preventDefault();
 
       var self = this;
-      if (!['title', 'grade', 'subject', 'url', 'html_body'].every(function(i){ return self[i] && self[i] !== ''; })) {
+      if (!['title', 'grade', 'url', 'html_body'].every(function(i){ return self[i] && self[i] !== ''; })) {
         return false;
       }
 
