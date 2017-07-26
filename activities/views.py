@@ -7,6 +7,7 @@ from .models import Activity, Grade, Subject, Device, Profile, Concept, Software
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ActivityForm, UserProfileForm, ResourceForm
+from registration.backends.simple.views import RegistrationView
 
 
 
@@ -305,3 +306,13 @@ def import_google_doc(request):
     body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', body, flags=re.MULTILINE)
 
     return HttpResponse(body)
+
+
+class MyRegistrationView(RegistrationView):
+
+    """
+    Subclass the django registration form
+
+    """
+    def get_success_url(self, user):
+        return '/users/edit'

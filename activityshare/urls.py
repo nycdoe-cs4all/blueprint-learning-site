@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from activities.views import index as homepage
+from activities.views import index as homepage, MyRegistrationView
 from django.views.generic import TemplateView
 
 urlpatterns = [
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^users/', include('activities.user_urls')),
     url(r'^resources/', include('activities.resource_urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/register/', MyRegistrationView.as_view(), name = 'registration_register'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^what-is-cs/$', TemplateView.as_view(template_name='what_is_cs.html')),
