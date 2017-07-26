@@ -50,6 +50,7 @@ class Activity:
         self.set_devices()
         self.set_concepts()
         self.set_software()
+        self.set_tags()
         self.set_body()
         self.set_plain_body()
 
@@ -89,6 +90,14 @@ class Activity:
             concepts = []
         self.concepts = concepts
 
+    def set_tags(self):
+        try:
+            el = [e for e in self.soup.select('h1, h2, h3') if 'Tags' in e.text or 'Topics' in e.text][0]
+            tags = [e.text.strip() for e in el.next_sibling.children]
+        except Exception as e:
+            tags = []
+        self.tags = tags
+
     def set_devices(self):
         try:
             el = [e for e in self.soup.select('h1, h2, h3') if 'Devices' in e.text][0]
@@ -124,6 +133,7 @@ class Activity:
             'devices': self.devices,
             'concepts': self.concepts,
             'software': self.software,
+            'tags': self.tags,
             'pacing': self.pacing
         }
 
