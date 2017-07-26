@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.urls import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark, Resource, ResourceTag
+from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark, Resource, ResourceTag, UnitTag
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ActivityForm, UserProfileForm, ResourceForm
@@ -31,6 +31,9 @@ def index(request):
     all_devices = sorted([d.name for d in Device.objects.all()])
     all_software = sorted([s.name for s in Software.objects.all()])
     all_concepts = sorted([c.name for c in Concept.objects.all()])
+    all_tags = sorted([c.name for c in UnitTag.objects.all()])
+
+    print(all_tags)
 
     grades = Grade.objects.all()
     subjects = Subject.objects.all()
@@ -41,6 +44,7 @@ def index(request):
     concepts = request.GET.getlist('concepts')
     level = request.GET.get('level')
     devices = request.GET.getlist('devices')
+    tags = request.GET.getlist('tags')
     software = request.GET.getlist('software')
     page = request.GET.get('page')
 
@@ -71,6 +75,9 @@ def index(request):
     if devices:
         activities_list = activities_list.filter(body__devices__contains=devices)
 
+    if tags:
+        activities_list = activities_list.filter(body__tags__contains=tags)
+
     if request.GET.get('q'):
         vector = SearchVector('plain_body', 'title')
         query = SearchQuery(q)
@@ -86,7 +93,7 @@ def index(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         activities = paginator.page(paginator.num_pages)
-    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software, 'all_concepts': all_concepts}
+    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software, 'all_concepts': all_concepts, 'all_tags': all_tags}
     return render(request, 'activities/index.html', context)
 
 
@@ -130,6 +137,11 @@ def create(request):
     possible_devices = Device.objects.all()
     devices = [d.name for d in possible_devices if d.name.lower() in submitted_devices]
 
+    submitted_tags = request.POST.get('tags').split(':::')
+    submitted_tags = [d.lower() for d in submitted_tags]
+    possible_tags = UnitTag.objects.all()
+    unittags = [d.name for d in possible_tags if d.name.lower() in submitted_tags]
+
     response = {}
     form = ActivityForm(request.POST)
     if form.is_valid():
@@ -145,7 +157,8 @@ def create(request):
             'plain': plain_body,
             'devices': devices,
             'concepts': concepts,
-            'software': softwares
+            'software': softwares,
+            'tags': unittags
         }
         activity.save()
         response['status'] = 'ok'
@@ -169,7 +182,8 @@ def new(request):
     subjects = Subject.objects.all()
     concepts = Concept.objects.all()
     software = Software.objects.all()
-    context = {'concepts': concepts, 'software': software, 'grades': grades, 'devices': devices, 'subjects': subjects}
+    tags = UnitTag.objects.all()
+    context = {'concepts': concepts, 'software': software, 'grades': grades, 'devices': devices, 'subjects': subjects, 'tags': tags}
 
     return render(request, 'activities/new.html', context)
 

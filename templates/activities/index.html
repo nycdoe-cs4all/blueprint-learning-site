@@ -69,6 +69,20 @@
       <hr>
 
       <div class="form-group">
+        <b>Filter by Topic</b>
+        {% for d in all_tags %}
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="tag-filter" value="{{d}}" {% if d in filters.tags %}checked{% endif %} name="tags">
+            {{ d}}
+          </label>
+        </div>
+        {% endfor %}
+      </div>
+
+      <hr>
+
+      <div class="form-group">
         <b>Filter by device</b>
         {% for d in all_devices %}
         <div class="checkbox">
