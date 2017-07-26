@@ -74,7 +74,7 @@ def index(request):
     if request.GET.get('q'):
         vector = SearchVector('plain_body', 'title')
         query = SearchQuery(q)
-        activities_list = activities_list.annotate(rank=SearchRank(vector, query)).order_by('-rank')
+        activities_list = activities_list.annotate(rank=SearchRank(vector, query), search=vector).filter(search=q).order_by('-rank')
 
     paginator = Paginator(activities_list, 20)
 
