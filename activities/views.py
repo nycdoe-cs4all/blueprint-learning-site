@@ -13,15 +13,24 @@ from registration.backends.simple.views import RegistrationView
 
 # Create your views here.
 def index(request):
-    # _devices = Activity.objects.all().raw("SELECT id, body->'devices' AS device FROM activities_activity")
     # all_devices = []
-    # for device in _devices:
+    # for device in Activity.objects.all().raw("SELECT id, body->'devices' AS device FROM activities_activity"):
     #     all_devices += device.device
     # all_devices = sorted(list(set(all_devices)))
+    #
+    # all_software = []
+    # for s in Activity.objects.all().raw("SELECT id, body->'software' AS software FROM activities_activity"):
+    #     all_software += s.software
+    # all_software = sorted(list(set(all_software)))
+    #
+    # all_concepts = []
+    # for concept in Activity.objects.all().raw("SELECT id, body->'concepts' AS concept FROM activities_activity"):
+    #     all_concepts += concept.concept
+    # all_concepts = sorted(list(set(all_concepts)))
 
-    all_devices = [d.name for d in Device.objects.all()]
-    all_software = [s.name for s in Software.objects.all()]
-    all_concepts = [c.name for c in Concept.objects.all()]
+    all_devices = sorted([d.name for d in Device.objects.all()])
+    all_software = sorted([s.name for s in Software.objects.all()])
+    all_concepts = sorted([c.name for c in Concept.objects.all()])
 
     grades = Grade.objects.all()
     subjects = Subject.objects.all()
