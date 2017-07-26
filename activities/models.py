@@ -77,7 +77,7 @@ class Activity(models.Model):
 
     user = models.ForeignKey(User)
     grade = models.ForeignKey(Grade)
-    subject = models.ForeignKey(Subject)
+    subject = models.ForeignKey(Subject, blank=True, null=True)
     # software = models.ForeignKey(Software)
     # devices = models.ManyToManyField(Device)
 

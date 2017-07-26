@@ -150,7 +150,7 @@ def create(request):
         activity.google_file_id = request.POST.get('url')
         activity.body = {
             'title': title,
-            'subject': activity.subject.name,
+            # 'subject': activity.subject.name,
             'grade': activity.grade.name,
             'pacing': pacing,
             'html': body,
