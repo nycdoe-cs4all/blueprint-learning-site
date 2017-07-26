@@ -327,6 +327,7 @@ def import_google_doc(request):
     body = str(soup.find('body'))
     body = re.sub(r"\s*style='(.*?)'\s*", '', body, flags=re.MULTILINE)
     body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', body, flags=re.MULTILINE)
+    body = body.replace('https://www.google.com/url?q=http', 'http')
 
     return HttpResponse(body)
 
