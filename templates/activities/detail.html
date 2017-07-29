@@ -3,10 +3,11 @@
 
 {% block content %}
 <script src="/static/js/reqwest.min.js"></script>
+<script src="/static/js/floatMenu.js"></script>
 <div class="col-md-9">
   <div id="activity-body">{{ activity.html_body|safe }}</div>
 </div>
-<div class="col-md-3">
+<div class="col-md-3" id="floatMenu">
   {% if user.is_superuser %}
     <p><a href="{% url 'admin:activities_activity_change' activity.id %}">Edit</a></p>
     <div class="form-group">
