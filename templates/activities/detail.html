@@ -22,7 +22,7 @@
       (function(){
         document.querySelector('#approved').addEventListener('change', function(e){
           var token = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
-          reqwest({url: '/activities/change_status/', method: 'POST', data: {csrfmiddlewaretoken: token, id: {{activity.pk}}, approved: e.target.value}});
+          reqwest({url: '/units/change_status/', method: 'POST', data: {csrfmiddlewaretoken: token, id: {{activity.pk}}, approved: e.target.value}});
         });
       })();
     </script>
@@ -43,7 +43,7 @@
           butt.textContent = 'Parsing...';
           var token = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
           reqwest({
-            url: '/activities/refresh/',
+            url: '/units/refresh/',
             method: 'POST',
             data: {csrfmiddlewaretoken: token, id: {{activity.pk}}}
           }).then(function(result){
@@ -73,7 +73,7 @@
 
   {% if user.is_authenticated %}
   <div class="form-group">
-    <form action="/activities/{% if has_bookmark %}delete{% else %}add{%endif%}_bookmark/" method="POST">
+    <form action="/units/{% if has_bookmark %}delete{% else %}add{%endif%}_bookmark/" method="POST">
       <input type="submit" value="{% if has_bookmark %}Remove Bookmark{% else %}Add Bookmark{%endif%}" class="btn btn-primary">
       <input type="hidden" name="activity_id" value="{{activity.id}}">
        <input type="hidden" name="next" value="{{ request.path }}">
