@@ -114,12 +114,12 @@
        M288.5,354.9c0-5,1.8-11,7.8-11s7.9,6,7.9,11s-1.9,10.9-7.9,10.9S288.5,359.9,288.5,354.9z M322.2,374.5H335v-21.4
       c0-4.3,2.1-8.4,7-8.4c7,0,6.4,5.4,6.4,10.8v19h12.8v-25.2c0-5.7-1.1-15.2-14.1-15.2c-4.7,0-10,2.5-12.3,6.5h-0.1v-5.4h-12.5V374.5
       z"/>
-    <polygon class="st1" points="588.1,1.6 457.4,1.6 418.2,40.8 418.2,171.5 457.4,210.7 588.1,210.7 627.3,171.5 627.3,132.3 
+    <polygon class="st1" points="588.1,1.6 457.4,1.6 418.2,40.8 418.2,171.5 457.4,210.7 588.1,210.7 627.3,171.5 627.3,132.3
       614.2,119.2 548.9,119.2 548.9,132.3 496.6,132.3 496.6,80 548.9,80 548.9,92.9 614.2,92.9 627.3,80 627.3,40.8     "/>
-    <polygon class="st7" points="196,1.6 143.8,1.6 130.7,14.7 130.7,66.9 65.3,1.6 13.1,1.6 0,14.7 0,197.6 13.1,210.7 65.3,210.7 
+    <polygon class="st7" points="196,1.6 143.8,1.6 130.7,14.7 130.7,66.9 65.3,1.6 13.1,1.6 0,14.7 0,197.6 13.1,210.7 65.3,210.7
       78.4,197.6 78.4,145.4 143.8,210.7 143.8,210.7 196,210.7 209.1,197.6 209.1,14.7    "/>
-    <polygon class="st8" points="287.5,210.7 339.8,210.7 352.9,197.6 352.9,158.4 418.2,93.1 418.2,14.7 405.1,1.6 352.9,1.6 
-      339.8,14.7 339.8,40.8 313.6,66.9 287.5,40.8 287.5,40.8 287.5,14.7 274.4,1.6 222.2,1.6 209.1,14.7 209.1,93.1 274.4,158.4 
+    <polygon class="st8" points="287.5,210.7 339.8,210.7 352.9,197.6 352.9,158.4 418.2,93.1 418.2,14.7 405.1,1.6 352.9,1.6
+      339.8,14.7 339.8,40.8 313.6,66.9 287.5,40.8 287.5,40.8 287.5,14.7 274.4,1.6 222.2,1.6 209.1,14.7 209.1,93.1 274.4,158.4
       274.4,197.6     "/>
   </g>
 </g>
@@ -196,7 +196,7 @@
 					<span class="icon"><svg><use xlink:href="#icon-resources" /></svg></span>
 					<span class="preamble">Educator</span> Resources
 				</a></li>
-				
+
           <li class="dropdown">
   					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/units">
   						<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
@@ -224,7 +224,7 @@
         </li>
         {% else %}
           <li>
-            <a href="{% url 'auth_login' %}">           
+            <a href="{% url 'auth_login' %}">
               <span class="icon"><svg><use xlink:href="#icon-lock" /></svg></span>
             login
           </a>
@@ -279,7 +279,16 @@
 
     ga('create', 'UA-84670539-2', 'auto');
     ga('send', 'pageview');
-    // if modal trigger is clicked
+
+
+    // Load contents of glossary into an array
+  var defArray = [];
+  $.getJSON("http://cs4all.nyc/api/glossary?term", function(data){
+    $.each(data, function(i, f){
+      defArray.push(f);
+    })
+  })
+  // if modal trigger is clicked
     $('.ls-modal').on('click', function(e){
   e.preventDefault();
   var myModal= $('#mymodal');
@@ -288,9 +297,15 @@
   // puts the term in the header
   myModal.find('.modal-header').text($(this).attr('href'));
   var modalBod=myModal.find('.modal-body'); //finds the body of the modal
-  // concatenates term with api address to make the call, loads it into the modal body
+  // Adds loading symbol into modalBod
   modalBod.html('<div class="loader"></div>');
-  modalBod.load("http://cs4all.nyc/api/glossary?term=".concat($(this).attr('href')));
+  // Looks through all of the terms to find one that matches the request and serves it up
+  for (var i = 0; i < defArray.length; i++){
+    if ((defArray[i].Term) == ($(this).attr('href'))){
+      modalBod.text(defArray[i].Definition);
+      break;
+    }
+  }
 });
   </script>
           <footer>
