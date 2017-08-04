@@ -376,8 +376,12 @@ nav a, .homepage a {
   color: #8ac8ff;
 }
 
-nav a:hover, .homepage a:hover, .dropdown.open > a {
+nav a:hover, .dropdown.open > a {
   color: #fff;
+  text-decoration: none;
+}
+
+.homepage a:hover{
   text-decoration: none;
 }
 
