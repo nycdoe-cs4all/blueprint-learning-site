@@ -276,6 +276,7 @@
     $(function(){
       $('#content').glossarizer({
         sourceURL: 'http://cs4all.nyc/api/glossary?term',
+        lookupTagName: 'p, ul',
         callback: function(){
           new tooltip();
         }
