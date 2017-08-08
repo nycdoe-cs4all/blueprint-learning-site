@@ -2,13 +2,17 @@ var perSelect="null";
 var prcSelect="null";
 var conSelect="null";
 
-function fecthStatement() {
+function fetchStatement() {
 	theurl="http://cs4all.nyc/api/ican";
 	var people = [];
 	$("#userdata tbody").empty();
 	if(perSelect.localeCompare("null")!=0&&prcSelect.localeCompare("null")!=0&&conSelect.localeCompare("null")!=0){
 		console.log("All Options Chosen");
+		// Load loader circle
+		$("#loaderContainer").html("<div class=\"loader\" style=\"margin:auto;\"></div>");
 		$.getJSON(theurl, function(data) {
+			// get rid of loader once the info has been fetched
+			$("#loaderContainer").html("<div></div>");
 			$.each(data, function(i, f) {
 
 				var per=f.Perspective;
@@ -42,51 +46,51 @@ window.onload = function(){
 		// var now = $(".cocon").html();
 
 		$(".an").hover(
-			function(){$(".old").html($(".ancon").html());}, 
+			function(){$(".old").html($(".ancon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".co").hover(
-			function(){$(".old").html($(".cocon").html());}, 
+			function(){$(".old").html($(".cocon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".pr").hover(
-			function(){$(".old").html($(".prcon").html());}, 
+			function(){$(".old").html($(".prcon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".ab").hover(
-			function(){$(".old").html($(".abcon").html());}, 
+			function(){$(".old").html($(".abcon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".al").hover(
-			function(){$(".old").html($(".alcon").html());}, 
+			function(){$(".old").html($(".alcon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".p").hover(
-			function(){$(".old").html($(".pcon").html());}, 
+			function(){$(".old").html($(".pcon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".d").hover(
-			function(){$(".old").html($(".dcon").html());}, 
+			function(){$(".old").html($(".dcon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".n").hover(
-			function(){$(".old").html($(".ncon").html());}, 
+			function(){$(".old").html($(".ncon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".e").hover(
-			function(){$(".old").html($(".econ").html());}, 
+			function(){$(".old").html($(".econ").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".c").hover(
-			function(){$(".old").html($(".ccon").html());}, 
+			function(){$(".old").html($(".ccon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".i").hover(
-			function(){$(".old").html($(".iicon").html());}, 
+			function(){$(".old").html($(".iicon").html());},
 			function(){$(".old").html(old);}
 			);
 		$(".z").hover(
-			function(){$(".old").html($(".zcon").html());}, 
+			function(){$(".old").html($(".zcon").html());},
 			function(){$(".old").html(old);}
 			);
 
@@ -155,7 +159,7 @@ window.onload = function(){
 			$(".prcinfo").html($("."+prccon).html());
 			$(".practice").addClass("practiceinvert");
 			$(".practice").removeClass("practice");
-			fecthStatement();
+			fetchStatement();
 		});
 
 		$(".conbtn").click(function(){
@@ -166,7 +170,7 @@ window.onload = function(){
 			$(".concept").addClass("conceptinvert");
 			$(".concept").removeClass("concept");
 
-			fecthStatement();
+			fetchStatement();
 		});
 		$(".perbtn").click(function(){
 			document.getElementById("perspective").innerHTML=($(this).html());
@@ -175,7 +179,7 @@ window.onload = function(){
 			$(".perspective").removeClass("perspective");
 			var percon=perSelect+"con2";
 			$(".perinfo").html($("."+percon).html());
-			fecthStatement();
+			fetchStatement();
 
 		});
 	};
