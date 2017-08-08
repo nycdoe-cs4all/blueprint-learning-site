@@ -238,7 +238,7 @@ width: 66%;
  display: none;
 }
 section{
-  position: absolute;
+  /*position: absolute;*/
   margin-top: 50px;
   padding-right: 20px;
 }
