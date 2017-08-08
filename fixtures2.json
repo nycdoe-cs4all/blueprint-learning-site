@@ -355,5 +355,82 @@
   "fields": {
     "name": "Networks"
   }
+},
+{
+  "model": "activities.unittag",
+  "pk": 1,
+  "fields": {
+    "name": "Storytelling"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 2,
+  "fields": {
+    "name": "Technology"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 3,
+  "fields": {
+    "name": "Geography"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 4,
+  "fields": {
+    "name": "Biology"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 5,
+  "fields": {
+    "name": "Literary Analysis"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 6,
+  "fields": {
+    "name": "Angles"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 7,
+  "fields": {
+    "name": "Mapping"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 8,
+  "fields": {
+    "name": "Timezones"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 9,
+  "fields": {
+    "name": "Fashion"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 10,
+  "fields": {
+    "name": "Globalization"
+  }
+},
+{
+  "model": "activities.unittag",
+  "pk": 11,
+  "fields": {
+    "name": "Visual Arts"
+  }
 }
 ]

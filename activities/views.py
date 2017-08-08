@@ -3,24 +3,37 @@ from django.http import JsonResponse
 from django.urls import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark, Resource, ResourceTag
+from .models import Activity, Grade, Subject, Device, Profile, Concept, Software, Bookmark, Resource, ResourceTag, UnitTag
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .forms import ActivityForm, UserProfileForm, ResourceForm
+from registration.backends.simple.views import RegistrationView
 
 
 
 # Create your views here.
 def index(request):
-    # _devices = Activity.objects.all().raw("SELECT id, body->'devices' AS device FROM activities_activity")
     # all_devices = []
-    # for device in _devices:
+    # for device in Activity.objects.all().raw("SELECT id, body->'devices' AS device FROM activities_activity"):
     #     all_devices += device.device
     # all_devices = sorted(list(set(all_devices)))
+    #
+    # all_software = []
+    # for s in Activity.objects.all().raw("SELECT id, body->'software' AS software FROM activities_activity"):
+    #     all_software += s.software
+    # all_software = sorted(list(set(all_software)))
+    #
+    # all_concepts = []
+    # for concept in Activity.objects.all().raw("SELECT id, body->'concepts' AS concept FROM activities_activity"):
+    #     all_concepts += concept.concept
+    # all_concepts = sorted(list(set(all_concepts)))
 
-    all_devices = [d.name for d in Device.objects.all()]
-    all_software = [s.name for s in Software.objects.all()]
-    all_concepts = [c.name for c in Concept.objects.all()]
+    all_devices = sorted([d.name for d in Device.objects.all()])
+    all_software = sorted([s.name for s in Software.objects.all()])
+    all_concepts = sorted([c.name for c in Concept.objects.all()])
+    all_tags = sorted([c.name for c in UnitTag.objects.all()])
+
+    print(all_tags)
 
     grades = Grade.objects.all()
     subjects = Subject.objects.all()
@@ -31,6 +44,7 @@ def index(request):
     concepts = request.GET.getlist('concepts')
     level = request.GET.get('level')
     devices = request.GET.getlist('devices')
+    tags = request.GET.getlist('tags')
     software = request.GET.getlist('software')
     page = request.GET.get('page')
 
@@ -61,10 +75,13 @@ def index(request):
     if devices:
         activities_list = activities_list.filter(body__devices__contains=devices)
 
+    if tags:
+        activities_list = activities_list.filter(body__tags__contains=tags)
+
     if request.GET.get('q'):
         vector = SearchVector('plain_body', 'title')
         query = SearchQuery(q)
-        activities_list = activities_list.annotate(rank=SearchRank(vector, query)).order_by('-rank')
+        activities_list = activities_list.annotate(rank=SearchRank(vector, query), search=vector).filter(search=q).order_by('-rank')
 
     paginator = Paginator(activities_list, 20)
 
@@ -76,7 +93,7 @@ def index(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         activities = paginator.page(paginator.num_pages)
-    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software, 'all_concepts': all_concepts}
+    context = {'activities': activities, 'grades': grades, 'subjects': subjects, 'filters': filters, 'all_devices': all_devices, 'all_software': all_software, 'all_concepts': all_concepts, 'all_tags': all_tags}
     return render(request, 'activities/index.html', context)
 
 
@@ -86,14 +103,14 @@ def create_bookmark(request):
     activity = get_object_or_404(Activity, pk=activity_id)
     bookmark = Bookmark(user_id=request.user.id, activity_id=activity_id)
     bookmark.save()
-    return redirect('/activities/' + activity_id)
+    return redirect('/units/' + activity_id)
 
 
 @login_required
 def delete_bookmark(request):
     activity_id = request.POST.get('activity_id')
     Bookmark.objects.filter(user=request.user, activity_id=activity_id).delete()
-    return redirect('/activities/' + activity_id)
+    return redirect('/units/' + activity_id)
 
 
 @login_required
@@ -120,6 +137,11 @@ def create(request):
     possible_devices = Device.objects.all()
     devices = [d.name for d in possible_devices if d.name.lower() in submitted_devices]
 
+    submitted_tags = request.POST.get('tags').split(':::')
+    submitted_tags = [d.lower() for d in submitted_tags]
+    possible_tags = UnitTag.objects.all()
+    unittags = [d.name for d in possible_tags if d.name.lower() in submitted_tags]
+
     response = {}
     form = ActivityForm(request.POST)
     if form.is_valid():
@@ -128,14 +150,15 @@ def create(request):
         activity.google_file_id = request.POST.get('url')
         activity.body = {
             'title': title,
-            'subject': activity.subject.name,
+            # 'subject': activity.subject.name,
             'grade': activity.grade.name,
             'pacing': pacing,
             'html': body,
             'plain': plain_body,
             'devices': devices,
             'concepts': concepts,
-            'software': softwares
+            'software': softwares,
+            'tags': unittags
         }
         activity.save()
         response['status'] = 'ok'
@@ -159,7 +182,8 @@ def new(request):
     subjects = Subject.objects.all()
     concepts = Concept.objects.all()
     software = Software.objects.all()
-    context = {'concepts': concepts, 'software': software, 'grades': grades, 'devices': devices, 'subjects': subjects}
+    tags = UnitTag.objects.all()
+    context = {'concepts': concepts, 'software': software, 'grades': grades, 'devices': devices, 'subjects': subjects, 'tags': tags}
 
     return render(request, 'activities/new.html', context)
 
@@ -303,5 +327,16 @@ def import_google_doc(request):
     body = str(soup.find('body'))
     body = re.sub(r"\s*style='(.*?)'\s*", '', body, flags=re.MULTILINE)
     body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', body, flags=re.MULTILINE)
+    body = body.replace('https://www.google.com/url?q=http', 'http')
 
     return HttpResponse(body)
+
+
+class MyRegistrationView(RegistrationView):
+
+    """
+    Subclass the django registration form
+
+    """
+    def get_success_url(self, user):
+        return '/users/edit'

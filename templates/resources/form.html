@@ -7,6 +7,7 @@
   <form method="post">
     {% csrf_token %}
     {% bootstrap_field form.title %}
+    {% bootstrap_field form.summary %}
     {% bootstrap_field form.body %}
     {% bootstrap_field form.activities addon_after='<button class="btn btn-primary" data-toggler="id_activities">Select all</button>' %}
     {% bootstrap_field form.tags  addon_after='<button class="btn btn-primary" data-toggler="id_tags">Select all</button>'%}

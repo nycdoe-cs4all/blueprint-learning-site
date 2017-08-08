@@ -27,6 +27,13 @@ class Device(models.Model):
         return self.name
 
 
+class UnitTag(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Subject(models.Model):
     name = models.CharField(max_length=255)
 
@@ -70,7 +77,7 @@ class Activity(models.Model):
 
     user = models.ForeignKey(User)
     grade = models.ForeignKey(Grade)
-    subject = models.ForeignKey(Subject)
+    subject = models.ForeignKey(Subject, blank=True, null=True)
     # software = models.ForeignKey(Software)
     # devices = models.ManyToManyField(Device)
 
@@ -123,6 +130,7 @@ class ResourceTag(models.Model):
 
 class Resource(models.Model):
     title = models.CharField(max_length=255, null=False, blank=False)
+    summary = models.CharField(max_length=255, null=True, blank=True)
     body = models.TextField(null=False, blank=False)
     activities = models.ManyToManyField(Activity, blank=True)
     tags = models.ManyToManyField(ResourceTag, blank=True)
