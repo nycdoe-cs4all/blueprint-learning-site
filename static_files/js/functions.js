@@ -13,6 +13,15 @@ $(document).ready(function() {
   $('a.embed').each(function() {
     vidTitle = $(this).attr('data-title');
     vidSubtitle = $(this).attr('data-subtitle');
+    var timeout;
+    if(vidSubtitle==="Elementary School"){
+      timeout = 190000;
+    } else if (vidSubtitle==="Middle School"){
+      timeout = 240000;
+    } else {
+      timeout = 138000;
+    }
+    
     if (vidSubtitle) {
       vidTitle = vidTitle + ' <span class="subtitle">' + vidSubtitle + '</span>';
     }
@@ -24,7 +33,13 @@ $(document).ready(function() {
       maxWidth: '100%',
       maxHeight: '100%',
       title: vidTitle,
-      opacity: 1
+      opacity: 1,
+      onComplete: function(){
+        setTimeout(function(){
+          $.colorbox.close()
+        }
+          , timeout);
+      },
     });
   });
 
