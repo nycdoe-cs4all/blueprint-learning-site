@@ -17,7 +17,7 @@ $(document).ready(function() {
     if(vidSubtitle==="Elementary School"){
       timeout = 190000;
     } else if (vidSubtitle==="Middle School"){
-      timeout = 243000;
+      timeout = 240000;
     } else {
       timeout = 138000;
     }
