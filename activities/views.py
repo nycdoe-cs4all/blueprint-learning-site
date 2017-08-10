@@ -284,7 +284,7 @@ def edit_resource(request, pk):
 
 @user_passes_test(lambda u: u.is_superuser)
 def delete_resource(request, pk):
-    resource = get_object_or_404(Resource, pk=pk)    
+    resource = get_object_or_404(Resource, pk=pk)
     if request.method=='POST':
         resource.delete()
         return redirect('list_resources')
@@ -328,6 +328,8 @@ def import_google_doc(request):
     body = re.sub(r"\s*style='(.*?)'\s*", '', body, flags=re.MULTILINE)
     body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', body, flags=re.MULTILINE)
     body = body.replace('https://www.google.com/url?q=http', 'http')
+    body = re.sub(r'(&amp;sa=D&amp;ust=).{59}', '', body, flags=re.MULTILINE)
+    body = body.replace('%3D', '=') #for videos and google docs
 
     return HttpResponse(body)
 

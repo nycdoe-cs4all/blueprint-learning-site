@@ -39,7 +39,7 @@ var subcons={
 	,"N.PRO":"Protocols"
 	,"N.PI":"Physical Internet"
 	,"N.M":"Markup"
-};	
+};
 var	theurl="http://cs4all.nyc/api/ican";
 function fetchStatement() {
 	//Empty table before we append to it
@@ -74,7 +74,7 @@ function fetchStatement() {
 								var tblRow = "<tr id=\"userdata\">" +"<td id=\"userdata\">" + f.ICanStatement  + "</td>" + "</tr>"
 								$(tblRow).appendTo("#userdata tbody");
 							//otherwise add a header and then ican statement
-						} else { 
+						} else {
 								console.log(f.Subconcept);
 								//grab full subconcept name from key:value pairs
 								var sectionHeader= "<tr id=\"userdata\" style=\"background-color:#F26922;color:white;\">" +"<td id=\"userdata\"style=\"color:white;\">"  + subcons[f.Subconcept] + "</td>" + "</tr>"
@@ -101,7 +101,7 @@ window.onload = function(){
 			$(".practice").addClass("practiceinvert");
 			$(".practice").removeClass("practice");
 			//do this for every button for when user changes selection
-			fetchStatement(); 
+			fetchStatement();
 		});
 	$(".conbtn").click(function(){
 			//change button name to selected option
