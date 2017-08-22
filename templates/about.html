@@ -2,39 +2,79 @@
 {% load i18n %}
 
 {% block content %}
+
+<style>
+div.fellow.col-md-3 span.fellow-text {
+    position: absolute;
+    left: 10px;
+    padding: 10px;
+    opacity: 0;
+    width: 250px;
+    font-size: 14pt;
+}
+
+div.fellow.col-md-3:hover img{
+    opacity: 0.25;
+}
+
+div.fellow.col-md-3:hover .fellow-text{
+    opacity: 1;
+}
+
+
+</style>
 <div id="about" class="row">
     <div class="col-md-12">
       <h2>About</h2>
       <img src="http://cs4all.nyc/wp-content/uploads/2017/03/CS4All_launch-workhop1_p11.jpg" style="float: right; margin: 0 0 10px 10px; width:400px; ">
-      <p>The Computer Science for All (CS4All) Blueprint is an academic and implementation guide for teaching computer science in New York City public schools. We know it is a big undertaking to support educators and their school communities as they begin to integrate, many for the first time, computer science into their classrooms. So, we created the Blueprint with a dedicated group of <a href="#fellows">Blueprint Teacher Fellows</a>, elevating their CS teaching knowledge and experience in NYC classrooms.</p>
+      <p>The Computer Science for All (CS4All) Blueprint is an academic and implementation guide for teaching computer science in New York City public schools. We know that it's a big undertaking to support educators and their school communities as they begin to integrate, many for the first time, computer science into their classrooms. So we created the Blueprint with a dedicated group of <a href="#fellows">Blueprint Teacher Fellows</a>, elevating their CS teaching knowledge and experience in NYC classrooms.</p>
 
-      <p>We also gathered feedback across 30+ sessions with researchers, the CS education community, industry, and families, and incorporated their needs, values, and goals in our design direction and content. A list of these stakeholders, as well as the important ideas and feedback they offered are summarized below.</p> 
+      <p>We also gathered feedback from more than 30  sessions with researchers, the CS education community, industry, and families; and incorporated their needs, values, and goals in our design direction and content. </p>
+      <p>A list of these stakeholders, as well as the important ideas and feedback they offered, are summarized below.</p> 
 
-      <p>With this first published version of the Blueprint, the CS4All team is engaging a new cohort of Teacher Fellows, and work with administrators to further develop the resources schools need to implement a rigorous computer science curriculum.</p>
-
-      <h4>A huge thank you to all those who attended our sessions. If you have thoughts or feedback on the Blueprint site, <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIeJ9xKpfT-ngiOeMY01GF-vounSQxMjnYzaePEsMXhwIEcQ/viewform">please use this form to share with us</a>! Here's a brief summary of what we learned:</h4>
+      <p>With this beta (first published draft) version of the Blueprint, the CS4All team is engaging a new cohort of Teacher Fellows, and work with administrators to further refine and develop the resources schools need to implement a rigorous computer science curriculum.</p>
+  </div>
+</div>
+<hr>
+<div id="about" class="row">
+    <div class="col-md-12">
+      <h4>A huge thank you to all those who attended our sessions.</h4>
+      <h4>If you have thoughts or feedback about the Blueprint website, <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIeJ9xKpfT-ngiOeMY01GF-vounSQxMjnYzaePEsMXhwIEcQ/viewform">please use this form to share them with us</a>! </h4>
+      </br>
+      <h4>Here's a brief summary of what we learned in 2016:</h4>
         <div class="row">
             <div class="col-md-3">
-                <h4>CS Education Researchers at the <a href="https://csnyc.org/our-work/csnyc-programs/knowledge-forum-2016" target="_blank">CSNYC Knowledge Forum</a></h4> 
-                <p>Generalize concepts and practices to elevate computation thinking CSNYC Knowledge Forum
+                <h4>CS education researchers at the <a href="https://csnyc.org/our-work/csnyc-programs/knowledge-forum-2016" target="_blank">CSNYC Knowledge Forum</a></h4> 
+                <ul>
+                  <li>Generalize concepts and practices to elevate computer science thinking on the CSNYC Knowledge Forum.
+                  </li>
+                </ul>
             </div>
             <div class="col-md-3">
-                <h4>CS Education community at <a href="https://hiveresearchlab.org/what-we-do/ideologies-of-computer-science-education/" target="_blank">Hive Research Lab CS Visions Convenings</a></h4> 
-                <p>Develop multiple perspectives to connect CS to schools’ visions and goals</p>
+                <h4>CS education community at <a href="https://hiveresearchlab.org/what-we-do/ideologies-of-computer-science-education/" target="_blank">Hive Research Lab CS Visions Convenings</a></h4> 
+                <ul>
+                  <li>Develop multiple perspectives about how to connect CS to each school's visions and goals.</li>
+                </ul>
             </div>
             <div class="col-md-3">
-                <h4>Tech and Tech-related Industry at CS4ALL Industry Roundtables</h4> 
-                <p>Collaboration and critical thinking are equally important to technical skills</p>
+                <h4>Tech and tech-related industry at CS4ALL industry roundtables</h4> 
+                <ul>
+                  <li>Collaboration and critical thinking are equally important to technical skills.</li>
+                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3">
-                <h4>School leaders at Principal and Assistant Principal Conferences</h4> 
-                <p>Include practical guides to support the roll-out of CS in schools</p>
+                <h4>School leaders at principal and assistant principal conferences</h4> 
+                <ul>
+                  <li>Include practical guides to support the roll-out of CS in schools.</li>
+                </ul>
             </div>
             <div class="col-md-3">
                 <h4>Families at <a href="http://makerfaire.com/" target="_blank">World Maker Faire</a></h4> 
-                <p>Families were most interested in general problem-solving and design-thinking skills </p>
+                <ul>
+                  <li>Families were most interested in general problem-solving and design-thinking skills. </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -47,59 +87,58 @@
     </ul>
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="2016-17">
-            <div class="row">
-            <div class="col-md-3">
+            <div class="fellow col-md-3">
                 <h4>Alana Robinson</h4>
-                <p>Alana Robinson teaches CS to elementary and middle school self-contained special education classes at a District 75 school. She was a NYC Teaching Fellow. She taught all core content areas before transitioning to teaching CS and has been teaching for 13 years. </p>
-                <p>"I want to contribute to the expansion of CS education in NYC to help create the next generation of innovators.  A new cohort of students will do more than use technology, they will create new technologies with empathy and their community in mind."</p>
+                <img src="/static/images/assets/alana-robinson.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>Alana Robinson teaches CS to elementary and middle school self-contained special education classes at the Mickey Mantle School, a District 75 school in Manhattan. </span>
             </div>
-            <div class="col-md-3">
+            <div class="fellow col-md-3">
                 <h4>Ariadna Phillips-Santos</h4>
-                <p>Ariadna Phillips-Santos is a passionate Dual Language (Spanish) Computer Science and ESL/ELA teacher in the South Bronx. An alum of Princeton University, Ms. Phillips-Santos has taught Spanish-language, Self-contained, and ICT Computer Science from K-8.</p>
-                <p>"I believe access to Computer Science education is a game changer in a city that is home to diverse learners and socioeconomic levels. I hope to expand CS education to include ELLs/Dual Language learners, IEP students, and high-need populations."</p>
+                <img src="/static/images/assets/ariadna-phillips-santos.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>Ariadna Phillips-Santos is a passionate Dual Language (Spanish) Computer Science and ESL/ELA teacher at the Laboratory School of Finance and Technology in the South Bronx.</span>
             </div>
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>Ben Samuels-Kalow</h4>
-                <p>Ben Samuels-Kalow was a Computer Science and Economics teacher at the Laboratory School of Finance & Technology in the South Bronx.</p>
-                <p>"Remember how you learned to write with a pencil and paper and only later did you learn how to type? I’d like to figure out how that works for coding in a sustainable, rigorous, and equitable way."</p>
+                <img src="/static/images/assets/ben-samuels-kalow.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>Ben Samuels-Kalow was a Computer Science and Economics teacher at the Laboratory School of Finance and Technology in the South Bronx.</span>
             </div>
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>Dr. Christa Quint</h4>
-                <p>Dr. Christa Quint is in her 12th year teaching in New York City. She is an experienced Math teacher and and a new Computer Science teacher.  </p>
-                    <p>"Computer Science is just as important to learn as the traditional subjects for students growing up in this millennium. Who better to help build a the CS curriculum  than experienced teachers?"</p>
+                <img src="/static/images/assets/christa-quint.jpg" width="250px" height="250px" />
+                <span class="fellow-text"><span>Dr. Christa Quint is in her 12th year teaching in New York City. She is an experienced Math teacher and and a new Computer Science teacher at the Urban Assembly Gateway School for Technology.  </span>
             </div>
-                    </div>
-        <div class="row">
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>Christy Crawford</h4>
-                <p>Christy Crawford has taught in Harlem and the Bronx for more than 13 years. She is an education consultant and contributor to Scholastic's Top Teaching blog - <a href="http://www.scholastic.com/teachers/teaching-ideas/christy-crawford">here.</a></p>  
-                <p>"Every child in every neighborhood deserves the opportunity to create, to learn the language of technology and to be a competitive producer in today's fastest -growing path to economic empowerment."</p>
+                <img src="/static/images/assets/christy-crawford.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>Christy Crawford has taught in Harlem and the Bronx for more than 13 years. She is an education consultant and contributor to <a href="https://www.scholastic.com/teachers/contributors/bloggers/christy-crawford/"> Scholastic's Top Teaching blog.</a>.</span>  
             </div>
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>JoAnn Westhall</h4>
-                <p>JoAnn Westhall is a Computer Science Instructor, Grades Pre-K-5 for the NYC Public Schools.  Prior work in the field of technology include Broadcast, Operations, and Engineering Division of ABC Television and work at a Data Conversion Laboratory.  </p><p>"Living in a Digital Age, I feel It is a social imperative to give our students exposure to Computer Science.  Not all students will go on to become programmers but we would be remiss not to expose them to the possibilities." 
-                </p>
+                <img src="/static/images/assets/joann-westhall.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>JoAnn Westhall is a Computer Science Instructor, Grades Pre-K-5 at PS 31 in Bayside, Queens. 
+                </span>
             </div>
 
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>Matt Boyle</h4>
-                <p>Matthew Boyle has background in architecture & graphic design, operations in education for 6 years, arts & digital media programming for 5 years, an inaugural Software Engineering Program (SEP) cohort member, and has taught the SEP program at the high school level for 3 years.</p><p>Teaching CS has changed my career, my life - and the lives of my students. Every hour spent in training translates to a serious return on the quality and engagement of the services we provide to our students.</p>
+                <img src="/static/images/assets/matt-boyle.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>Matthew Boyle has background in architecture and graphic design. He helps lead operations, arts and digital media programming at the Renaissance Charter HS for Innovation.</span>
             </div>
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>Sean Pawelec</h4>
-                <p>Sean Pawelec has background in teaching Earth Science and Living Environment on the high school level. He is an original member of Software Engineering Programs's Cohort 1 and also teach AP Computer Science Principles at the Renaissance Charter HS for Innovation where he is the Science Department Chair. </p><p>I believe in equal educational opportunities for all students; especially for Title 1 schools similar to my own school. Throughout my career I have been committed to creating engaging project based learning curricula that promotes learning. </p>
+                <img src="/static/images/assets/sean-pawelec.jpg" width="250px" height="250px" />
+                <span class="fellow-text"><span>Sean Pawelec has a background in earth science who teaches computer science at the Renaissance Charter HS for Innovation where he is the Science Department Chair.</span>
             </div>
-                    </div>
-        <div class="row">
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>Tim Feimer</h4>
-                <p>Tim Feimer is a certified SS 7-12 teacher who has been involved with the SEP program for the last three years.  He has enjoyed building and learning all about the different topics on all the grade levels (6-8).  3D printing has become his favorite topic.</p><p>With the right amount of professional development most subject teachers will be able to become effective CS teachers, al long as they have the will to learn.  I want to be part of bringing computer science to other teachers like myself.</p>
+                <img src="/static/images/assets/tim-feimer.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>Tim Feimer is a certified SS 7-12 teacher who enjoys building and learning all about CS topics for all middle school grade levels (6-8).</span>
             </div>
-            <div class="col-md-3">
+            <div class=" fellow col-md-3">
                 <h4>Tim Chen</h4>
-                <p>Tim Chen was a software engineering teacher at the Urban Assembly Gateway School for Technology.  He graduated with a B.S. in Secondary Mathematics Education from New York University.  He is interested in everything related to computer science ed!</p><p>I want to contribute resources for teachers interested in learning the content to a level where they are comfortable teaching it, as well as presenting the content to students in an engaging manner with opportunities for personal creation.</p>
+                <img src="/static/images/assets/tim-chen.png" width="250px" height="250px" />
+                <span class="fellow-text"><span>Tim Chen was a software engineering teacher at the Urban Assembly Gateway School for Technology. He is interested in everything related to computer science education!</span>
             </div>
-        </div>
         </div>
 
 
