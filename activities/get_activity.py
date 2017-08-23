@@ -51,6 +51,7 @@ class Activity:
         self.set_concepts()
         self.set_software()
         self.set_tags()
+        print("I got here!")
         self.set_body()
         self.set_plain_body()
 
@@ -118,6 +119,10 @@ class Activity:
         self.body = str(self.soup.find('body'))
         self.body = re.sub(r"\s*style='(.*?)'\s*", '', self.body, flags=re.MULTILINE)
         self.body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', self.body, flags=re.MULTILINE)
+        # Checks for google annoying redirects and sends them back from whence they came
+        self.body = re.sub(r'(&amp;sa=D&amp;ust=).{59}', '', self.body, flags=re.MULTILINE) #after
+        self.body = self.body.replace('https://www.google.com/url?q=http', 'http') #before
+        self.body = self.body.replace('%3D', '=') #for videos
         return self.body
 
     def set_plain_body(self):
