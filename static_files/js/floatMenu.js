@@ -10,12 +10,18 @@ window.onload = function(){
           } else {
             menuOffset = 10 + "px";
           }
-          $('#floatMenu').animate({
-              top: menuOffset
-          }, {
-              duration: 500,
-              queue: false
-          });
+          // var isMouseOver = false;
+          // $('#floatMenu').mouseEnter(function(){isMouseOver = true;});
+          // $('#floatMenu').mouseover(function(){isMouseOver = true;});
+          // $('#floatMenu').mouseout(function(){isMouseOver = false;});
+          // if (isMouseOver == false){
+          //   $('#floatMenu').animate({
+          //       top: menuOffset
+          //   }, {
+          //       duration: 50,
+          //       queue: false
+          //   });
+          // }
       }
 
       // menuYloc = $('#floatMenu').offset();
