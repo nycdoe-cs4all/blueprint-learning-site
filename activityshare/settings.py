@@ -101,9 +101,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blueprint',
         'USER': 'doe',
-        'PASSWORD': '',
+        'PASSWORD': 'test',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
     }
 }
 
