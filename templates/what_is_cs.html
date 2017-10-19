@@ -5,12 +5,12 @@
   <h4>Blueprint CS Foundations</h4>
 
   <ul>
-    <li><a href="/what-is-cs">What is CS education?</a></li>
-    <li><a href="/meaningful-cs">What is a meaningful CS Unit?</a></li>
-    <li><a href="/concepts">CS Concepts</a></li>
-    <li><a href="/practices">CS Practices</a></li>
-    <li><a href="/perspectives">CS Perspectives</a></li>
-    <li><a href="/ican">I Can Statements</a></li>
+    <li><a class="filter" href="/what-is-cs">What is CS education?</a></li>
+    <li><a  href="/meaningful-cs">What is a meaningful CS Unit?</a></li>
+    <li><a  href="/concepts">CS Concepts</a></li>
+    <li><a  href="/practices">CS Practices</a></li>
+    <li><a  href="/perspectives">CS Perspectives</a></li>
+    <li><a  href="/ican">I Can Statements</a></li>
   </ul>
 
 </div>
@@ -93,10 +93,19 @@
 
 </div>
 
+<script src="/static/js/jquery.min.js"></script>
 <script>
 $('#tablist a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
 })
+
+
+//change the color of the selected filter
+// $('.filter').click(function(e){
+//     $('.filter').css("color", "#327BBF");
+//     $(this).css("color", "black");
+//   console.log("hello");
+// });
 </script>
 {% endblock %}
