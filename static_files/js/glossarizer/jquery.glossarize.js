@@ -7,11 +7,7 @@
  */
 
 ;(function ($) {
-  /**
-   * Defaults
-   */
-
-  var pluginName = 'glossarizer',
+    var pluginName = 'glossarizer',
     defaults = {
       sourceURL: '', /* URL of the JSON file with format {"term": "", "description": ""} */
       replaceTag: 'abbr', /* Matching words will be wrapped with abbr tags by default */
@@ -83,6 +79,7 @@
             /* Excluded terms array */
 
             base.excludes.push(trimmed.substr(1))
+
           }
         }
       }
@@ -90,6 +87,9 @@
       /**
        * Wrap terms
        */
+
+            //  // fix the order issue so that programming and programming languages have different definittions
+            //  base.terms.sort(function(a, b){ return b.length - a.length; });
 
       base.wrapTerms()
     })
@@ -100,7 +100,10 @@
    */
   Glossarizer.prototype = {
     getDescription: function (term) {
-      var regex = new RegExp('(\,|\s*)' + this.clean(term) + '\\s*|\\,$', 'i')
+      var regex = new RegExp('(\,|\s*)' + this.clean(term) + '$', 'i');
+
+
+
 
       /**
        * Matches

@@ -307,6 +307,7 @@ def list_resources(request):
     return render(request, 'resources/index.html', {'resources': resources, 'tags': tags})
 
 
+# Google doc imports
 def import_google_doc(request):
     from .get_activity import KEY
     from apiclient.discovery import build
@@ -324,13 +325,14 @@ def import_google_doc(request):
     html = response.execute()
     soup = BeautifulSoup(html, 'html.parser')
 
+# \*removes styling from doc*\
     body = str(soup.find('body'))
     body = re.sub(r"\s*style='(.*?)'\s*", '', body, flags=re.MULTILINE)
     body = re.sub(r'\s*(style|id)="(.*?)"\s*', '', body, flags=re.MULTILINE)
     body = body.replace('https://www.google.com/url?q=http', 'http')
     body = re.sub(r'(&amp;sa=D&amp;ust=).{59}', '', body, flags=re.MULTILINE)
     body = body.replace('%3D', '=') #for videos and google docs
-
+    # print("")
     return HttpResponse(body)
 
 
