@@ -201,6 +201,7 @@
 					<span class="preamble">Educator</span> Resources
 				</a></li>
 
+        {% if user.is_authenticated %}
           <li class="dropdown">
   					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/units">
   						<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
@@ -212,6 +213,12 @@
               <li><a href="{% url 'new' %}">New Unit</a></li>
             </ul>
   				</li>
+        {% else %}
+        <li><a href="/units">
+					<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
+					<span class="preamble">Explore</span> Units
+				</a></li>
+        {% endif %}
 
         {% if user.is_authenticated %}
         <li class="dropdown">
