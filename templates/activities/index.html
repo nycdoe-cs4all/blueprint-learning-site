@@ -120,6 +120,13 @@
 
 <div class="col-md-9">
   <h1 style="margin-top: 0;">Units</h1>
+  {% if user.is_authenticated %}
+  <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
+
+  {% else %}
+  <p> <a href="{% url 'auth_login' %}">Login</a> to contribute a new unit</p>
+  {% endif %}
+
   {% if activities %}
   {% include "activities/_activity_list.html" %}
   {% else %}
