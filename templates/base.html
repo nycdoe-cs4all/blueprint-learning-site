@@ -281,7 +281,6 @@
     ga('create', 'UA-84670539-2', 'auto');
     ga('send', 'pageview');
 
-
 // call glossarizer to fix things
     $(function(){
       $('#content').glossarizer({
@@ -293,9 +292,7 @@
       });
     });
 
-    $("a").attr("target", "_blank");
   </script>
-
 <!-- load common fonts for resource upload  -->
   <script>
     WebFont.load({
@@ -303,6 +300,17 @@
         families: ['Open Sans', 'Oswald', 'Arial','Calibri','Cambria','Comic Sans MS', 'Consolas', 'Impact', 'Roboto Mono', 'Helvetica Neue']
       }
     });
+
+    // open all external links in a new tab
+    $(document).ready(function() {
+    $("a[href^=http]").click(function(){
+       if(this.href.indexOf(location.hostname) == -1) {
+          $(this).attr({
+             target: "_blank",
+          });
+       }
+    })
+    })
   </script>
 
           <footer>
