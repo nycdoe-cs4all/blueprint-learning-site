@@ -124,7 +124,8 @@
   <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
 
   {% else %}
-  <p> <a href="{% url 'auth_login' %}">Login</a> to contribute a new unit</p>
+  <p> <a href="{% url 'auth_login' %}?next={{ request.path }}">Login</a>   to contribute a new unit</p>
+
   {% endif %}
 
   {% if activities %}
