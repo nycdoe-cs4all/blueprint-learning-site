@@ -31,6 +31,7 @@
             </span>
           </button></span>
         </div>
+        <!-- <p style="font-size:12px">Drop a <b>public</b> Google Doc url in the submission form and click "Fetch".</p> -->
 
         <p style="margin-top: 15px;" class="bg-danger" v-if="parseError">
           Sorry that url couldn't be processed. Please make sure that you've entered a valid Google Doc url and that you've made your document public.
@@ -112,13 +113,13 @@
 
     <div class="col-md-8"  style="border-left: 1px solid #ccc;" v-else>
         <ul class="nav nav-tabs" role="tablist" id="tablist">
-            <li role="presentation" class="active"><a href="#submitting" role="tab" data-toggle="tab">Submitting a Unit</a></li>
-            <li role="presentation"><a href="#contributing" role="tab" data-toggle="tab">Contributing to the Blueprint</a></li>
+            <li role="presentation" class="active"><a href="#contributing" role="tab" data-toggle="tab">Contributing to the Blueprint</a></li>
             <li role="presentation"><a href="#sample" role="tab" data-toggle="tab">Sample Unit Writing Template</a></li>
+            <li role="presentation"><a href="#submitting" role="tab" data-toggle="tab">How to Submit a Unit</a></li>
 
         </ul>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="submitting">
+            <div role="tabpanel" class="tab-pane" id="submitting">
                 <div class=" fellow col-md-10">
                     Submitting a meaningful CS unit to the Blueprint is easy, just follow these steps:
                     <h3>Use Google Docs</h3>
@@ -149,12 +150,13 @@
 
                     <h3>Approval</h3>
                     <p>Your unit will be reviewed by the CS4All team to ensure it meets the requirements for a meaningful CS unit and is aligned to the needs of classroom educators.</p>
+                    <!-- <a href="#sample">Link</a> -->
 
                 </div>
             </div>
 
 
-            <div role="tabpanel" class="tab-pane" id="contributing">
+            <div role="tabpanel" class="tab-pane active" id="contributing">
                 <div class="col-md-10">
                   <!-- <h3>Introduction</h3>
                   <p>Every student in New York City will receive at least one meaningful unit of computer science (CS) instruction by 2025, at every grade band: K-2, 3-5, 6-8, and 9-12.</p>
@@ -203,6 +205,8 @@
                 <h3>How do I contribute?</h3>
                 <p>The Blueprint utilizes a tight integration with Google Docs to make it easy for educators to use a unit. You simply need to provide a link to your Google Doc (make sure that it’s publicly viewable) and the site will fetch the content, maintaining your formatting and styling.</p>
                 <p>Once the content is fetched, we ask you to complete some basic information about the unit to make it easy for educators to find your unit.</p>
+
+                <a href="#" onclick="activaTab('sample');">See a sample unit writing template</a>
                 </div>
             </div>
 
@@ -295,8 +299,12 @@
                         <li>Presentation: how will students share their work? will they share with peers, outside world? what media could/should be made available to students? <strong>Include a Rubric</strong></li>
                         <li>Reflection: reflection questions that ask students to think about CS concepts and practices. <strong>Include a Rubric</strong></li>
                       </ul>
+                      <a href="#" onclick="activaTab('submitting');">How to submit a unit</a>
+
+
                     <h3>Reference</h3>
                     <p><a target="_blank" href="https://www.weteachnyc.org/media2016/filer_public/1b/06/1b06cc14-71bb-4378-b2db-e68aba23097e/grade_2_unit_1_web_toc.pdf">NYCDOE Social Studies Curriculum Sample</a></p>
+
                 </div>
             </div>
 
@@ -436,6 +444,11 @@ var app = new Vue({
     }
   }
 });
+
+function activaTab(tab){
+    $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+};
+
 </script>
 <style>
   table {

@@ -17,7 +17,7 @@
 
   {% if user.profile.link %}
     <p>
-      <a href="{{user.profile.link}}">{{user.profile.link}}</a>  
+      <a href="{{user.profile.link}}">{{user.profile.link}}</a>
     </p>
   {% endif %}
 
@@ -32,11 +32,14 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="units">
       <h2>Units</h2>
+      <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
+
       {% if activities %}
         {% include "activities/_activity_list.html" %}
       {% else %}
         <p>No units created</p>
       {% endif %}
+      
     </div>
 
     <div role="tabpanel" class="tab-pane" id="bookmarks">
@@ -58,5 +61,3 @@ $('#tablist a').click(function (e) {
 })
 </script>
 {% endblock %}
-
-
