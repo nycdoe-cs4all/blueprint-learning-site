@@ -300,9 +300,9 @@ def show_resource(request, pk):
 def list_resources(request):
     tag_name = request.GET.get('tag')
     if tag_name:
-        resources = Resource.objects.filter(tags__title=tag_name)
+        resources = Resource.objects.filter(tags__title=tag_name).order_by('title')
     else:
-        resources = Resource.objects.all()
+        resources = Resource.objects.all().order_by('title')
     tags = ResourceTag.objects.all()
     return render(request, 'resources/index.html', {'resources': resources, 'tags': tags})
 
