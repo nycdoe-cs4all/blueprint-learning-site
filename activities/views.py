@@ -304,6 +304,7 @@ def list_resources(request):
     else:
         resources = Resource.objects.all().order_by('title')
     tags = ResourceTag.objects.all()
+    # plan= Resource.objects.filter(tags__title='Planning')
     return render(request, 'resources/index.html', {'resources': resources, 'tags': tags})
 
 
@@ -342,5 +343,6 @@ class MyRegistrationView(RegistrationView):
     Subclass the django registration form
 
     """
+
     def get_success_url(self, user):
         return '/users/edit'

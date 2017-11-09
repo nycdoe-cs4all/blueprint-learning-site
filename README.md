@@ -53,7 +53,7 @@ Create a superuser account that you can use to log in locally to the admin panel
 
 Load in data about grades/subjects
 ```
-./manage.py loaddate fixtures2.json
+./manage.py loaddata fixtures2.json
 ```
 
 Add the `credentials.json` file the `activities` folder (ask an admin for access to the file).
@@ -85,4 +85,3 @@ If you've edited or created any static assets (js, images, css etc) you'll also 
 source env/bin/activate
 ./manage.py collectstatic
 ```
-
