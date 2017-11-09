@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +40,8 @@ INSTALLED_APPS = [
     'activities.apps.ActivitiesConfig',
     'bootstrap3',
     'anymail',
+    'captcha',
+    # 'django_extensions',
 ]
 
 ANYMAIL = {
@@ -138,6 +139,13 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+# Captcha - google.com/recaptcha visible
+RECAPTCHA_PUBLIC_KEY = '6LdLwjcUAAAAAJSzzjLMJVedRFfsKe95Aubback7'
+RECAPTCHA_PRIVATE_KEY = '6LdLwjcUAAAAAHn_gGYa4cfmJGCtdpskFUI1RK2r'
+NOCAPTCHA = True
+
 
 
 # Static files (CSS, JavaScript, Images)
