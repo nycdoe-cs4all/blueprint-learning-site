@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'activities.apps.ActivitiesConfig',
     'bootstrap3',
     'anymail',
-    'captcha',
+    # 'captcha',
     # 'django_extensions',
 ]
 
@@ -142,9 +142,9 @@ USE_TZ = True
 
 
 # Captcha - google.com/recaptcha visible
-RECAPTCHA_PUBLIC_KEY = '6LdLwjcUAAAAAJSzzjLMJVedRFfsKe95Aubback7'
-RECAPTCHA_PRIVATE_KEY = '6LdLwjcUAAAAAHn_gGYa4cfmJGCtdpskFUI1RK2r'
-NOCAPTCHA = True
+# RECAPTCHA_PUBLIC_KEY = '6LdLwjcUAAAAAJSzzjLMJVedRFfsKe95Aubback7'
+# RECAPTCHA_PRIVATE_KEY = '6LdLwjcUAAAAAHn_gGYa4cfmJGCtdpskFUI1RK2r'
+# NOCAPTCHA = True
 
 
 
