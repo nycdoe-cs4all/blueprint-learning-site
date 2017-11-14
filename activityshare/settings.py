@@ -25,7 +25,7 @@ SECRET_KEY = 'b%_)b#1bv%b5i2u6cax#9gn0az5a0p@!i#5+%i&f!*s_0&)6%7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['159.203.128.78', 'blueprint.cs4all.nyc', 'www.blueprint.cs4all.nyc']
 
 # Application definition
 
@@ -102,7 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blueprint',
         'USER': 'doe',
-        'PASSWORD': '',
+        'PASSWORD': 'doedoe',
         'HOST': 'localhost',
         'PORT': '',
     }
