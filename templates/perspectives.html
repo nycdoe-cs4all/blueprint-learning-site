@@ -1,326 +1,269 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-<script src="/static/js/floatMenu.js"></script>
-<div class="col-md-3" id="floatMenu">
+<!-- <script src="/static/js/floatMenu.js"></script>
+<div class="col-md-3" id="floatMenu"> -->
 
-  <h4>Blueprint CS Foundations</h4>
+<div id="page">
+	<article class="blue-theme">
 
-  <ul>
-    <li><a href="/what-is-cs">What is CS education?</a></li>
-    <li><a href="/meaningful-cs">What is a meaningful CS Unit?</a></li>
-    <li><a href="/concepts">CS Concepts</a></li>
-    <li><a href="/practices">CS Practices</a></li>
-    <li><a class="filter" href="/perspectives">CS Perspectives</a></li>
-    <li><a href="/ican">I Can Statements</a></li>
-  </ul>
+		<header>
+			<h2><span class="preamble">Computer Science</span> Perspectives</h2>
+			<p>How students progress in their understanding of computing concepts and practices.</p>
+		</header>
 
-</div>
-<div class="col-md-9">
-  <h1>Computer Science Perspectives</h1>
- <!--  <p class="c4">Computer science is the exploration and application of computing practices and concepts. Computer science (CS) is the theoretical and practical study of fundamentals of computing. On the theoretical end, computer science deals with understanding and testing the limits of computers while on the practical end computer science is about creating computing systems like computers, the Internet, self-driving cars, interactive art installations, manufacturing robots, and more.</p> -->
-  <p class="c4">The perspectives below are four approaches to teaching computer science (CS) <a href="/practices">practices</a> and <a href="/concepts">concepts</a>. These perspectives draw on the imperatives behind the CS4All initiative in New York City, as well as research from the the <a href="http://scratched.gse.harvard.edu/ct/defining.html">ScratchEd team</a> and the <a href="https://hiveresearchlab.org/what-we-do/ideologies-of-computer-science-education/">CSed Visions research project</a>, a collaboration between between New York University, Indiana University and the City University of New York.</p>
-  <p class="c4">These perspectives aim to provide school leaders, teachers, and students a lens to frame their computer science teaching methodology. Schools should consider fostering perspectives that:</p>
-  <ul>
-    <li class="c3">Fit students&rsquo; prior experience with computer science</li><li class="c3">Support students&rsquo; evolving ideas about computer science</li>
-    <li class="c3">Reflect the values of the school community;  principals, teachers and parents</li>
-  </ul>
-  <h2 class="c10" id="h.i7yj8sgfz3dj">Perspectives describe how and why students can learn computer science</h2>
-  <p class="c4">Ideally, a teacher and school are able to identify how students can move from one CS perspective to the next by the end of a unit, course, or multi-year sequence. However, a single classroom or school can employ multiple perspectives to scaffold student learning.</p>
-  <p class="c4">These perspectives are:</p>
-  <ul class="c2 lst-kix_2qqdfzgghvt-0 start">
-    <li class="c3">Explorer: &ldquo;I can play with computing practices and concepts.&rdquo;</li>
-    <li class="c3">Creator: &ldquo;I can express myself with computing practices and concepts.&rdquo;</li>
-    <li class="c3">Innovator: &ldquo;I can connect to the work of others using computing practices and concepts.&rdquo;</li>
-    <li class="c3">Citizen: &ldquo;I can question how computing practices and concepts affect my community.&rdquo;</li>
-  </ul>
-  <p class="c4">Educators should use formal or informal pre-assessment to map out from which perspective to begin their CS unit and plan the perspective they'd like their students to develop. Furthermore, educators should use formative assessment to guide when and how they introduce a new perspective.</p><p class="c4 c21"></p>
-  <p class="c4">We&rsquo;ve defined these Perspectives in detail below. Each definition addresses how each perspective interacts with the three required practices and with a subset of relevant concepts.</p>
+		<div class="article-content">
+			<p class="intro">Meaningful computer science units help students fully embrace a perspective such that they are ready and interested in progressing to the next.</p>
+		</div>
 
-  <a name="creator"></a><h2>Explorer (E)</h2>
-  <p class="c4">Students begin their CS journey as Explorers playing with computing. To make CS real to them<sup><a href="#cmnt1" id="cmnt_ref1">[a]</a></sup>, Explorers manipulate computing applications, problems, and topics with physical or visual models or representations.</p><h3 class="c22" id="h.qsu7pljj4rf">Explorers + Practices</h3>
-  <p class="c4">Even though they are just at the beginning of their CS journey, Explorers can still use all three practices in a single meaningful CS unit.</p>
-  <ul>
-    <li class="c3">Analyze: Explorers analyze computing applications that they can see, touch, and hear. </li>
-    <li class="c3">Prototype: Explorers prototype computing artifacts by building in closed-ended or puzzle-based environments, remixing/reusing projects, and with teacher guidance.</li>
-    <li class="c3">Communicate: Explorers communicate the results of their exploration in a way that highlights the connections they made between their lives and computer science concepts.</li>
-  </ul>
-  <h3>Explorers + Concepts</h3>
-  <table class="c29">
-    <tbody>
-      <tr class="c6">
-        <td class="c19" colspan="1" rowspan="1"><p class="c12">Concept</p></td>
-        <td class="c14" colspan="1" rowspan="1"><p class="c12">Subconcepts</p></td><td class="c17" colspan="1" rowspan="1"><p class="c12">Example</p></td>
-      </tr>
-      <tr class="c28">
-        <td class="c19" colspan="1" rowspan="1"><p class="c4">Abstraction</p></td>
-        <td class="c14" colspan="1" rowspan="1">
-          <ul class="c2 lst-kix_mu5ocexibfsy-0 start">
-            <li class="c0">Decomposition (AB.D) </li>
-            <li class="c0">Pattern Recognition (AB.PR) </li>
-            <li class="c0">Generalization and Detail Removal (AB.GDR)</li>
-          </ul>
-        </td>
-        <td class="c17" colspan="1" rowspan="1"><p class="c4">Working with routines or tasks of a visual or physical nature, Explorers can break down the task into steps, notice patterns such as repetitions, and can find similarities between different steps or even entire tasks.</p></td>
-      </tr>
-      <tr class="c6">
-        <td class="c19" colspan="1" rowspan="1"><p class="c4">Algorithms</p></td>
-        <td class="c14" colspan="1" rowspan="1">
-          <ul class="c2 lst-kix_rm0ucx4ha7fv-0 start">
-            <li class="c0">Algorithm Design (AL.AD)</li>
-          </ul></td>
-          <td class="c17" colspan="1" rowspan="1"><p class="c4">Explorers can design simple sequences and series of actions for routines or physical tasks.</p></td>
-        </tr>
-        <tr class="c6">
-          <td class="c19" colspan="1" rowspan="1"><p class="c4">Programming</p></td>
-          <td class="c14" colspan="1" rowspan="1">
-            <ul class="c2 lst-kix_1weawln1gevz-0 start">
-              <li class="c0">Syntax (P.S)</li>
-            </ul></td>
-            <td class="c17" colspan="1" rowspan="1">
-              <p class="c4">Explorers can interact with visual syntax in an unplugged lesson where they give or receive commands from peers to complete a task. </p>
-            </td>
-          </tr>
-          <tr class="c6">
-            <td class="c19" colspan="1" rowspan="1"><p class="c4">Data</p></td><td class="c14" colspan="1" rowspan="1">
-            <ul class="c2 lst-kix_az0ssww54zlf-0 start">
-              <li class="c0 c15">Sensors and Datasets (D.SD)</li>
-            </ul>
-          </td>
-          <td class="c17" colspan="1" rowspan="1"><p class="c4">Explorers can take measurements in their classroom or school using simple sensors to collect data for a purpose (i.e. digital rainfall meter, learning station check-in, etc.)</p></td>
-        </tr>
-        <tr class="c28">
-          <td class="c19" colspan="1" rowspan="1"><p class="c4">Networks</p><p class="c4 c21"></p></td>
-          <td class="c14" colspan="1" rowspan="1">
-            <ul class="c2 lst-kix_f79a0o6i9mk7-0 start">
-              <li class="c0">Physical Internet (N.PI)</li>
-            </ul>
-            </td>
-            <td class="c17" colspan="1" rowspan="1"><p class="c4">Physically manipulating connections between objects, Explorers can begin to build an understanding of how they and others are able to connect to the Internet.</p></td>
-          </tr>
-        </tbody>
-      </table>
-<a name="creator"></a><h2>Creator (C)</h2>
-<p class="c4">Students continue their CS journey as Creators expressing their ideas through computing. Intrigued by the possibilities of computing, Creators use computing to represent their ideas, thoughts, or interests.</p>
-<h3>Creators + Practices</h3>
-<p class="c4">Creators are making things, but still engage in all three practices to ensure authentic, meaningful CS learning.</p>
-<p class="c4">In this context, Creators:</p>
-<ul class="c2 lst-kix_lf1u8fy2x4s0-0">
-  <li class="c3">Analyze: Categories of computing applications that intrigue them, or that they use daily.</li>
-  <li class="c3">Prototype: Computing artifacts in open-ended, scaffolded environments by remixing/reusing theirs or other projects.</li>
-  <li class="c3">Communicate: The connections they made between computing applications they analyzed, the artifacts they created, and the choices they made while building those artifacts.</li>
-</ul>
-<h3>Creators + Concepts</h3>
-<table class="c29">
-  <tbody>
-    <tr class="c6">
-      <td class="c16" colspan="1" rowspan="1"><p class="c12">Concept</p></td>
-      <td class="c20" colspan="1" rowspan="1"><p class="c12">Subconcept</p></td>
-      <td class="c25" colspan="1" rowspan="1"><p class="c12">Example</p></td>
-    </tr>
-    <tr class="c6">
-      <td class="c16" colspan="1" rowspan="1"><p class="c4">Abstraction</p></td>
-      <td class="c20" colspan="1" rowspan="1">
-        <ul class="c2 lst-kix_mu5ocexibfsy-0">
-          <li class="c0">Decomposition (AB.D) </li>
-          <li class="c0">Pattern Recognition (AB.PR) </li>
-          <li class="c0">Generalization and Detail Removal (AB.GDR)</li>
-        </ul></td>
-        <td class="c25" colspan="1" rowspan="1"><p class="c4">Working with written tasks or multi-step projects, Creators can break down projects into components, as well as find patterns and similarities between components of a project.</p></td>
-      </tr>
-      <tr class="c6">
-        <td class="c16" colspan="1" rowspan="1"><p class="c4">Algorithms</p></td>
-        <td class="c20" colspan="1" rowspan="1">
-          <ul class="c2 lst-kix_rm0ucx4ha7fv-0">
-            <li class="c0">Algorithm Design (AL.AD)</li>
-            <li class="c0">Control Flow (AL.CF)</li>
-          </ul>
-        </td>
-        <td class="c25" colspan="1" rowspan="1"><p class="c4">Creators can design and implement multi-step processes that use loops, parallelism, and conditionals that leverage patterns and characteristics. </p></td>
-      </tr>
-      <tr class="c6">
-        <td class="c16" colspan="1" rowspan="1"><p class="c4">Programming</p></td>
-        <td class="c20" colspan="1" rowspan="1">
-          <ul class="c2 lst-kix_1weawln1gevz-0"><li class="c0">Syntax (P.S) </li><li class="c0">Development Environments (P.DE)</li></ul></td>
-          <td class="c25" colspan="1" rowspan="1"><p class="c4">Creators can implement algorithms in development environments that offer open-ended possibilities with visual programming languages.</p></td>
-        </tr>
-        <tr class="c6"><td class="c16" colspan="1" rowspan="1"><p class="c4">Data</p></td>
-          <td class="c20" colspan="1" rowspan="1">
-            <ul class="c2 lst-kix_az0ssww54zlf-0">
-              <li class="c0 c15">Sensors and Datasets (D.SD)</li>
-            </ul></td>
-            <td class="c25" colspan="1" rowspan="1"><p class="c4">Creators can interpret a dataset provided by a teacher  to inform the design a prototype, such as using rainfall data to ensure a digital rain  meter has a large enough reservoir.</p></td>
-          </tr>
-          <tr class="c6">
-            <td class="c16" colspan="1" rowspan="1"><p class="c4">Networks</p></td>
-            <td class="c20" colspan="1" rowspan="1">
-              <ul class="c2 lst-kix_f79a0o6i9mk7-0">
-                <li class="c0">Trust (N.T) </li>
-                <li class="c0">Physical Internet (N.PI)</li>
-                <li class="c0">Markup (N.M)</li>
-              </ul>
-            </td>
-            <td class="c25" colspan="1" rowspan="1"><p class="c4">Creators can communicate the types of information they want to share on a network, given the people on that network.</p></td>
-          </tr>
-        </tbody>
-      </table>
-<a name="innovator"></a><h2>Innovator (I)</h2>
-  <p class="c4">Innovators engage with open-ended topics connected to the work of individuals in public, private and open-source domains of CS practice.</p>
-<h3>Innovators + Practices</h3>
-  <ul class="c2 lst-kix_lf1u8fy2x4s0-0">
-  <li class="c3">Analyze: Computer science in practice by looking at the purpose, the features, and the designs of different computing applications created by domains of CS practice.</li>
-  <li class="c3">Prototype: Projects around open-ended problems under constraints,utilizing tools and structures used by individuals in CS practice domains..</li>
-  <li class="c3">Communicate: Their work analyzing and prototyping applications, with a focus on the connections to CS practice domains. </li>
-</ul>
-<h3>Innovators + Concepts</h3>
-<table class="c29">
-  <tbody>
-    <tr class="c6">
-      <td class="c19" colspan="1" rowspan="1"><p class="c12">Concept</p></td>
-      <td class="c26" colspan="1" rowspan="1"><p class="c12">Subconcept</p></td>
-      <td class="c7" colspan="1" rowspan="1"><p class="c12">Example</p></td>
-  </tr>
-  <tr class="c6"><td class="c19" colspan="1" rowspan="1"><p class="c4">Abstraction</p></td>
-    <td class="c26" colspan="1" rowspan="1">
-    <ul class="c2 lst-kix_mu5ocexibfsy-0">
-      <li class="c0">Decomposition (AB.D) </li>
-      <li class="c0">Pattern Recognition (AB.PR) </li>
-      <li class="c0">Generalization and Detail Removal (AB.GDR) </li>
-      <li class="c0">Interfaces (AB.I)</li>
-    </ul></td>
-<td class="c7" colspan="1" rowspan="1"><p class="c4">Innovators can break down computing applications or problems; find patterns in how applications are used, designed, or implemented, understand how to focus on components that can be addressed with computing, and consider how others use their applications.</p></td>
-</tr>
-<tr class="c6">
-<td class="c19" colspan="1" rowspan="1"><p class="c4">Algorithms</p></td>
-<td class="c26" colspan="1" rowspan="1">
-  <ul class="c2 lst-kix_rm0ucx4ha7fv-0"><li class="c0">Algorithm Design (AL.AD) </li>
-    <li class="c0">Control Flow (AL.CF) </li>
-    <li class="c0">Inputs, Variables, Outputs (AL.IVO)</li>
-  </ul></td>
-  <td class="c7" colspan="1" rowspan="1"><p class="c4">Innovators can design algorithms that can be applied to an open-ended process. They can consider the inputs that such algorithms might need, the values in the algorithm that may change based on inputs, and how the algorithm can be designed to provide different outputs.</p></td>
-</tr>
-<tr class="c6">
-  <td class="c19" colspan="1" rowspan="1"><p class="c4">Programming</p></td>
-  <td class="c26" colspan="1" rowspan="1">
-    <ul class="c2 lst-kix_1weawln1gevz-0">
-      <li class="c0">Languages (P.L)</li>
-      <li class="c0">Syntax (P.S) </li>
-      <li class="c0">Development Environments (P.DE)</li>
-      <li class="c0 c15">Collaboration (P.C)</li>
-    </ul></td>
-    <td class="c7" colspan="1" rowspan="1"><p class="c4">Innovators can work in development environments similar or the same as the environments used in CS practice domains, while effectively collaborating with others to build a single prototype -- by using versions, roles, and methods for merging work done separately.<sup><a href="#cmnt2" id="cmnt_ref2">[b]</a></sup></p></td>
-  </tr>
-  <tr class="c6">
-    <td class="c19" colspan="1" rowspan="1"><p class="c4">Data</p></td><td class="c26" colspan="1" rowspan="1">
-    <ul class="c2 lst-kix_az0ssww54zlf-0">
-      <li class="c0 c15">Sensors &amp; Datasets (D.SD)</li>
-      <li class="c0 c15">Data Abstraction &amp; Storage (D.DAS) </li>
-      <li class="c0 c15">Transformation and Visualization (D.TV)</li>
-    </ul></td>
-    <td class="c7" colspan="1" rowspan="1"><p class="c4">Innovators can reflect on data about open-ended issues collected by sensors and datasets by storing, organizing, and mapping it to contextual data like user, time, or other datasets. Innovators can tell stories with data by presenting more than one meaningful view.</p></td>
-  </tr>
-  <tr class="c6">
-    <td class="c19" colspan="1" rowspan="1"><p class="c4">Networks</p></td>
-    <td class="c26" colspan="1" rowspan="1">
-      <ul class="c2 lst-kix_f79a0o6i9mk7-0">
-        <li class="c0">Trust (N.T) </li>
-        <li class="c0">Physical Internet (N.PI)</li>
-        <li class="c0">Markup (N.M)</li>
-      </ul></td>
-      <td class="c7" colspan="1" rowspan="1"><p class="c4">Innovators can share analyses and prototypes on a network using markup/markdown protocols, while keeping  privacy, security and consent in mind.</p></td></tr>
-    </tbody>
-  </table>
-<a name="citizen"></a><h2>Citizen(Z)</h2>
-<p class="c4">Citizens examine and try to influence the intersection of computing with social, economic and political systems<sup><a href="#cmnt3" id="cmnt_ref3">[c]</a></sup>.</p>
-<h3>Citizens + Practices</h3>
-<ul class="c2 lst-kix_4g45pdhdgrq4-0 start">
-  <li class="c3">Analyze:Trends and patterns that illuminate who is impacted, how they are affected, and what might be done to mitigate or improve these experiences.</li>
-  <li class="c3">Prototype: Citizens prototype computing applications that tackle systemic issues that are not only open-ended, but require consideration of related ethical, social and economic consequences.</li>
-  <li class="c3">Communicate: Their work as arguments, proposals, and rationale of the explicit and implicit impact of computing to relevant social systems.<sup><a href="#cmnt4" id="cmnt_ref4">[d]</a></sup> </li>
-</ul>
-<h3>Citizens + Concepts</h3>
-<table class="c29">
-  <tbody>
-    <tr class="c6">
-      <td class="c16" colspan="1" rowspan="1"><p class="c12">Concept</p></td>
-      <td class="c18" colspan="1" rowspan="1"><p class="c12">Subconcept</p></td>
-      <td class="c1" colspan="1" rowspan="1"><p class="c12">Example</p></td>
-    </tr>
-    <tr class="c6">
-      <td class="c16" colspan="1" rowspan="1"><p class="c4">Abstraction</p></td>
-      <td class="c18" colspan="1" rowspan="1">
-        <ul class="c2 lst-kix_mu5ocexibfsy-0">
-          <li class="c0">Decomposition (AB.D) </li>
-          <li class="c0">Pattern Recognition (AB.PR) </li>
-          <li class="c0">Generalization and Detail Removal (AB.GDR)</li>
-          <li class="c0">Modularity (AB.M) </li>
-          <li class="c0">Interfaces (AB.I)</li>
-        </ul>
-      </td>
-      <td class="c1" colspan="1" rowspan="1"><p class="c4">Citizens can effectively represent a problem, identify the role computing may play, and map out how computing fits or interacts with a system -- while taking into account different use cases.</p></td>
-    </tr>
-    <tr class="c6">
-      <td class="c16" colspan="1" rowspan="1"><p class="c4">Algorithms</p></td>
-      <td class="c18" colspan="1" rowspan="1">
-        <ul class="c2 lst-kix_rm0ucx4ha7fv-0">
-          <li class="c0">Algorithm Design (AL.AD) </li>
-          <li class="c0">Control Flow (AL.CF) </li>
-          <li class="c0">Inputs, Variables, Outputs (AL.IVO)</li>
-          <li class="c0">Application (AL.A)</li></ul></td>
-          <td class="c1" colspan="1" rowspan="1"><p class="c4">Citizens can evaluate the design of an algorithm given the constraints, goals, and history of a systemic issue by examining inputs and outputs, and investigating the intent behind the algorithm&rsquo;s decision-making.</p></td>
-        </tr>
-        <tr class="c6">
-          <td class="c16" colspan="1" rowspan="1"><p class="c4">Programming</p></td><td class="c18" colspan="1" rowspan="1">
-          <ul class="c2 lst-kix_1weawln1gevz-0">
-            <li class="c0 c15">Languages (P.L)</li>
-            <li class="c0 c15">Syntax (P.S) </li>
-            <li class="c0 c15">Development Environments (P.DE)</li>
-            <li class="c0 c15">Collaboration (P.C)</li>
-          </ul>
-        </td>
-        <td class="c1" colspan="1" rowspan="1"><p class="c4">Citizens can identify the right programming languages, environments, or collaborations for a specific systemic issue, and explain their thinking.<sup><a href="#cmnt5" id="cmnt_ref5">[e]</a></sup></p></td></tr><tr class="c6">
-        <td class="c16" colspan="1" rowspan="1"><p class="c4">Data</p></td>
-        <td class="c18" colspan="1" rowspan="1">
-          <ul class="c2 lst-kix_az0ssww54zlf-0">
-            <li class="c0 c15">Sensors and Datasets (D.SD),</li>
-            <li class="c0 c15">Data Abstraction &amp; Storage (D.DAS) </li>
-            <li class="c0 c15">Transformation &amp; Visualization (D.TV)</li>
-            <li class="c0 c15">Feedback Loops &amp; Automation (D.FLA)</li>
-          </ul></td>
-          <td class="c1" colspan="1" rowspan="1"><p class="c4">Citizens can identify, examine, and evaluate different sources of data<sup><a href="#cmnt6" id="cmnt_ref6">[f]</a></sup> created by a system for its relevance, potential uses, and potential misuses; putting emphasis on evaluating the feedback loops that use the data, or could use the data.</p></td>
-        </tr>
-        <tr class="c6"><td class="c16" colspan="1" rowspan="1"><p class="c4">Networks</p></td>
-          <td class="c18" colspan="1" rowspan="1">
-            <ul class="c2 lst-kix_f79a0o6i9mk7-0">
-              <li class="c0">Trust (N.T),</li>
-              <li class="c0">Protocols (N.PRO),</li>
-              <li class="c0">Physical Internet (N.PI),</li>
-              <li class="c0">Markup (N.M)</li>
-            </ul></td>
-            <td class="c1" colspan="1" rowspan="1"><p class="c4">Citizens can engage with the community of other citizens that actively shape the protocols and infrastructure that govern and shape the Internet.</p></td>
-          </tr>
-        </tbody>
-      </table>
+		<section id="perspective-explorer" class="accordion-target compressed">
 
+			<header>
+				<a class="box accordion" href="#perspective-explorer">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-explorer" /></svg></span>
+						<h3>Explorer</h3>
+						At the beginning of their journey, students learn CS concepts and practices by manipulating physical models and working in guided digital environments.
+					</div>
+				</a>
+			</header>
+
+
+			<div class="section-content">
+
+				<div class="introduction col-sm-6 col-md-7">
+
+					<p class="headline">&ldquo;I can play with computing practices and concepts.&rdquo;</p>
+
+					<ul class="examples">
+
+						<li>Second graders Grismely and Angie programmed a robot to complete a maze by trying different solutions and talking about when the robot didn't do what they expected.</li>
+
+						<li>Sixth grader Julio made a funny animation about a polar bear meeting a dinosaur using only 10 blocks in the Scratch programming environment. This was the first part of a unit about using Scratch to create a public service announcement for his school community.</li>
+
+						<li>Ninth grader Annabella used Python to look for patterns and trends in presidential election data from the past 10 years. This was the first part of a unit about evaluating how computing could impact our electoral process.</li>
+
+					</ul>
+
+					<p>Educators teaching Kindergarten to second grade should focus on developing their students confidence as Explorers by providing them with defined tasks that allow students to tinker, try things, and persist until they find a possible solution. The goal of this exploration is to help students build familiarity and facility with CS so they can progress to becoming Creators who are able to start defining the ideas they would like to express through CS.</p>
+
+					<p>Educators teaching third to fifth grade, middle school and high school students should also utilize this perspective to begin meaningful CS units that aim to help students embrace the Creator, Innovator, Citizen perspectives. Exploring early in a unit can help students with little or no prior experience gain confidence before learning CS from more advanced perspectives.</p>
+
+				</div>
+
+				<div class="case-study col-sm-6 col-md-5">
+
+						<a target="_blank" href="http://alpha.editor.p5js.org/KCintheNYC/sketches/Hyvg4Kw8Z">
+							<img src="/static/images/assets/explorer-robot.jpg" alt="" />
+						</a>
+
+						<h4>Exploring Animation</h4>
+
+						<p>Kara works on partnerships for Computer Science for All (CS4All) in NYC. She is an economist by training who loves finding ways to engage young women in STEM.</p>
+
+						<p>She didn't know computer science when she joined the CS4All team so she attended teacher professional development to explore CS. During PD she learned a creative coding programming language that allowed her to draw fun sketches on the screen with code. In the PD participants were asked to draw a robot by hand using only simple shapes. She enjoyed seeing everyone's design and trying to code her robot.</p>
+
+						<p>Eventually she was not only able to draw the robot on the screen with code, but to also animate it so it moved when the mouse was clicked. When she tried to sketch a complicated design with repeated features, she discovered the value of being able to use code to repeat functions instead of having to do it by hand.</p>
+
+				</div>
+
+			</div>
+
+
+
+	     </section>
+
+
+
+	     <section id="perspective-creator" class="accordion-target compressed">
+
+	     	<header>
+	     		<a class="box accordion" href="#perspective-creator">
+	     			<div class="box-content">
+	     				<span class="icon"><svg><use xlink:href="#icon-creator" /></svg></span>
+	     				<h3>Creator</h3>
+	     				Continuing on their journey, students excited by the possibilities of computing can use friendly, open-ended physical and digital tools to represent their ideas, thoughts, or interests.
+	     			</div>
+	     		</a>
+	     	</header>
+
+
+	     	<div class="section-content">
+
+
+				<div class="introduction col-sm-7">
+
+					<p class="headline">&ldquo;I can express myself with computing practices and concepts&rdquo;</p>
+
+					<ul class="examples">
+
+						<li>A group of 4th graders create an interactive Scratch project that helps to introduce new students to the school, providing information about key locations and resources throughout the building.</li>
+
+						<li>7th grader Umaima programmed a micro:bit to pick a random number and used it to choose the winning tickets at a school event's raffle.</li>
+
+						<li>9th grader Nora used Python and conditionals to create choose-your-own-adventure story with different outcomes depending on the decisions made by the user. This was part of a unit to create an web application that improved upon an existing product based on the student's’ research.</li>
+
+					</ul>
+
+					<p>Educators teaching third to fifth grade students should focus on developing their students confidence as Creators by providing them with opportunities to analyze computing projects, imagine how they might express themselves through computing, and build prototypes of their ideas. The goal of these opportunities for expression is to help students develop a sense of self-efficacy with CS that will enable them to be Innovators who can build on or incorporate the work of the larger CS community.  Educators teaching from this perspective should scaffold instruction with elements of the Explorer perspective.</p>
+
+					<p>Educators teaching middle and high school students should also utilize the Creator perspective to introduce or provide structure to students learning CS as Innovators or Citizens. Both the Innovator and Citizen perspectives ask students to consider how they might bring their ideas into existing systems, so educators should ensure that students are confident expressing their ideas before asking them to learn as Innovators and Citizens.</p>
+
+				</div>
+
+
+				<div class="case-study col-sm-5">
+
+					<a target="_blank" href="http://ariellehein.com/projects.html">
+						<img src="/static/images/assets/perspective-arielle.jpg" alt="" />
+					</a>
+
+					<h4>Creating More Hours in the Day(light)</h4>
+
+					<p>Arielle is a visual designer exploring the effects of natural light on humans. She assembled a wearable light sensor to track her own exposure to the sun (sort of like a FitBit for sunlight).</p>
+
+					<p>But she wasn't content merely to measure the Sun; she wanted to celebrate it, like the ancient Greeks did Helios. So she created a web application that retrieved sunrise and sunset times from an online source, and mapped them to the movement of a clock prototype. She found that clock, which began its rotation upon sunrise and completed it at sunset, truly inspired her to spend more time in the sun, and soon made a physical version that hangs on the wall, reminding its observers to make the most of the daylight. </p>
+
+				</div>
+
+			</div>
+
+	     </section>
+
+
+	     <section id="perspective-innovator" class="accordion-target compressed">
+
+	     	<header>
+     			<a class="box accordion" href="#perspective-innovator">
+     				<div class="box-content">
+     					<span class="icon"><svg><use xlink:href="#icon-innovator" /></svg></span>
+     					<h3>Innovator</h3>
+     					Innovators consider open-ended questions about public, private and open-source computing.
+     				</div>
+     			</a>
+     		</header>
+
+
+     		<div class="section-content">
+
+				<div class="introduction col-sm-7">
+
+					<p class="headline">&ldquo;I can connect to the work of others using computing practices and concepts.&rdquo;</p>
+
+					<ul class="examples">
+
+						<li>An 8th grade student creates a Scratch Studio and then "interviews" other Scratchers to "hire" them to make a Scratch project with the goal of animating a comic book that she designed and wrote.</li>
+
+						<li>10th grader Stephanie utilized an interactive map showing average temperature by year in a website that she created to discuss the impacts of humans on the environment.</li>
+
+						<li>A group of high schoolers building an app to help people struggling from addiction used a Javascript calendar library to create a way for their users to plan out new routines and document their progress.</li>
+
+					</ul>
+
+					<p>Educators teaching middle school and career and technical high school should focus on developing their students confidence as Innovators by challenging them to consider how their work connects to, builds on, or can incorporate the work of individuals in the public, private, and open-source domains. The goal of challenging students in this way is to help them see themselves as part of the larger CS community. These connections can mean analyzing data from government agencies, utilizing software libraries from open source organizations, or communicating their projects to professionals visiting the classroom. Educators teaching from this perspective should scaffold instruction with elements of the Explorer and Creator perspectives.</p>
+
+					<p>Educators teaching general education high school can use the Innovator perspective to introduce students to connecting their work to the world outside the classroom before asking students to think like Citizens considering how computing intersects with the social systems important to them.</p>
+
+				</div>
+
+
+				<div class="case-study col-sm-5">
+
+					<a target="_blank" href="https://tonejs.github.io/">
+						<img src="/static/images/assets/perspective-innovator.jpg" alt="" />
+					</a>
+
+					<h4>Musical Innovation</h4>
+
+					<p>Yotam was studying jazz piano in college when he stumbled upon a place at his college where people were making music with technology. He was inspired to earn a second degree in computer science so he too could make music with computers. Yotam wanted to make it easy for musicians of all types to make music with computers so he decided to write music-making software that could run in a web browser.</p>
+
+					<p>Every web browser has software built-in called Web Audio, but it’s hard for most people to use. Yotam wanted something that would make sense to musicians as well as programmers, so he wrote new software called Tone.js that uses structure and language that would be familiar to the different types of people he knew wanted to make music on the Internet.</p>
+
+				</div>
+		     	</div>
+
+		</section>
+
+
+		<section id="perspective-citizen" class="accordion-target compressed">
+
+			<header>
+				<a class="box accordion" href="#perspective-citizen">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-citizen" /></svg></span>
+						<h3>Citizen</h3>
+						Citizens examine the intersection of computing with social, economic, and political systems, and then work to influence those systems.
+					</div>
+				</a>
+			</header>
+
+
+			<div class="section-content">
+
+				<div class="introduction col-sm-7">
+
+					<p class="headline">&ldquo;I can question how computing practices and concepts affect my community.&rdquo;</p>
+
+					<ul class="examples">
+
+						<li>Isabel analyzed the NYC high school assignment algorithm and prototyped her own version before sharing with her class how she thinks it might be improved to make school placement more equitable.</li>
+
+						<li>Jason and Aminata held a debate to discuss the ways in which self-driving cars might be programmed to value human lives.</li>
+
+						<li>A group of students wrote to Facebook with ideas for filtering out fake news posts.</li>
+
+					</ul>
+
+					<p>Educators teaching general education high school should focus on developing their students’ ability to think systemically about the impacts of computing by challenging students to research how computers are involved in or are changing the systems with which they interact. The goal of this exploration is to help students develop the confidence to apply CS concepts and practices to difficult social, economic and political issues that do not have clear solutions. Students should feel confident developing informed opinions on the impacts of computing and effectively communicating them with their community.  Educators teaching from this perspective should scaffold instruction with elements of the Explorer, Creator, Innovator perspectives.</p>
+
+				</div>
+
+
+				<div class="case-study col-sm-5">
+
+					<a target="_blank" href="https://www.mhpbooks.com/books/networks-of-new-york/">
+						<img src="/static/images/assets/perspective-citizen.jpg" alt="" />
+					</a>
+
+					<h4>Networked Citizenship</h4>
+
+					<p>Ingrid is a writer who became interested in the impact of the Internet on social, economic and political systems. She felt that it was important that a broad audience of people understood the people, companies, and interests that drove the development and use of the Internet. Much of the information about the how the Internet works, however, revolves around technology that’s behind secure doors or rules, or protocols, written in technical language or code that is hard to understand.</p>
+
+					<p>She wanted a way for people to recognize and think about the infrastructure behind the time they spend online everyday. This infrastructure was hiding in plain sight in the form of spray-painted sidewalk markings, manhole covers, and networked police cameras, so she created an illustrated field guide to the urban internet infrastructure called “Networks of New York”. In it she gives readers a tour of the urban network visible in New York City and ties it to important stories about telecommunications monopolies, public and private companies that control network infrastructure, and networks impact things like the stock market through high frequency trading.</p>
+
+				</div>
+				</div>
+
+	     </section>
+
+</article>
+
+<div class="interior-container">
+
+  <div class="exit-menu">
+
+    <ol class="list-unstyled">
+      <li>
+        <a class="box" href="/what-is-cs/" role="button"><span class="box-content">CS Education</span></a>
+      </li><li class="current">
+        <a href="">Perspectives</a>
+      </li><li>
+        <div class="box">
+          <a class="btn btn-primary btn-lg" href="/practices/" role="button">Next: <span class="preamble">Let&rsquo;s discuss the</span> Practices <span class="preamble">each perspective employs.</span></a>
+        </div>
+      </li><li>
+        <a class="box" href="/concepts/" role="button"><span class="box-content">Concepts</span></a>
+      </li><li>
+        <a class="box" href="/outcomes/" role="button"><span class="box-content">Outcomes</span></a>
+      </li>
+    </ol>
+
+  </div>
 
 </div>
 
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    border: 1px solid #666;
-    padding: 10px;
-  }
-  .c8 {
-    font-weight: bold;
-  }
+</div><!-- /#page -->
 
-  .filter{
-    color: grey
-  }
 
-</style>
 
 {% endblock %}

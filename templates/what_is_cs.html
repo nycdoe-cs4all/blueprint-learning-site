@@ -1,110 +1,115 @@
 {% extends "base.html" %} {% load i18n %} {% block content %}
-<script src="/static/js/floatMenu.js"></script>
-<div class="col-md-3" id="floatMenu">
 
-  <h4>Blueprint CS Foundations</h4>
+<article class="light-theme">
 
-  <ul>
-    <li><a class="filter" href="/what-is-cs">What is CS education?</a></li>
-    <li><a  href="/meaningful-cs">What is a meaningful CS Unit?</a></li>
-    <li><a  href="/concepts">CS Concepts</a></li>
-    <li><a  href="/practices">CS Practices</a></li>
-    <li><a  href="/perspectives">CS Perspectives</a></li>
-    <li><a  href="/ican">I Can Statements</a></li>
+<!-- <script src="/static/js/floatMenu.js"></script>
+<div class="col-md-3" id="floatMenu"> -->
+
+<header>
+  <h2><span class="preamble">What is</span> CS education?</h2>
+  <p>New York City's unique approach to providing its students with crucial skills and preparing them for the future.</p>
+</header>
+
+
+
+<div class="article-content">
+
+  <p>Computer science (CS) is the study of the capabilities and limitations of computers. New York City K-12 CS education emphasizes a hands-on (rather than theoretical) approach to computer science known as <a href="/resources/">creative computing</a>.</p>
+
+  <p>Each <a href="/units/">meaningful unit</a> of CS education combines three core components:</p>
+
+  <ul class="list-unstyled submenu">
+
+    <li class="blue">
+      <a class="box" href="/perspectives/">
+        <div class="box-content">
+          <div class="icon-set">
+            <span class="icon"><svg><use xlink:href="#icon-explorer" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-creator" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-innovator" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-citizen" /></svg></span>
+          </div>
+          <h3>Perspectives</h3>
+          The different stages of CS learning describe how and why your students will tackle a computing task.
+        </div>
+      </a>
+    </li>
+
+    <li class="green">
+      <a class="box" href="/practices/">
+        <div class="box-content">
+          <div class="icon-set">
+            <span class="icon"><svg><use xlink:href="#icon-analyze" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-prototype" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-communicate" /></svg></span>
+          </div>
+          <h3>Practices</h3>
+          The interdependent methods and skills students will need to master in order to solve a problem, answer a question, or express themselves.
+        </div>
+      </a>
+    </li>
+
+    <li class="orange">
+      <a class="box" href="/concepts/">
+        <div class="box-content">
+          <div class="icon-set">
+            <span class="icon"><svg><use xlink:href="#icon-algorithm" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-programming" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-data" /></svg></span>
+            <span class="icon"><svg><use xlink:href="#icon-network" /></svg></span>
+          </div>
+          <h3>Concepts</h3>
+          The big ideas students will explore in the process, and better understand when they're done.
+        </div>
+      </a>
+    </li>
+
   </ul>
 
-</div>
+  <p>Combined, a perspective, practice, and concept describe a new capability students will take away from the unit, and suggest a number of practical skills they've learned in the process. We call these "I Can" statements.</p>
 
-<div class="col-md-9">
-
-  <ul class="nav nav-tabs" role="tablist" id="tablist">
-    <li role="presentation" class="active"><a href="#whatiscs" aria-controls="whatiscs" role="tab" data-toggle="tab">What is CS Education?</a></li>
-    <li role="presentation"><a href="#fellows" aria-controls="fellows" role="tab" data-toggle="tab">Message from CS4All Blueprint Teacher Fellows</a></li>
-  </ul>
-
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="whatiscs">
-      <h1>What is CS education?</h1>
-      <p>Computer science (CS) is the theoretical study and creative application of the capabilities and limitations of computers. K-12 CS education in New York City emphasizes the creative application of computer science, or creative computing because it:</p>
-      <ul>
-        <li>Provides hands-on experience that can lead to multiple pathways for future learning.</li>
-        <li>Can be adapted to meet the needs of all schools, teachers, and students.</li>
-        <li>Engages teachers and students with current technologies and problems.</li>
-      </ul>
-      <p>To better understand the emphasis on creative computing over its theoretical study, let's consider this example: Computers are useful in solving tedious problems such as sorting lists. If you are trying to sort a list of all 1.1 million students in NYC, you will want to use a computer.</p>
-      <p>An educator emphasizing the theoretical study of CS may ask students, &quot;How can we use a computer to alphabetically sort a list of 1.1 million names?&quot; This problem is too large for a spreadsheet, so students will have to give the computer instructions using a programming language. Students will grapple with the computational concepts of algorithms, programming, and data. This will lead to discussions about different methods for sorting the names in the list, the efficiency of different methods, and a potential higher-order mathematical understanding of computation.</p>
-      <p>An educator emphasizing the creative application of CS might ask students, &quot;How can we use a computer to design a mural with the names of all 1.1 million students in the NYC school system?&quot; This project has too many parts to consider all at once, so students will have to analyze the project and decompose it into smaller parts. </p>
-      <p>What messages could this mural send? What should it look like? How do we want to display the names? A computer can be useful in helping us design the display of the names. If students want to communicate how people may view the mural, they can use a creative programming language, like Scratch or Processing, to make an animation. If we want to display the names alphabetically, students can use a programming language with a sort function. If we want to group the names by shared interests between students, students can prototype representing relationships between names in the computer. This leads to student-driven discussions, layered with many computational concepts like abstraction, algorithms, programming, data, and networks.</p>
-      <p>Both approaches lead to a rigorus discussion of computer science practices and concepts. However, the student-driven discussion of the creative computing approach provides an entry point for all students.</p>
-
-      <h2>Hands-on experience that leads to multiple pathways for future learning</h2>
-      <p>The size or significance of computing problems will vary between computer science beginners and experts, and both groups will come to understand the capabilities and limitations of computers through hands-on experience. Students can prepare for many different CS pursuits by learning the habits of experts such as; prototyping ideas in an iterative process, clearly communicating work with others, and analyzing their own work, as well as the work of others.</p>
-
-      <p>Let’s consider an example to better understand what this looks like in the classroom.</p>
-
-      <p>An educator can instill fundamental CS practices in groups of elementary students that are competing to give robots instructions to complete a maze the fastest. These students can engage in an iterative process to determine the sequence of instructions that will get the robot through the maze. Once students have successfully developed instructions, the competition requires them to show their work and to communicate the reasons why their instructions may be the fastest. While one group is showing their work and sharing their thoughts, other groups can consider how they might learn from their peers to make their own robots complete the maze faster. Students learning from each other is a sign of a successful CS classroom.</p>
-
-      <p>Engaged students that are familiar with the Analyze, Prototype and Communicate practices can continue to take on new and different CS challenges. The practices required to instruct robots to move through mazes are the same as those required to program robots to navigate Mars.</p>
-
-      <h2>Adapting to meet the needs of all schools, teachers, and students</h2>
-      <p>Computer science is often simplified as &quot;coding&quot; or programming. Programming is just one concept in computer science, and focusing on it can reinforce a stereotype that computer science is not accessible to all schools, teachers, and students.</p>
-
-      <p>Rigorous CS education can focus on other concepts such as Abstraction, Algorithms, Data, and Networks, and never ask teachers or students to write code. This opens up more possibilities for CS education and makes it more adaptive to the needs of different schools.</p>
-
-      <p>Creative computing can enable students to understand the capabilities and limitations of computers without ever having to write code. Examples of creative computing with no programming are:</p>
-      <ul>
-        <li>Designing a set of instructions that, when followed, yields a piece of art.</li>
-        <li>Documenting and modeling the physical infrastructure of the Internet.</li>
-        <li>Analyzing literature with the help of data, such as the number of times characters appear together.</li>
-      </ul>
-      <h2>Engaging teachers and students with current technologies and problems</h2>
-      <p>From 1950 to 2016, computers went from occupying a room to fitting on a wrist. This rate of change shows no sign of slowing, therefore teachers and students that are preparing for the future must work with the most current technologies and problems. Current computer science technologies often have lower barriers to entry over their predecessors, in exchange for more specific uses or purposes. The most prominent example of this is the Scratch visual programming language.
-      <p>While it’s easy to get started with Scratch because of the drag-and-drop, color-coded interface, projects in Scratch are limited in the type of data they can handle. This is a negligible trade-off for beginners and the benefit is not having to learn how to read, write, and comprehend a text-based programming language. There are other examples of current technologies with low barriers to entry that allow students’ understanding of computers to grow more sophisticated over time.
-      <ul>
-        <li>Makey Makey is a game controller, without casing or buttons, that plugs into a computer as a keyboard, giving students the ability to explore a new dimension of computing and electricity.</li>
-      <li>Thimble/Codepen are examples of online code editors with communities of projects that give students the opportunity to create and publish their own web pages.</li>
-      <li>Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts that enables students to innovate on their ideas and those of others.</li>
-      <li>Arduino is an open-source microcontroller, or mini computer, that gives students a platform to consider the multitude of ways humans can interact with computers.</li>
-      <li>Jupyter Notebooks are novel interfaces for writing Python that allow students to analyze data sets associated with large systemic issues and understand computing’s role in these systemic issues.</li>
-      </ul>
-      <p>Creative computing gives teachers and students the opportunity to explore these technologies hands-on, with very little prerequisite knowledge. Students develop confidence with these technologies by frequently reusing and remixing each other's projects. That confidence translates into students creating their own artifacts that they can share with their school, community and beyond. With constructive feedback loops, students can broaden the technologies they work with to include those used in open-source, private, and public sectors.</p>
-    </div>
-
-    <div role="tabpanel" class="tab-pane" id="fellows">
-      <h1>What are we trying to teach?</h1>
-
-        <p>In Math class, a student holds a pencil. They may hold that same pencil in English, but what they’re asked to produce, and how they’re trained to think are different in Math class and English class. The pencil is not the focus in either class.</p>
-
-        <p>In computer science, the computer is the pencil.</p>
-
-        <p>Your students have used computers to convey their thinking in documents, slides, or pictures. Our hope is that these resources will help you create a classroom in which students think with the computer, where the
-          computer becomes &quot;a bicycle for the mind,&quot; a tool for empowering and unlocking our students' curiosity and creativity.</p>
-
-        <p>We'll be tackling everything from recommended programming languages and courses of study, to the arrangement of tables and chairs in your classroom. There is a lot to digest (and a lot that we are still learning,) but these resources were put together
-          by folks who love teaching computer science and learned to teach it, just like you, while in the classroom.</p>
-
-        <p>A final thought before we jump into the nitty-gritty. Why CS4All? After all, not everyone will become a computer programmer, and that's fine. Not every student will become a novelist, but every student has the right to read great literature and be exposed to the possibility that she can create something great and enduring. CS4All is about unlocking potential.  Our objective is not to produce coders, but young people who think about code and are not afraid to try to read and write it. </p>
-        <p>In
-          the history of computer science, we have mostly been content to wait for prodigies to drive innovation. We believe there is more prodigious talent in our students that can be unlocked by learning to create and iterate. These resources are a commitment
-          to equity, to unlocking more unrealized potential in all of our students, in as many ways as we possibly can.</p>
-    </div>
+  <div class="submenu">
+    <a href="/student-outcomes/" class="box">
+      <div class="box-content">
+        <div class="icon-set">
+          <span class="icon"></span>
+          <span class="icon"><svg><use xlink:href="#icon-communicate" /></svg></span>
+          <span class="icon"><svg><use xlink:href="#icon-abstraction" /></svg></span>
+        </div>
+        <h3>Student Outcomes</h3>
+        Proficiencies gained through the study of computer science, articulated from students' point of view.
+      </div>
+    </a>
   </div>
 
 </div>
 
-<script src="/static/js/jquery.min.js"></script>
-<script>
-$('#tablist a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
 
 
-//change the color of the selected filter
-// $('.filter').click(function(e){
-    $('.filter').css("color", "grey");
-//     $(this).css("color", "black");
-//   console.log("hello");
-// });
-</script>
+</article>
+<div class="interior-container">
+
+		<div class="exit-menu">
+
+			<ol class="list-unstyled">
+				<li class="current">
+					<a href="">CS&nbsp;Education</a>
+				</li><li>
+					<div class="box">
+						<a class="btn btn-primary btn-lg" href="/perspectives/" role="button">Next: <span class="preamble">We&rsquo;ll look at</span> Perspectives, <span class="preamble">and see how students approach CS education at different stages.</span></a>
+					</div>
+				</li><li>
+					<a class="box" href="/practices/" role="button"><span class="box-content">Practices</span></a>
+				</li><li>
+					<a class="box" href="/concepts/" role="button"><span class="box-content">Concepts</span></a>
+				</li><li>
+					<a class="box" href="/outcomes/" role="button"><span class="box-content">Outcomes</span></a>
+				</li>
+			</ol>
+
+		</div>
+
+	</div>
+
+</div><!-- /#page -->
 {% endblock %}

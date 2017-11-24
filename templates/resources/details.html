@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
-
 {% block content %}
+<div id="page">
+	<article class="light-theme">
+
 <div class="col-md-9">
-  <h1>{{resource.title}}</h1>
-  <div>
+  <header><span class="preamble"><h2>{{resource.title}}</h2></span></header>
+  <div class="article-content">
     {{resource.body | safe}}
   </div>
 </div>
@@ -28,4 +30,8 @@
   {% endif %}
 
 </div>
+</article>
+
+
+</div><!-- /#page -->
 {% endblock %}

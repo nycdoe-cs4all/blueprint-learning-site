@@ -2,6 +2,10 @@
 {% load i18n %}
 
 {% block content %}
+
+<div id="page">
+	<article class="light-theme">
+
 <div class="col-md-3">
   {% if user.profile.full_name %}
     <h1 style="margin-top:0;">{{ user.profile.full_name }}</h1>
@@ -22,24 +26,24 @@
   {% endif %}
 
 </div>
-<div class="col-md-9">
+<!-- <div class="col-md-9"> -->
 
   <ul class="nav nav-tabs" role="tablist" id="tablist">
     <li role="presentation" class="active"><a href="#units" aria-controls="units" role="tab" data-toggle="tab">Units</a></li>
     <li role="presentation"><a href="#bookmarks" aria-controls="bookmarks" role="tab" data-toggle="tab">Bookmarks</a></li>
   </ul>
 
-  <div class="tab-content">
+  <div  style="margin-left:10%; margin-right:10%;" class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="units">
       <h2>Units</h2>
-      <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
+      <p style="text-align:center;">Contribute a new unit <a href="{% url 'new' %}">here</a></p>
 
       {% if activities %}
         {% include "activities/_activity_list.html" %}
       {% else %}
         <p>No units created</p>
       {% endif %}
-      
+
     </div>
 
     <div role="tabpanel" class="tab-pane" id="bookmarks">
@@ -50,9 +54,12 @@
         <p>No bookmarks</p>
       {% endif %}
     </div>
-  </div>
+  <!-- </div> -->
 
 </div>
+
+</article>
+</div><!-- /#page -->
 
 <script>
 $('#tablist a').click(function (e) {

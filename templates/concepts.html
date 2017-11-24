@@ -1,271 +1,398 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-<script src="/static/js/floatMenu.js"></script>
-<div class="col-md-3" id="floatMenu">
+<div id="page">
+	<article class="orange-theme">
 
-  <h4>Blueprint CS Foundations</h4>
+		<header>
+			<h2><span class="preamble">Computer Science</span> Concepts</h2>
+			<p class="subhead">A framework for what computers can and cannot do.</p>
+		</header>
 
-  <ul>
-    <li><a href="/what-is-cs">What is CS education?</a></li>
-    <li><a href="/meaningful-cs">What is a meaningful CS Unit?</a></li>
-    <li><a class="filter" href="/concepts">CS Concepts</a></li>
-    <li><a href="/practices">CS Practices</a></li>
-    <li><a href="/perspectives">CS Perspectives</a></li>
-    <li><a href="/ican">I Can Statements</a></li>
-  </ul>
-
-</div>
-<div class="col-md-9">
-<h1>Computer Science Concepts</h1>
-<p>In the sections below, we define CS concepts commonly used in a variety of computing applications. We introduce CS vocabulary, and try to demystify concepts by presenting parallels that exist in other subjects. </p>
-
-<p >CS Concepts are ideas that students apply when practicing computing. Computer science concepts provide a framework for what a computer can and cannot do. There are five top-level concepts, each with multiple sub-concepts:</p>
-<ol class="c16 lst-kix_ft2q8ezhb0om-0 start" start="1">
-  <li class="c2 c32"><a href="#abstraction">Abstraction</a></li>
-  <li class="c2 c32"><a href="#algorithms">Algorithms</a> </li>
-  <li class="c2 c32"><a href="#programming">Programming</a> </li>
-  <li class="c2 c32"><a href="#data">Data</a> </li>
-  <li class="c2 c32"><a href="#networks">Networks</a></li>
-</ol>
-<!-- <div class="col-md-12">
-  <div class="col-md-4">
-    <img src="/static/images/abstraction.svg" style="width: 50%; margin-top:10px; margin-bottom: 10px ">
-  </div>
-  <div class="col-md-4">
-    <img src="/static/images/algorithm.svg" style="width: 50%; margin-top:10px; margin-bottom: 10px ">
-  </div>
-  <div class="col-md-4">
-    <img src="/static/images/programming.svg" style="width: 50%; margin-top:10px; margin-bottom: 10px ">
-  </div>
-  <div class="col-md-4">
-    <img src="/static/images/data.svg" style="width: 50%; margin-top:10px; margin-bottom: 10px ">
-  </div>
-  <div class="col-md-4">
-    <img src="/static/images/networks.svg" style="width: 50%; margin-top:10px; margin-bottom: 10px ">
-  </div>
-</div> -->
-<p >Each concept and its sub-concepts are defined below, with demystifying examples of those concepts in Math and English Language Arts (ELA).</p>
-
-<a name="abstraction"></a><h2>Abstraction (AB)</h2>
-<p >An abstraction represents a simplified idea or problem, derived by ignoring details and focusing on patterns or general characteristics. A programming language is a simple example of a CS abstraction: Programming languages "abstract away" from complex details allowing programmers to give complex instructions to computers without worrying about the <span class="c26">bits &amp; bytes!</p>
-<table ><tbody>
-  <tr class="c34">
-    <td  colspan="1" rowspan="2"></td>
-    <td  colspan="1" rowspan="2"><p >Sub-concept</p></td>
-    <td  colspan="1" rowspan="2"><p >Definition</p></td>
-    <td class="c22" colspan="2" rowspan="1"><p >Demystifying Parallels in Other Subjects</p></td>
-  </tr>
-  <tr class="c34">
-    <td  colspan="1" rowspan="1"><p >Math</p></td>
-    <td  colspan="1" rowspan="1"><p >ELA</p></td>
-  </tr>
-  <tr >
-    <td  colspan="1" rowspan="1"><p >D</p></td><td  colspan="1" rowspan="1"><p >Decomposition</p></td>
-    <td  colspan="1" rowspan="1"><p >Ideas, problems, or projects are broken down into component parts to set the stage for deeper analysis.</p></td>
-    <td  colspan="1" rowspan="1"><p >145 can be decomposed as 100 + 40 + 5.</p></td>
-    <td  colspan="1" rowspan="1"><p >Words can be broken into syllables to sound them out. Essays have three parts; introduction, body, and conclusion.</p></td></tr><tr ><td  colspan="1" rowspan="1"><p >PR</p></td>
-    <td  colspan="1" rowspan="1"><p >Pattern Recognition</p></td>
-    <td  colspan="1" rowspan="1"><p >Decomposed component parts are examined to find patterns like similarities, repetition, conditional relationships, or nested relationships.</p></td>
-    <td  colspan="1" rowspan="1"><p >2, 4, 6, 8, 10 are even numbers. &nbsp;1, 3, 5, 7, 9, 11 are odd numbers.</p></td>
-    <td  colspan="1" rowspan="1"><p >As an alphabetic language, English has many systematic spelling patterns—“change y to i before adding es,” “i before e except after c”</p></td>
-  </tr>
-  <tr class="c48">
-    <td  colspan="1" rowspan="1"><p >GDR</p></td><td  colspan="1" rowspan="1"><p >Generalization and Detail Removal</p></td>
-    <td  colspan="1" rowspan="1"><p >Component parts are grouped by general characteristics, and unnecessary details filtered out.</p></td>
-    <td  colspan="1" rowspan="1"><p >Rounding or estimating removes details to provide a general understanding.</p></td>
-    <td  colspan="1" rowspan="1"><p >The main idea is determined by identifying the most salient idea and filtering out supporting details.</p></td>
-  </tr><tr >
-  <td  colspan="1" rowspan="1"><p >M</p></td><td  colspan="1" rowspan="1"><p >Modularity</p></td>
-  <td  colspan="1" rowspan="1"><p >A process that completes a single task is more useful when it can be chained together with other processes to accomplish something more complex.</p></td>
-  <td  colspan="1" rowspan="1"><p >Inscribing a shape inside another shape is a process that can be done regardless of the inner and outer shape.</p></td>
-  <td  colspan="1" rowspan="1"><p >Each phase of the writing process requires individual work that leads to a developed piece of writing—generating, rehearsing, drafting, revising, editing, and publishing.  </p></td>
-</tr>
-<tr >
-  <td  colspan="1" rowspan="1"><p >I</p></td><td  colspan="1" rowspan="1"><p >Interfaces</p></td>
-  <td  colspan="1" rowspan="1"><p >Interfaces help users complete tasks, while hiding details of the overall process.</p></td>
-  <td  colspan="1" rowspan="1"><p >Function machines in math that take inputs and produce outputs represent the math being done.</p></td>
-  <td  colspan="1" rowspan="1"></td>
-</tr>
-</tbody>
-</table>
-
-<a name="algorithms"></a><h2>Algorithms (AL)</h2>
-<p >Algorithms are generalized and repeatable sequences of instructions that achieve a particular purpose and output, given a set of inputs. It&#39;s important to understand when, why and how to implement an algorithm, and to consider who or what might be affected.</p>
-<table ><tbody>
-  <tr >
-    <td  colspan="1" rowspan="2"><p >&nbsp;</p></td><td  colspan="1" rowspan="2"><p >Sub-concept</p></td>
-    <td  colspan="1" rowspan="2"><p >Definition</p></td>
-    <td  colspan="2" rowspan="1"><p >Demystifying Parallels in Other Subjects</p></td></tr><tr class="c44">
-    <td  colspan="1" rowspan="1"><p >Math</p></td><td  colspan="1" rowspan="1"><p >ELA</p></td>
-  </tr>
-  <tr >
-    <td  colspan="1" rowspan="1"><p >AD</p></td>
-    <td  colspan="1" rowspan="1"><p >Algorithm Design</p></td>
-    <td  colspan="1" rowspan="1"><p >Instructions should be general, clear, well-formed, complete, and capable of being executed as intended without confusion.</p></td>
-    <td  colspan="1" rowspan="1"><p >Showing the strategies used to solve a problem.</p></td>
-    <td  colspan="1" rowspan="1"><p >Explicitly demonstrating strategies to determine character traits—a) notice a character’s actions and ask, “What kind of person acts this way?” b) pay attention to dialogue and ask, “What kind of person would say things like this?”</p></td>
-  </tr>
-  <tr ><td  colspan="1" rowspan="1"><p >CF</p></td><td  colspan="1" rowspan="1"><p >Control Flow</p></td>
-    <td  colspan="1" rowspan="1"><p >The order in which steps of an algorithm are executed; determined by logical constructs such as IF statements, loops and calls to other procedures.</p></td>
-    <td  colspan="1" rowspan="1"><p >Students explain their problem-solving steps when addressing a word problem. First they decompose their problem, choose a strategy based on some logic, and so on.</p></td>
-    <td  colspan="1" rowspan="1"><p >In non-fiction texts, a footnote can redirect us to look elsewhere for more information, before taking us back to where we left off.</p><p>The steps in the writing process aren’t necessarily linear.  When revising, writers might need to return to the rehearsal phase and gather more information.  During rehearsal, writers might do some flash drafting to try out an idea.</p></td>
-  </tr>
-  <tr >
-    <td  colspan="1" rowspan="1"><p >IVO</p></td>
-    <td  colspan="1" rowspan="1"><p >Inputs, &nbsp;Variables and Outputs</p></td>
-    <td  colspan="1" rowspan="1"><p >How <span class="c28"><a class="c49" href="http://blueprint.cs4all.nyc/concepts#data">data</a>&nbsp;is passed into (inputs,) manipulated by, used within (variables,) and returned from the algorithm (outputs).</p><p >&nbsp;</p></td>
-    <td  colspan="1" rowspan="1"><p >A function machine is an example of a process that takes inputs, manipulates them in a way and outputs them.</p><p >&nbsp;</p><p >* Variables in CS can be more than just numbers - they can also represent strings of characters, lists, etc.</p></td>
-    <td  colspan="1" rowspan="1"><p >Writing a paper that must be on a specific topic, using vocabulary words and meeting a word count.</p><p >&nbsp;</p><p >Writing an informational text (output) can be done by using varied research materials, explicitly taught vocabulary (inputs), and prior knowledge/experience (variable). </p></td>
-  </tr>
-  <tr >
-    <td  colspan="1" rowspan="1"><p >A</p></td>
-    <td  colspan="1" rowspan="1"><p >Application</p></td>
-    <td  colspan="1" rowspan="1"><p >Understanding where, when, why and how to apply algorithms and which algorithm to apply in a given context.</p></td>
-    <td  colspan="1" rowspan="1"><p >Interpreting a word problem to figure out which strategy to utilize.</p></td>
-    <td  colspan="1" rowspan="1"><p >Upon encountering an unfamiliar word, readers make decisions about whether to use context clues or morphology clues (prefix, root, suffix) to define the word.  </p></td>
-  </tr>
-</tbody>
-</table>
-
-<a name="programming"></a><h2>Programming (P)</h2>
-<p >Programming is about giving instructions to computers. Programming can be done through a constantly changing set of languages. Each language is translated from human-readable code into machine code that can be executed by the computer&rsquo;s central processing unit, CPU.</p>
-<table >
-  <tbody>
-    <tr >
-      <td class="c17" colspan="1" rowspan="2"><p >&nbsp;</p></td>
-      <td class="c23" colspan="1" rowspan="2"><p >Sub-concept</p></td>
-      <td class="c15" colspan="1" rowspan="2"><p >Definition</p></td>
-      <td class="c50" colspan="2" rowspan="1"><p >Demystifying Parallels in Other Subjects</p></td></tr><tr class="c34"><td class="c33" colspan="1" rowspan="1"><p >Math</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >ELA</p></td>
-    </tr>
-    <tr class="c45">
-      <td class="c17" colspan="1" rowspan="1"><p >L</p></td>
-      <td class="c23" colspan="1" rowspan="1"><p >Languages</p></td>
-      <td class="c15" colspan="1" rowspan="1"><p >Programming languages have different applications and require different amounts of prior knowledge. Some languages can only be <span class="c26">run&nbsp;on specific hardware, while others run inside software such as a web browser.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >Fractions, ratios, decimals and percentages all express proportions, but are used in different contexts and require different background knowledge to use correctly.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >Within the English language there are different writing or speaking styles that are used in different contexts: formal language, technical language, colloquial language, regional dialects, etc.</p></td>
-    </tr>
-    <tr >
-      <td class="c17" colspan="1" rowspan="1"><p >S</p></td>
-      <td class="c23" colspan="1" rowspan="1"><p >Syntax</p></td>
-      <td class="c15" colspan="1" rowspan="1"><p >All programming languages have a set of commands or reserved words and grammar rules that must be followed.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >Mathematical notation represents numbers, operations and relationships. The syntax for 5 plus 5 is 5+5.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >Writers follow the common rules of grammar and mechanics in English to communicate easily with the reader.</p></td></tr>
-
-      <tr class="c10"><td class="c17" colspan="1" rowspan="1"><p >DE</p></td>
-      <td class="c23" colspan="1" rowspan="1"><p >Development Environments</p></td>
-      <td class="c15" colspan="1" rowspan="1"><p >Programmers use development environments to create applications. These environments have an editor to write code, a method to run and show a program&rsquo;s output and a console to log errors that arise.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >Excel can be used as a development environment when formulas are written in cells. Excel will help you write a formula, run the formula for you, and then tell you if there is an error.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >Word processors provide an environment for you to write text and display errors in the form of spelling and grammar checks.</p></td></tr><tr class="c10"><td class="c17" colspan="1" rowspan="1"><p >C</p></td>
-      <td class="c23" colspan="1" rowspan="1"><p >Collaboration</p></td>
-      <td class="c15" colspan="1" rowspan="1"><p >Collaborating on code is complex because each line is part of a larger algorithm or abstraction. Clearly setting team roles, saving versions along the way, and using parallel versions are some ways to manage that complexity.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p >Extended problem-solving, such as that used to design a playground, requires students to combine their work in order to achieve a single goal.</p></td>
-      <td class="c33" colspan="1" rowspan="1"><p class="c35">Large research projects are often written in collaboration with others who may have different areas of expertise. The collaborators have to meet frequently to ensure cohesion in the content.</p></td>
-    </tr>
-  </tbody>
-</table>
-
-<a name="data"></a><h2>Data (D)</h2>
-<p >Computers can be used to collect, store and analyze massive amounts of data quickly and reliably. Computer programs can use data to make decisions or to automate tasks.</p>
-<table >
-  <tbody>
-    <tr class="c40">
-      <td class="c20" colspan="1" rowspan="2"><p >&nbsp;</p></td>
-      <td class="c3" colspan="1" rowspan="2"><p >Subconcept</p></td>
-      <td class="c31" colspan="1" rowspan="2"><p >Definition</p></td>
-      <td class="c56" colspan="2" rowspan="1"><p >Demystifying Parallels in Other Subjects</p></td>
-    </tr>
-    <tr class="c63">
-      <td class="c5" colspan="1" rowspan="1"><p >Math</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p >ELA</p></td>
-    </tr>
-    <tr class="c38"><td class="c20" colspan="1" rowspan="1"><p >SD</p></td>
-      <td class="c3" colspan="1" rowspan="1"><p >Sensors and Datasets</p></td>
-      <td class="c31" colspan="1" rowspan="1"><p >Data is collected by sensors such as video cameras or thermostats, or from other datasets such as government data, or your <span class="c26">digital activity. Data from sensors and datasets must always be <span class="c26">cleaned, to ensure its accuracy and usability.</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p >Data can be collected from the class such as heights, interests, country of origin, etc.</p><p >&nbsp;</p><p >If students are taking measurements, rulers can be seen as analogous to sensors. Sensor data needs a reasonableness check.</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p > When researching a topic, writers collect data and information from various sources. Writers should use current research to ensure its relevance and usability.</p></td></tr>
-      <tr class="c51"><td class="c20" colspan="1" rowspan="1"><p >DAS</p></td>
-      <td class="c3" colspan="1" rowspan="1"><p >Data Abstraction and Storage</p></td>
-      <td class="c31" colspan="1" rowspan="1"><p >Computer data is represented as binary, but humans save and use data on computers as <span class="c26">lists, <span class="c26">databases, <span class="c26">key-value pairs, etc.</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p >Tables of rows and columns are an example of data representation.</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p >Outlines, timelines, and graphic organizers can represent complex data in a structured form.</p></td>
-    </tr>
-    <tr class="c62">
-      <td class="c20" colspan="1" rowspan="1"><p >TV</p></td>
-      <td class="c3" colspan="1" rowspan="1"><p >Transformation and Visualization</p></td>
-      <td class="c31" colspan="1" rowspan="1"><p >Computers make looking at data easier by allowing us to quickly visualize data in different ways; to break up a big problem into manageable pieces, operate on each piece independently, and then put all the pieces back together.</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p >When (x,y) points are plotted, it becomes easier to see their relationship.</p><p >&nbsp;</p><p >If the (x,y) points are very far apart, the scale of a graph must be adjusted.</p></td><td class="c5" colspan="1" rowspan="1"><p >Infographics are used to visually represent complex information and convey scale, interconnections, and progressions.</p></td>
-    </tr>
-    <tr class="c51">
-      <td class="c20" colspan="1" rowspan="1"><p >FLA</p></td><td class="c3" colspan="1" rowspan="1"><p >Feedback Loops and Automation</p></td>
-      <td class="c31" colspan="1" rowspan="1"><p >Automation is controlled by data. Some automation uses data from outside the automated system, like time. Other automation uses data on the output of the system, like temperature.</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p >If the answer to a math problem doesn&rsquo;t pass the reasonableness check, the student may backpedal through their work.</p></td>
-      <td class="c5" colspan="1" rowspan="1"><p >Using editing and revision checklists while writing to improve accuracy and clarity as well as self-assessment, peer-assessment and teacher feedback.</p></td>
-    </tr>
-  </tbody>
-</table>
-
-<a name="networks"></a><h2>Networks (N)</h2>
-<p >Networks, like the Internet, allow computers to interface with other computers through a set of rules, or protocols, that define how computers send and receive data. Protocols and standards are created and agreed upon by groups of people.</p>
-<table >
-  <tbody>
-    <tr class="c40">
-      <td class="c25" colspan="1" rowspan="2"><p >&nbsp;</p></td><td class="c11" colspan="1" rowspan="2"><p class="c2 c24"></p><p >Subconcept</p></td>
-      <td class="c29" colspan="1" rowspan="2"><p >Definition</p></td>
-      <td class="c58" colspan="2" rowspan="1"><p >Demystifying Parallels in Other Subjects</p></td></tr><tr class="c40"><td  colspan="1" rowspan="1"><p >Math</p></td>
-      <td class="c37" colspan="1" rowspan="1"><p >ELA</p></td>
-    </tr>
-    <tr class="c10">
-      <td class="c25" colspan="1" rowspan="1"><p >T</p></td><td class="c11" colspan="1" rowspan="1"><p >Trust</p></td>
-      <td class="c29" colspan="1" rowspan="1"><p >The common thread behind issues of security, privacy and consent is trust. Whenever we connect to a <span class="c26">network, we decide our level of trust, based on our security and privacy needs. We implement and monitor <span class="c26">protocols to protect those needs.</p></td>
-      <td  colspan="1" rowspan="1"><p >&nbsp;</p></td>
-      <td class="c37" colspan="1" rowspan="1"><p >When researching a topic, writers should verify the credibility and accuracy of the information source. Researchers look for evidence of the author's expertise.</p></td>
-    </tr>
-    <tr class="c51">
-      <td class="c25" colspan="1" rowspan="1"><p >PRO</p></td>
-      <td class="c11" colspan="1" rowspan="1"><p >Protocols</p></td>
-      <td class="c29" colspan="1" rowspan="1"><p >In order to send data from one device to another, the devices must be synchronized, share a <span class="c26">syntax&nbsp;for the data, share a method of <span class="c26">encryption, and have a way to report and recover from errors.</p></td>
-      <td  colspan="1" rowspan="1"><p >Protocols for a math assignment include requirements like a due date, format, and consequences if those protocols are not followed.</p></td>
-      <td class="c37" colspan="1" rowspan="1"><p >When students are reading in a book club, they can follow a protocol for discussing the book and use talking prompts to share their thinking. </p><p>If there are misconceptions or confusion, readers can refer back to the text for evidence.</p></td></tr>
-      <tr class="c45"><td class="c25" colspan="1" rowspan="1"><p >PI</p></td>
-      <td class="c11" colspan="1" rowspan="1"><p >Physical Internet</p></td>
-      <td class="c29" colspan="1" rowspan="1"><p >It is critical to understand the infrastructure of the Internet, including the hardware, companies, governing bodies, etc., that connect your computer to <span class="c26">internet exchanges -- where massive networks cross-connect to the <span class="c26">undersea fiber optic cables&nbsp;that connect the world (not satellites).</p></td>
-      <td  colspan="1" rowspan="1"><p >&nbsp;</p></td>
-      <td class="c37" colspan="1" rowspan="1"><p >&nbsp;</p></td>
-    </tr>
-    <tr class="c60"><td class="c25" colspan="1" rowspan="1"><p >M</p></td>
-      <td class="c11" colspan="1" rowspan="1"><p >Markup</p></td>
-      <td class="c29" colspan="1" rowspan="1"><p >Hypertext Markup Language (HTML) is the standard way to publish information or applications on the Internet. It is a standard agreed upon by the Internet Engineering Task Force (IETF). It is not a programming language, as it doesn&rsquo;t use logic.</p></td>
-      <td  colspan="1" rowspan="1"><p >Mathematics has standard representations of different expressions: 1 x 2 is multiplication, etc.</p></td>
-      <td class="c37" colspan="1" rowspan="1"><p >Underlining titles, indenting paragraphs, starting sentences with capitalization, and ending them with punctuation, are examples of publishing standards in English.</p></td>
-    </tr>
-  </tbody>
-</table>
+		<div class="article-content">
+			<p>Here are definitions of common CS concepts, alongside parallels from other subjects to help to demystify unfamiliar vocabulary.</p>
+		</div>
 
 
+		<section id="concept-abstraction" class="accordion-target compressed">
+
+			<header>
+				<a class="box accordion" href="#concept-abstraction">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-abstraction" /></svg></span>
+						<h3>Abstraction</h3>
+						Extracting essential details and repeatable patterns from a more complex system.
+					</div>
+				</a>
+			</header>
 
 
-</div>
+			<div class="section-content">
 
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    border: 1px solid #666;
-    padding: 10px;
-  }
-  .c8 {
-    font-weight: bold;
-  }
+				<p >An abstraction represents a simplified idea or problem derived by ignoring details and using patterns or general characteristics. A simple example of a CS abstraction can be found in programming languages: They allow programmers to give complex instructions to computers without worrying about the bits &amp; bytes!</p>
 
-  .filter{
-    color: grey
-  }
+				<table >
+
+					<caption>Abstraction sub-concepts &amp; interdisciplinary parallels</caption>
+
+					<thead>
+						<tr>
+							<th>Sub-concept</th>
+							<th>Definition</th>
+							<th>Math</th>
+							<th>ELA</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr >
+							<th>Decomposition</th>
+							<td><p >Ideas, problems, or projects are broken down into component parts to set the stage for deeper analysis.</p></td>
+							<td data-column="Math"><p >145 can be decomposed as 100 + 40 + 5.</p></td>
+							<td data-column="ELA"><p >Words can be broken into syllables to sound them out. Essays have three parts—introduction, body, &amp; conclusion.</p></td>
+						</tr>
+
+						<tr >
+							<th>Pattern Recognition</th>
+							<td><p >Decomposed component parts are examined to find patterns like similarities, repetition, conditional relationships, or nested relationships.</p></td>
+							<td data-column="Math"><p >2, 4, 6, 8, 10 are even numbers. &nbsp;1, 3, 5, 7, 9, 11 are odd numbers.</p></td>
+							<td data-column="ELA"><p >As an alphabetic language, English has many systematic spelling patterns—“change y to i before adding es,” “i before e except after c”</p></td>
+						</tr>
+
+						<tr>
+							<th>Generalization &amp; Detail Removal</th>
+							<td><p >Component parts are grouped by general characteristics, and unnecessary details filtered out.</p></td>
+							<td data-column="Math"><p >Rounding or estimating removes details to provide a general understanding.</p></td>
+							<td data-column="ELA"><p >The main idea is determined by identifying the most salient idea and filtering out supporting details.</p></td>
+						</tr>
+
+						<tr >
+							<th>Modularity</th>
+							<td><p >A process that completes a single task is more useful when it can be chained together with other processes to accomplish something more complex.</p></td>
+							<td data-column="Math"><p >Inscribing a shape inside another shape is a process that can be done regardless of the inner and outer shape.</p></td>
+							<td data-column="ELA"><p >Each phase of the writing process has individual work that leads to creating a developed piece of writing—generating, rehearsing, drafting, revising, editing, and publishing.</p></td>
+						</tr>
+
+						<tr >
+							<th>Interfaces</th>
+							<td><p >Interfaces help users complete tasks, while hiding details of the overall process.</p></td>
+							<td data-column="Math"><p >Function machines in math that take inputs and produce outputs represent the math being done.</p></td>
+							<td data-column="ELA" class="placeholder"></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+		</section>
 
 
-</style>
+		<section id="concept-algorithms" class="accordion-target compressed">
 
+			<header>
+				<a class="box accordion" href="#concept-algorithms">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-algorithm" /></svg></span>
+						<h3>Algorithm</h3>
+						Instructions that convert a set of inputs into a desired output (kind of like a recipe).
+					</div>
+				</a>
+			</header>
+
+			<div class="section-content">
+
+				<p>Algorithms are a generalized and repeatable sequence of instructions that achieve a particular purpose and output, given a set of inputs. It&#39;s important to understand when, why and how to implement an algorithm, and to consider who or what might be affected.</p>
+
+				<table >
+
+					<caption>Algorithm sub-concepts &amp; interdisciplinary parallels</caption>
+
+					<thead>
+						<tr >
+							<th>Sub-concept</th>
+							<th>Definition</th>
+							<th>Math</th>
+							<th>ELA</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr >
+							<th>Algorithm Design</th>
+							<td><p >Instructions should be general, clear, well-formed, complete, and capable of being executed as intended without confusion.</p></td>
+							<td data-column="Math"><p >Showing the strategies used to solve a problem.</p></td>
+							<td data-column="ELA"><p >Explicitly demonstrating strategies to determine character traits—a) notice a character’s actions and ask, “What kind of person acts this way?” b) pay attention to dialogue and ask, “What kind of person would say things like this?”</p></td>
+						</tr>
+
+						<tr >
+							<th>Control Flow</th>
+							<td><p >The order in which steps of an algorithm are executed; determined by logical constructs such as IF statements, loops and calls to other procedures.</p></td>
+							<td data-column="Math"><p >Students explain their problem-solving steps when addressing a word problem. First they decompose their problem, chose a strategy based on some logic, and so on.</p></td>
+							<td data-column="ELA"><p >In non-fiction texts, a footnote can redirect us to look elsewhere for more information, before taking us back to where we left off.</p><p>The steps in the writing process aren’t necessarily linear.  When revising, writers might need to return to the rehearsal phase and gather more information.  During rehearsal, writers might do some flash drafting to try out an idea.</p></td>
+						</tr>
+
+						<tr >
+							<th>Inputs, Variables &amp; Outputs</th>
+							<td><p >How <span class="c28"><a class="c49" href="http://blueprint.cs4all.nyc/concepts#data">data</a>&nbsp;is passed into (inputs,) manipulated by, used within (variables,) and returned from the algorithm (outputs).</p><p >&nbsp;</p></td>
+							<td data-column="Math">
+								<p >A function machine is an example of a process that takes inputs, manipulates them in a way and outputs them.</p>
+								<p >* Variables in CS are more than just numbers - they can also represent strings of characters, lists, etc.</p>
+							</td>
+							<td data-column="ELA">
+								<p >Writing a paper that must be on a specific topic, using vocabulary words and meeting a word count.</p>
+								<p >Writing an informational text (output) can be done by using varied research materials, explicitly taught vocabulary (inputs), and prior knowledge/experience (variable). </p>
+							</td>
+						</tr>
+
+						<tr >
+							<th>Application</th>
+							<td><p >Understanding where, when, why and how to apply algorithms and which algorithm to apply in a given context.</p></td>
+							<td data-column="Math"><p >Interpreting a word problem to know what strategy to utilize.</p></td>
+							<td data-column="ELA"><p >When encountering an unfamiliar word, readers make decisions about whether to use context clues or morphology clues (prefix, root, suffix). </p></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+
+		</section>
+
+
+		<section id="concept-programming" class="accordion-target compressed">
+
+			<header>
+				<a class="box accordion" href="#concept-programming">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-programming" /></svg></span>
+						<h3>Programming</h3>
+						Giving instructions to computers in a human language.
+					</div>
+				</a>
+			</header>
+
+			<div class="section-content">
+
+				<p >Programming is about giving instructions to computers. Programming can be done through a constantly changing set of languages. Each language is translated from human-readable code into machine code that can be executed by the computer&rsquo;s central processing unit, CPU.</p>
+
+				<table >
+
+					<caption>Programming sub-concepts &amp; interdisciplinary parallels</caption>
+
+					<thead>
+						<tr >
+							<th>Sub-concept</th>
+							<th>Definition</th>
+							<th>Math</th>
+							<th>ELA</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th>Languages</th>
+							<td><p >Programming languages have different applications and require different amounts of prior knowledge. Some languages can only be run on specific hardware, while others run inside software such as a web browser.</p></td>
+							<td data-column="Math"><p >Fractions, ratios, decimals and percentages all express proportions, but are used in different contexts and require different background knowledge to use correctly.</p></td>
+							<td data-column="ELA"><p >Within English there are different writing or speaking styles that are used depending on the situation: formal language, technical language, colloquial language, regional dialects, etc.</p></td>
+						</tr>
+
+						<tr>
+							<th>Syntax</th>
+							<td><p >All programming languages have a set of commands or reserved words and grammar rules that must be followed.</p></td>
+							<td data-column="Math"><p >Mathematical notation represents numbers, operations and relationships. The syntax for 5 plus 5 is 5+5.</p></td>
+							<td data-column="ELA"><p >Writers follow the common rules of grammar and mechanics in English to communicate easily with the reader.</p></td>
+						</tr>
+
+						<tr>
+							<th>Development Environments</th>
+							<td><p >Programmers use development environments to create applications; these environments have an editor to write code, run and show a program&rsquo;s output and log errors that arise.</p></td>
+							<td data-column="Math"><p >Excel can be used as a development environment when formulas are written in cells. It will give you help writing them, run the formula for you, and then tell you if there is an error.</p></td>
+							<td data-column="ELA"><p >Word processors or other digital media display errors in the form of spelling and grammar checks.</p></td>
+						</tr>
+
+						<tr>
+							<th>Collaboration</th>
+							<td><p >Collaborating on code is complex because each line is part of a larger algorithm or abstraction. Clearly setting team roles, saving versions along the way, and using parallel versions are some ways to manage the complexity.</p></td>
+							<td data-column="Math"><p >Extended problem-solving, such as that used to design a playground, requires students to combine their work in order to achieve a single goal.</p></td>
+							<td data-column="ELA"><p>Large research projects are often written in collaboration with others who may have different areas of expertise. The collaborators have to meet frequently to ensure cohesion in the content.</p></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+
+		</section>
+
+
+		<section id="concept-data" class="accordion-target compressed">
+
+			<header>
+				<a class="box accordion" href="#concept-data">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-data" /></svg></span>
+						<h3>Data</h3>
+						Information that can be collected, stored, and processed by a computer.
+					</div>
+				</a>
+			</header>
+
+			<div class="section-content">
+
+				<p >Computers can be used to collect, store and analyze massive amounts of data quickly and reliably. Computer programs can use data to make decisions or to automate tasks.</p>
+
+				<table >
+
+					<caption>Data sub-concepts &amp; interdisciplinary parallels</caption>
+
+					<thead>
+						<tr>
+							<th>Subconcept</th>
+							<th>Definition</th>
+							<th>Math</th>
+							<th>ELA</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th>Sensors &amp; Datasets</th>
+							<td><p >Data is collected by sensors such as video cameras or thermostats, or from other datasets such as government data, or your digital activity. Data from sensors and datasets must always be cleaned, to ensure its accuracy and usability.</p></td>
+							<td data-column="Math"><p >Data can be collected from the class such as heights, interests, country of origin, etc.</p><p >If students are taking measurements, rulers can be seen as analogous to sensors. Sensor data needs a reasonableness check.</p></td>
+							<td data-column="ELA"><p > When researching a topic, writers collect data and information from various sources. Writers should use current research to ensure its relevance and usability.</p></td>
+						</tr>
+
+						<tr>
+							<th>Data Abstraction &amp; Storage</th>
+							<td><p >Data is represented in computers as binary, but humans save and use data on computers as lists, databases, key-value pairs, etc.</p></td>
+							<td data-column="Math"><p >Tables of rows and columns are an example of data representation.</p></td>
+							<td data-column="ELA"><p >Outlines, timelines, and graphic organizers can represent complex data in a structured form.</p></td>
+						</tr>
+
+						<tr>
+							<th>Transformation &amp; Visualization</th>
+							<td><p >Computers make looking at data easier by allowing us to quickly visualize data in different ways; to break up a big problem into manageable pieces, operate on each piece independently, and then put all the pieces back together.</p></td>
+							<td data-column="Math">
+								<p >When (x,y) points are plotted, it becomes easier to see their relationship.</p>
+								<p >If the (x,y) points are very far apart, the scale of a graph must be adjusted.</p>
+							</td>
+							<td data-column="ELA"><p >Infographics are used to visually represent complex information and convey scale, interconnections, and progressions.</p></td>
+						</tr>
+
+						<tr>
+							<th>Feedback Loops &amp; Automation</th>
+							<td><p >Automation is controlled by data. Some automation uses data from outside the automated system, like time. Other automation uses data on the output of the system, like temperature.</p></td>
+							<td data-column="Math"><p >If the answer to a math problem doesn&rsquo;t pass the reasonableness check, the student may backpedal through their work.</p></td>
+							<td data-column="ELA"><p >Using editing and revision checklists during writing for accuracy and clarity through self-assessment, peer-assessment and teacher feedback.</p></td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</section>
+
+
+		<section id="concept-networks" class="accordion-target compressed">
+
+			<header>
+				<a class="box accordion" href="#concept-networks">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-network" /></svg></span>
+						<h3>Networks</h3>
+						Connections between computers that allow them to share data.
+					</div>
+				</a>
+			</header>
+
+			<div class="section-content">
+
+				<p >Networks, like the Internet, allow computers to interface with other computers through a set of rules, or protocols, that define how computers send and receive data. Protocols and standards are created and agreed upon by groups of people.</p>
+
+				<table >
+
+					<caption>Network sub-concepts &amp; interdisciplinary parallels</caption>
+
+					<thead>
+						<tr>
+							<th>Subconcept</th>
+							<th>Definition</th>
+							<th>Math</th>
+							<th>ELA</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th>Trust</th>
+							<td><p >The common thread behind issues of security, privacy and consent is trust. Whenever we connect to a network, we decide our level of trust, based on our security and privacy needs. We implement and monitor protocols to protect those needs.</p></td>
+							<td data-column="Math" class="placeholder"></td>
+							<td data-column="ELA"><p >When researching a topic, writers should verify the credibility and accuracy of the source and information. Researchers look for evidence of expertise of the author.</p></td>
+						</tr>
+
+						<tr>
+							<th>Protocols</th>
+							<td><p >In order to send data from one device to another, the devices must be synchronized, share a syntax for the data, share a method of encryption, and have a way to report and recover from errors.</p></td>
+							<td data-column="Math"><p >Protocols for a math assignment include requirements like due date, format, and there are consequences if not followed.</p></td>
+							<td data-column="ELA">
+								<p >When students are reading in a book club, they can follow a protocol for discussing the book and use talking prompts to share their thinking.</p>
+								<p>If there are misconceptions or confusion, readers can refer back to the text for evidence.</p>
+							</td>
+						</tr>
+
+						<tr>
+							<th>Physical Internet</th>
+							<td><p >It is critical to understand the infrastructure of the Internet, including the hardware, companies, governing bodies, etc., that connect your computer to internet exchanges -- where massive networks cross-connect to the undersea fiber optic cables that connect the world (not satellites).</p></td>
+							<td data-column="Math" class="placeholder"></td>
+							<td data-column="ELA" class="placeholder"></td>
+						</tr>
+
+						<tr>
+							<th>Markup</th>
+							<td><p >Hypertext Markup Language (HTML) is the standard way to publish information or applications on the Internet. It is a standard agreed upon by the Internet Engineering Task Force (IETF). It is not a programming language, as it doesn&rsquo;t use logic.</p></td>
+							<td data-column="Math"><p >Mathematics has standard representations of different expressions: 1 x 2 is multiplication, etc.</p></td>
+							<td data-column="ELA"><p >Underlining titles, indenting paragraphs, starting sentences with capitalization, and ending them with punctuation, are examples of publishing standards in English.</p></td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</section>
+
+	</article>
+
+	<div class="interior-container">
+
+		<div class="exit-menu">
+			<ol class="list-unstyled">
+				<li>
+					<a class="box" href="/what-is-cs/" role="button"><span class="box-content">CS Education</span></a>
+				</li><li>
+					<a class="box" href="/perspectives/" role="button"><span class="box-content">Perspectives</span></a>
+				</li><li>
+					<a class="box" href="/practices/" role="button"><span class="box-content">Practices</span></a>
+				</li><li class="current">
+					<a href="">Concepts</a>
+				</li><li>
+					<div class="box">
+						<a class="btn btn-primary btn-lg" href="/outcomes/" role="button">Next: <span class="preamble">let's put it all together and see </span> <span>what CS Students can do!</span></a>
+					</div>
+				</li>
+			</ol>
+		</div>
+
+	</div>
+
+</div><!-- /#page -->
 
 {% endblock %}

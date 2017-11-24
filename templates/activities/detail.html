@@ -2,13 +2,21 @@
 {% load i18n %}
 
 {% block content %}
-<script src="/static/js/reqwest.min.js"></script>
-<script src="/static/js/floatMenu.js"></script>
+<!-- <script src="/static/js/reqwest.min.js"></script>
+<script src="/static/js/floatMenu.js"></script> -->
+<div id="page">
+	<article class="light-theme">
 
-<div class="col-md-9">
-  <div id="activity-body">{{ activity.html_body|safe }}</div>
+<div  class="article-content">
+  <div class="section-content">
+
+  <div class="col-md-12">
+    <div id="activity-body">{{ activity.html_body|safe }}</div>
+  </div>
+  </div>
 </div>
-<div class="col-md-3" id="floatMenu">
+
+<div class="col-md-12" id="floatMenu">
   {% if user.is_superuser %}
     <p><a href="{% url 'admin:activities_activity_change' activity.id %}">Edit</a></p>
     <div class="form-group">
@@ -94,4 +102,10 @@
   {% endif %}
 
 </div>
+</article>
+
+
+
+</div><!-- /#page -->
+
 {% endblock %}

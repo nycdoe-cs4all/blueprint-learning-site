@@ -2,95 +2,62 @@
 {% load i18n %}
 
 {% block content %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div id="page">
+	<article class="light-theme">
+
+		<header>
+			<h2><span class="preamble">educator</span> Resources</h2>
+
+			<p>Answers to common questions, developed by teachers for teachers.</p>
+		</header>
 
 
-<div class="col-md-3">
-  <h4 style="margin-top:0">Filter Resources</h4>
-<!-- <div id="allCheckboxes">
-        <li><input type="checkbox" id= "All"> All Resources</li>
-      {% for tags in tags %}
-          <li value="{{tags}}"><input type="checkbox" id={{tags}}> {{tags}}</li>
-      {% endfor %}
+		<div class="article-content">
 
-    <script>
-    $(function() {
-        $('#allCheckboxes').on("change", ":checkbox", function () {
-          var list = document.createElement('list');
-            if (this.checked) {
-                console.log(this.id + ' is checked'); -->
-                  <!-- // if(this.id== "Planning"){
-                  //   list.innerHTML = '\
-                  //   {% for resource in resources %}\
-                  //   <div class="resource">\
-                  //   {% for tags in resource.tags.all %}\
-                  //   {% if "Planning" in tags|stringformat:"s" %}\
-                  //           <h3 id= "Plan" ><a href="{% url "show_resource" resource.id %}">{{ resource.title }}</a></h3>\
-                  //             {% if resource.summary %}\
-                  //               <p id= "Plan">{{ resource.summary }}</p>\
-                  //             {% endif %}\
-                  //           {% endif %}\
-                  //           </div>\
-                  //       {% endfor %}\
-                  //   {% endfor %}'
-                  // }
+			<div id="page-menu" class="col-md-3">
 
-                // document.getElementById('resource-list').appendChild(list);
+				<h4 >Filter Resources</h4>
 
-            // } else {
-            //     console.log(this.id + ' is unchecked');
-            //     if(this.id== "Planning"){
-            //         $("[id=Plan]").hide();                }
-        //     }
-        //   });
-        // });
-
-        // {% for resource in resources %}
-        //       <div class="resource">
-        //       {% for tags in resource.tags.all %}
-        //         {% if "Planning" in tags|stringformat:"s" %}
-        //         <h3><a href="{% url "show_resource" resource.id %}">{{resource.title}}</a></h3>
-        //         {% if resource.summary %}
-        //           <p>{{ resource.summary }}</p>
-        //         {% endif %}
-        //       </div>
-        //           {% endif %}
-        //       {% endfor %}
-        // {% endfor %}
-
-        </script> -->
-
-
-    <li><a href="/resources">All Resources</a></li>
-    <li><a href="/resources?tag=Planning">Planning</a></li>
-    <li><a href="/resources?tag=School Culture">School Culture</a></li>
-    <li><a href="/resources?tag=Assessment">Assessment</a></li>
-    <li><a href="/resources?tag=Instructional Strategies">Instructional Strategies</a></li>
-    <li><a href="/resources?tag=Device Management">Device Management</a></li>
-    <li><a href="/resources?tag=Classroom Management">Classroom Management</a></li>
-    <li><a href="/resources?tag=Video">Video</a></li>
-  <!-- </div> -->
-
-
-  {% if user.is_superuser %}
-    <p>
-      <a href="{% url "create_resource" %}" class="btn btn-primary">New Resource</a>
-    </p>
-  {% endif %}
-</div>
-<div class="col-md-9">
-  <h1 style="margin-top:0">Resources</h1>
-  <p>These resources were developed by teachers for teachers. Use the tags under Filter Resources to the left help you find what you need.</p>
-  <div id="resource-list">
-      {% for resource in resources %}
-      <div class="resource">
-        <h3><a href="{% url "show_resource" resource.id %}">{{ resource.title }}</a></h3>
-        {% if resource.summary %}
-          <p>{{ resource.summary }}</p>
+				<ul class="list-unstyled">
+					<li><a href="/resources">All Resources</a></li>
+					<li><a href="/resources?tag=Planning">Planning</a></li>
+					<li><a href="/resources?tag=School Culture">School Culture</a></li>
+					<li><a href="/resources?tag=Assessment">Assessment</a></li>
+					<li><a href="/resources?tag=Instructional Strategies">Instructional Strategies</a></li>
+					<li><a href="/resources?tag=Device Management">Device Management</a></li>
+					<li><a href="/resources?tag=Classroom Management">Classroom Management</a></li>
+					<li><a href="/resources?tag=Video">Video</a></li>
+				</ul>
+        {% if user.is_superuser %}
+          <p>
+            <a href="{% url "create_resource" %}" class="btn btn-primary">New Resource</a>
+          </p>
         {% endif %}
-      </div>
-      {% endfor %}
-  </div>
+			</div>
 
-</div>
+
+    <!-- </div> -->
+        <div class="resource-list col-md-9">
+
+          <!-- <div id="resource-list"> -->
+              {% for resource in resources %}
+              <div class="resource">
+                <h3><a href="{% url "show_resource" resource.id %}">{{ resource.title }}</a></h3>
+                {% if resource.summary %}
+                  <p>{{ resource.summary }}</p>
+                {% endif %}
+              </div>
+              {% endfor %}
+          <!-- </div> -->
+
+        </div>
+
+
+
+
+</article>
+
+
+
+</div><!-- /#page -->
 {% endblock %}

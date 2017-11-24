@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% load i18n %}
-
 {% block content %}
-<div id="search">
 
-</div>
-<div class="row">
-  <div class="col-md-3">
+<div id="page">
+	<article class="light-theme">
+
+		<header>
+			<h2><span class="preamble">Explore</span> Units</h2>
+		</header>
+
+  <div class="article-content row">
+
+
+  <div id="page-menu" class="col-md-3">
     <form action="/units">
       <div class="form-group">
         <div class="input-group">
@@ -26,6 +32,7 @@
       </div>
       {% endif %}
 
+
       <div class="form-group">
         <select name="grade" id="grade-filter" class="form-control">
           <option value="">All Grades</option>
@@ -34,6 +41,11 @@
           {% endfor %}
         </select>
       </div>
+
+      <button type='button'  class="btn btn-info" data-toggle="collapse" data-target=".advfilter">Show Filters</button>
+      <hr />
+
+      <div class="advfilter collapse">
 
       {# <div class="form-group"> #}
       {#   <select name="level" id="level-filter" class="form-control"> #}
@@ -49,11 +61,11 @@
       {#     {% endfor %} #}
       {#   </select> #}
       {# </div> #}
-
+<!--
      <button type='button'  class="btn btn-info" data-toggle="collapse" data-target=".advfilter">Show Filters</button>
-     <hr>
+     <hr> -->
 
-     <div class="advfilter collapse">
+     <hr />
       <div class="form-group">
         <b>Filter by CS concept</b>
         {% for d in all_concepts %}
@@ -119,37 +131,42 @@
 </div>
 
 <div class="col-md-9">
-  <h1 style="margin-top: 0;">Units</h1>
-  {% if user.is_authenticated %}
-  <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
 
-  {% else %}
-  <p> <a href="{% url 'auth_login' %}?next={% url 'new' %}">Log in</a>   to contribute a new unit</p>
-
-  {% endif %}
-
-  {% if activities %}
-  {% include "activities/_activity_list.html" %}
-  {% else %}
-  <p>No units found.</p>
-  {% endif %}
-
-  <div class="pagination">
-    <span class="step-links">
-      {% if activities.has_previous %}
-      <a href="?page={{ activities.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">previous</a>
-      {% endif %}
-
-      <span class="current">
-        Page {{ activities.number }} of {{ activities.paginator.num_pages }}.
-      </span>
-
-      {% if activities.has_next %}
-      <a href="?page={{ activities.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">next</a>
-      {% endif %}
-    </span>
+  <div class="activity-list">
+    {% if activities %}
+    {% include "activities/_activity_list.html" %}
+    {% else %}
+    <p>No units found.</p>
+    {% endif %}
   </div>
 
+  <!-- <h1 style="margin-top: 0;">Units</h1> -->
+  {% if user.is_authenticated %}
+  <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
+  {% else %}
+  <p> <a href="{% url 'auth_login' %}?next={% url 'new' %}">Log in</a>   to contribute a new unit</p>
+  {% endif %}
 </div>
 </div>
+
+<div class="pagination">
+  <span class="step-links">
+    {% if activities.has_previous %}
+    <a href="?page={{ activities.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">previous</a>
+    {% endif %}
+
+    <span class="current">
+      Page {{ activities.number }} of {{ activities.paginator.num_pages }}.
+    </span>
+
+    {% if activities.has_next %}
+    <a href="?page={{ activities.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">next</a>
+    {% endif %}
+  </span>
+</div>
+
+
+	</article>
+
+</div><!-- /#page -->
 {% endblock %}

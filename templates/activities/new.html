@@ -6,136 +6,138 @@
 {% if error_message %}
   <p><strong>{{ error_message }}</strong></p>
 {% endif %}
-<div class="row">
+<div id="page">
+	<article class="light-theme">
+
+<!-- <div class="row"> -->
   <div id="activity-app">
-    <div v-if="submitted" class="col-md-4">
+    <div v-if="submitted" class="col-md-3">
       <h1>Unit Submitted</h1>
       <p>You're unit has been submitted and is pending review.</p>
       <p><a href="/units/new">Click here to submit another unit</a></p>
     </div>
     <div v-else>
 
-    <form id="create-activity" action="{% url 'create' %}" method="post" v-on:submit="submit" class="col-md-4">
-      {% csrf_token %}
+        <form id="create-activity" action="{% url 'create' %}" method="post" v-on:submit="submit" class="col-md-3">
+          {% csrf_token %}
 
-      <label for="url">Google Docs URL</labeL>
-      <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" type="text" name="url" id="url" v-model="url" placeholder="http://" v-on:keyup.enter="parseDoc">
-          <span class="input-group-btn"><button class="btn btn-default" type="button" v-on:click="parseDoc">
-            <span v-if="fetching">
-              Parsing...
-            </span>
-            <span v-else>
-              Fetch
-            </span>
-          </button></span>
-        </div>
-        <!-- <p style="font-size:12px">Drop a <b>public</b> Google Doc url in the submission form and click "Fetch".</p> -->
+          <label for="url">Google Docs URL</labeL>
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" type="text" name="url" id="url" v-model="url" placeholder="http://" v-on:keyup.enter="parseDoc">
+              <span class="input-group-btn"><button class="btn btn-default" type="button" v-on:click="parseDoc">
+                <span v-if="fetching">
+                  Parsing...
+                </span>
+                <span v-else>
+                  Fetch
+                </span>
+              </button></span>
+            </div>
+            <!-- <p style="font-size:12px">Drop a <b>public</b> Google Doc url in the submission form and click "Fetch".</p> -->
 
-        <p style="margin-top: 15px;" class="bg-danger" v-if="parseError">
-          Sorry that url couldn't be processed. Please make sure that you've entered a valid Google Doc url and that you've made your document public.
-        </p>
-      </div>
+            <p style="margin-top: 15px;" class="bg-danger" v-if="parseError">
+              Sorry that url couldn't be processed. Please make sure that you've entered a valid Google Doc url and that you've made your document public.
+            </p>
+          </div>
 
-      <div v-if="html_body">
-        <p class="form-group">
-          <label for="title">Title</labeL>
-          <input class="form-control" type="text" id="title" required v-model="title">
-        </p>
+          <div v-if="html_body">
+            <p class="form-group">
+              <label for="title">Title</labeL>
+              <input class="form-control" type="text" id="title" required v-model="title">
+            </p>
 
-        <p  class="form-group">
-          <label for="grade">Grade</labeL>
-          <select class="form-control" id="grade" required v-model="grade">
-            <option value=""></option>
-            {% for g in grades %}
-              <option value="{{ g.id }}">{{ g.name }}</option>
-            {% endfor %}
-          </select>
-        </p>
+            <p  class="form-group">
+              <label for="grade">Grade</labeL>
+              <select class="form-control" id="grade" required v-model="grade">
+                <option value=""></option>
+                {% for g in grades %}
+                  <option value="{{ g.id }}">{{ g.name }}</option>
+                {% endfor %}
+              </select>
+            </p>
 
-        <p class="form-group">
-          <label for="pacing">Pacing</labeL>
-          <input class="form-control" type="text" id="pacing" required v-model="pacing">
-        </p>
+            <p class="form-group">
+              <label for="pacing">Pacing</labeL>
+              <input class="form-control" type="text" id="pacing" required v-model="pacing">
+            </p>
 
-        {# <p class="form-group"> #}
-        {#   <label for="subject">Subject</labeL> #}
-        {#   <select class="form-control" id="subject" required v-model="subject"> #}
-        {#     <option value=""></option> #}
-        {#     {% for s in subjects %} #}
-        {#       <option value="{{ s.id }}">{{ s.name }}</option> #}
-        {#     {% endfor %} #}
-        {#   </select> #}
-        {# </p> #}
+            {# <p class="form-group"> #}
+            {#   <label for="subject">Subject</labeL> #}
+            {#   <select class="form-control" id="subject" required v-model="subject"> #}
+            {#     <option value=""></option> #}
+            {#     {% for s in subjects %} #}
+            {#       <option value="{{ s.id }}">{{ s.name }}</option> #}
+            {#     {% endfor %} #}
+            {#   </select> #}
+            {# </p> #}
 
-        <p class="form-group">
-          <label>Tags</labeL>
-            {% for t in tags %}
-              <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ t.name }}" v-model="tags"> {{ t.name }}</label>
-            {% endfor %}
-        </p>
+            <p class="form-group">
+              <label>Tags</labeL>
+                {% for t in tags %}
+                  <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ t.name }}" v-model="tags"> {{ t.name }}</label>
+                {% endfor %}
+            </p>
 
-        <p class="form-group">
-          <label>Concepts</labeL>
-            {% for c in concepts %}
-              <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ c.name }}" v-model="concepts"> {{ c.name }}</label>
-            {% endfor %}
-        </p>
+            <p class="form-group">
+              <label>Concepts</labeL>
+                {% for c in concepts %}
+                  <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ c.name }}" v-model="concepts"> {{ c.name }}</label>
+                {% endfor %}
+            </p>
 
-        <p class="form-group">
-          <label>Software</labeL>
-            {% for d in software %}
-              <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ d.name }}" v-model="software"> {{ d.name }}</label>
-            {% endfor %}
-        </p>
+            <p class="form-group">
+              <label>Software</labeL>
+                {% for d in software %}
+                  <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ d.name }}" v-model="software"> {{ d.name }}</label>
+                {% endfor %}
+            </p>
 
-        <p class="form-group">
-          <label>Devices</labeL>
-            {% for d in devices %}
-              <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ d.name }}" v-model="devices"> {{ d.name }}</label>
-            {% endfor %}
-        </p>
+            <p class="form-group">
+              <label>Devices</labeL>
+                {% for d in devices %}
+                  <label style="display:block;font-weight:normal"><input type="checkbox" value="{{ d.name }}" v-model="devices"> {{ d.name }}</label>
+                {% endfor %}
+            </p>
 
-        <textarea style="display:none;" v-model="html_body"></textarea>
-        <textarea style="display:none;" v-model="plain_body"></textarea>
+            <textarea style="display:none;" v-model="html_body"></textarea>
+            <textarea style="display:none;" v-model="plain_body"></textarea>
 
-        <p class="form-group">
-          <input type="submit" class="btn btn-default" value="Submit Unit" :disabled="submitting"/>
-        </p>
-      </div>
-    </form>
+            <p class="form-group">
+              <input type="submit" class="btn btn-default" value="Submit Unit" :disabled="submitting"/>
+            </p>
+          </div>
+        </form>
 
-    <div class="col-md-8" style="border-left: 1px solid #ccc;" v-if="html_body">
-      <h3>Preview:</h3>
-      <div id="preview" v-html="html_body"></div>
+    <div class="col-md-9" style="border-left: 1px solid #ccc;" v-if="html_body">
+      <h3 v-html="html_body">Preview:</h3>
+      <div style="margin:0px; max-width:100%;" id="preview" v-html="html_body"></div>
     </div>
 
-    <div class="col-md-8"  style="border-left: 1px solid #ccc;" v-else>
-        <ul class="nav nav-tabs" role="tablist" id="tablist">
+    <div v-else class="col-md-9"  style="border-left: 1px solid #ccc;">
+        <ul style="margin:10px; max-width: 100%;" class="nav nav-tabs" role="tablist" id="tablist" >
             <li role="presentation" class="active"><a href="#contributing" role="tab" data-toggle="tab">Contributing to the Blueprint</a></li>
             <li role="presentation"><a href="#sample" role="tab" data-toggle="tab">Sample Unit Writing Template</a></li>
-            <li role="presentation"><a href="#submitting" role="tab" data-toggle="tab">How to Submit a Unit</a></li>
-
+            <li role="presentation"><a href="#submitting" role="tab" data-toggle="tab">Submit a Unit</a></li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content" >
             <div role="tabpanel" class="tab-pane" id="submitting">
-                <div class=" fellow col-md-10">
-                    Submitting a meaningful CS unit to the Blueprint is easy, just follow these steps:
-                    <h3>Use Google Docs</h3>
-                    <p>Make sure your content is in Google Docs. Google Drive makes it easy to convert many different document types into Google Docs. We use Google docs because many educators use it and it makes it easy for educators to copy your unit and make changes.</p>
+                <div class="content">
+                    <p style="margin:25px;">Submitting a meaningful CS unit to the Blueprint is easy, just follow these steps:</p>
+                    <h3 style="margin:25px;">Use Google Docs</h3>
+                    <p style="margin:25px;">Make sure your content is in Google Docs. Google Drive makes it easy to convert many different document types into Google Docs. We use Google docs because many educators use it and it makes it easy for educators to copy your unit and make changes.</p>
 
 
-                    <h3>Fetch</h3>
+                    <h3 style="margin:25px;">Fetch</h3>
                     <!-- <h3>Review and Submit</h3> -->
                     <!-- <p>Once you’ve ensured you’ve got all your metadata in the document, please drop the link to the document in the submission form and click “Fetch”. The Blueprint site will retrieve and parse the document, looking specifically for the metadata from the previous step.</p> -->
-                    <p>Please drop the link to the document in the submission form to the left and click “Fetch”. Make sure the link is public. Once the blueprint site has parsed your document, you will be able to preview how your unit will look on the Blueprint site.</p>
+                    <p style="margin:25px;">Please drop the link to the document in the submission form to the left and click “Fetch”. Make sure the link is public. Once the blueprint site has parsed your document, you will be able to preview how your unit will look on the Blueprint site.</p>
 
-                    <h3>Provide Metadata</h3>
-                    <p>Metadata will help educators find your unit. Once your document has been processed, a form will appear in the sidebar. Fill out the form to provide information about your unit.</p>
+                    <h3 style="margin:25px;">Provide Metadata</h3>
+                    <p style="margin:25px;">Metadata will help educators find your unit. Once your document has been processed, a form will appear in the sidebar. Fill out the form to provide information about your unit.</p>
 
-                    <p>Here is a list of the metadata fields:</p>
-                    <ul>
+                    <p style="margin:25px;">Here is a list of the metadata fields:</p>
+                    <ul style="margin:45px;">
                       <li><b>Title</b> -A descriptive name for your unit</li>
                       <li><b>Grade</b> - K-2, 3-5, 6-8, 9-12 (choose one)</li>
                       {# <li><b>Subject</b> - ELA, Math, Social Studies, Science, Art, Technology</li> #}
@@ -145,34 +147,29 @@
                       <li><b>Devices</b> - Select all relevant devices</li>
                       <li><b>Software</b> - Select all relevant software</li>
                     </ul>
-                    <h3>Submit</h3>
-                    <p> Once you feel good about the look and the metadata associated with your unit, click “Submit”.</p>
+                    <h3 style="margin:25px;">Submit</h3>
+                    <p style="margin:25px;"> Once you feel good about the look and the metadata associated with your unit, click “Submit”.</p>
 
-                    <h3>Approval</h3>
-                    <p>Your unit will be reviewed by the CS4All team to ensure it meets the requirements for a meaningful CS unit and is aligned to the needs of classroom educators.</p>
+                    <h3 style="margin:25px;">Approval</h3>
+                    <p style="margin:25px;">Your unit will be reviewed by the CS4All team to ensure it meets the requirements for a meaningful CS unit and is aligned to the needs of classroom educators.</p>
                     <!-- <a href="#sample">Link</a> -->
 
                 </div>
             </div>
 
-
             <div role="tabpanel" class="tab-pane active" id="contributing">
-                <div class="col-md-10">
-                  <!-- <h3>Introduction</h3>
-                  <p>Every student in New York City will receive at least one meaningful unit of computer science (CS) instruction by 2025, at every grade band: K-2, 3-5, 6-8, and 9-12.</p>
-                  <p>To help educators understand the criteria and see them in practice, the CS4ALL Blueprint provides sample units that are contributed by the creative computing community.</p> -->
+                <div class="col-md-12">
+                  <h3 style="margin:25px;">Who should contribute?</h3>
+                  <p style="margin:25px;">The Blueprint was built on the idea that an open approach to CS education would yield innovative educational materials that are timely and meaningful to students outside the classroom. Therefore CS educators of all backgrounds are highly encouraged to contribute new units or remix existing units.</p>
+                  <p style="margin:25px;">Units currently published and in our review backlog are written by educators from different parts of the CS education community, including K-12 CS teachers, higher ed CS educators, teaching artists, and out-of-school educators.</p>
 
-                  <h3>Who should contribute?</h3>
-                  <p>The Blueprint was built on the idea that an open approach to CS education would yield innovative educational materials that are timely and meaningful to students outside the classroom. Therefore CS educators of all backgrounds are highly encouraged to contribute new units or remix existing units.</p>
-                  <p>Units currently published and in our review backlog are written by educators from different parts of the CS education community, including K-12 CS teachers, higher ed CS educators, teaching artists, and out-of-school educators.</p>
+                  <h3 style="margin:25px;">Finding a Collaborator</h3>
+                  <p style="margin:25px;">Those without education experience may feel awkward writing “unit plans”. The CS4All team works with lots of great educators in the public and private education spaces. We can help facilitate connections directly or you can request to jump into our community of educators at cs4allteachers.slack.com by completing this form.</p>
 
-                  <h3>Finding a Collaborator</h3>
-                  <p>Those without education experience may feel awkward writing “unit plans”. The CS4All team works with lots of great educators in the public and private education spaces. We can help facilitate connections directly or you can request to jump into our community of educators at cs4allteachers.slack.com by completing this form.</p>
-
-                  <h3>Uh, what’s a “unit”?</h3>
-                  <p>At a high level, a unit is a meaningful exploration of an unanswerable question, or an “essential question” in educator speak. Through the lessons, tasks, and projects in this exploration students learn the concepts and practices of a specific domain of knowledge.</p>
-                  <p>The CS4All team has defined a meaningful computer science unit as:</p>
-                  <ul>
+                  <h3 style="margin:25px;">Uh, what’s a “unit”?</h3>
+                  <p style="margin:25px;">At a high level, a unit is a meaningful exploration of an unanswerable question, or an “essential question” in educator speak. Through the lessons, tasks, and projects in this exploration students learn the concepts and practices of a specific domain of knowledge.</p>
+                  <p style="margin:25px;">The CS4All team has defined a meaningful computer science unit as:</p>
+                  <ul style="margin:25px;">
                     <li>A creative application of computing with connections to each student's interests, such as other academic subjects, or real-world scenarios.</li>
                     <li>A performance task that assesses students on their ability to think through open-ended tasks.</li>
                     <li>A Hands-on experience with:</li>
@@ -181,10 +178,10 @@
                         <li>at least three of five CS concepts; Abstraction, Algorithms, Programming, Data, and Networks.</li>
                       </ul>
                 </ul>
-                <p>Based on our experience, this definition results in about 10-25 hours of instructional time.</p>
-                <h3>What should I include in my Blueprint unit?</h3>
-                <p>All Blueprint Units must include the following components to make it easy for teachers to scan, comprehend, and plan on implementing in their classrooms:</p>
-                <ul>
+                <p style="margin:25px;">Based on our experience, this definition results in about 10-25 hours of instructional time.</p>
+                <h3 style="margin:25px;">What should I include in my Blueprint unit?</h3>
+                <p style="margin:25px;">All Blueprint Units must include the following components to make it easy for teachers to scan, comprehend, and plan on implementing in their classrooms:</p>
+                <ul style="margin:25px;">
                   <li>Essential Question - what is the big unanswerable thing we are exploring?</li>
                   <li>Unit Student Outcomes - what will students know and be able to do at the end of the unit?</li>
                   <li>Implementation Guidance - practical information on how this can be pulled off successfully.</li>
@@ -202,20 +199,20 @@
                         <li>How will teachers evaluate whether students are walking away with a new perspective on CS concepts and practices?</li>
                       </ul>
                 </ul>
-                <h3>How do I contribute?</h3>
-                <p>The Blueprint utilizes a tight integration with Google Docs to make it easy for educators to use a unit. You simply need to provide a link to your Google Doc (make sure that it’s publicly viewable) and the site will fetch the content, maintaining your formatting and styling.</p>
-                <p>Once the content is fetched, we ask you to complete some basic information about the unit to make it easy for educators to find your unit.</p>
+                <h3 style="margin:25px;">How do I contribute?</h3>
+                <p style="margin:25px;">The Blueprint utilizes a tight integration with Google Docs to make it easy for educators to use a unit. You simply need to provide a link to your Google Doc (make sure that it’s publicly viewable) and the site will fetch the content, maintaining your formatting and styling.</p>
+                <p style="margin:25px;">Once the content is fetched, we ask you to complete some basic information about the unit to make it easy for educators to find your unit.</p>
 
                 <a href="#" onclick="activaTab('sample');">See a sample unit writing template</a>
                 </div>
             </div>
 
             <div role="tabpanel" class="tab-pane" id="sample">
-                <div class="col-md-10">
-                  <h3>Essential Question</h3>
-                    <p> This is a question that leads to meaningful exploration of CS concepts and practices.</p>
-                  <h3>Example Computer Science Essential Questions</h3>
-                  <ul>
+                <div class="col-md-12">
+                  <h3 style="margin:25px;">Essential Question</h3>
+                    <p style="margin:25px;"> This is a question that leads to meaningful exploration of CS concepts and practices.</p>
+                  <h3 style="margin:25px;">Example Computer Science Essential Questions</h3>
+                  <ul style="margin:25px;">
                     <li> How can computers help us conduct scientific experiments?</li>
                     <li> How can programming represent your ideas and beliefs?</li>
                     <li> How might we use math to express ourselves creatively?</li>
@@ -226,15 +223,15 @@
                     <li> How can we share/publish on the Internet?</li>
                   </ul>
 
-                  <h3>Unit Rationale</h3>
-                    <p>Narrative of what the unit is about and why we should learn it. Simple enough that a student could read it and get it.</p>
-                  <h3>Pacing</h3>
-                    <p>The pacing of a unit should be expressed in number of total hours the unit will take in a typical classroom. Please try to take into account transition time at the beginning and end of class periods.</p>
-                  <h3>Materials</h3>
-                    <p>What hardware, software, or other materials will teachers need for lessons and end-of-unit performance task?</p>
-                  <h3>Unit Student Outcomes</h3>
-                    <p>What the student should know and be able to do by the end of the unit:</p>
-                      <ul>
+                  <h3 style="margin:25px;">Unit Rationale</h3>
+                    <p style="margin:25px;">Narrative of what the unit is about and why we should learn it. Simple enough that a student could read it and get it.</p>
+                  <h3 style="margin:25px;">Pacing</h3>
+                    <p style="margin:25px;">The pacing of a unit should be expressed in number of total hours the unit will take in a typical classroom. Please try to take into account transition time at the beginning and end of class periods.</p>
+                  <h3 style="margin:25px;">Materials</h3>
+                    <p style="margin:25px;">What hardware, software, or other materials will teachers need for lessons and end-of-unit performance task?</p>
+                  <h3 style="margin:25px;">Unit Student Outcomes</h3>
+                    <p style="margin:25px;">What the student should know and be able to do by the end of the unit:</p>
+                      <ul style="margin:25px;">
                         <li>CS Concepts, Practices and Perspectives</li>
                         <li>Vocabulary</li>
                         <li>Brief Description of Performance Tasks and Formative Assessments</li>
@@ -247,20 +244,20 @@
                                 </ul>
                           </ul>
                       </ul>
-                  <h3>Prerequisites & Pre-Assessment</h3>
-                    <p>What do students and teachers need to know or be able to do to be successful? These can be expressed as standards (Common Core, Next Generation Science Standards, etc.), references to standard curriculum or scopes & sequences, or in language that you’ve tested as comprehensible to educators.</p>
-                  <h3>Implementation Guidance & Reflection</h3>
-                    <p>What happened when you delivered the unit? What modifications might you consider making - why and how?</p>
-                  <h3>Day-by-Day Planner</h3>
-                    <p>The length of “Days” should be very clearly stated at the beginning of the Day-by-Day Planner. The day-by-day planner need not be a detailed walkthrough of exactly what teachers are doing, but should provide at least the following to give teachers the shape of the day(s).</p>
-                    <ul>
+                  <h3 style="margin:25px;">Prerequisites & Pre-Assessment</h3>
+                    <p style="margin:25px;">What do students and teachers need to know or be able to do to be successful? These can be expressed as standards (Common Core, Next Generation Science Standards, etc.), references to standard curriculum or scopes & sequences, or in language that you’ve tested as comprehensible to educators.</p>
+                  <h3 style="margin:25px;">Implementation Guidance & Reflection</h3>
+                    <p style="margin:25px;">What happened when you delivered the unit? What modifications might you consider making - why and how?</p>
+                  <h3 style="margin:25px;">Day-by-Day Planner</h3>
+                    <p style="margin:25px;">The length of “Days” should be very clearly stated at the beginning of the Day-by-Day Planner. The day-by-day planner need not be a detailed walkthrough of exactly what teachers are doing, but should provide at least the following to give teachers the shape of the day(s).</p>
+                    <ul style="margin:25px;">
                         <li>Learning Objectives - what will students be able to do at the end of the day?</li>
                         <li>What will teachers be doing that day?</li>
                         <li>What will students be doing that day?</li>
                         <li>Resources - readings, videos, sample code, worksheets, assessments, etc.</li>
                     </ul>
-                    <p>Lesson objectives may take multiple days to complete as long as they are clearly delineated as such. Please do not use other names for days, such as classes, sessions, or periods, because schools use those words in different ways.</p>
-                    <p>Here is an example using content from the Creative Computing Guide</p>
+                    <p style="margin:25px;">Lesson objectives may take multiple days to complete as long as they are clearly delineated as such. Please do not use other names for days, such as classes, sessions, or periods, because schools use those words in different ways.</p>
+                    <p style="margin:25px;"> Here is an example using content from the Creative Computing Guide</p>
                     <table ><tbody>
                       <tr class="titleColumn">
                         <td  colspan="1" rowspan="1"><p >Day</p></td>
@@ -291,9 +288,9 @@
                     </tr>
                     </tbody>
                     </table>
-                    <h3>End-of-Unit Performance-Based Assessment</h3>
-                    <p>The performance task should be described with enough detail that the teacher understands:</p>
-                      <ul>
+                    <h3 style="margin:25px;">End-of-Unit Performance-Based Assessment</h3>
+                    <p style="margin:25px;">The performance task should be described with enough detail that the teacher understands:</p>
+                      <ul style="margin:25px;">
                         <li>Pacing: oftentimes CS projects take more than one day, teachers will need an idea of how to break up the project so they can plan and keep students on track</li>
                         <li>Multiple Project Exit Points: an idea of high-medium-low projects so students are locked into one end product. The end product of CS performance task is not as important to the assessment as is the analysis and communication displayed in presentation and reflection activities</li>
                         <li>Presentation: how will students share their work? will they share with peers, outside world? what media could/should be made available to students? <strong>Include a Rubric</strong></li>
@@ -301,58 +298,28 @@
                       </ul>
                       <a href="#" onclick="activaTab('submitting');">How to submit a unit</a>
 
-
-                    <h3>Reference</h3>
-                    <p><a target="_blank" href="https://www.weteachnyc.org/media2016/filer_public/1b/06/1b06cc14-71bb-4378-b2db-e68aba23097e/grade_2_unit_1_web_toc.pdf">NYCDOE Social Studies Curriculum Sample</a></p>
+                    <h3 style="margin-left:0px; margin-top:20px;">Reference</h3>
+                    <p style="margin:0px;"><a target="_blank" href="https://www.weteachnyc.org/media2016/filer_public/1b/06/1b06cc14-71bb-4378-b2db-e68aba23097e/grade_2_unit_1_web_toc.pdf">NYCDOE Social Studies Curriculum Sample</a></p>
 
                 </div>
             </div>
-
-
-
+        </div>
     </div>
 
-
-    <div class="col-md-8"  style="border-left: 1px solid #ccc;" v-else>
-      Submitting a meaningful CS unit to the Blueprint is easy, just follow these steps:
-      <h3>Use Google Docs</h3>
-      <p>Make sure your content is in Google Docs. Google Drive makes it easy to convert many different document types into Google Docs. We use Google docs because many educators use it and it makes it easy for educators to copy your unit and make changes.</p>
-
-
-      <h3>Fetch</h3>
-      <!-- <h3>Review and Submit</h3> -->
-      <!-- <p>Once you’ve ensured you’ve got all your metadata in the document, please drop the link to the document in the submission form and click “Fetch”. The Blueprint site will retrieve and parse the document, looking specifically for the metadata from the previous step.</p> -->
-      <p>Please drop the link to the document in the submission form to the left and click “Fetch”. Make sure the link is public. Once the blueprint site has parsed your document, you will be able to preview how your unit will look on the Blueprint site.</p>
-
-      <h3>Provide Metadata</h3>
-      <p>Metadata will help educators find your unit. Once your document has been processed, a form will appear in the sidebar. Fill out the form to provide information about your unit.</p>
-
-      <p>Here is a list of the metadata fields:</p>
-      <ul>
-        <li><b>Title</b> -A descriptive name for your unit</li>
-        <li><b>Grade</b> - K-2, 3-5, 6-8, 9-12 (choose one)</li>
-        {# <li><b>Subject</b> - ELA, Math, Social Studies, Science, Art, Technology</li> #}
-        <li><b>Pacing</b> - in hours and minutes (7 hours, 30 minutes)</li>
-        <li><b>CS Concepts</b> - Select all relevant concepts. See Concepts section for concepts and subconcepts. (Abstraction - Pattern Recognition)</li>
-        <li><b>Topic Tags</b> - Select all relevant topic tags</li>
-        <li><b>Devices</b> - Select all relevant devices</li>
-        <li><b>Software</b> - Select all relevant software</li>
-      </ul>
-      <h3>Submit</h3>
-      <p> Once you feel good about the look and the metadata associated with your unit, click “Submit”.</p>
-
-      <h3>Approval</h3>
-      <p>Your unit will be reviewed by the CS4All team to ensure it meets the requirements for a meaningful CS unit and is aligned to the needs of classroom educators.</p>
-
-    </div>
-  </div>
   </div>
 </div>
+</article>
+</div><!-- /#page -->
+
 
 <script src="/static/js/vue.js"></script>
 <script src="/static/js/reqwest.min.js"></script>
 
 <script>
+
+function activaTab(tab){
+    $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+};
 
 var app = new Vue({
   el: '#activity-app',
@@ -445,21 +412,7 @@ var app = new Vue({
   }
 });
 
-function activaTab(tab){
-    $('.nav-tabs a[href="#' + tab + '"]').tab('show');
-};
 
 </script>
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    border: 1px solid #666;
-    padding: 10px;
-  }
-  .contentColumn{
-    color:grey;
-  }
-</style>
+
 {% endblock %}

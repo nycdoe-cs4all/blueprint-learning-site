@@ -3,7 +3,8 @@
 {% load i18n %}
 
 {% block content %}
-<div class="col-md-6">
+<div id="page">
+	<article>
   <h2>Log in</h2>
   <form method="post" action=".">
     {% csrf_token %}
@@ -16,5 +17,6 @@
 
   <p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>.</p>
   <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>.</p>
-</div>
+</article>
+</div><!-- /#page -->
 {% endblock %}

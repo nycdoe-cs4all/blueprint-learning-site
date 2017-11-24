@@ -1,0 +1,989 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+
+
+<div id="page">
+
+
+	<article class="light-theme">
+
+
+		<header>
+			<h2><span class="preamble">Student</span> Outcomes</h2>
+			<p>Perspectives, Practices &amp; Concepts combine to describe the progression of student outcomes in NYC K-12 computer science education.</p>
+		</header>
+
+
+		<div class="article-content">
+
+
+				<p>Meaningful CS units will include a set of student outcomes that follow these requirements:</p>
+				<ul>
+					<li>At least one outcome from each Practice</li>
+					<li>At least one outcome from three Concepts</li>
+					<li>At least one outcome from each level of <a target="_blank" href="https://www.weteachnyc.org/resources/collection/depth-knowledge/">Webb’s Depth of Knowledge</a></li>
+				</ul>
+
+		</div>
+
+
+		<section id="perspective-explorer" class="accordion-target-">
+
+			<div class="section-content">
+
+				<header>
+					<span class="icon"><svg><use xlink:href="#icon-explorer" /></svg></span>
+					<h3>Explorer Outcomes</h3>
+					At the beginning of their journey, students learn CS concepts and practices by manipulating physical models and working in guided digital environments.
+				</header>
+
+
+				<table>
+
+					<thead>
+						<tr>
+							<th>Practice</th>
+							<th>Concepts</th>
+							<th>&ldquo;Students will/I can…&rdquo;</th>
+							<th>Depth of Knowledge</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th rowspan="5">Analyze</th>
+							<td>
+								<h4>Abstraction</h4>
+								<ul>
+									<li>Decomposition</li>
+									<li>Pattern Recognition</li>
+									<li>Generalization &amp; Detail Removal</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> the components, patterns, and characteristics of a concrete computing problem or idea.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Algorithms</h4>
+								Algorithm Design
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> the clarity and completeness of instructions.</td>
+							<td data-column="Depth of Knowledge">2/3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Programming</h4>
+								Syntax
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Examine</strong> the commands and rules of a programming language.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Data</h4>
+								Sensors &amp; Datasets
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> how the computer uses data from sensors or datasets.</td>
+							<td data-column="Depth of Knowledge">2/3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Networks</h4>
+								Physical Internet
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Examine</strong> how computers physically connect to the Internet.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+					</tbody>
+
+
+					<tbody>
+
+						<tr>
+							<th rowspan="5">Prototype</th>
+							<td>
+								<h4>Abstraction</h4>
+								<ul>
+									<li>Decomposition</li>
+									<li>Pattern Recognition</li>
+									<li>Generalization &amp; Detail Removal</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Ask</strong> how a problem or idea can be broken down into components and imagine how they can build on one or more of those components.</td>
+							<td data-column="Depth of Knowledge">2/3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Algorithms</h4>
+								Algorithm Design
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Plan, create/use, &amp; test</strong> a set of instructions that completes a concrete task. </td>
+							<td data-column="Depth of Knowledge">3/4</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Programming</h4>
+								Syntax
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Create</strong> a tangible or digital program with the commands and rules of a programming language.</td>
+							<td data-column="Depth of Knowledge">4</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Data</h4>
+								Sensors &amp; Datasets
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Use or imagine</strong> how to use data from sensors or datasets.</td>
+							<td data-column="Depth of Knowledge">2/3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Networks</h4>
+								Physical Internet
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Research</strong> how computers physically connect to the Internet. </td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+					</tbody>
+
+
+					<tbody>
+
+						<tr>
+							<th rowspan="5">Communicate</th>
+							<td>
+								<h4>Abstraction</h4>
+								<ul>
+									<li>Decomposition</li>
+									<li>Pattern Recognition</li>
+									<li>Generalization &amp; Detail Removal</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> how the components and characteristics of a tangible computing problem or idea are identified.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Algorithms</h4>
+								Algorithm Design
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> why and how a set of instructions completed a tangible task.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Programming</h4>
+								Syntax
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> how programming language commands and rules were used in a program.</td>
+							<td data-column="Depth of Knowledge">2/3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Data</h4>
+								Sensors &amp; Datasets
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Show</strong> how the computer uses data from sensors or datasets.</td>
+							<td data-column="Depth of Knowledge">1</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Networks</h4>
+								Physical Internet
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> how computers are physically connected to the Internet.</td>
+							<td data-column="Depth of Knowledge">2/3</td>
+						</tr>
+
+					</tbody>
+
+
+				</table>
+
+			</div>
+
+
+
+		</section>
+
+		<section id="outcomes-creator" class="accordion-target-">
+
+			<div class="section-content">
+
+				<header>
+					<span class="icon"><svg><use xlink:href="#icon-creator" /></svg></span>
+					<h3>Creator Outcomes</h3>
+					Continuing on their journey, students excited by the possibilities of computing can use friendly, open-ended physical and digital tools to represent their ideas, thoughts, or interests.
+				</header>
+
+				<table>
+
+					<thead>
+						<tr>
+							<th>Practice</th>
+							<th>Concepts</th>
+							<th>&ldquo;Students will/I can…&rdquo;</th>
+							<th>Depth of Knowledge</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th rowspan="5">Analyze</th>
+							<td>
+								<h4>Abstraction</h4>
+								<ul>
+									<li>Decomposition</li>
+									<li>Pattern Recognition</li>
+									<li>Generalization &amp; Detail Removal</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> the importance of the components and characteristics of an expressive project.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Algorithms</h4>
+								<ul>
+									<li>Algorithm Design</li>
+									<li>Control Flow</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> how control flow can be used to improve instructions.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Programming</h4>
+								<ul>
+									<li>Syntax</li>
+									<li>Development Environments</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Examine</strong> how computers are programmed using the commands and rules of a programming language.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Data</h4>
+								Sensors &amp; Datasets
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> how data from sensors or datasets can be meaningfully used in an expressive project.</td>
+							<td data-column="Depth of Knowledge">2/3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Networks</h4>
+								Physical Internet
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret </strong> the benefits and constraints of using the Internet to safely share information.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+					</tbody>
+
+
+					<tbody>
+
+						<tr>
+							<th rowspan="5">Prototype</th>
+							<td>
+								<h4>Abstraction</h4>
+								<ul>
+									<li>Decomposition</li>
+									<li>Pattern Recognition</li>
+									<li>Generalization &amp; Detail Removal</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Imagine &amp; plan</strong> how to build an expressive project with specific components and characteristics.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Algorithms</h4>
+								<ul>
+									<li>Algorithm Design</li>
+									<li>Control Flow</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Plan, create/use, &amp; test</strong> a program that uses control flow to complete a specific task. </td>
+							<td data-column="Depth of Knowledge">4</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Programming</h4>
+								<ul>
+									<li>Syntax</li>
+									<li>Development Environments</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Create &amp; test</strong> a digital program with the commands and rules of a programming language using a development environment.</td>
+							<td data-column="Depth of Knowledge">4</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Data</h4>
+								Sensors &amp; Datasets
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Imagine, plan &amp; use</strong> data from sensors or datasets in an expressive project.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Networks</h4>
+								Physical Internet
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Research, plan &amp; create</strong> a website that safely shares information.</td>
+							<td data-column="Depth of Knowledge">4</td>
+						</tr>
+
+					</tbody>
+
+
+					<tbody>
+
+						<tr>
+							<th rowspan="5">Communicate</th>
+							<td>
+								<h4>Abstraction</h4>
+								<ul>
+									<li>Decomposition</li>
+									<li>Pattern Recognition</li>
+									<li>Generalization &amp; Detail Removal</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> the importance of the components and characteristics of their/my expressive project.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Algorithms</h4>
+								<ul>
+									<li>Algorithm Design</li>
+									<li>Control Flow</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> why and how control flow was useful in creating an expressive project.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Programming</h4>
+								<ul>
+									<li>Syntax</li>
+									<li>Development Environments</li>
+								</ul>
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> the process of creating and testing a digital program.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Data</h4>
+								Sensors &amp; Datasets
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> how their/my expressive project uses data from sensors or datasets.</td>
+							<td data-column="Depth of Knowledge">3</td>
+						</tr>
+
+						<tr>
+							<td>
+								<h4>Networks</h4>
+								Physical Internet
+							</td>
+							<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> the process and important considerations of sharing information on the Internet.</td>
+							<td data-column="Depth of Knowledge">2</td>
+						</tr>
+
+					</tbody>
+
+
+				</table>
+
+			</div>
+
+		</section>
+
+
+
+		<section id="outcomes-innovator" class="accordion-target-">
+
+				<div class="section-content">
+
+					<header>
+						<span class="icon"><svg><use xlink:href="#icon-innovator" /></svg></span>
+						<h3>Innovator Outcomes</h3>
+						Innovators consider open-ended questions about public, private and open-source computing.
+					</header>
+
+					<table>
+
+						<thead>
+							<tr>
+								<th>Practice</th>
+								<th>Concepts</th>
+								<th>&ldquo;Students will/I can…&rdquo;</th>
+								<th>Depth of Knowledge</th>
+							</tr>
+						</thead>
+
+						<tbody>
+
+							<tr>
+								<th rowspan="5">Analyze</th>
+								<td>
+									<h4>Abstraction</h4>
+									<ul>
+										<li>Decomposition</li>
+										<li>Pattern Recognition</li>
+										<li>Generalization &amp; Detail Removal</li>
+										<li>Interfaces</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> how their/my project might be built by remixing, contributing to, or incorporating others’ software or hardware.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Algorithms</h4>
+									<ul>
+										<li>Algorithm Design</li>
+										<li>Control Flow</li>
+										<li>Inputs, Variables, Outputs</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> how algorithms can be generalized by providing meaningful outputs based inputs.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Programming</h4>
+									<ul>
+										<li>Languages</li>
+										<li>Syntax</li>
+										<li>Development Environments</li>
+										<li>Collaboration</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> the impact of the technical aspects of collaborating with others on building software or hardware on their own work process.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Data</h4>
+									<ul>
+										<li>Sensors &amp; Datasets</li>
+										<li>Data Abstraction &amp; Storage</li>
+										<li>Transformation &amp; Visualziation</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Interpret</strong> data by retrieving, storing, transforming and visualizing it.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Networks</h4>
+									<ul>
+										<li>Trust</li>
+										<li>Physical Internet</li>
+										<li>Markup</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> the needs of the people that might use their web-based software in terms of consent, privacy, and security.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+						</tbody>
+
+
+						<tbody>
+
+							<tr>
+								<th rowspan="5">Prototype</th>
+								<td>
+									<h4>Abstraction</h4>
+									<ul>
+										<li>Decomposition</li>
+										<li>Pattern Recognition</li>
+										<li>Generalization &amp; Detail Removal</li>
+										<li>Interfaces</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Research, plan, build &amp; test</strong> interfaces that improve the usability, accessibility, or capability of a type of software or hardware.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Algorithms</h4>
+									<ul>
+										<li>Algorithm Design</li>
+										<li>Control Flow</li>
+										<li>Inputs, Variables, Outputs</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Plan, create &amp; test</strong> an algorithm that provides meaningful outputs based on inputs </td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Programming</h4>
+									<ul>
+										<li>Languages</li>
+										<li>Syntax</li>
+										<li>Development Environments</li>
+										<li>Collaboration</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Create, test &amp; improve</strong> software in collaboration with their peers or a safe online community.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Data</h4>
+									<ul>
+										<li>Sensors &amp; Datasets</li>
+										<li>Data Abstraction &amp; Storage</li>
+										<li>Transformation &amp; Visualziation</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>research, imagine &amp; create</strong> a story, visualization, or interaction based on data.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Networks</h4>
+									<ul>
+										<li>Trust</li>
+										<li>Physical Internet</li>
+										<li>Markup</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>plan, create &amp; test</strong> a web-based interface that meaningfully considers the needs of the people that may use it.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+						</tbody>
+
+
+						<tbody>
+
+							<tr>
+								<th rowspan="5">Communicate</th>
+								<td>
+									<h4>Abstraction</h4>
+									<ul>
+										<li>Decomposition</li>
+										<li>Pattern Recognition</li>
+										<li>Generalization &amp; Detail Removal</li>
+										<li>Interfaces</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Present</strong> how their/my own works remixes, contributes to, or incorporates another’s work. </td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Algorithms</h4>
+									<ul>
+										<li>Algorithm Design</li>
+										<li>Control Flow</li>
+										<li>Inputs, Variables, Outputs</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Present</strong> why their/my algorithm provides meaningful outputs based on inputs.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Programming</h4>
+									<ul>
+										<li>Languages</li>
+										<li>Syntax</li>
+										<li>Development Environments</li>
+										<li>Collaboration</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Explain</strong> the technical steps and challenges to collaborating on building software.</td>
+								<td data-column="Depth of Knowledge">2</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Data</h4>
+									<ul>
+										<li>Sensors &amp; Datasets</li>
+										<li>Data Abstraction &amp; Storage</li>
+										<li>Transformation &amp; Visualziation</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Present</strong> the process they/I used to develop their data-driven story, visualization or interaction including sources of data, how they transformed it, and how they chose to display it.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Networks</h4>
+									<ul>
+										<li>Trust</li>
+										<li>Physical Internet</li>
+										<li>Markup</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Present</strong> process they/I used to make a web-based interface and what aspects of the user’s trust and interaction they/I considered important.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+						</tbody>
+
+
+					</table>
+
+
+				</div>
+
+			</section>
+
+
+			<section id="outcomes-citizen" class="accordion-target-">
+
+				<div class="section-content">
+
+					<header>
+						<span class="icon"><svg><use xlink:href="#icon-citizen" /></svg></span>
+						<h3>Citizen Outcomes</h3>
+						Citizens examine the intersection of computing with social, economic and political systems and then work to influence those systems.
+					</header>
+
+					<table>
+
+						<thead>
+							<tr>
+								<th>Practice</th>
+								<th>Concepts</th>
+								<th>&ldquo;Students will/I can…&rdquo;</th>
+								<th>Depth of Knowledge</th>
+							</tr>
+						</thead>
+
+						<tbody>
+
+							<tr>
+								<th rowspan="5">Analyze</th>
+								<td>
+									<h4>Abstraction</h4>
+									<ul>
+										<li>Decomposition</li>
+										<li>Pattern Recognition</li>
+										<li>Generalization &amp; Detail Removal</li>
+										<li>Modularity</li>
+										<li>Interfaces</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> how computing systems built from modular pieces can impact their/my family and friends, school, or local community.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Algorithms</h4>
+									<ul>
+										<li>Algorithm Design</li>
+										<li>Control Flow</li>
+										<li>Inputs, Variables, Outputs</li>
+										<li>Application</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> the application of algorithms that impact their/my community by looking at who is applying them, what data is used an input, and patterns in the output.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Programming</h4>
+									<ul>
+										<li>Languages</li>
+										<li>Syntax</li>
+										<li>Development Environments</li>
+										<li>Collaboration</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> the programming languages, existing projects, and collaborators that are best suited to explore the impacts of computing on their/my community.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Data</h4>
+									<ul>
+										<li>Sensors &amp; Datasets</li>
+										<li>Data Abstraction &amp; Storage</li>
+										<li>Transformation &amp; Visualziation</li>
+										<li>Feedback Loops &amp; Automation</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> the data used to in feedback loops to automate decisions or tasks that systemically impact their/my community</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Networks</h4>
+									<ul>
+										<li>Trust</li>
+										<li>Physical Internet</li>
+										<li>Protocols</li>
+										<li>Markup</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Evaluate</strong> how they/I might have a role in the shaping of networks including the Internet through the lens of the protocols that govern networks and who creates those protocols.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+						</tbody>
+
+
+						<tbody>
+
+							<tr>
+								<th rowspan="5">Prototype</th>
+								<td>
+									<h4>Abstraction</h4>
+									<ul>
+										<li>Decomposition</li>
+										<li>Pattern Recognition</li>
+										<li>Generalization &amp; Detail Removal</li>
+										<li>Modularity</li>
+										<li>Interfaces</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Ask, research &amp; imagine</strong> a computing system of modular components that can impact their/my community.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Algorithms</h4>
+									<ul>
+										<li>Algorithm Design</li>
+										<li>Control Flow</li>
+										<li>Inputs, Variables, Outputs</li>
+										<li>Application</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Create/use, test &amp; improve</strong> an algorithm that considers the history, needs, and constraints of their/my community.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Programming</h4>
+									<ul>
+										<li>Languages</li>
+										<li>Syntax</li>
+										<li>Development Environments</li>
+										<li>Collaboration</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Research, imagine, plan</strong> the languages, existing projects, and collaborators that may help them explore a systemic impact.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Data</h4>
+									<ul>
+										<li>Sensors &amp; Datasets</li>
+										<li>Data Abstraction &amp; Storage</li>
+										<li>Transformation &amp; Visualziation</li>
+										<li>Feedback Loops &amp; Automation</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Research, imagine &amp; create</strong> a model, digitally or on paper, that explores the impact of the data used in feedback loops to automate decisions.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Networks</h4>
+									<ul>
+										<li>Trust</li>
+										<li>Physical Internet</li>
+										<li>Protocols</li>
+										<li>Markup</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Research, plan, explicitly create/use</strong> protocols that govern how computers connect and communicate.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+						</tbody>
+
+
+						<tbody>
+
+							<tr>
+								<th rowspan="5">Communicate</th>
+								<td>
+									<h4>Abstraction</h4>
+									<ul>
+										<li>Decomposition</li>
+										<li>Pattern Recognition</li>
+										<li>Generalization &amp; Detail Removal</li>
+										<li>Modularity</li>
+										<li>Interfaces</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Discuss</discuss> how a computing system of modular components impacts their/my community.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Algorithms</h4>
+									<ul>
+										<li>Algorithm Design</li>
+										<li>Control Flow</li>
+										<li>Inputs, Variables, Outputs</li>
+										<li>Application</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Discuss</strong> how their/my algorithm considers the history, needs, and constraints of their/my community.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Programming</h4>
+									<ul>
+										<li>Languages</li>
+										<li>Syntax</li>
+										<li>Development Environments</li>
+										<li>Collaboration</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Present</strong> the languages, projects, and collaborators they envision helping them explore a systemic impact.</td>
+								<td data-column="Depth of Knowledge">3</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Data</h4>
+									<ul>
+										<li>Sensors &amp; Datasets</li>
+										<li>Data Abstraction &amp; Storage</li>
+										<li>Transformation &amp; Visualziation</li>
+										<li>Feedback Loops &amp; Automation</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Discuss</strong> the impacts of the specific data used in feedback loops to automate decisions.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+							<tr>
+								<td>
+									<h4>Networks</h4>
+									<ul>
+										<li>Trust</li>
+										<li>Physical Internet</li>
+										<li>Protocols</li>
+										<li>Markup</li>
+									</ul>
+								</td>
+								<td data-column="&ldquo;Students will/I can…&rdquo;"><strong>Discuss</strong> how protocols govern networks, who creates, protocols, and how they/I might engage in shaping those protocols.</td>
+								<td data-column="Depth of Knowledge">4</td>
+							</tr>
+
+						</tbody>
+
+
+					</table>
+
+
+				</div>
+
+			</section>
+
+
+
+
+	</article>
+
+	<div class="interior-container">
+		<div class="exit-menu">
+
+			<ol class="list-unstyled">
+				<li>
+					<a class="box" href="/what-is-cs/" role="button"><span class="box-content">CS Education</span></a>
+				</li><li>
+					<a class="box" href="/perspectives/" role="button"><span class="box-content">Perspectives</span></a>
+				</li><li>
+					<a class="box" href="/practices/" role="button"><span class="box-content">Practices</span></a>
+				</li><li>
+					<a class="box" href="/concepts/" role="button"><span class="box-content">Concepts</span></a>
+				</li><li class="current">
+					<a href="">Outcomes</a>
+				</li>
+			</ol>
+
+		</div>
+
+
+		<div class="exit-links">
+
+			<div class="row">
+				<div class="col-md-6 box">
+					<a class="btn btn-primary btn-lg" href="/units/" role="button"><span class="preamble">Cool. Let&rsquo;s find a</span> unit <span class="preamble">to teach.</span></a>
+				</div>
+				<div class="col-md-6 box">
+					<a class="btn btn-primary btn-lg" href="/resources/" role="button"><span class="preamble">Hold on, I still have</span> questions.</span></a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div><!-- /#page -->
+
+
+
+{% endblock %}

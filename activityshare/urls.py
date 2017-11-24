@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^concepts/$', TemplateView.as_view(template_name='concepts.html')),
     url(r'^practices/$', TemplateView.as_view(template_name='practices.html')),
     url(r'^perspectives/$', TemplateView.as_view(template_name='perspectives.html')),
+    url(r'^outcomes/$', TemplateView.as_view(template_name='outcomes.html')),
     url(r'^ican/$', TemplateView.as_view(template_name='ican.html')),
 
 ]

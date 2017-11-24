@@ -1,213 +1,283 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
-<script src="/static/js/floatMenu.js"></script>
-<div class="col-md-3" id="floatMenu">
+<div id="page">
+	<article class="green-theme">
 
-  <h4>Blueprint CS Foundations</h4>
+		<header>
+			<h2><span class="preamble">Computer Science</span> Practices</h2>
+			<p>The intertwined methods by which computer science is studied and applied.</p>
 
-  <ul>
-    <li><a href="/what-is-cs">What is CS education?</a></li>
-    <li><a href="/meaningful-cs">What is a meaningful CS Unit?</a></li>
-    <li><a href="/concepts">CS Concepts</a></li>
-    <li><a class="filter" href="/practices">CS Practices</a></li>
-    <li><a href="/perspectives">CS Perspectives</a></li>
-    <li><a href="/ican">I Can Statements</a></li>
-  </ul>
 
-</div>
-<div class="col-md-9">
-<h1>Computer Science Practices</h1>
-<p class="c1">In the sections below, we define CS practices commonly used by individuals studying and applying computing. CS Practices provide structure for activities that students engage in.</p>
-<p class="c1 c23"></p>
-<p class="c1">Each practice is intertwined with the others and will require time for students to apply concepts, analyze information from multiple sources, as well as design and create artifacts.</p>
-<p class="c1 c23"></p>
-<ul class="c33 lst-kix_lyveonxnes8g-0 start">
-  <li><a href="#analyze">Analyze: The impact of computing</a></li>
-  <li><a href="#prototype">Prototype: Projects connected to their interests</a></li>
-  <li><a href="#communicate">Communicate: Their understanding of computing concepts</a></li>
-</ul>
-<p class="c1">Educators must mold the practices to fit the needs of their students. This could mean that only components of a specific practice are covered.</p><p class="c1 c23"></p>
+		</header>
 
-<a name="analyze"></a><h2>Analyze (AN): The impact of computing</h2>
-<p class="c1">People of all backgrounds must evaluate and respond to the ways that computing affects their lives, their families and friends, as well as their communities. Government, industry, startups, nonprofits, researchers, artists and many others use the principles of computing to accomplish an increasing number of tasks. We may think of some of these tasks as beneficial or malicious, and we are still not sure how to evaluate others.</p>
+		<div class="article-content"><p>Each practice consists of a progression of skills (based on Webb’s Depth of Knowledge) that help educators structure lessons to meet students’ needs. </p></div>
 
-<table class="c22">
-  <tbody>
-    <tr class="c36">
-      <td class="c16" colspan="1" rowspan="1"><p class="c31">Beneficial</p></td>
-      <td class="c16" colspan="1" rowspan="1"><p class="c31">Unclear  </p></td><td class="c16" colspan="1" rowspan="1"><p class="c31">Malicious</p></td>
-    </tr>
-    <tr class="c36">
-      <td class="c16" colspan="1" rowspan="1">
-        <ul class="c33 lst-kix_2imcs45huitf-0 start">
-          <li class="c3 c21">Banking</li>
-          <li class="c3 c21">Mass communication</li>
-          <li class="c3 c21">Automating complex tasks (e.g. gene sequencing)</li>
-          <li class="c3 c21">Computer animation</li>
-          <li class="c3 c21">Interactive science museum exhibits</li>
-        </ul></td>
-        <td class="c16" colspan="1" rowspan="1">
-          <ul class="c33 lst-kix_row5pil18yc0-0 start">
-            <li class="c3 c26">Automating manufacturing</li>
-            <li class="c3 c26">Surveillance</li>
-            <li class="c3 c26">Consumer profiling</li>
-            <li class="c3 c26">Stock trading</li>
-            <li class="c3 c26">Ride-sharing</li>
-            <li class="c3 c26">Algorithmic decision-making</li>
-            <li class="c3 c26">Self-driving cars</li>
-          </ul>
-        </td>
-        <td class="c16" colspan="1" rowspan="1">
-          <ul class="c33 lst-kix_4la5yotoh4gv-0 start">
-            <li class="c3 c28">Taking control of networked computers</li>
-            <li class="c3 c28">Generating fake news</li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-<p class="c1">These are just a few examples and the breadth and depth of computing is growing fast. In order to analyze the impact of computing, students should:</p><p class="c1"> </p>
-<table class="c22">
-  <tbody>
-    <tr class="c8">
-      <td class="c6" colspan="1" rowspan="1"><p class="c1"><span class="c7"> </p></td>
-        <td class="c14" colspan="1" rowspan="1"><p class="c1"><span class="c7">Skill</p></td>
-        <td class="c24" colspan="1" rowspan="1"><p class="c1"><span class="c7">Definition</p></td>
-        <td class="c20" colspan="1" rowspan="1"><p class="c1"><span class="c7">Example</p></td>
-      </tr>
-      <tr class="c34">
-        <td class="c6" colspan="1" rowspan="1"><p class="c1">1</p></td>
-        <td class="c14" colspan="1" rowspan="1"><p class="c1">Describe</p></td>
-        <td class="c24" colspan="1" rowspan="1"><p class="c1">Describe an application of computing by detailing who, what, where, when. In this first step, focus on things that can be observed.</p></td>
-        <td class="c20" colspan="1" rowspan="1"><p class="c3">A keyboard allows users to input data into a computer. It has keys with letters, symbols and other functions.</p></td></tr><tr class="c34"><td class="c6" colspan="1" rowspan="1"><p class="c1">2</p></td>
-        <td class="c14" colspan="1" rowspan="1"><p class="c1">Examine</p></td>
-        <td class="c24" colspan="1" rowspan="1"><p class="c1">Examine the description looking for patterns, general characteristics, or anomalies. How do the parts of the whole relate to each other and the user?</p></td>
-        <td class="c20" colspan="1" rowspan="1"><p class="c3">The letter keys are not arranged alphabetically. Some keys affect the behavior of others. Users need to know the placement of, and how to read the keys.</p></td>
-      </tr>
-      <tr class="c9">
-        <td class="c6" colspan="1" rowspan="1"><p class="c1">3</p></td><td class="c14" colspan="1" rowspan="1"><p class="c1">Interpret</p></td>
-        <td class="c24" colspan="1" rowspan="1"><p class="c1">Interpret your analysis by looking for evidence to support an explanation. Test the evidence by researching similar cases, running experiments, or creating models (relates to<a class="c27" href="#prototype"> prototype</a>).</p></td>
-        <td class="c20" colspan="1" rowspan="1"><p class="c3">I can draw on personal experience and interviews with others about how they use the keyboard, i.e. from memory, looking at the keyboard, etc.</p></td>
-      </tr>
-      <tr class="c9">
-        <td class="c6" colspan="1" rowspan="1"><p class="c1">4</p></td>
-        <td class="c14" colspan="1" rowspan="1"><p class="c1">Evaluate</p></td>
-        <td class="c24" colspan="1" rowspan="1"><p class="c1">Evaluate the application of computing, based on your investigation. What are its benefits and evils; and to whom, how much, when and how? What are potential modifications and arguments for and against them?</p></td>
-        <td class="c20" colspan="1" rowspan="1"><p class="c3">The keyboard works great for people that memorize the keys and know all the functions. Blind people or people without full control of their fingers may experience difficulties.</p></td>
-      </tr>
-    </tbody>
-  </table>
-  <a name="prototype"></a><h2>Prototype (PR): Computing projects connected to student interests</h2>
-  <p class="c1">The goal of the prototyping practice is to help students build a mental model of how to use a computer to create new applications. Computer applications or programs like word processors or web browsers define how we use computers in a limited way. When we practice prototyping computing projects, we are creating our own applications; using computers in different ways than when we fire up our word processor or web browser.</p>
-  <p class="c1">There are many versions of the prototyping process - this is a seven step process that equally weighs:</p><p class="c1">&#9679;     Researching and designing what to build (many connections to the <a class="c27" href="#analyze">analyze</a> practice).</p>
-  <p class="c1">&#9679;     Building the prototype in iterations, or many small parts, in order to test often and make small changes.</p>
-  <p class="c1">&#9679;     Recording and reflecting on work and the results of testing.</p>
- <table class="c22">
-  <tbody>
-    <tr class="c44">
-      <td class="c47" colspan="2" rowspan="1"><p class="c1"><span class="c7">Skill</p></td>
-      <td class="c19" colspan="1" rowspan="1"><p class="c1"><span class="c7">Definition</p></td>
-      <td class="c18" colspan="1" rowspan="1"><p class="c1"><span class="c7">Example</p></td>
-    </tr>
-    <tr class="c34">
-      <td class="c13" colspan="1" rowspan="1"><p class="c1">1</p></td>
-      <td class="c2" colspan="1" rowspan="1"><p class="c3">Ask</p></td>
-      <td class="c19" colspan="1" rowspan="1"><p class="c3">Identify a problem that can be solved, break it down into smaller parts, and set constraints that limit its goal, features, or complexity.</p></td>
-      <td class="c18" colspan="1" rowspan="1"><p class="c3">A school performance (dance, play, etc.) needs three animations of ten minutes each, but we can loop shorter animations to fill ten minutes.</p></td>
-    </tr>
-    <tr class="c46">
-      <td class="c13" colspan="1" rowspan="1"><p class="c3">2</p></td><td class="c2" colspan="1" rowspan="1"><p class="c3">Research</p></td>
-      <td class="c19" colspan="1" rowspan="1"><p class="c3">Read about the problem. Look into how others solve it. Find projects that you can repurpose / remix. Interview people such as experts, or people that might use your prototype.</p></td>
-      <td class="c18" colspan="1" rowspan="1"><p class="c3">We researched concert videos with background animations, searched the Scratch community for projects to remix, and spoke to the performance director.</p></td>
-    </tr>
-    <tr class="c34"><td class="c13" colspan="1" rowspan="1"><p class="c3">3</p></td>
-      <td class="c2" colspan="1" rowspan="1"><p class="c3">Imagine</p></td>
-      <td class="c19" colspan="1" rowspan="1"><p class="c3">Collaborate to imagine ways to solve the problem. Use the problem definition, constraints, and research to help you imagine new ideas.</p></td>
-      <td class="c18" colspan="1" rowspan="1"><p class="c3">We came together to jot down ideas on chart paper, crossed out ideas that were too hard, and voted on a few options.</p></td>
-    </tr>
-    <tr class="c34">
-      <td class="c13" colspan="1" rowspan="1"><p class="c3">4</p></td>
-      <td class="c2" colspan="1" rowspan="1"><p class="c3">Plan</p></td>
-      <td class="c19" colspan="1" rowspan="1"><p class="c3">Select a promising solution, build a team, and set roles. Identify materials, break down your project into smaller parts, and set a timeline.</p></td>
-      <td class="c18" colspan="1" rowspan="1"><p class="c3">We drew a storyboard for each option, set a timeline to share with the performance team, and then built it in code.</p></td>
-    </tr>
-    <tr class="c41">
-      <td class="c13" colspan="1" rowspan="1"><p class="c3">5</p></td>
-      <td class="c2" colspan="1" rowspan="1"><p class="c3">Create</p></td>
-      <td class="c19" colspan="1" rowspan="1"><p class="c3">Work with your team to build enough of the project in order to test it out and get feedback. Be creative about your materials: paper, drawing apps and code. Take pictures or video, and comment on your work or code.</p></td>
-      <td class="c18" colspan="1" rowspan="1"><p class="c3">First iteration: We created a slideshow of our animation options using pictures we found and drawings.</p>
-        <p class="c3">Second iteration: We created animations in Scratch to test out with the projector.</p></td></tr><tr class="c0"><td class="c13" colspan="1" rowspan="1"><p class="c3">6</p></td>
-        <td class="c2" colspan="1" rowspan="1"><p class="c3">Test or Critique</p></td>
-        <td class="c19" colspan="1" rowspan="1"><p class="c3">Allow different people to test your prototype without telling them how it works. Take detailed notes and ask questions.</p><p class="c3">]When critiquing or giving feedback, use the ><a class="c27" href="#analyze">analyze</a> practice to structure feedback.</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c3">First iteration: The performance director and actors said that the theme and colors were good, but the animation was too fast.</p><p class="c3">Second iteration: The animation was square but the projection was rectangular.</p></td>
-        </tr>
-        <tr class="c0">
-          <td class="c13" colspan="1" rowspan="1"><p class="c3">7</p></td><td class="c2" colspan="1" rowspan="1"><p class="c3">Improve</p></td>
-          <td class="c19" colspan="1" rowspan="1"><p class="c3">Repeat the process using the information from testing as a new starting point. Repeat the process multiple times!</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c3">First Iteration: Slowing down the animation won&rsquo;t be simple, but can be done.</p><p class="c3">Second Iteration: We will screen-capture the animation over a background to align its sides to the projection.</p></td>
-        </tr>
-      </tbody>
-    </table>
+		<section id="practice-analyze" class="accordion-target compressed">
 
-    <a name="communicate"></a><h2>Communicate (CO): Understanding computing concepts</h2>
-    <p class="c1">Whether it be in college or their careers, students will have to communicate the complex thought processes behind their work. Students will inevitably work with collaborators, professors, advisors, project leaders, customers and many others on issues or projects. These stakeholders will be interested in the &lsquo;how&rsquo; and &lsquo;why&rsquo; behind students&rsquo; projects and analyses.</p>
-    <p class="c1">Students should practice the skills required to communicate their higher-order CS thinking, go through the <a class="c27" href="#analyze">analyze</a> and <a class="c27" href="#prototype">prototype</a> practices, and not just complete those activities.</p>
+			<header>
+				<a class="box accordion" href="#practice-analyze">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-analyze" /></svg></span>
+						<h3>Analyze</h3>
+						Evaluating the social impact of computing
+					</div>
+				</a>
+			</header>
 
-    <table class="c22">
-      <tbody>
-        <tr class="c8">
-          <td class="c32" colspan="2" rowspan="1"><p class="c1"><span class="c7"> </p><p class="c1"><span class="c7">Skill</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c1"><span class="c7">Definition</p></td><td class="c30" colspan="1" rowspan="1"><p class="c1"><span class="c7">Example</p></td>
-        </tr>
-        <tr class="c9">
-          <td class="c13" colspan="1" rowspan="1"><p class="c1">1</p></td><td class="c25" colspan="1" rowspan="1"><p class="c3">What</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c3">What did you learn about computing? Make a statement about how a computing concept was used while <a class="c27" href="#prototype">prototyping</a> or <a class="c27" href="#analyze">analyzing</a>.</p></td>
-          <td class="c30" colspan="1" rowspan="1"><p class="c3">While programming a drawing app, I used the idea of<a class="c27" href="/concepts#abstraction"> generalization and detail removal</a> to create an eraser that doesn&rsquo;t erase, but covers the drawing with the background color.</p></td>
-        </tr>
-        <tr class="c46">
-          <td class="c13" colspan="1" rowspan="1"><p class="c3">2</p></td>
-          <td class="c25" colspan="1" rowspan="1"><p class="c3">Who</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c3">Consider presenting ideas to broader audiences: the entire class, all of the teachers in school, the community, etc. Empathize with the backgrounds, knowledge and values of the audience.</p></td>
-          <td class="c30" colspan="1" rowspan="1"><p class="c3">I noticed that my classmates struggled with how to erase, because they wanted to erase like they do with pencil and paper. Everyone isn&rsquo;t comfortable with code, so I will focus on talking about the idea without showing code.</p></td>
-        </tr>
-        <tr class="c9">
-          <td class="c13" colspan="1" rowspan="1"><p class="c3">3</p></td><td class="c25" colspan="1" rowspan="1"><p class="c3">How</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c3">Select the media that works best for the intended audience, be it interactive programs, video, audio, slide decks, blog posts, papers, or instructional activities.</p></td>
-          <td class="c30" colspan="1" rowspan="1"><p class="c3">I will ask my classmates to compare and contrast all the ways they fix mistakes on paper. I will then have them use my app to try to guess which of those strategies I&rsquo;m using.</p></td>
-        </tr>
-        <tr class="c41">
-          <td class="c13" colspan="1" rowspan="1"><p class="c3">4</p></td>
-          <td class="c25" colspan="1" rowspan="1"><p class="c3">Why</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c3">Explicitly show and explain the application of a computing concept. Why was it significant to your thinking? Why should others care about it? How did it help you? Why was it easy or hard to use? How do you plan to learn more?</p></td>
-          <td class="c30" colspan="1" rowspan="1"><p class="c3">Detail removal was important to helping me jump from observing that drawing with the background color was the same as erasing. I wrote code activated by the &lsquo;erase&rsquo; button to set the pen color to the background color. I&rsquo;m curious about what other buttons we press that do things in unexpected ways!</p></td>
-        </tr>
-        <tr class="c39">
-          <td class="c13" colspan="1" rowspan="1"><p class="c3">5</p></td><td class="c25" colspan="1" rowspan="1"><p class="c3">Feedback</p></td>
-          <td class="c18" colspan="1" rowspan="1"><p class="c3">Present or publish your work and ask for formative feedback in the form of questions and answers, comments, or user testing. Publishing work and capturing feedback as part of digital portfolios helps work continue after the unit or class ends.</p><p class="c3">When critiquing, or giving feedback, use the<a class="c27" href="#analyze"> analyze</a> practice to structure feedback.</p></td>
-          <td class="c30" colspan="1" rowspan="1"><p class="c1">My presentation went well, but I wish I had planned to show and explain my code. Many students understood the idea quickly, but weren&rsquo;t sure how to write the code, or how to create an &lsquo;erase&rsquo; button. I posted screenshots of my app and pictures of my activity on my digital portfolio.</p></td>
-        </tr>
-        </tbody>
-      </table>
 
-</div>
+			<div class="section-content">
 
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    border: 1px solid #666;
-    padding: 10px;
-  }
-  .c8 {
-    font-weight: bold;
-  }
+				<p class="headline">&ldquo;I can develop a deeper understanding of computing applications.&rdquo;</p>
 
-  .filter{
-    color: grey;
-  }
+				<p>In the future students will interact with computing applications created by government, industry, startups, nonprofits, researchers, artists and many others.They will need to evaluate and respond to the ways that these applications affect their lives, their families and friends, as well as their communities.</p>
 
-</style>
+				<p>In order build their ability to analyze computing applications, educators should help students develop these skills:</p>
 
+				<table class="ordered">
+
+					<caption>Steps to Analyze the Impact of Computing</caption>
+
+					<thead>
+						<tr>
+							<th>Skill</th>
+							<th>Definition</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th>Describe</th>
+							<td><p>Describe an application of computing by detailing who, what, where, when. In this first step, focus on things that can be observed.</p></td>
+							<td data-column="Example"><p>A keyboard allows users to input data into a computer. It has keys with letters, symbols and other functions.</p></td>
+						</tr>
+
+						<tr>
+							<th>Examine</th>
+							<td><p>Examine the description for patterns, general characteristics, or anomalies. How do the parts of the whole relate to each other and the user?</p></td>
+							<td data-column="Example"><p>The letter keys are not arranged alphabetically. Some keys affect the behavior of others. Users need know the placement of, and how to read the keys.</p></td>
+						</tr>
+
+						<tr>
+							<th>Interpret</th>
+							<td><p>Interpret your analysis by looking for evidence to support an explanation. Test the evidence by researching similar cases, running experiments, or creating models (relates to<a href="#prototype"> prototype</a>).</p></td>
+							<td data-column="Example"><p>I can draw on personal experience and interviews with others about how they use the keyboard, i.e. from memory, looking at the keyboard, etc.</p></td>
+						</tr>
+
+						<tr>
+							<th>Evaluate</th>
+							<td><p>Evaluate the application of computing, based on your investigation. What are its benefits and evils; and to whom, how much, when and how? What are potential modifications and the arguments for and against?</p></td>
+							<td data-column="Example"><p>The keyboard works great for people that memorize the keys and know all the functions. Blind people or people without full control of their fingers may experience difficulties.</p></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+		</section>
+
+
+
+		<section id="practice-prototype" class="accordion-target compressed">
+
+			<header>
+				<a class="box accordion" href="#practice-prototype">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-prototype" /></svg></span>
+						<h3>Prototype</h3>
+						Computing projects connected to student interests
+					</div>
+				</a>
+			</header>
+
+
+			<div class="section-content">
+
+				<p class="headline">&ldquo;I can express my ideas by making computing projects&rdquo;</p>
+
+				<p>The goal of the prototyping practice is to help students build a mental model of how to use a computer to create new applications. Computer applications or programs like word processors or web browsers define how we use computers in a limited way. When we practice prototyping computing projects, we are creating our own applications; using computers in different ways than when we fire up our word processor or web browser.</p>
+
+				<p>There are many versions of the prototyping process - this is a seven step process that equally weighs:</p>
+
+				<ul>
+					<li>Researching and designing what to build (many connections to the <a class="c27" href="#analyze">analyze</a> practice).</li>
+
+					<li>Building the prototype in iterations, or many small parts, in order to test often and make small changes.</li>
+
+					<li>Recording and reflecting on work and the results of testing.</li>
+				</ul>
+
+				<table class="ordered">
+
+					<caption>Steps to Prototype an Algorithm or Application</caption>
+
+					<thead>
+						<tr>
+							<th>Skill</th>
+							<th>Definition</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th>Ask</th>
+							<td><p>Identify a problem that can be solved, break it down into smaller parts, and set constraints that limit its goal, features, or complexity.</p></td>
+							<td data-column="Example"><p>A school performance (dance, play, etc.) needs three animations of ten minutes each, but we can loop a shorter animation.</p></td>
+						</tr>
+
+						<tr>
+							<th>Research</th>
+							<td><p>Read about the problem, look into how others solve it, find projects you can repurpose / remix, interview people such as experts, or people that might use your prototype.</p></td>
+							<td data-column="Example"><p>We researched concert videos with background animations, searched the Scratch community for projects to remix, and spoke to the performance director.</p></td>
+						</tr>
+
+						<tr>
+							<th>Imagine</td>
+							<td><p>Collaborate to imagine how to solve the problem. Use problem definition, constraints, and research to help you imagine new ideas.</p></td>
+							<td data-column="Example"><p>We came together to jot down ideas on chart paper, crossed out ideas that were too hard, and voted on a couple options.</p></td>
+						</tr>
+
+						<tr>
+							<th>Plan</th>
+							<td><p>Select a promising solution, build a team, and set roles. Identify materials, break down your project into smaller parts, and set a timeline.</p></td>
+							<td data-column="Example"><p>We drew a storyboard for each option, set a timeline to share it with the performance team, and then built it in code.</p></td>
+						</tr>
+
+						<tr>
+							<th>Create</th>
+							<td><p>Work with your team to build enough of the project in order to test it out and get feedback. Be creative about your materials: paper, drawing apps and code. Take pictures or video, and comment on your work or code.</p></td>
+							<td data-column="Example">
+								<p>First iteration: We created a slideshow of our animation options using pictures we found and drawings.</p>
+								<p>Second iteration: We created animations in Scratch to test out with the projector.</p>
+							</td>
+						</tr>
+
+						<tr>
+							<th>Test or Critique</th>
+							<td>
+								<p>Allow different people to test your prototype without telling them how it works. Take detailed notes and ask questions.</p>
+								<p>When critiquing or giving feedback, use the <a href="#analyze">analyze</a> practice to structure feedback.</p>
+							</td>
+							<td data-column="Example">
+								<p>First iteration: The performance director and actors said that the theme and colors were good, but the animation was too fast.</p>
+								<p>Second iteration: The animation was square but the projection was rectangular.</p>
+							</td>
+						</tr>
+
+						<tr>
+							<th>Improve</th>
+							<td><p>Repeat the process using the information from testing as a new starting point. Repeat the process multiple times!</p></td>
+							<td data-column="Example">
+								<p>First Iteration: Slowing down the animation won&rsquo;t be simple, but can be done.</p>
+								<p>Second Iteration: We will screen-capture the animation over a background to align its sides to the projection.</p>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+
+		</section>
+
+
+
+		<section id="practice-communicate" class="accordion-target compressed">
+
+			<header>
+				<a class="box accordion" href="#practice-communicate">
+					<div class="box-content">
+						<span class="icon"><svg><use xlink:href="#icon-communicate" /></svg></span>
+						<h3>Communicate</h3>
+						Understanding computing concepts
+					</div>
+				</a>
+			</header>
+
+
+			<div class="section-content">
+
+				<p class="headline">&ldquo;I can engage others in my ideas and work on computing concepts.&rdquo;</p>
+
+				<p>Whether it be in college or a career, students will have to communicate the complex thought processes behind their computer science work. Students will inevitably work with collaborators, professors, advisors, project leaders, customers and many others on computing issues or projects. These stakeholders will be interested in the &lsquo;how&rsquo; and &lsquo;why&rsquo; behind students&rsquo; projects and analyses.</p>
+
+				<p>Students should practice the skills required to communicate their higher-order CS thinking, go through the <a href="#analyze">analyze</a> and <a href="#prototype">prototype</a> practices, and not just complete those activities.</p>
+
+
+				<table class="ordered">
+
+					<caption>Steps to Communicate the &ldquo;How&rdquo; And &ldquo;Why&rdquo; of a CS Project</caption>
+
+					<thead>
+						<tr>
+							<th>Skill</th>
+							<th>Definition</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+
+					<tbody>
+
+						<tr>
+							<th>Show</th>
+							<td>Talk, draw, sing, etc. about a computing application, why you think it’s interesting, or why you made it.</td>
+							<td data-column="Example"><p>&ldquo;I made a circuit with two lights and button. When I’m not pushing the button, one light is on and the other is off and pushing the button reverses which one is on and off. I like this because it reminds me of a digital lock on a door, like in the movies!&rdquo;</p></td>
+						</tr>
+
+						<tr>
+							<th>Explain</th>
+							<td>In your own words talk, draw, sing, etc. about your understanding of how a computing application works. What did you discover about how it works while playing, testing, or creating it?</td>
+							<td data-column="Example"><p>&ldquo;I used code that recognizes when the button in my circuit pushed if it is pushed, it turns on one light and turns off the other. That’s called an if-statement and it let’s me tell the computer how to make a simple decision.&rdquo;</p></td>
+						</tr>
+
+						<tr>
+							<th>Present</th>
+							<td>Talk, draw, sing, etc. about your understanding of computing concepts to a group of people. Consider how you might help your audience better understand your presentation - e.g. including relevant and practical examples or hands-on activities. Capture feedback that might be useful to improve your presentation.</td>
+							<td data-column="Example"><p>&ldquo;I used code to make the button in my circuit do something simple, but interesting. The code is running on a small chip called a microcontroller. Anyone can program a microcontroller, so let’s all try to do a very simple blinking light activity together now. Once we do it, I’d love to hear what questions you have about microcontrollers.&rdquo;</p></td>
+						</tr>
+
+						<tr>
+							<th>Discuss</th>
+							<td>Engage in a deep discussion around computing concepts by asking questions, researching and presenting evidence, and drawing on your firsthand experiences using computing concepts.</td>
+							<td data-column="Example"><p>Computers are getting smaller and can be embedded anywhere which could make our lives better, but how do we protect people’s privacy? Because small computers can’t store large amounts of data, people’s personal data is sent over the Internet to databases. What if I don’t want my data sent thousands of miles away?</p></td>
+						</tr>
+
+					</tbody>
+
+				</table>
+
+			</div>
+
+		</section>
+
+	</article>
+
+
+	<div class="interior-container">
+
+		<div class="exit-menu">
+			<ol class="list-unstyled">
+				<li>
+					<a class="box" href="/what-is-cs/" role="button"><span class="box-content">CS Education</span></a>
+				</li><li>
+					<a class="box" href="/perspectives/" role="button"><span class="box-content">Perspectives</span></a>
+				</li><li class="current">
+					<a href="">Practices</a>
+				</li><li>
+					<div class="box">
+						<a class="btn btn-primary btn-lg" href="/concepts/" role="button">Next: <span class="preamble">We&rsquo;ll define the</span> Concepts <span class="preamble">students explore through their CS practice.</span></a>
+					</div>
+				</li><li>
+					<a class="box" href="/outcomes/" role="button"><span class="box-content">Outcomes</span></a>
+				</li>
+			</ol>
+		</div>
+
+	</div>
+
+</div><!-- /#page -->
 {% endblock %}
