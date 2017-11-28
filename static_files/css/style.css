@@ -160,6 +160,7 @@ body {
 	line-height: 1.6;
 }
 
+
 nav a, a {
 	color: #8ac8ff;
 }
@@ -1694,7 +1695,9 @@ article.green-theme section.compressed a.box {
 
 }
 /* Video Player */
-
+.iframe{
+  margin:auto;
+}
 
 /* Core Style */
 
