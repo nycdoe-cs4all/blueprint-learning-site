@@ -22,7 +22,7 @@
   </title>
 </head>
 
-<body class="{% block body_class %}{% endblock %}" style="max-width:100%; padding-right:0px;">
+<body class="{% block body_class %}{% endblock %} preload" style="max-width:100%; padding-right:0px;">
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 <style type="text/css">
   .st0{fill:#F26922;}
@@ -252,10 +252,8 @@
     </div>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-  <!-- <script src="/static/js/jquery.min.js"></script> -->
-  <!-- <script src="/static/js/bootstrap.min.js"></script> -->
   <script src="http://blueprint.cs4all.nyc/static/js/bootstrap.min.js"></script>
 
 <!-- glossarizer scipts -->
@@ -293,11 +291,11 @@
   </script>
 <!-- load common fonts for resource upload  -->
   <script>
-    WebFont.load({
-      google: {
-        families: ['Open Sans', 'Oswald', 'Arial','Calibri','Cambria','Comic Sans MS', 'Consolas', 'Impact', 'Roboto Mono', 'Helvetica Neue']
-      }
-    });
+    // WebFont.load({
+    //   google: {
+    //     families: ['Open Sans', 'Oswald', 'Arial','Calibri','Cambria','Comic Sans MS', 'Consolas', 'Impact', 'Roboto Mono', 'Helvetica Neue']
+    //   }
+    // });
 
     // open all external links in a new tab
     $(document).ready(function() {

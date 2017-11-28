@@ -79,7 +79,7 @@ $( document ).ready(function() {
 
 
 // Run on load
-$(window).load(function() {
+$(window).on("load", function (e) {
 
 	$('body').removeClass('preload');
 

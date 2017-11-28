@@ -9,9 +9,9 @@
 
 ## What it is
 
-A small jquery plugin that automatically marks up glossary terms on a page. The glossary terms can be read from an external json file. When users hover over the link (dashed line), they get to see the glossary definition as a tooltip. 
+A small jquery plugin that automatically marks up glossary terms on a page. The glossary terms can be read from an external json file. When users hover over the link (dashed line), they get to see the glossary definition as a tooltip.
 
-Tooltips are optional, you can use any third-party tooltips. 
+Tooltips are optional, you can use any third-party tooltips.
 
 ## Why use it
 
@@ -52,7 +52,7 @@ If you are writing content that uses specialist vocabulary or many acronyms you 
 ### 2. Initialize the plugin
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
     <script src="tooltip/tooltip.js"></script>
     <script src="jquery.glossarize.js"></script>
     <script>
@@ -62,9 +62,9 @@ If you are writing content that uses specialist vocabulary or many acronyms you 
       $('.content').glossarizer({
         sourceURL: 'glossary.json',
         callback: function(){
-          
+
           // Callback fired after glossarizer finishes its job
-          
+
           new tooltip();
 
         }
@@ -81,8 +81,8 @@ If you are writing content that uses specialist vocabulary or many acronyms you 
 
 
     defaults = {
-      sourceURL     : '', 
-      replaceTag    : 'abbr', 
+      sourceURL     : '',
+      replaceTag    : 'abbr',
       lookupTagName : 'p, ul, a',
       callback      : null,
       replaceOnce   : true,
@@ -100,7 +100,7 @@ Attribute  | Options                   | Default             | Description
 `lookupTagName`   | *string*                     | `p, ul, a`               | Which nodes to search
 `replaceOnce`    | *boolean*                  | `true`               | Replace once in a textnode?
 `replaceClass`    | *string*                  | `glossarizer_replaced`               | Class name of the replaceTag
-`callback`    | *method*                  | `null`               | Completed callback 
+`callback`    | *method*                  | `null`               | Completed callback
 `caseSensitive`    | *boolean*                  | `false`               | Match case sensitive
 
 ## External Methods
