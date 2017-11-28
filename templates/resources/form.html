@@ -3,20 +3,23 @@
 {% load i18n %}
 
 {% block content %}
+<div id="page">
+	<article class="blue-theme" style="padding:0px !important;">
+
 <div class="col-md-9">
-  <form method="post">
+  <form method="post" style="max-width: 100% !important; margin: 10px;">
     {% csrf_token %}
     {% bootstrap_field form.title %}
     {% bootstrap_field form.summary %}
     {% bootstrap_field form.body %}
     {% bootstrap_field form.activities addon_after='<button class="btn btn-primary" data-toggler="id_activities">Select all</button>' %}
     {% bootstrap_field form.tags  addon_after='<button class="btn btn-primary" data-toggler="id_tags">Select all</button>'%}
-    <input type="submit" value="Submit" />
+    <input class="btn btn-primary" type="submit" value="Submit" />
   </form>
 </div>
 
 <div class="col-md-3">
-  <form id="import-form">
+  <form id="import-form" style="max-width: 100% !important; margin: 10px;">
     <label for="url">Import From Google Docs URL</labeL>
     <div class="form-group">
       <div class="input-group">
@@ -26,6 +29,12 @@
     </div>
   </form>
 </div>
+
+</article>
+
+
+
+</div><!-- /#page -->
 {% endblock %}
 
 {% block extra_scripts %}
