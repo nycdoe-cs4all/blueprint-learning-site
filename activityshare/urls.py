@@ -17,10 +17,6 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from activities.views import index as homepage, MyRegistrationView, edit_profile
 from django.views.generic import TemplateView
-# for captchas
-# from django.contrib.auth import views as auth_views
-# from activities.forms import CaptchaPasswordResetForm
-# from django.contrib.auth.views import password_reset
 
 
 urlpatterns = [
@@ -30,7 +26,6 @@ urlpatterns = [
     url(r'^resources/', include('activities.resource_urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/register/', MyRegistrationView.as_view(), name = 'registration_register'),
-    # url(r'^accounts/password/reset/$',auth_views.password_reset, {'post_reset_redirect': '/accounts/password/reset/done/','password_reset_form': CaptchaPasswordResetForm},  name='password_reset'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^about/$', TemplateView.as_view(template_name='about.html')),
     url(r'^what-is-cs/$', TemplateView.as_view(template_name='what_is_cs.html')),
@@ -40,5 +35,4 @@ urlpatterns = [
     url(r'^perspectives/$', TemplateView.as_view(template_name='perspectives.html')),
     url(r'^outcomes/$', TemplateView.as_view(template_name='outcomes.html')),
     url(r'^ican/$', TemplateView.as_view(template_name='ican.html')),
-
 ]
