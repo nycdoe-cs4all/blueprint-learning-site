@@ -3,4 +3,4 @@ env/
 *.pyc
 credentials.json
 *.DS_Store
-settings.py
+activityshare/settings.py
