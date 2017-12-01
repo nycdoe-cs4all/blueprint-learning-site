@@ -380,11 +380,11 @@ iframe {
   }
 }
 
-a, svg, img, .icon-bar, .btn {
+/*a, svg, img, .icon-bar, .btn {
   transition: color .3s, transform .6s, fill .3s, border .3s, background .3s, stroke .3s;
-}
+}*/
 
-.icon {
+/*.icon {
   transition: transform .4s;
 }
 
@@ -398,12 +398,12 @@ nav h1 {
 
 #masthead, .interior-container, .theme-light {
   transition: opacity 1s ease .2s;
-}
+}*/
 
 
 /* Preliminary states */
 
-.preload .jumbotron, .preload .jumbotron p a, .preload .jumbotron a.btn, .preload .jumbotron .intro-1, .preload .jumbotron .intro-2, .preload .jumbotron .intro-3 {
+/*.preload .jumbotron, .preload .jumbotron p a, .preload .jumbotron a.btn, .preload .jumbotron .intro-1, .preload .jumbotron .intro-2, .preload .jumbotron .intro-3 {
   color: transparent;
   border-color: transparent;
   animation: none;
@@ -427,7 +427,7 @@ nav h1 {
   transform: scale(1, 0);
   animation: none;
 }
-
+*/
 @media (min-width: 768px) {
   .animation #masthead, .animation .interior-container, .animation .light-theme {
     transition: none;
