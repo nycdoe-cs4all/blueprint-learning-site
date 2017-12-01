@@ -12,7 +12,7 @@
 </div>
 <div class="col-md-3">
   {% if activities %}
-    <h3>Related Units</h3>
+    <h2>Related Units</h2>
     <ul>
     {% for activity in activities %}
       <li><a href="{% url 'detail' activity.id %}">{{activity.title}}</a></li>
