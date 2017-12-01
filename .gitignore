@@ -4,3 +4,4 @@ env/
 credentials.json
 *.DS_Store
 activityshare/settings.py
+ez_setup.py
