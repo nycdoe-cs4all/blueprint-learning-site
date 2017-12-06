@@ -10,10 +10,12 @@
     {{resource.body | safe}}
   </div>
 </div>
-<div class="col-md-3">
+<div class="col-md-12">
+	<div class="article-content">
+
   {% if activities %}
-    <h2>Related Units</h2>
-    <ul>
+    <h1>Related Units</h1>
+    <ul style="max-width:100%;">
     {% for activity in activities %}
       <li><a href="{% url 'detail' activity.id %}">{{activity.title}}</a></li>
     {% endfor %}
@@ -22,12 +24,13 @@
 
   {% if user.is_superuser %}
     <hr>
-    <a href="{% url "edit_resource" resource.id %}" class="btn btn-primary">Edit Resource</a>
-    <form method="post" action="{% url "delete_resource" resource.id %}" style="display:inline">
+    <a href="{% url "edit_resource" resource.id %}" class="btn btn-primary" style="width:150px !important; font-size:15px; padding: 4px 8px;">Edit Resource</a>
+    <form method="post" action="{% url "delete_resource" resource.id %}" style="width:150; max-width:100%;">
       {% csrf_token %}
       <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="Delete Resource">
     </form>
   {% endif %}
+</div>
 
 </div>
 </article>

@@ -1,10 +1,6 @@
 from django import forms
 
 from .models import Activity, Profile, Resource
-# from django.contrib.auth.forms import PasswordResetForm
-# from captcha.fields import ReCaptchaField
-
-# from nocaptcha_recaptcha.fields import NoReCaptchaField
 
 
 class ActivityForm(forms.ModelForm):
@@ -26,7 +22,3 @@ class ResourceForm(forms.ModelForm):
     class Meta:
         model = Resource
         fields = ['title', 'summary', 'body', 'activities', 'tags']
-
-
-# class CaptchaPasswordResetForm(PasswordResetForm):
-#     captcha = ReCaptchaField(attrs={'theme' : 'clean'})

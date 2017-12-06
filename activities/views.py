@@ -304,7 +304,6 @@ def list_resources(request):
     else:
         resources = Resource.objects.all()
     tags = ResourceTag.objects.all()
-    # plan= Resource.objects.filter(tags__title='Planning')
     return render(request, 'resources/index.html', {'resources': resources, 'tags': tags})
 
 

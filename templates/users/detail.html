@@ -6,37 +6,35 @@
 <div id="page">
 	<article class="light-theme">
 
-<div class="col-md-3">
+<div class="col-md-3" style="margin:0px;">
   {% if user.profile.full_name %}
-    <h1 style="margin-top:0;">{{ user.profile.full_name }}</h1>
+    <h1 style="margin:0px;">{{ user.profile.full_name }}</h1>
   {% else %}
-    <h1 style="margin-top:0;">{{ user.profile.username }}</h1>
+    <h1 style="margin:0px;">{{ user.profile.username }}</h1>
   {% endif %}
-
 
   {% if user.profile.school %}
-    <p>{{user.profile.school.name}}</p>
+    <p style="margin:0px;">{{user.profile.school.name}}</p>
   {% endif %}
-  <p>{{user.profile.organization}}</p>
-
+  <p style="margin:0px;">{{user.profile.organization}}</p>
   {% if user.profile.link %}
-    <p>
+    <p style="margin:0px; margin-bottom:15px">
       <a href="{{user.profile.link}}">{{user.profile.link}}</a>
     </p>
   {% endif %}
 
 </div>
-<!-- <div class="col-md-9"> -->
+<div class="col-md-9">
 
-  <ul class="nav nav-tabs" role="tablist" id="tablist">
+  <ul class="nav nav-tabs" role="tablist" id="tablist" style="margin-left:0; margin-top:0; margin-bottom:1em; margin-right:10%;">
     <li role="presentation" class="active"><a href="#units" aria-controls="units" role="tab" data-toggle="tab">Units</a></li>
     <li role="presentation"><a href="#bookmarks" aria-controls="bookmarks" role="tab" data-toggle="tab">Bookmarks</a></li>
   </ul>
 
-  <div  style="margin-left:10%; margin-right:10%;" class="tab-content">
+  <div  style="margin-left:0; margin-right:15%; text-align:center;" class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="units">
       <h2>Units</h2>
-      <p style="text-align:center;">Contribute a new unit <a href="{% url 'new' %}">here</a></p>
+      <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
 
       {% if activities %}
         {% include "activities/_activity_list.html" %}
@@ -54,7 +52,7 @@
         <p>No bookmarks</p>
       {% endif %}
     </div>
-  <!-- </div> -->
+  </div>
 
 </div>
 
