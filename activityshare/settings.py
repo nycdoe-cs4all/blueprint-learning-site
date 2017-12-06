@@ -25,7 +25,7 @@ SECRET_KEY = 'b%_)b#1bv%b5i2u6cax#9gn0az5a0p@!i#5+%i&f!*s_0&)6%7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['159.203.128.78', 'blueprint.cs4all.nyc', 'www.blueprint.cs4all.nyc','localhost']
+ALLOWED_HOSTS = ['159.203.128.78', 'blueprint.cs4all.nyc', 'www.blueprint.cs4all.nyc','localhost','127.0.0.1']
 
 
 # Application definition
