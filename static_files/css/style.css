@@ -440,7 +440,7 @@ nav h1 {
     animation: draw-vertical 1s ease-in 2.5s backwards;
   }
   .animation #masthead {
-    animation: reveal 1s ease-in 4.5s backwards;
+    animation: reveal 1navs ease-in 4.5s backwards;
   }
   .animation .interior-container, .animation .light-theme {
     animation: reveal 1s ease-in 5s backwards;
