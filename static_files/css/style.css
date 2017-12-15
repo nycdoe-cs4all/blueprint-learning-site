@@ -1443,7 +1443,7 @@ h2 .preamble {
 article.orange-theme,
 section.orange-theme {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#922900+0,b23900+20,b23900+80,922900+100 */
-  background: linear-gradient(to right, #922900 0%,#b23900 20%,#b23900 80%,#922900 100%); 
+  background: linear-gradient(to right, #922900 0%,#b23900 20%,#b23900 80%,#922900 100%);
 }
 .orange-theme h2 .preamble {
   color: #f9af60;
@@ -1510,7 +1510,7 @@ article.orange-theme section,
   color: #521909;
 }
 article.orange-theme section.compressed a.box {
-  color: #e99f50; 
+  color: #e99f50;
 }
 
 
@@ -1597,7 +1597,7 @@ article.green-theme section,
   color: #1b572f;
 }
 article.green-theme section.compressed a.box {
-  color: #A1CC3A; 
+  color: #A1CC3A;
 }
 
 
@@ -1990,7 +1990,7 @@ article.green-theme section.compressed a.box {
   .box .box-content .icon + h3 {
     display: block;
   }
-  
+
   .box .box-content .icon-set {
     height: 64px;
     width: 64px;
@@ -2020,7 +2020,7 @@ article.green-theme section.compressed a.box {
   .container {
   padding: 0;
   }
-  
+
   article {
   padding: 32px;
   }
@@ -2028,14 +2028,14 @@ article.green-theme section.compressed a.box {
   margin: 32px -32px;
   padding: 32px;
   }
-  
+
   article header {
     text-align: center;
   }
   article header p {
     max-width: 790px;
   }
-  
+
   header .icon {
     width: 96px;
     height: 96px;
@@ -2053,15 +2053,15 @@ article.green-theme section.compressed a.box {
   article section + .article-content {
     margin-top: 64px;
   }
-  
+
   article h2 + .subhead {
   margin-top: 0;
   }
-  
+
   .article-content img {
     width: 790px;
   }
-  
+
     article table thead tr {
       display: table-row;
     }
@@ -2070,23 +2070,23 @@ article.green-theme section.compressed a.box {
   article table td.placeholder {
     display: table-cell;
   }
-  
+
   article table td:before {
     display: none;
   }
-  
+
   table.ordered tr:before {
     display: table-cell;
   }
   table.ordered th:before {
     display: none;
   }
-  
+
   article ul,
   article ol {
     padding: 0;
   }
-  
+
   .alignright,
   img.alignright {
     float: right;
@@ -2101,11 +2101,11 @@ article.green-theme section.compressed a.box {
     float: left;
     margin: 6px 32px 24px 0;
   }
-  
+
   .introduction {
     padding-right: 32px;
   }
-  
+
   .btn, nav .btn {
     padding: 24px;
     font-size: 22px;
@@ -2176,13 +2176,13 @@ article.green-theme section.compressed a.box {
     width: 96px;
     left: 32px;
   }
-  
+
   .box .box-content .icon-set {
     height: 96px;
     width: 96px;
     left: 32px;
   }
-  
+
   .exit-links {
     margin: 12px auto;
   }
@@ -2192,7 +2192,7 @@ article.green-theme section.compressed a.box {
   .gallery:before {
     bottom: 0;
   }
-  
+
 /*  .exit-links {
     display: table;
   }
@@ -2203,7 +2203,7 @@ article.green-theme section.compressed a.box {
     display: table-cell;
     vertical-align: middle;
   }*/
-  
+
   #statement {
     margin: 64px 0;
   }
@@ -2217,16 +2217,16 @@ article.green-theme section.compressed a.box {
   #statement .dropdown:hover .dropdown-content {
     transform: scale(1,1);
   }
-  
+
   .fellow {
     width: calc(100% / 3);
     padding: 33.3% 0 0;
   }
-  
+
   article table tbody th {
     min-width: 16%;
   }
-  
+
   article table tbody th,
   article table td,
   article table td:first-child {
@@ -2240,7 +2240,7 @@ article.green-theme section.compressed a.box {
   article table td:last-child {
     border-radius: 2px 8px 8px 2px !important;
   }
-  
+
 }
 
 
@@ -2263,16 +2263,16 @@ article.green-theme section.compressed a.box {
   .nav > li > a {
     padding-bottom: 0;
   }
-  
+
 /*  article .subhead {
     font-size: 24px;
   }*/
-  
+
   .fellow {
     width: calc(25%);
     padding: 12.5% 0;
   }
-  
+
   article {
     padding: 32px;
   }
@@ -2291,17 +2291,17 @@ article.green-theme section.compressed a.box {
     height: 2px;
     margin: 0 0 16px;
   }*/
-  
+
   article section {
     margin: 64px -32px;
     padding: 64px 32px 32px;
   }
-  
+
   img.alignright,
   img.alignleft {
     max-width: 40%;
   }
-  
+
   .jumbotron {
     padding-bottom: 16px;
   }
@@ -2353,7 +2353,7 @@ article.green-theme section.compressed a.box {
   .box:hover .box-content .icon {
     transform: translate(0, -50%) scale(1, 1);
   }
-  
+
   .box .box-content .icon-set {
     height: 98px;
     width: 98px;
@@ -2362,7 +2362,7 @@ article.green-theme section.compressed a.box {
   .box:hover .box-content .icon-set .icon {
     transform: scale(1.1, 1.1);
   }
-  
+
   .preview-image .icon {
     height: 80px;
     width: 80px;
@@ -2388,7 +2388,7 @@ article.green-theme section.compressed a.box {
   .light-theme .box:hover:before, .light-theme .box:hover:after, .light-theme .box:hover .box-content:before, .light-theme .box:hover .box-content:after {
     opacity: 1;
   }
-  
+
   .exit-menu {
     display: table;
     border-spacing: 38px;
@@ -2449,7 +2449,7 @@ article.green-theme section.compressed a.box {
     padding: 16px;
     white-space: nowrap;
   }
-  
+
 }
 
 
@@ -2463,7 +2463,7 @@ article.green-theme section.compressed a.box {
     padding-left: 24px;
     padding-right: 24px;
   }
-  
+
   header .box .box-content {
     padding: 24px 64px 24px 191px;
   }
@@ -2497,4 +2497,21 @@ h1 span{
 
 .filter{
     color: grey;
+}
+
+.title{
+  margin-bottom:16px !important;
+  max-width:640px !important;
+  margin-left:auto !important;
+  margin-right: auto !important;
+  font-size: 48px !important;
+  line-height: .9 !important;
+  text-align: center !important;
+  position: relative !important;
+  display: block !important;
+  text-transform: uppercase !important;
+  font-weight: 900 !important;
+  font-family: 'Roboto', sans-serif !important;
+  color: 'red'!important;
+
 }

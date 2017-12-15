@@ -4,18 +4,33 @@
 {% block content %}
 	<script src="/static/js/reqwest.min.js"></script>
 	<script src="/static/js/floatMenu.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <div id="page">
 	<article class="light-theme">
 
 <div  class="article-content">
-  <!-- <div class="section-content" >
-		<div class="row"> -->
+
 		  <div class="col-md-9">
 		    <div id="activity-body">{{ activity.html_body|safe }}</div>
 		  </div>
-		  <!-- </div>
-		</div> -->
+
+<script>
+$(document).ready(function(){
+
+	$(' article .title').find('span').each(function(i) {
+		$(this).wrapInner('<h2 />')
+			});
+	$(' article h2').find('span').each(function(i) {
+			$(this).wrapInner('<h1 />')
+					});
+	$(' article h1').find('span').each(function(i) {
+			$(this).wrapInner('<h3 />')
+					});
+	$('article img').css('max-width', '50%');
+	$('article h2').css('line-height', '.8');
+});
+</script>
 
 <div class="col-md-3" id="floatMenu">
   {% if user.is_superuser %}
@@ -46,6 +61,9 @@
     </div>
     <hr>
     <script>
+
+
+
       (function(){
         var butt = document.querySelector('#refresh-button')
         butt.addEventListener('click', function(e){

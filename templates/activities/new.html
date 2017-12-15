@@ -111,6 +111,7 @@
     <div class="col-md-8" style="border-left: 1px solid #ccc;" v-if="html_body">
       <h3>Preview:</h3>
       <div id="preview" v-html="html_body"></div>
+
     </div>
 
     <div class="col-md-8"  style="border-left: 1px solid #ccc;" v-else>
@@ -313,6 +314,9 @@
 
 </article>
 </div><!-- /#page -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
 <script src="/static/js/vue.js"></script>
 <script src="/static/js/reqwest.min.js"></script>
 
@@ -321,7 +325,6 @@
 function activaTab(tab){
     $('.nav-tabs a[href="#' + tab + '"]').tab('show');
 };
-
 
 var app = new Vue({
   el: '#activity-app',
@@ -355,7 +358,6 @@ var app = new Vue({
       this.resetMe();
 
       var self = this;
-
       reqwest({url: '/units/parse/?url=' + this.url}).then(function(data) {
         self.html_body = data.body;
         self.plain_body = data.plain_body;
@@ -413,5 +415,9 @@ var app = new Vue({
     }
   }
 });
+
+
 </script>
+
+
 {% endblock %}
