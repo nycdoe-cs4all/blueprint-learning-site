@@ -118,8 +118,31 @@ class Activity:
 
     def set_body(self):
         self.body = str(self.soup.find('body'))
+        # self.para = str(self.body.find('p'))
+
+        pars= self.soup.findAll('p', 'td')
+
+        # print "\n".join(set(span['style'] for span in spans))
+        for par in pars:
+            if par.find('img'):
+                print('has image')
+            else:
+                newPar= par
+                newPar2=str(newPar)
+                newPar3= re.sub(r'\s*(style)="(.*?)"\s*', '', newPar2, flags=re.MULTILINE)
+                # newPar3= re.sub(r'\s*(style)="(.*?)"\s*', '', newPar2, flags=re.MULTILINE)
+                self.body = self.body.replace(newPar2, newPar3)
+
+        # td= self.soup.findAll('td')
+        # newTable=td
+        # table1= str(newTable)
+        # table2= re.sub(r"\s*style='(.*?)'\s*", '',table1, flags=re.MULTILINE)
+
+
+        # self.body = re.sub(r"\s*style='(.*?)'\s*", '',  self.body, flags=re.MULTILINE)
+        # self.body = re.sub(r'\s*(style)="(.*?)"\s*', '',  self.body, flags=re.MULTILINE)
         self.body = re.sub(r"\s*style='(.*?)'\s*", '', self.body, flags=re.MULTILINE)
-        self.body = re.sub(r'\s*(style)="(.*?)"\s*', '', self.body, flags=re.MULTILINE)
+        # self.body = re.sub(r'\s*(style)="(.*?)"\s*', '', self.body, flags=re.MULTILINE)
         # Checks for google annoying redirects and sends them back from whence they came
         self.body = re.sub(r'(&amp;sa=D&amp;ust=).{59}', '', self.body, flags=re.MULTILINE) #after
         self.body = self.body.replace('https://www.google.com/url?q=http', 'http') #before
