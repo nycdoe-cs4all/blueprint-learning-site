@@ -13,6 +13,8 @@
   <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Computer Science for All (CS4All) Blueprint is an academic and implementation guide to teaching computer science in all New York City public schools.">
+  <meta property="og:site_name" content="CS4All Blueprint - Beta">
+  <meta property="og:image" content="http://cs4all.nyc/wp-content/uploads/2016/09/SEP-Hackathon-LED.jpg">
   <link rel="icon" href="https://blueprint.cs4all.nyc/static/images/icon-blueprint.svg">
 
   <title>
@@ -20,6 +22,8 @@
       CS4ALL Blueprint Beta
     {% endblock %}
   </title>
+  <link rel="icon" href="http://cs4all.nyc/wp-content/uploads/2016/11/doe_favicon.png" sizes="192x192" />
+
 </head>
 
 <body class="{% block body_class %}{% endblock %} preload" style="max-width:100%; padding-right:0px;">
@@ -192,7 +196,7 @@
           <li class="dropdown">
   					<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/units">
   						<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
-  						<span class="preamble">Explore</span> Units
+  						<span class="preamble">Sample</span> Units
               <span class="caret"></span>
   					</a>
             <ul class="dropdown-menu">
@@ -203,7 +207,7 @@
         {% else %}
         <li><a href="/units">
 					<span class="icon"><svg><use xlink:href="#icon-units" /></svg></span>
-					<span class="preamble">Explore</span> Units
+					<span class="preamble">Sample</span> Units
 				</a></li>
         {% endif %}
 

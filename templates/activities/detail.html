@@ -3,7 +3,6 @@
 
 {% block content %}
 	<script src="/static/js/reqwest.min.js"></script>
-	<script src="/static/js/floatMenu.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <div id="page">
@@ -45,7 +44,7 @@ $(document).ready(function(){
 });
 </script>
 
-<div class="col-md-3" id="floatMenu">
+<div class="col-md-3">
   {% if user.is_superuser %}
     <p><a href="{% url 'admin:activities_activity_change' activity.id %}">Edit</a></p>
     <div class="form-group">
