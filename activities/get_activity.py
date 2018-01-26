@@ -156,42 +156,15 @@ class Activity:
         changeTitle= str(title.string.wrap(self.soup.new_tag("h2")))
         self.body = self.body.replace(titleTag, changeTitle)
 
-        # pars= self.soup.findAll('p')
-        # for par in pars:
-        #     if par.text == '':
-        #         empty=par
-        #         # del empty
-        #         print empty
-
-
-        # self.soup.title.wrap(self.soup.new_tag("h2"))
-        # for content in reversed(title.contents):
-        #     new_h2.insert(0, content.extract())
-        #
-
-
-
-
-
-
-        # tds= self.soup.find_all('td')
-
-        # for td in tds:
-                # del tag['style']
-
-                # newTable=td
-                # table1= str(newTable)
-                # table2= re.sub(r'\s*(style)="(.*?)"\s*', '',table1, flags=re.MULTILINE)
-                # self.body = self.body.replace(table1, table2)
-
-        # trs= self.soup.find_all('table')
-        #
-        # for tr in trs:
-        #         newTr=tr
-        #         tr1= str(newTr)
-        #         tr2= re.sub(r'\s*(style)="(.*?)"\s*', '',tr1, flags=re.MULTILINE)
-        #         self.body = self.body.replace(tr1, tr2)
-        #
+        pars= self.bodyTags.findAll('p')
+        for par in pars:
+            span=par.find('span')
+            if span.text == '':
+                empPar= par
+                empParStr= str(empPar)
+                empPar2= ''
+                # empParStr2= str(empPar2)
+                self.body = self.body.replace(empParStr, empPar2)
 
         # self.body = re.sub(r"\s*style='(.*?)'\s*", '',  self.body, flags=re.MULTILINE)
         # self.body = re.sub(r'\s*(style)="(.*?)"\s*', '',  self.body, flags=re.MULTILINE)

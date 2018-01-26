@@ -17,23 +17,13 @@
 <script>
 $(document).ready(function(){
 
-	$(' article .title').find('span').each(function(i) {
-		$(this).wrapInner('<h2 />')
-			});
-	$(' article h2').find('span').each(function(i) {
-			$(this).wrapInner('<h1 />')
-					});
-	$(' article h1').find('span').each(function(i) {
-			$(this).wrapInner('<h3 />')
-					});
-	$('article img').css('display','inline-flex');
 	$('article h2').css('line-height', '.8');
-	$('article table').addClass('table');
-	$('article table tbody tr td').addClass('td');
-
-	$('td').removeAttr('style');
-	$('table').removeAttr('style');
-	$('ul').removeAttr('style');
+	// $('article table').addClass('table');
+	// $('article table tbody tr td').addClass('td');
+  //
+	// $('td').removeAttr('style');
+	// $('table').removeAttr('style');
+	// $('ul').removeAttr('style');
 
 	$('ul[class*="-1"]').addClass('listItems1');
 	$('ul[class*="-2"]').addClass('listItems2');
