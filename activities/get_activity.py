@@ -117,54 +117,69 @@ class Activity:
         self.software = software
 
     def set_body(self):
-        self.body = str(self.soup.find('body'))
-        # self.para = str(self.body.find('p'))
-        self.bodyTags = self.soup.find('body')
 
-        # print "\n".join(set(span['style'] for span in spans))
-        #     else:
-        #         newPar= par
-        #         newPar2=str(newPar)
-        #         newPar3= re.sub(r'\s*(style)="(.*?)"\s*', '', newPar2, flags=re.MULTILINE)
-        #         # newPar3= re.sub(r'\s*(style)="(.*?)"\s*', '', newPar2, flags=re.MULTILINE)
-        #         self.body = self.body.replace(newPar2, newPar3)
-                #
+        # find the body and wrap it in div
+        self.bodyTagsDel = self.soup.find('body').wrap(self.soup.new_tag("div"))
+        # self.bodyDel= str(self.bodyTagsDel.wrap(self.soup.new_tag("div")))
+
+        # unwrap the div to get rid of the body tag
+        self.bodyTags1 = self.soup.find('div')
+        self.bodyTags1.body.unwrap()
+        self.bodyTags= self.bodyTags1
+        self.body = str(self.bodyTags1)
+
+
+        # remove all style tags except from divs that contain images
         for child in self.bodyTags.children:
             if child.find('img'):
-                print('has image')
+                print(child)
             else:
-                    # print(child)
                 newTag=child
                 tag1= str(newTag)
                 tag2= re.sub(r'\s*(style)="(.*?)"\s*', '',tag1, flags=re.MULTILINE)
                 self.body = self.body.replace(tag1, tag2)
 
-
-        h3Tag = self.bodyTags.findAll('h3')
+        # replace all h3 tags with h4
+        # title = self.bodyTags.findAll('p', class_="title")
         # h2Tag = self.soup.new_tag("h2")
-        for tag in h3Tag:
-            tagVar=tag
-            tag1=str(tagVar)
-            change= str(tag.string.wrap(self.soup.new_tag("h4")))
-            self.body = self.body.replace(tag1, change)
+        # for tag in title:
+        #     tagVar=tag
+        #     tag1=str(tagVar)
+        #     change= str(tag.string.wrap(self.soup.new_tag("h2")))
+        #     self.body = self.body.replace(tag1, change)
             # print change
 
-
+        # give title h2 tag
         title = self.bodyTags.find('p', class_="title")
-        # print title
         titleTag=str(title)
-        changeTitle= str(title.string.wrap(self.soup.new_tag("h2")))
-        self.body = self.body.replace(titleTag, changeTitle)
+        changeTitle= title.wrap(self.soup.new_tag("h2"))
+        changeTitle.p.unwrap()
+        changeTitle2= str(changeTitle)
+        self.body = self.body.replace(titleTag, changeTitle2)
 
+
+
+        # remove empty parag
         pars= self.bodyTags.findAll('p')
         for par in pars:
             span=par.find('span')
-            if span.text == '':
+            if span.find('img'):
+                print('has image')
+            elif span.text == '':
                 empPar= par
                 empParStr= str(empPar)
                 empPar2= ''
-                # empParStr2= str(empPar2)
                 self.body = self.body.replace(empParStr, empPar2)
+
+
+        # wrap the first span of the title in b tags for styling
+        h2Span= self.bodyTags.h2.find('span')
+        h2SpanWrap= h2Span.wrap(self.soup.new_tag("b"))
+        h2SpanStr= str(h2Span)
+        h2SpanWrapStr= str(h2SpanWrap)
+        self.body = self.body.replace(h2SpanStr, h2SpanWrapStr)
+        # print h2SpanWrap
+
 
         # self.body = re.sub(r"\s*style='(.*?)'\s*", '',  self.body, flags=re.MULTILINE)
         # self.body = re.sub(r'\s*(style)="(.*?)"\s*', '',  self.body, flags=re.MULTILINE)
@@ -175,10 +190,13 @@ class Activity:
         self.body = re.sub(r'(&amp;sa=D&amp;ust=).{59}', '', self.body, flags=re.MULTILINE) #after
         self.body = self.body.replace('https://www.google.com/url?q=http', 'http') #before
         self.body = self.body.replace('%3D', '=') #for videos
+
         return self.body
 
+
+
     def set_plain_body(self):
-        self.plain_body = self.soup.find('body').getText(separator=' ')
+        self.plain_body = self.soup.find('div').getText(separator=' ')
 
     def to_dict(self):
         return {
