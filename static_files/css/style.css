@@ -629,7 +629,7 @@ nav h1 {
   content: '';
   display: inline-block;
   vertical-align: middle;
-  background: url('images/svg/icon-triangle.svg') no-repeat 0 0;
+  background: url('/static/images/svg/icon-triangle.svg') no-repeat 0 0;
   background-size: 100% auto;
   height: 16px;
   width: 16px;
@@ -1110,7 +1110,7 @@ article #activity-body ul li {
   content: '';
   display: inline-block;
   vertical-align: middle;
-  background: url('images/svg/icon-triangle.svg') no-repeat 50% 50%;
+  background: url('/static/images/svg/icon-triangle.svg') no-repeat 50% 50%;
   width: 10px;
   height: 10px;
   margin: -3px 0 0 8px;
@@ -2619,7 +2619,7 @@ article.green-theme section.compressed a.box {
       display: none;
     }
     #menu .site-menu .parent-menu > a:after {
-      background-image: url('images/svg/icon-triangle-lightblue.svg');
+      background-image: url('/static/images/svg/icon-triangle-lightblue.svg');
       width: 8px;
       height: 8px;
       margin: -2px 0 0 2px;

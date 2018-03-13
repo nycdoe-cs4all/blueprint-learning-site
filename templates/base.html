@@ -224,12 +224,33 @@
               <span class="preamble">About</span> Blueprint
             </a>
   
-          </li><li>
+<!--           </li><li>
             <a href="/login">
               <span class="icon"><svg><use xlink:href="#icon-lock" /></svg></span>
               login
             </a>
+          </li> -->
+          {% if user.is_authenticated %}
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="http://blueprint.cs4all.nyc/accounts/login/">
+              <span class="icon"><svg><use xlink:href="#icon-user" /></svg></span>
+              <span class="preamble">my</span> ACCOUNT
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/users/{{user.id}}">View Profile</a></li>
+              <li><a href="{% url 'edit_profile' %}">Edit Profile</a></li>
+              <li><a href="{% url 'auth_logout' %}">Log Out</a></li>
+            </ul>
           </li>
+          {% else %}
+            <li>
+              <a href="{% url 'auth_login' %}">
+                <span class="icon"><svg><use xlink:href="#icon-lock" /></svg></span>
+              login
+            </a>
+            </li>
+          {% endif %}
   
         </ul>
       </div><!-- /#menu -->
