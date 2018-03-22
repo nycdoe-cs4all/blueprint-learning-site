@@ -142,7 +142,7 @@
   {% if user.is_authenticated %}
   <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
   {% else %}
-  <p> <a href="{% url 'auth_login' %}?next={% url 'new' %}">Log in</a>   to contribute a new unit</p>
+  <div class="add-new"> <a href="{% url 'auth_login' %}?next={% url 'new' %}">Log in</a>   to contribute a new unit</div>
   {% endif %}
 </div>
 </div>
