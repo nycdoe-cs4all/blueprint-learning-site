@@ -79,7 +79,7 @@ body, h3, .preamble, #cboxTitle .subtitle, h2 b span, p[data-desktop]::after {
   font-family: 'Roboto Slab', serif;
 }
 
-h1, h2, h4, .interior-container li, nav, footer, .btn, .subtitle, #cboxTitle, .subhead, table, table caption, .case-study, .col-md-3, a.box, #page-menu, .nav-tabs, .fellow, article header, .activity-list a, .activity-list h3 .activity-grade, article .col-md-3 h3 {
+h1, h2, h4, .interior-container li, nav, #footer, .btn, .subtitle, #cboxTitle, .subhead, table, table caption, .case-study, .col-md-3, a.box, #page-menu, .nav-tabs, .fellow, article header, .activity-list a, .activity-list h3 .activity-grade, article .col-md-3 h3 {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -87,7 +87,7 @@ h2 .preamble, h2 b span {
   font-weight: 100;
 }
 
-body, h3, .interior-container ul li, footer, .preamble, article li p {
+body, h3, .interior-container ul li, #footer, .preamble, article li p {
   font-weight: 300;
 }
 
@@ -1434,18 +1434,18 @@ form .input-group-btn .btn {
 
 /* Footer */
 
-footer {
+#footer {
   font-size: 14px;
   padding: 0 16px 32px;
   text-align: center;
 }
-.has-page-menu + footer {
+.has-page-menu + #footer {
   padding-left: 66px;
 }
-footer a {
+#footer a {
   display: inline-block;
 }
-footer .icon {
+#footer .icon {
   width: 128px;
   height: 40px;
   display: block;
@@ -2271,7 +2271,7 @@ article.green-theme section.compressed a.box {
   .interior-container {
     padding: 48px 32px;
   }
-  footer, .jumbotron {
+  #footer, .jumbotron {
     text-align: center;
   }
   .jumbotron p {
@@ -2343,10 +2343,10 @@ article.green-theme section.compressed a.box {
     padding: 32px 74px 0 32px;    
   }
   
-  footer {
+  #footer {
     padding: 0 32px 64px;
   }
-  .has-page-menu + footer {
+  .has-page-menu + #footer {
     padding-left: 81px
   }
   
