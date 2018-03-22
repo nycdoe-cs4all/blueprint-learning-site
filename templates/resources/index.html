@@ -55,7 +55,7 @@
               <li>
                 <a href="{% url "show_resource" resource.id %}"><h3>{{ resource.title }}</h3>
                 {% if resource.summary %}
-                  <p>{{ resource.summary }}</p>
+                  {{ resource.summary }}
                 {% endif %}
                 </a>
               </li>
