@@ -49,7 +49,7 @@
         
         <div class="article-content">
                     
-            <ul class="activity-list submenu">
+            <ul class="activity-list"> <!-- submenu class narrowed the list area -->
             {% spaceless %}
               {% for resource in resources %}
               <li><a href="{% url "show_resource" resource.id %}"><h3>{{ resource.title }}</h3>
