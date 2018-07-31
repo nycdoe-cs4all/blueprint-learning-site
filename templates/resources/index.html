@@ -49,7 +49,7 @@
         
         <div class="article-content">
                     
-            <ul class="activity-list "> <!-- deleted submenu class b/c it was resulting in two columns of tiles instead of three-->
+            <ul class="activity-list submenu">
             {% spaceless %}
               {% for resource in resources %}
               <li><a href="{% url "show_resource" resource.id %}"><h3>{{ resource.title }}</h3>

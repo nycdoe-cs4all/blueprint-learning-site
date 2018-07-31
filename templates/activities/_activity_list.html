@@ -1,4 +1,5 @@
 <div class="activity-list">
+  {% spaceless %}
   {% for activity in activities %}
     <li>
       <a href="{% url 'detail' activity.id %}">
@@ -19,4 +20,5 @@
       </a>
     </li>
   {% endfor %}
+  {% endspaceless %}
 </div>
