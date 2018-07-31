@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-<div id="page" class="has-page-menu">
+<div id="" class="has-page-menu">
 
 
     <div id="page-menu" class="light-theme">
@@ -52,13 +52,11 @@
             <ul class="activity-list "> <!-- deleted submenu class b/c it was resulting in two columns of tiles instead of three-->
 
               {% for resource in resources %}
-              <li>
-                <a href="{% url "show_resource" resource.id %}"><h3>{{ resource.title }}</h3>
+              <li><a href="{% url "show_resource" resource.id %}"><h3>{{ resource.title }}</h3>
                 {% if resource.summary %}
                   {{ resource.summary }}
                 {% endif %}
-                </a>
-              </li>
+                </a></li>
               {% endfor %}
 
             </ul>
