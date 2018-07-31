@@ -129,7 +129,7 @@
     
     <div class="article-content">
                       
-      <ul class="activity-list submenu">
+      <ul class="activity-list"> <!-- deleted submenu class b/c it was resulting in two columns of tiles instead of three-->
         {% if activities %}
         {% include "activities/_activity_list.html" %}
         {% else %}
