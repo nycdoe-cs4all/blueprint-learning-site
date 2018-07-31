@@ -148,6 +148,16 @@ $(window).load(function() {
         }, 500);
     }
     
+    $('.expanded-tip').each(function() {
+        divHeight = $(this).height();
+        $(this).css('height', divHeight);
+        $(this).parent('.asset-tip').addClass('compressed');
+    });
+    $('.asset-tip a.expander').click(function(event) {
+        event.preventDefault();
+        $(this).parent('.asset-tip').toggleClass('compressed');
+    });
+    
 
 
 });

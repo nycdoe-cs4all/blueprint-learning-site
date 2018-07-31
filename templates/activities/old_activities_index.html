@@ -1,11 +1,7 @@
-{% extends "base.html" %}
-{% load i18n %}
-{% block content %}
-
 <div id="page" class="has-page-menu">
 
   <div id="page-menu" class="light-theme">
-      
+
     <header>
     
       <a href="#page-menu" class="toggle">
@@ -18,10 +14,9 @@
       </a>
     
     </header>
-    
-    <div class="menu-content">
-      <form action="/units">
-      
+
+  <div class="menu-count">
+    <form action="/units">
       <div class="form-group">
         <div class="input-group">
           <input type="text" class="form-control" name="q" value="{{filters.q}}" placeholder="Search for...">
@@ -40,7 +35,7 @@
       </div>
       {% endif %}
 
-      
+
       <div class="form-group">
         <select name="grade" id="grade-filter" class="form-control">
           <option value="">All Grades</option>
@@ -50,15 +45,30 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <select name="subject" id="subject-filter" class="form-control">
-          <option value="">All Subjects</option>
-          {% for subject in subjects %}
-          <option {% if filters.subject == subject.name %}selected{% endif %} value="{{subject.name}}">{{subject.name}}</option>
-          {% endfor %}
-        </select>
-      </div>
+      <button type='button'  class="btn btn-info" data-toggle="collapse" data-target=".advfilter">Show Filters</button>
+      <hr />
 
+      <div class="advfilter collapse">
+
+      {# <div class="form-group"> #}
+      {#   <select name="level" id="level-filter" class="form-control"> #}
+      {#     <option value="">All Levels</option> #}
+      {#   </select> #}
+      {# </div> #}
+
+      {# <div class="form-group"> #}
+      {#   <select name="subject" id="subject-filter" class="form-control"> #}
+      {#     <option value="">All Subjects</option> #}
+      {#     {% for subject in subjects %} #}
+      {#     <option {% if filters.subject == subject.name %}selected{% endif %} value="{{subject.name}}">{{subject.name}}</option> #}
+      {#     {% endfor %} #}
+      {#   </select> #}
+      {# </div> #}
+<!--
+     <button type='button'  class="btn btn-info" data-toggle="collapse" data-target=".advfilter">Show Filters</button>
+     <hr> -->
+
+     <hr />
       <div class="form-group">
         <b>Filter by CS concept</b>
         {% for d in all_concepts %}
@@ -70,6 +80,8 @@
         </div>
         {% endfor %}
       </div>
+
+      <hr>
 
       <div class="form-group">
         <b>Filter by Topic</b>
@@ -83,6 +95,8 @@
         {% endfor %}
       </div>
 
+      <hr>
+
       <div class="form-group">
         <b>Filter by device</b>
         {% for d in all_devices %}
@@ -94,6 +108,8 @@
         </div>
         {% endfor %}
       </div>
+
+      <hr>
 
       <div class="form-group">
         <b>Filter by software</b>
@@ -107,64 +123,14 @@
         {% endfor %}
       </div>
 
+      <hr>
+
       <div class="form-group">
         <a href="/units" class="btn btn-default">Reset</a>
         <button class="btn btn-default">Apply</button>
       </div>
-          
-        
-      </form>
-      
-    </div><!-- /.menu-content -->
+    </form>
     
-  </div><!-- /#page-menu -->
-
-  <article id="explore-units">
+  </div><!-- /.menu-content -->
   
-    <header>
-      <h2><span class="preamble">CS Educator</span> Community Units</h2>
-      <p>These units were designed and taught in classrooms by educators of different backgrounds to produce meaningful <a href="/outcomes">student outcomes</a>.</p>
-    </header>   
-    
-    
-    <div class="article-content">
-                      
-      <ul class="activity-list submenu">
-        {% if activities %}
-        {% include "activities/_activity_list.html" %}
-        {% else %}
-        <p>No units found.</p>
-        {% endif %}
-      </ul>  
-  </div>
-
-  <!-- <h1 style="margin-top: 0;">Units</h1> -->
-  {% if user.is_authenticated %}
-  <p>Contribute a new unit <a href="{% url 'new' %}">here</a></p>
-  {% else %}
-  <div class="add-new"> <a href="{% url 'auth_login' %}?next={% url 'new' %}">Log in</a>   to contribute a new unit</div>
-  {% endif %}
-</div>
-</div>
-
-<div class="pagination">
-  <span class="step-links">
-    {% if activities.has_previous %}
-    <a href="?page={{ activities.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">previous</a>
-    {% endif %}
-
-    <span class="current">
-      Page {{ activities.number }} of {{ activities.paginator.num_pages }}.
-    </span>
-
-    {% if activities.has_next %}
-    <a href="?page={{ activities.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">next</a>
-    {% endif %}
-  </span>
-</div>
-
-
-	</article>
-
-</div><!-- /#page -->
-{% endblock %}
+</div><!-- /#page-menu -->
