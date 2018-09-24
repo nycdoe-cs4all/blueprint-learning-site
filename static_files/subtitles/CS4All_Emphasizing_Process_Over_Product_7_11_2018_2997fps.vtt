@@ -1,0 +1,464 @@
+﻿WEBVTT
+
+00:00:00.233 --> 00:00:02.235
+If you think you can figure
+out how to code a block
+
+00:00:02.302 --> 00:00:04.003
+that's not there, good.
+
+00:00:04.070 --> 00:00:05.939
+How would you store
+that information?
+
+00:00:06.005 --> 00:00:09.008
+The most common thing to use
+in this kind of form of binary.
+
+00:00:09.075 --> 00:00:10.477
+One of the things
+that we set up
+
+00:00:10.543 --> 00:00:11.811
+and tell them
+from the very beginning
+
+00:00:11.878 --> 00:00:14.547
+is that in computer science
+
+00:00:14.614 --> 00:00:17.016
+there is no one way
+to do anything.
+
+00:00:17.083 --> 00:00:18.418
+We didn't want them to raise
+their hand and say,
+
+00:00:18.485 --> 00:00:20.320
+"Well, what block
+do I put here?"
+
+00:00:20.387 --> 00:00:24.591
+So, we tried to think about
+what strategies we could use
+
+00:00:24.657 --> 00:00:26.359
+and what we could give them
+
+00:00:26.426 --> 00:00:27.927
+that they could use
+independently.
+
+00:00:27.994 --> 00:00:29.662
+Okay, so then
+this will likely be
+
+00:00:29.729 --> 00:00:32.432
+what you put in that report,
+this exact variable.
+
+00:00:32.499 --> 00:00:38.104
+♪
+
+00:00:38.171 --> 00:00:40.039
+Yesterday in class,
+we introduced them
+
+00:00:40.106 --> 00:00:42.041
+to what the goal was
+
+00:00:42.108 --> 00:00:43.376
+and we had them
+break that down
+
+00:00:43.443 --> 00:00:46.379
+into large high level of tasks.
+
+00:00:46.446 --> 00:00:49.549
+-The X value and the Y value.
+-Yeah.
+
+00:00:49.616 --> 00:00:53.653
+Today's Do Now asks them
+to review those tasks,
+
+00:00:53.720 --> 00:00:55.755
+see where they thought
+issues might come up,
+
+00:00:55.822 --> 00:00:57.791
+what things they thought
+might be challenging.
+
+00:00:57.857 --> 00:01:00.994
+When you're coding something,
+it's endless.
+
+00:01:01.060 --> 00:01:03.463
+You can go up the straight path
+
+00:01:03.530 --> 00:01:05.432
+or you can go down
+the rocky mountains
+
+00:01:05.498 --> 00:01:08.101
+and you'll still end up
+in the same place,
+
+00:01:08.168 --> 00:01:09.602
+but you first
+have to write it out
+
+00:01:09.669 --> 00:01:12.972
+in how you would do it
+and make it your own.
+
+00:01:13.039 --> 00:01:15.275
+It's very easy for the students
+to get bogged down
+
+00:01:15.341 --> 00:01:17.177
+in the minor details
+of the code
+
+00:01:17.243 --> 00:01:19.279
+and not think about
+the big picture,
+
+00:01:19.345 --> 00:01:22.148
+so we ask them to get
+an outline on paper first,
+
+00:01:22.215 --> 00:01:25.251
+then we ask them to play
+around with the code.
+
+00:01:25.318 --> 00:01:26.319
+-Okay?
+-Okay.
+
+00:01:26.386 --> 00:01:28.588
+We work on our code
+or try to solve,
+
+00:01:28.655 --> 00:01:31.624
+like, a certain problem,
+then we'll share to the class
+
+00:01:31.691 --> 00:01:33.693
+and everyone will,
+like, describe
+
+00:01:33.760 --> 00:01:36.496
+what problems they faced
+or--and how they solved it.
+
+00:01:36.563 --> 00:01:39.132
+If the number is, like,
+divisible by four
+
+00:01:39.199 --> 00:01:42.068
+and make the third zero
+in the sequence one.
+
+00:01:42.135 --> 00:01:45.004
+And the share out
+actually saw us step through
+
+00:01:45.071 --> 00:01:46.506
+the one that
+they had discussed
+
+00:01:46.573 --> 00:01:48.174
+so that everyone
+came away with
+
+00:01:48.241 --> 00:01:50.510
+at least this one algorithm
+that they had a sense
+
+00:01:50.577 --> 00:01:51.711
+of how to complete.
+
+00:01:51.778 --> 00:01:55.648
+We need to, like, subtract it
+from that number
+
+00:01:55.715 --> 00:01:59.219
+because, like,
+64 will obviously
+
+00:01:59.285 --> 00:02:02.522
+fit in a number
+that 128 fits in.
+
+00:02:02.589 --> 00:02:03.957
+You're absolutely right.
+
+00:02:04.023 --> 00:02:07.360
+I think a lot of education
+focuses on
+
+00:02:07.427 --> 00:02:10.763
+the product
+and not necessarily the process
+
+00:02:10.830 --> 00:02:11.798
+and how you get there.
+
+00:02:11.865 --> 00:02:14.200
+I think that our course
+is useful
+
+00:02:14.267 --> 00:02:15.668
+because we highlight
+that through
+
+00:02:15.735 --> 00:02:19.038
+the critical thinking
+algorithm that we use.
+
+00:02:19.105 --> 00:02:21.407
+♪
+
+00:02:21.474 --> 00:02:24.177
+It's not only about
+the thing that you produce,
+
+00:02:24.244 --> 00:02:26.946
+it's about how you get there.
+
+00:02:27.013 --> 00:02:29.282
+♪
+
+00:02:29.349 --> 00:02:31.117
+When it comes to debugging,
+we have incorporated
+
+00:02:31.184 --> 00:02:33.987
+a number of strategies in there:
+
+00:02:34.053 --> 00:02:35.522
+breaking the code
+into sections,
+
+00:02:35.588 --> 00:02:38.057
+isolating variables
+and changing them
+
+00:02:38.124 --> 00:02:39.692
+so that you can get
+a different answer,
+
+00:02:39.759 --> 00:02:42.495
+trying to break the code.
+
+00:02:42.562 --> 00:02:43.563
+♪
+
+00:02:43.630 --> 00:02:45.598
+It sort of encapsulates
+all of these things
+
+00:02:45.665 --> 00:02:47.267
+that we noticed
+we kept coming over
+
+00:02:47.333 --> 00:02:48.635
+and the kids would say,
+"What do I do,"
+
+00:02:48.701 --> 00:02:50.503
+and we kept giving
+the same answers.
+
+00:02:50.570 --> 00:02:53.406
+We tried to put that
+into one cohesive document
+
+00:02:53.473 --> 00:02:55.508
+which would allow them
+to take ownership
+
+00:02:55.575 --> 00:02:56.576
+and that way
+we don't come over
+
+00:02:56.643 --> 00:02:57.977
+and put out so many fires.
+
+00:02:58.044 --> 00:02:59.779
+And it works.
+
+00:02:59.846 --> 00:03:03.449
+The critical thinking
+problem-solving algorithm...
+
+00:03:03.516 --> 00:03:04.651
+♪
+
+00:03:04.717 --> 00:03:08.021
+...it allows students
+to take a process
+
+00:03:08.087 --> 00:03:11.024
+to get where they need to go,
+to break down a problem
+
+00:03:11.090 --> 00:03:12.926
+and to decide what steps
+they need to take,
+
+00:03:12.992 --> 00:03:15.495
+what concrete actions
+they need to take.
+
+00:03:15.562 --> 00:03:18.731
+It fosters independence
+and that's its purpose.
+
+00:03:18.798 --> 00:03:20.400
+...the red thing,
+they all go away.
+
+00:03:20.466 --> 00:03:22.368
+We wanted it to be
+something we could use for
+
+00:03:22.435 --> 00:03:24.571
+regardless what program
+we're using,
+
+00:03:24.637 --> 00:03:26.606
+regardless of what level
+the student is at,
+
+00:03:26.673 --> 00:03:28.007
+and so that's what this is.
+
+00:03:28.074 --> 00:03:30.143
+It asks them to start
+at the very beginning.
+
+00:03:30.209 --> 00:03:34.247
+So, first things first,
+what do you want to do?
+
+00:03:34.314 --> 00:03:36.149
+♪
+
+00:03:36.215 --> 00:03:38.384
+What I want a student
+to be able to do
+
+00:03:38.451 --> 00:03:41.754
+is to begin by explaining
+and isolating
+
+00:03:41.821 --> 00:03:45.592
+what exactly is their problem,
+why is it not working,
+
+00:03:45.658 --> 00:03:48.761
+and start finding
+where the problems exist.
+
+00:03:48.828 --> 00:03:51.164
+We also like them
+to be able to collaborate
+
+00:03:51.230 --> 00:03:54.200
+and work together,
+so we encourage them
+
+00:03:54.267 --> 00:03:57.704
+before calling one of us
+over with a problem
+
+00:03:57.770 --> 00:03:59.606
+to start by turning
+to the person next to them,
+
+00:03:59.672 --> 00:04:01.507
+turning to the person
+in front or behind,
+
+00:04:01.574 --> 00:04:03.776
+start asking if somebody else
+has seen the same problem
+
+00:04:03.843 --> 00:04:04.677
+and knows how to fix it.
+
+00:04:04.744 --> 00:04:07.180
+Can we put in the directions...
+
+00:04:07.246 --> 00:04:08.815
+Okay, if we can--
+
+00:04:08.881 --> 00:04:10.083
+We're gonna wrap it up,
+if we can get
+
+00:04:10.149 --> 00:04:11.250
+everybody's focus over here,
+
+00:04:11.317 --> 00:04:13.553
+we're gonna do
+a quick share out.
+
+00:04:13.620 --> 00:04:15.021
+In the class,
+what I like about it
+
+00:04:15.088 --> 00:04:19.158
+is that a lot of the work,
+it's like us doing
+
+00:04:19.225 --> 00:04:21.260
+and we have to figure it out
+by ourselves.
+
+00:04:21.327 --> 00:04:23.596
+Students can take away
+from this course
+
+00:04:23.663 --> 00:04:26.165
+the ability to step back
+and be reflective.
+
+00:04:26.232 --> 00:04:28.001
+They can take away
+from this course
+
+00:04:28.067 --> 00:04:32.238
+the ability to isolate things
+and focus on them
+
+00:04:32.305 --> 00:04:35.475
+before connecting them
+to other larger pieces,
+
+00:04:35.541 --> 00:04:37.977
+and I think that beyond that
+it shows students
+
+00:04:38.044 --> 00:04:40.546
+that it's okay to struggle
+to get there.
+
+00:04:40.613 --> 00:04:42.649
+This is a skill that
+they're gonna need in life.
+
+00:04:42.715 --> 00:04:44.183
+You're gonna get things wrong
+
+00:04:44.250 --> 00:04:46.619
+and, in fact,
+that's how you learn.
+
+00:04:46.686 --> 00:04:54.260
+♪
+
+

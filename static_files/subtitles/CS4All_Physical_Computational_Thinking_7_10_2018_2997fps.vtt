@@ -1,0 +1,485 @@
+﻿WEBVTT
+
+00:00:00.333 --> 00:00:02.369
+So, I said,
+"Write a pseudocode,"
+
+00:00:02.435 --> 00:00:04.504
+but you're gonna actually use
+your laptops.
+
+00:00:04.571 --> 00:00:06.606
+Move three units forward
+and turn right.
+
+00:00:06.673 --> 00:00:08.375
+Move two blocks...
+
+00:00:08.441 --> 00:00:09.576
+Go to the Do-Now.
+
+00:00:09.642 --> 00:00:12.712
+Students are
+going to do a Do-Now,
+
+00:00:12.779 --> 00:00:17.684
+so they're going to use
+themselves as the tool
+
+00:00:17.751 --> 00:00:19.753
+in order to perform a task.
+
+00:00:19.819 --> 00:00:22.956
+For you, you, personally,
+to walk in a square.
+
+00:00:23.022 --> 00:00:27.160
+One, two, three, four.
+
+00:00:27.227 --> 00:00:31.131
+♪
+
+00:00:31.197 --> 00:00:33.099
+My name is Robert Calungsod.
+
+00:00:33.166 --> 00:00:34.467
+I teach Algebra II
+
+00:00:34.534 --> 00:00:37.203
+and also Computer Science
+and Robotics.
+
+00:00:37.270 --> 00:00:38.705
+So, if you want to move
+to the side,
+
+00:00:38.772 --> 00:00:39.773
+then you change the "Y."
+
+00:00:39.839 --> 00:00:42.542
+So, the Do-Now
+is actually individual.
+
+00:00:42.609 --> 00:00:44.744
+The students will have
+their own laptops.
+
+00:00:44.811 --> 00:00:46.780
+They're going to type
+the steps
+
+00:00:46.846 --> 00:00:49.449
+in order to walk in squares.
+
+00:00:49.516 --> 00:00:52.152
+Basically, what we did
+is we made an algorithm,
+
+00:00:52.218 --> 00:00:55.321
+so the Do-Now asks us
+to write a script
+
+00:00:55.388 --> 00:00:58.458
+of someone or an object,
+anything, to walk in a square.
+
+00:00:58.525 --> 00:01:01.494
+So, we went on Microsoft Word,
+we made a pseudocode.
+
+00:01:01.561 --> 00:01:04.397
+Pseudocode is actually
+the representation
+
+00:01:04.464 --> 00:01:06.633
+or the steps in English.
+
+00:01:06.699 --> 00:01:09.302
+Writing out the pseudocode
+is valuable
+
+00:01:09.369 --> 00:01:11.805
+because it's kind of easier
+to identify errors.
+
+00:01:11.871 --> 00:01:13.039
+Especially writing it down,
+
+00:01:13.106 --> 00:01:14.808
+when you write down
+the pseudocode,
+
+00:01:14.874 --> 00:01:16.543
+like, you see exactly
+what you're writing,
+
+00:01:16.609 --> 00:01:18.077
+you need to see
+exactly what it takes
+
+00:01:18.144 --> 00:01:19.345
+to execute your plan,
+
+00:01:19.412 --> 00:01:20.814
+so a pseudocode
+definitely helps.
+
+00:01:20.880 --> 00:01:22.949
+It's basically like a draft
+to whatever you're doing.
+
+00:01:23.016 --> 00:01:25.285
+These are the other steps
+on the board.
+
+00:01:25.351 --> 00:01:28.288
+And then I'm going to show
+one of the computer screens
+
+00:01:28.354 --> 00:01:32.025
+on the board
+and then ask another student
+
+00:01:32.091 --> 00:01:34.360
+to perform the steps.
+
+00:01:34.427 --> 00:01:36.429
+I call another student
+
+00:01:36.496 --> 00:01:39.933
+to perform the steps
+
+00:01:39.999 --> 00:01:41.768
+instead of that student
+because, sometimes,
+
+00:01:41.835 --> 00:01:44.170
+the students will rationalize,
+
+00:01:44.237 --> 00:01:46.206
+and a computer
+doesn't rationalize.
+
+00:01:46.272 --> 00:01:47.974
+It just follows them.
+
+00:01:48.041 --> 00:01:50.176
+So that removes the bias.
+
+00:01:50.243 --> 00:01:52.145
+Basically, whatever they wrote,
+
+00:01:52.212 --> 00:01:53.947
+that's what they perform.
+
+00:01:54.013 --> 00:01:56.082
+That's the same pseudocode
+that you're going to implement
+
+00:01:56.149 --> 00:01:57.250
+using choreograph.
+
+00:01:57.317 --> 00:01:59.552
+Today, they're going
+to use choreograph
+
+00:01:59.619 --> 00:02:03.490
+because that's the language
+that is going to be used
+
+00:02:03.556 --> 00:02:05.058
+to talk to the robot.
+
+00:02:05.124 --> 00:02:08.561
+Then, they're going to
+demonstrate their pseudocode...
+
+00:02:08.628 --> 00:02:11.564
+You have to do it
+based on what is in there.
+
+00:02:11.631 --> 00:02:15.068
+...and they're going to do it
+in the front of the class.
+
+00:02:15.134 --> 00:02:16.369
+I...
+
+00:02:16.436 --> 00:02:18.638
+♪
+
+00:02:18.705 --> 00:02:20.607
+Each step is going
+to be recorded.
+
+00:02:20.673 --> 00:02:22.675
+For example, they're going
+to say walk straight
+
+00:02:22.742 --> 00:02:23.710
+for how many steps.
+
+00:02:23.776 --> 00:02:25.645
+Four steps,
+one, two, three, four.
+
+00:02:25.712 --> 00:02:27.180
+That's what they can do.
+
+00:02:27.247 --> 00:02:30.717
+So, the next step should be
+based on what they plan to do
+
+00:02:30.783 --> 00:02:32.552
+in order to solve the problem.
+
+00:02:32.619 --> 00:02:36.489
+So, it leads to the student
+thinking about the algorithm,
+
+00:02:36.556 --> 00:02:40.360
+about the steps it takes
+in order to perform the task.
+
+00:02:40.426 --> 00:02:42.428
+I'm like, "Okay, I've gotten
+this down pat.
+
+00:02:42.495 --> 00:02:44.397
+Maybe I can face the next one."
+
+00:02:44.464 --> 00:02:48.468
+So, we have a little robot,
+a humanoid robot called Nao.
+
+00:02:48.535 --> 00:02:52.805
+The angle, the data
+is actually what you use.
+
+00:02:52.872 --> 00:02:55.475
+We're going to use
+the pseudocode
+
+00:02:55.542 --> 00:02:58.778
+and program our robot
+
+00:02:58.845 --> 00:03:02.348
+in order to do the same task
+as what they did.
+
+00:03:02.415 --> 00:03:03.449
+But what we were
+doing earlier,
+
+00:03:03.516 --> 00:03:04.651
+we have to figure out
+how we can make
+
+00:03:04.717 --> 00:03:06.286
+the robot walk in a square.
+
+00:03:06.352 --> 00:03:10.056
+Like, I made it go
+three units forward
+
+00:03:10.123 --> 00:03:11.457
+and turn right.
+
+00:03:11.524 --> 00:03:15.461
+So, you click "play,"
+it's going to move forward,
+
+00:03:15.528 --> 00:03:17.697
+and then look what happens.
+
+00:03:17.764 --> 00:03:20.600
+So, that's 90 degrees.
+
+00:03:20.667 --> 00:03:23.369
+This class is AP
+Computer Science Principles.
+
+00:03:23.436 --> 00:03:25.071
+The skill levels are varied,
+
+00:03:25.138 --> 00:03:28.474
+so it's always giving them
+different tasks,
+
+00:03:28.541 --> 00:03:31.210
+not to lose
+the lower level ones,
+
+00:03:31.277 --> 00:03:34.314
+and also give extra tasks
+for those students
+
+00:03:34.380 --> 00:03:36.916
+who are advanced.
+
+00:03:36.983 --> 00:03:38.985
+If we're in the business
+of preparing our children
+
+00:03:39.052 --> 00:03:40.787
+for the future,
+we have to have
+
+00:03:40.853 --> 00:03:42.922
+a viable computer
+science program.
+
+00:03:42.989 --> 00:03:46.659
+The students are actually
+building, developing, coding,
+
+00:03:46.726 --> 00:03:49.162
+and creating the language
+of science,
+
+00:03:49.228 --> 00:03:50.697
+and that will
+hopefully help them
+
+00:03:50.763 --> 00:03:52.765
+in terms of mathematics.
+
+00:03:52.832 --> 00:03:55.501
+What's the mathematical
+principle that involves this?
+
+00:03:55.568 --> 00:03:57.704
+What I like about
+computer science
+
+00:03:57.770 --> 00:04:00.039
+is being able to overcome
+an obstacle.
+
+00:04:00.106 --> 00:04:02.175
+So, you're turning
+in a--into a circle.
+
+00:04:02.241 --> 00:04:04.210
+So, that's really what I enjoy
+because, you know,
+
+00:04:04.277 --> 00:04:06.112
+struggling through it
+is a little difficult,
+
+00:04:06.179 --> 00:04:08.948
+but once I overcome it,
+I feel good.
+
+00:04:09.015 --> 00:04:11.551
+Because the students
+are in various levels,
+
+00:04:11.618 --> 00:04:15.188
+it is very important
+for the student to know
+
+00:04:15.254 --> 00:04:17.757
+and to understand,
+"Oh, these are the steps."
+
+00:04:17.824 --> 00:04:19.692
+When they perform it
+physically,
+
+00:04:19.759 --> 00:04:22.362
+like them walking in a square,
+
+00:04:22.428 --> 00:04:26.399
+they can actually perceive
+the steps necessary to do it
+
+00:04:26.466 --> 00:04:30.470
+so, therefore, the physical
+aspect is helpful.
+
+00:04:30.536 --> 00:04:31.738
+I really like the fact
+
+00:04:31.804 --> 00:04:34.240
+that the students
+were very engaged.
+
+00:04:34.307 --> 00:04:36.309
+Doing the lesson
+like Robert had,
+
+00:04:36.376 --> 00:04:38.177
+they followed directions
+very well
+
+00:04:38.244 --> 00:04:42.181
+and they do like to act out
+whatever plan that they have
+
+00:04:42.248 --> 00:04:43.616
+from a think map.
+
+00:04:43.683 --> 00:04:45.518
+That was amazing.
+
+00:04:45.585 --> 00:04:48.921
+I always tell them that
+if you have the work ethic,
+
+00:04:48.988 --> 00:04:50.390
+then we can
+work it out together
+
+00:04:50.456 --> 00:04:53.092
+and, eventually,
+it will lead to success.
+
+00:04:53.159 --> 00:04:55.662
+But it's amazing,
+you'll see them, "Oh, oh, oh,"
+
+00:04:55.728 --> 00:04:57.130
+and then they have
+these sounds...
+
+00:04:57.196 --> 00:04:58.698
+(laughs)
+
+00:04:58.765 --> 00:05:01.000
+...'cause they're happy
+if they get the answer.
+
+00:05:01.067 --> 00:05:03.269
+I wrote the original code
+and it actually worked.
+
+00:05:03.336 --> 00:05:06.506
+I've been with Mr. C.
+for about six months now
+
+00:05:06.572 --> 00:05:08.107
+and his way of teaching
+has really helped me
+
+00:05:08.174 --> 00:05:09.542
+and improved
+my way of thinking.
+
+00:05:09.609 --> 00:05:12.445
+So, as a teacher,
+I always feel proud
+
+00:05:12.512 --> 00:05:14.080
+when something
+like this happens.
+
+00:05:14.147 --> 00:05:18.418
+You do everything in here
+and then you add it to "X."
+
+00:05:18.484 --> 00:05:23.056
+♪
+
+

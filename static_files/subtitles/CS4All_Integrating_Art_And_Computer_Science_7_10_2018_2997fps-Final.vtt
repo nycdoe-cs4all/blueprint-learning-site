@@ -1,0 +1,528 @@
+﻿WEBVTT
+
+00:00:00.600 --> 00:00:03.169
+Come on over, lean in,
+and what's theoretically wrong
+
+00:00:03.236 --> 00:00:05.071
+with this piece of embroidery?
+
+00:00:05.138 --> 00:00:07.474
+My background is as
+a working artist.
+
+00:00:07.540 --> 00:00:09.809
+The designer wanted this
+to all be even.
+
+00:00:09.876 --> 00:00:11.411
+I think human beings
+like making things,
+
+00:00:11.478 --> 00:00:13.480
+and touching things,
+and looking at things.
+
+00:00:13.546 --> 00:00:15.715
+Can we find what the problem is
+and fix it?
+
+00:00:15.782 --> 00:00:17.484
+Yes, by looking at the code.
+
+00:00:17.550 --> 00:00:19.519
+So, by making code visible,
+
+00:00:19.586 --> 00:00:23.456
+by using code
+like an art material,
+
+00:00:23.523 --> 00:00:26.059
+we can touch it
+and get to know it.
+
+00:00:26.126 --> 00:00:28.128
+When you touch it
+and you feel it, you can see
+
+00:00:28.194 --> 00:00:30.630
+that it looks like four
+but there really are six.
+
+00:00:30.697 --> 00:00:32.799
+It makes it very personal,
+and all of a sudden,
+
+00:00:32.866 --> 00:00:36.002
+the pattern-making becomes
+a personal expression,
+
+00:00:36.069 --> 00:00:38.405
+which is really what
+coding should be.
+
+00:00:38.471 --> 00:00:40.039
+Interesting design, right?
+
+00:00:40.106 --> 00:00:44.310
+♪
+
+00:00:44.377 --> 00:00:46.312
+So, we're using Turtlestitch,
+
+00:00:46.379 --> 00:00:48.548
+which is a relative of Snap.
+
+00:00:48.615 --> 00:00:50.116
+It's the same base code,
+
+00:00:50.183 --> 00:00:54.554
+and we're building
+coding problems
+
+00:00:54.621 --> 00:00:58.158
+and then we're stitching them
+to see them.
+
+00:00:58.224 --> 00:01:00.560
+-The code is the pattern.
+-Yeah, exactly.
+
+00:01:00.627 --> 00:01:02.162
+So, I'm gonna model one for you
+
+00:01:02.228 --> 00:01:03.997
+and then I have set up
+three problems,
+
+00:01:04.063 --> 00:01:05.665
+challenges around the room
+for you.
+
+00:01:05.732 --> 00:01:08.034
+So, I presented three
+different challenges.
+
+00:01:08.101 --> 00:01:09.335
+Analyze the problem.
+
+00:01:09.402 --> 00:01:12.305
+To look at,
+to identify the problem,
+
+00:01:12.372 --> 00:01:15.241
+to analyze the problem first
+so they could recognize
+
+00:01:15.308 --> 00:01:17.710
+what problem
+they thought existed.
+
+00:01:17.777 --> 00:01:19.979
+And then they started to think
+about strategies
+
+00:01:20.046 --> 00:01:22.382
+for dealing with the problem
+or debugging it.
+
+00:01:22.449 --> 00:01:24.517
+So, write some Post-its,
+stick them here,
+
+00:01:24.584 --> 00:01:26.786
+and then what could be done
+to fix or debug it.
+
+00:01:26.853 --> 00:01:30.190
+So, you give people code
+and say, "Debug the problem,"
+
+00:01:30.256 --> 00:01:32.792
+which we've done,
+but giving them a real pattern
+
+00:01:32.859 --> 00:01:34.727
+and realizing you wanna make
+a different pattern,
+
+00:01:34.794 --> 00:01:37.397
+it changes debugging,
+yet it's the same strategies.
+
+00:01:37.464 --> 00:01:40.266
+And so, if you can learn
+to debug code
+
+00:01:40.333 --> 00:01:42.569
+by making something
+and by touching it,
+
+00:01:42.635 --> 00:01:44.938
+if it engages you
+and debugging is no longer
+
+00:01:45.004 --> 00:01:46.639
+an exercise you have to do
+every night,
+
+00:01:46.706 --> 00:01:49.943
+but it's really a process
+that becomes fun.
+
+00:01:50.009 --> 00:01:51.744
+It is fun,
+because you're connecting
+
+00:01:51.811 --> 00:01:54.147
+between computers
+and then making it real.
+
+00:01:54.214 --> 00:01:57.150
+So, you can look at the math
+and science behind it
+
+00:01:57.217 --> 00:01:59.786
+and see what goes into
+making something like this.
+
+00:01:59.853 --> 00:02:02.255
+I think having something
+in your hand
+
+00:02:02.322 --> 00:02:04.724
+that you can actually hold,
+look at
+
+00:02:04.791 --> 00:02:08.928
+really brings a new element
+to actually doing it,
+
+00:02:08.995 --> 00:02:12.465
+because yeah, I can visualize
+the code in my head.
+
+00:02:12.532 --> 00:02:14.934
+Being able to actually have
+something in my hand.
+
+00:02:15.001 --> 00:02:16.402
+Like, the problems we did today,
+
+00:02:16.469 --> 00:02:18.338
+you wouldn't really be able
+to see where it's thicker,
+
+00:02:18.404 --> 00:02:19.772
+'cause it just goes over it.
+
+00:02:19.839 --> 00:02:21.608
+But here you--but with it
+actually in your hand,
+
+00:02:21.674 --> 00:02:23.343
+you can determine like,
+
+00:02:23.409 --> 00:02:25.445
+"Well, that's not exactly
+what I wanted."
+
+00:02:25.512 --> 00:02:28.248
+So, it helps in that sense,
+
+00:02:28.314 --> 00:02:30.416
+and it makes you feel
+I guess more engaged.
+
+00:02:30.483 --> 00:02:31.718
+Like, you made this yourself.
+
+00:02:31.784 --> 00:02:34.721
+This is yours, you know.
+
+00:02:34.787 --> 00:02:36.389
+So we might have to change.
+
+00:02:36.456 --> 00:02:37.690
+And this one's
+like a combination.
+
+00:02:37.757 --> 00:02:41.261
+I enjoy the concept
+of hands-on debugging,
+
+00:02:41.327 --> 00:02:43.496
+and actually taking it
+off the computer
+
+00:02:43.563 --> 00:02:44.797
+and letting the kids see that,
+you know,
+
+00:02:44.864 --> 00:02:46.566
+they kinda do this all the time
+when you're looking at
+
+00:02:46.633 --> 00:02:48.434
+different things
+in you're regular life,
+
+00:02:48.501 --> 00:02:51.271
+and then by debugging it
+on the computer,
+
+00:02:51.337 --> 00:02:52.605
+it's really the same thing.
+
+00:02:52.672 --> 00:02:55.308
+Using process of elimination,
+seeing what's wrong,
+
+00:02:55.375 --> 00:02:58.378
+identifying the problem,
+and then solving the problem.
+
+00:02:58.444 --> 00:03:01.548
+I think it's human nature to
+enjoy troubleshooting a problem,
+
+00:03:01.614 --> 00:03:03.650
+especially a design problem.
+
+00:03:03.716 --> 00:03:06.252
+So, it is engaging,
+it's really fun,
+
+00:03:06.319 --> 00:03:08.755
+which is really what
+coding should be.
+
+00:03:08.821 --> 00:03:09.989
+You don't learn to code.
+
+00:03:10.056 --> 00:03:11.991
+You code to express yourself,
+
+00:03:12.058 --> 00:03:15.428
+and code can be and is
+in our day and age,
+
+00:03:15.495 --> 00:03:19.599
+an artist's material
+as much as clay in many ways.
+
+00:03:19.666 --> 00:03:23.136
+To me, I find that
+it's a very interesting
+
+00:03:23.202 --> 00:03:25.238
+almost interconnection
+
+00:03:25.305 --> 00:03:28.041
+of art and coding.
+
+00:03:28.107 --> 00:03:30.243
+And what's most fascinating
+about it is that
+
+00:03:30.310 --> 00:03:33.513
+through the usage of art,
+it almost enables you
+
+00:03:33.580 --> 00:03:35.782
+to like touch your code.
+
+00:03:35.848 --> 00:03:39.419
+It enables you to physically see
+
+00:03:39.485 --> 00:03:41.487
+your code coming to life.
+
+00:03:41.554 --> 00:03:43.656
+I learned about Turtlestitch
+
+00:03:43.723 --> 00:03:46.025
+when I went to a Scratch
+conference in Amsterdam,
+
+00:03:46.092 --> 00:03:47.527
+and I fell in love
+with Turtlestitch.
+
+00:03:47.594 --> 00:03:50.063
+I came back and I wasn't sure
+what I needed to do,
+
+00:03:50.129 --> 00:03:52.098
+but I knew the students here
+would love it.
+
+00:03:52.165 --> 00:03:54.233
+I introduced to my Tech Club
+at first,
+
+00:03:54.300 --> 00:03:55.768
+and Jennifer
+and a few other people
+
+00:03:55.835 --> 00:03:57.971
+dabbled in it and were curious.
+
+00:03:58.037 --> 00:04:01.307
+Turtlestitch helped me feel
+more comfortable with coding,
+
+00:04:01.374 --> 00:04:03.276
+because I was a beginner
+with it.
+
+00:04:03.343 --> 00:04:04.544
+She started learning.
+
+00:04:04.611 --> 00:04:07.280
+Just like a sponge,
+she soaked everything up.
+
+00:04:07.347 --> 00:04:10.049
+And every time she'd try
+something and she'd stitch it,
+
+00:04:10.116 --> 00:04:11.818
+and then she'd be
+so excited about it.
+
+00:04:11.884 --> 00:04:15.054
+So, these are comments I made
+on each blog.
+
+00:04:15.121 --> 00:04:16.923
+So, Jennifer started a blog.
+
+00:04:16.990 --> 00:04:20.193
+I started a blog just to share
+my experience
+
+00:04:20.259 --> 00:04:23.363
+with learning codes.
+
+00:04:23.429 --> 00:04:26.733
+And I wanted other people
+to join me through my journey.
+
+00:04:26.799 --> 00:04:29.135
+And then, out of that
+came the tutorial cards.
+
+00:04:29.202 --> 00:04:31.270
+So, these are Turtlestitch cards
+I made.
+
+00:04:31.337 --> 00:04:34.007
+Because we realized Turtlestitch
+is still pretty new,
+
+00:04:34.073 --> 00:04:35.408
+although it's really exploding
+
+00:04:35.475 --> 00:04:37.276
+'cause people are so excited
+about it.
+
+00:04:37.343 --> 00:04:39.712
+Every time she learned something
+she made a card for it.
+
+00:04:39.779 --> 00:04:43.383
+Because I felt the need for
+other people to learn as well.
+
+00:04:43.449 --> 00:04:47.253
+It was really empowering for her
+to learn to code,
+
+00:04:47.320 --> 00:04:50.023
+and all of a sudden,
+math became very purposeful.
+
+00:04:50.089 --> 00:04:52.392
+She wasn't just studying
+for tests anymore.
+
+00:04:52.458 --> 00:04:54.127
+She was really learning
+and sharing it,
+
+00:04:54.193 --> 00:04:55.795
+and part of a community.
+
+00:04:55.862 --> 00:04:57.530
+So, it's pretty exciting
+
+00:04:57.597 --> 00:04:59.132
+that she's been able
+to have that impact.
+
+00:04:59.198 --> 00:05:02.268
+STEM courses and courses like
+AP Computer Science Principles
+
+00:05:02.335 --> 00:05:05.738
+give kids access
+to certain opportunities
+
+00:05:05.805 --> 00:05:09.175
+that they may not have
+in a regular course.
+
+00:05:09.242 --> 00:05:11.577
+They can really delve
+into coding
+
+00:05:11.644 --> 00:05:14.714
+or into combining coding
+with art
+
+00:05:14.781 --> 00:05:17.383
+or math or science in a way
+
+00:05:17.450 --> 00:05:20.286
+that they don't normally have
+that opportunity to.
+
+00:05:20.353 --> 00:05:21.921
+Now, go back to your solution.
+
+00:05:21.988 --> 00:05:24.390
+The only reason I'm teaching
+computer science now
+
+00:05:24.457 --> 00:05:28.428
+is because I've found a way
+to do computer science
+
+00:05:28.494 --> 00:05:30.730
+in a way that I do think
+it's really powerful,
+
+00:05:30.797 --> 00:05:34.300
+but allows me to express myself
+as an artist,
+
+00:05:34.367 --> 00:05:37.503
+as a teacher, and really
+even better than that,
+
+00:05:37.570 --> 00:05:40.006
+allows me to pass that on
+to my students,
+
+00:05:40.073 --> 00:05:41.974
+which is just so wonderful.
+
+00:05:42.041 --> 00:05:43.476
+Yes, yes, yes.
+
+00:05:43.543 --> 00:05:46.312
+♪
+
+

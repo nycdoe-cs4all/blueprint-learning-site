@@ -1,0 +1,468 @@
+﻿WEBVTT
+
+00:00:01.000 --> 00:00:02.769
+♪
+
+00:00:02.836 --> 00:00:04.971
+One of the things that happens
+in computational thinking
+
+00:00:05.038 --> 00:00:08.007
+and thinking about
+how we're gonna use
+
+00:00:08.074 --> 00:00:10.410
+these computers to get
+desired results that we want,
+
+00:00:10.477 --> 00:00:13.947
+we have to think in a way
+that makes sense
+
+00:00:14.013 --> 00:00:16.082
+'cause it's the only way that
+computers are gonna operate.
+
+00:00:16.149 --> 00:00:17.450
+If they don't make sense,
+
+00:00:17.517 --> 00:00:19.219
+it's gonna be
+faulty reasoning.
+
+00:00:19.285 --> 00:00:21.788
+♪
+
+00:00:21.855 --> 00:00:24.424
+As part of learning
+about how computers operate
+
+00:00:24.491 --> 00:00:26.960
+and how we communicate
+with our computers,
+
+00:00:27.026 --> 00:00:29.129
+I try to bring to the students
+
+00:00:29.195 --> 00:00:32.332
+a way to think about
+how computers think...
+
+00:00:32.399 --> 00:00:34.567
+When we originally defined
+"algorithms,"
+
+00:00:34.634 --> 00:00:38.037
+we talked about it in terms of
+this repeatable set of steps.
+
+00:00:38.104 --> 00:00:40.640
+We compared it
+to a cake recipe,
+
+00:00:40.707 --> 00:00:41.775
+how you make a cake.
+
+00:00:41.841 --> 00:00:43.977
+You gotta get the flour,
+you gotta get the sugar,
+
+00:00:44.043 --> 00:00:45.278
+you gotta do all that,
+put it together,
+
+00:00:45.345 --> 00:00:46.279
+and then bake it.
+
+00:00:46.346 --> 00:00:48.081
+Those were steps
+that we could understand
+
+00:00:48.148 --> 00:00:50.183
+in terms of how we do anything.
+
+00:00:50.250 --> 00:00:51.518
+...and the way
+in which I do that
+
+00:00:51.584 --> 00:00:55.588
+is by introducing them to
+some basic concepts in logic,
+
+00:00:55.655 --> 00:00:58.057
+things that they do every day
+when they make decisions,
+
+00:00:58.124 --> 00:01:00.226
+when they decide
+to do certain things,
+
+00:01:00.293 --> 00:01:03.163
+and then apply it to a way
+in which a computer
+
+00:01:03.229 --> 00:01:05.265
+would process
+that kind of information
+
+00:01:05.331 --> 00:01:07.934
+and show them
+that computer science
+
+00:01:08.001 --> 00:01:10.236
+and the way computers
+communicate with humans
+
+00:01:10.303 --> 00:01:13.606
+is based on a very simple type
+of logical pattern.
+
+00:01:13.673 --> 00:01:15.775
+We want to make sure
+that what we put in,
+
+00:01:15.842 --> 00:01:17.977
+whatever it is,
+whatever that recipe is,
+
+00:01:18.044 --> 00:01:20.079
+whatever that algorithm
+that we're writing,
+
+00:01:20.146 --> 00:01:23.616
+that it's gonna produce
+a certain kind of output.
+
+00:01:23.683 --> 00:01:24.951
+♪
+
+00:01:25.018 --> 00:01:26.619
+All students should have
+a foundation
+
+00:01:26.686 --> 00:01:30.156
+in computer science
+because of the logical thinking
+
+00:01:30.223 --> 00:01:34.160
+and the computational thinking
+that spans across disciplines.
+
+00:01:34.227 --> 00:01:35.562
+It will help you with math,
+
+00:01:35.628 --> 00:01:37.530
+it would help you
+with writing,
+
+00:01:37.597 --> 00:01:39.466
+it would help you with
+
+00:01:39.532 --> 00:01:41.334
+thinking logically
+through a problem.
+
+00:01:41.401 --> 00:01:44.137
+Mr. Kaufman, he teaches
+in a really entertaining way.
+
+00:01:44.204 --> 00:01:45.939
+He'll put it
+in different lessons,
+
+00:01:46.005 --> 00:01:48.041
+like, take it step by step
+
+00:01:48.107 --> 00:01:50.276
+in order to make it
+easier for us,
+
+00:01:50.343 --> 00:01:51.578
+even though it will
+get complicated
+
+00:01:51.644 --> 00:01:53.279
+even more later on.
+
+00:01:53.346 --> 00:01:54.781
+When we come into class,
+he'll probably tell us,
+
+00:01:54.848 --> 00:01:56.649
+like, one of his corny jokes,
+
+00:01:56.716 --> 00:01:59.118
+you know, just to get us
+into the lesson.
+
+00:01:59.185 --> 00:02:00.787
+You have a right
+to remain ignorant.
+
+00:02:00.854 --> 00:02:03.022
+I know, but I refuse
+to find out.
+
+00:02:03.089 --> 00:02:04.257
+He's--he's a good teacher.
+
+00:02:04.324 --> 00:02:07.026
+The concept of logic
+and learning is so basic
+
+00:02:07.093 --> 00:02:08.728
+to all our subjects
+in high school
+
+00:02:08.795 --> 00:02:10.063
+that it's important
+to lay out
+
+00:02:10.129 --> 00:02:12.632
+how these--these
+basic building blocks
+
+00:02:12.699 --> 00:02:13.967
+are actually developed.
+
+00:02:14.033 --> 00:02:16.069
+Understanding
+the basic of logic
+
+00:02:16.135 --> 00:02:18.371
+is also understanding
+at a fundamental level
+
+00:02:18.438 --> 00:02:20.940
+how computers operate
+so that we can manipulate
+
+00:02:21.007 --> 00:02:23.309
+the code in a way
+that will give us
+
+00:02:23.376 --> 00:02:26.112
+a better,
+more efficient algorithm
+
+00:02:26.179 --> 00:02:27.547
+and a way to approach
+algorithms
+
+00:02:27.614 --> 00:02:28.648
+a little differently.
+
+00:02:28.715 --> 00:02:30.750
+It's also gonna help us
+in our life as well,
+
+00:02:30.817 --> 00:02:32.452
+understanding
+how to make decisions.
+
+00:02:32.519 --> 00:02:35.522
+The most basic understanding
+of how we develop
+
+00:02:35.588 --> 00:02:39.392
+who we are as people,
+how we see the world
+
+00:02:39.459 --> 00:02:42.028
+needs to be based on things
+that we learn.
+
+00:02:42.095 --> 00:02:44.697
+You're gonna develop
+programs in Snap
+
+00:02:44.764 --> 00:02:46.633
+that demonstrate
+deductive argument
+
+00:02:46.699 --> 00:02:49.335
+and that demonstrate
+inductive argument.
+
+00:02:49.402 --> 00:02:51.437
+They can apply that to
+
+00:02:51.504 --> 00:02:55.375
+both their practical
+programming,
+
+00:02:55.441 --> 00:02:57.043
+coding, and computing,
+
+00:02:57.110 --> 00:03:00.446
+as well as practical parts
+of their own lives.
+
+00:03:00.513 --> 00:03:02.515
+It's level of abstraction,
+excellent.
+
+00:03:02.582 --> 00:03:05.518
+I try to design
+my lessons around
+
+00:03:05.585 --> 00:03:09.589
+what I think they can absorb
+and go a little bit more
+
+00:03:09.656 --> 00:03:12.959
+and keep them engaged
+by challenging them to think
+
+00:03:13.026 --> 00:03:16.062
+a little bit beyond
+just, you know, the facts
+
+00:03:16.129 --> 00:03:18.131
+or the information
+that I provide.
+
+00:03:18.197 --> 00:03:20.533
+Manuel, let's check this.
+I'm gonna put you on the spot.
+
+00:03:20.600 --> 00:03:23.636
+He didn't use long examples,
+so it was three statements.
+
+00:03:23.703 --> 00:03:26.773
+If this, then that,
+therefore it must be.
+
+00:03:26.839 --> 00:03:28.308
+All vegetables are plants.
+
+00:03:28.374 --> 00:03:29.609
+-True.
+-True?
+
+00:03:29.676 --> 00:03:31.277
+-Yeah.
+-Yeah?
+
+00:03:31.344 --> 00:03:32.312
+Tomato is a vegetable.
+
+00:03:32.378 --> 00:03:34.414
+-Yeah.
+-No, it's a fruit.
+
+00:03:34.480 --> 00:03:35.548
+Uh-oh.
+
+00:03:35.615 --> 00:03:37.784
+I love the tomato, you know,
+
+00:03:37.850 --> 00:03:40.386
+because there's always the, uh,
+
+00:03:40.453 --> 00:03:42.088
+is it a fruit
+or is it a vegetable?
+
+00:03:42.155 --> 00:03:44.324
+Again, when it broke it down,
+they had to think about it,
+
+00:03:44.390 --> 00:03:46.259
+so it wasn't
+just him lecturing.
+
+00:03:46.326 --> 00:03:48.094
+They had to come up
+and why is it, you know,
+
+00:03:48.161 --> 00:03:51.064
+and if that is true,
+then therefore it must be.
+
+00:03:51.130 --> 00:03:55.368
+Let me show you this video
+from Monty Python.
+
+00:03:55.435 --> 00:03:57.704
+I really liked how he brought
+in the real-life examples.
+
+00:03:57.770 --> 00:04:00.940
+I liked how he had
+the Monty Python video clip.
+
+00:04:01.007 --> 00:04:04.344
+There are ways of telling
+whether she's a witch.
+
+00:04:04.410 --> 00:04:05.311
+Are there?
+
+00:04:05.378 --> 00:04:06.946
+Monty Python was awesome.
+
+00:04:07.013 --> 00:04:08.815
+It--it kept it flowing.
+
+00:04:08.881 --> 00:04:13.720
+If she weighs
+the same as a duck...
+
+00:04:15.855 --> 00:04:17.457
+...she's made of wood!
+
+00:04:17.523 --> 00:04:20.126
+And therefore...
+
+00:04:20.193 --> 00:04:21.561
+-A witch!
+-A witch!
+
+00:04:21.628 --> 00:04:24.664
+(cheering)
+
+00:04:24.731 --> 00:04:27.166
+Deductive or inductive?
+
+00:04:27.233 --> 00:04:29.168
+So, it's possible
+she's a witch.
+
+00:04:29.235 --> 00:04:30.670
+We don't know until
+we perform the test.
+
+00:04:30.737 --> 00:04:33.339
+Now we can argue
+whether the test is foolproof,
+
+00:04:33.406 --> 00:04:34.273
+but it's there.
+
+00:04:34.340 --> 00:04:35.642
+You cannot do computer science
+
+00:04:35.708 --> 00:04:37.644
+without being creative,
+but it is a way
+
+00:04:37.710 --> 00:04:39.379
+to be able to teach
+those kinds of things
+
+00:04:39.445 --> 00:04:40.780
+that I think students need
+
+00:04:40.847 --> 00:04:42.248
+to be able to live in the world
+
+00:04:42.315 --> 00:04:44.150
+and now as well
+as in the future.
+
+00:04:44.217 --> 00:04:50.089
+♪
+
+
