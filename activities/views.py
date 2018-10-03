@@ -265,7 +265,7 @@ def user_details(request, user_id):
 @user_passes_test(lambda u: u.is_superuser)
 def create_resource(request):
     form = ResourceForm(request.POST or None)
-    print(form)
+    # print(form)
     if form.is_valid():
         form.save()
         return redirect('list_resources')

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load bootstrap3 %}
+<!-- {% load bootstrap3 %} -->
 {% load i18n %}
 
 {% block content %}
@@ -32,18 +32,20 @@
 
 </article>
 
-
-
 </div><!-- /#page -->
-{% endblock %}
+
+
 
 {% block extra_scripts %}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-lite.js"></script>
 
 <script>
+
 $('textarea').summernote({
-  minHeight: 400,
+  minHeight: 100,
+
 });
 $('[data-toggler]').on('click', function(e) {
   e.preventDefault();
@@ -67,4 +69,5 @@ $('#import-form').on('submit', function(e){
   });
 });
 </script>
+{% endblock %}
 {% endblock %}
