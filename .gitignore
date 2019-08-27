@@ -1,4 +1,4 @@
-xenv/
+env/
 *.sqlite3
 *.pyc
 credentials.json
@@ -6,3 +6,4 @@ credentials.json
 activityshare/settings.py
 ez_setup.py
 static-files/videos/
+*.txt
