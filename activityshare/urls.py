@@ -35,7 +35,7 @@ urlpatterns = [
     url(r'^perspectives/$', TemplateView.as_view(template_name='perspectives.html')),
     url(r'^outcomes/$', TemplateView.as_view(template_name='outcomes.html')),
     url(r'^curriculum/$', TemplateView.as_view(template_name='curriculum.html')),
-    url(r'^curriculum/computational-media-explorer/$', TemplateView.as_view(template_name='computational-media-explorer.html')),  
+    url(r'^curriculum/computational-media-explorer/$', TemplateView.as_view(template_name='computational-media-explorer.html')),
     url(r'^curriculum/computational-media-creator/$', TemplateView.as_view(template_name='computational-media-creator.html')),
     url(r'^curriculum/computational-media-innovator/$', TemplateView.as_view(template_name='computational-media-innovator.html')),
     url(r'^curriculum/intro-to-pcomp/$', TemplateView.as_view(template_name='intro-to-pcomp.html')),
@@ -57,4 +57,5 @@ urlpatterns = [
     url(r'^curriculum/units-k2-computer-science-and-me/$', TemplateView.as_view(template_name='units-k2-computer-science-and-me.html')),
     url(r'^curriculum/units-35-creating-from-scratch/$', TemplateView.as_view(template_name='units-35-creating-from-scratch.html')),
     url(r'^curriculum/units-68-innovative-programming/$', TemplateView.as_view(template_name='units-68-innovative-programming.html')),
+    url(r'^curriculum/bootstrap-data-science/$', TemplateView.as_view(template_name='bootstrap-data-science.html')),
 ]
