@@ -49,6 +49,7 @@ urlpatterns = [
     url(r'^curriculum/software-engineering-program/$', TemplateView.as_view(template_name='software-engineering-program.html')),
     url(r'^curriculum/software-engineering-program-jr/$', TemplateView.as_view(template_name='software-engineering-program-jr.html')),
     url(r'^curriculum/creative-computing/$', TemplateView.as_view(template_name='creative-computing.html')),
+    url(r'^curriculum/critical-computing/$', TemplateView.as_view(template_name='critical-computing.html')),
     url(r'^curriculum/creative-web/$', TemplateView.as_view(template_name='creative-web.html')),
     url(r'^curriculum/tangible-interfaces/$', TemplateView.as_view(template_name='tangible-interfaces.html')),
     url(r'^curriculum/cs-and-the-city/$', TemplateView.as_view(template_name='cs-and-the-city.html')),
