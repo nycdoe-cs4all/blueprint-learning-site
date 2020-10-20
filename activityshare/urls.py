@@ -55,6 +55,7 @@ urlpatterns = [
     url(r'^curriculum/cs-and-the-city/$', TemplateView.as_view(template_name='cs-and-the-city.html')),
     url(r'^curriculum/cs-principles/$', TemplateView.as_view(template_name='cs-principles.html')),
     url(r'^curriculum/cs-a/$', TemplateView.as_view(template_name='cs-a.html')),
+        url(r'^curriculum/units-20-21/$', TemplateView.as_view(template_name='units-20-21.html')),
     url(r'^curriculum/units-k2-computer-science-and-me/$', TemplateView.as_view(template_name='units-k2-computer-science-and-me.html')),
     url(r'^curriculum/units-35-creating-from-scratch/$', TemplateView.as_view(template_name='units-35-creating-from-scratch.html')),
     url(r'^curriculum/units-68-innovative-programming/$', TemplateView.as_view(template_name='units-68-innovative-programming.html')),
